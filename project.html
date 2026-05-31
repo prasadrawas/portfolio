@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Prasad Rawas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/project-detail.css">
+</head>
+<body>
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav scrolled" id="nav">
+        <a href="index.html" class="nav-logo">PR<span class="accent">.</span></a>
+        <div class="nav-links">
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#skills" class="nav-link">Skills</a>
+            <a href="index.html#projects" class="nav-link">Projects</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html#about" class="mobile-link">About</a>
+        <a href="index.html#skills" class="mobile-link">Skills</a>
+        <a href="index.html#projects" class="mobile-link">Projects</a>
+        <a href="index.html#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Project Detail Content (populated by JS) -->
+    <main class="project-detail" id="projectDetail">
+        <!-- Back link -->
+        <div class="container">
+            <a href="index.html#projects" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Projects
+            </a>
+        </div>
+
+        <!-- Hero banner -->
+        <div class="detail-hero" id="detailHero">
+            <div class="container">
+                <div class="detail-hero-content">
+                    <span class="detail-badge" id="detailBadge"></span>
+                    <h1 class="detail-title" id="detailTitle"></h1>
+                    <p class="detail-subtitle" id="detailSubtitle"></p>
+                    <div class="detail-actions" id="detailActions"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="detail-grid">
+                <!-- Main content -->
+                <div class="detail-main">
+                    <!-- Overview -->
+                    <section class="detail-section">
+                        <h2 class="detail-section-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+                            Overview
+                        </h2>
+                        <div class="detail-overview" id="detailOverview"></div>
+                    </section>
+
+                    <!-- Key Features -->
+                    <section class="detail-section">
+                        <h2 class="detail-section-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+                            Key Features
+                        </h2>
+                        <ul class="detail-features" id="detailFeatures"></ul>
+                    </section>
+
+                    <!-- User Flow -->
+                    <section class="detail-section">
+                        <h2 class="detail-section-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            User Flow
+                        </h2>
+                        <div class="detail-flow" id="detailFlow"></div>
+                    </section>
+
+                    <!-- Architecture -->
+                    <section class="detail-section" id="archSection">
+                        <h2 class="detail-section-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            Architecture
+                        </h2>
+                        <div class="detail-arch" id="detailArch"></div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="detail-sidebar">
+                    <!-- Tech Stack -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Tech Stack</h3>
+                        <div class="sidebar-tech" id="sidebarTech"></div>
+                    </div>
+
+                    <!-- Project Info -->
+                    <div class="sidebar-card">
+                        <h3 class="sidebar-title">Project Info</h3>
+                        <div class="sidebar-info" id="sidebarInfo"></div>
+                    </div>
+
+                    <!-- Links -->
+                    <div class="sidebar-card" id="sidebarLinksCard">
+                        <h3 class="sidebar-title">Links</h3>
+                        <div class="sidebar-links" id="sidebarLinks"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>Designed & Built by <strong>Prasad Rawas</strong></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/projects-data.js"></script>
+    <script src="assets/js/project-detail.js"></script>
+    <script>
+        // Reuse nav toggle from main site
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Cursor glow
+        const cursorGlow = document.getElementById('cursorGlow');
+        let mouseX = 0, mouseY = 0, glowX = 0, glowY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+        (function animateGlow() {
+            glowX += (mouseX - glowX) * 0.08;
+            glowY += (mouseY - glowY) * 0.08;
+            cursorGlow.style.left = glowX + 'px';
+            cursorGlow.style.top = glowY + 'px';
+            requestAnimationFrame(animateGlow);
+        })();
+    </script>
+</body>
+</html>
