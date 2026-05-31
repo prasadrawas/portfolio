@@ -16,6 +16,36 @@
     // Set page title
     document.title = `${p.title}. Prasad Rawas`;
 
+    // Dynamic meta tags for SEO
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        metaDesc.content = p.subtitle;
+    } else {
+        const meta = document.createElement('meta');
+        meta.name = 'description';
+        meta.content = p.subtitle;
+        document.head.appendChild(meta);
+    }
+
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = `https://prasadrawas.github.io/portfolio/project.html?id=${projectId}`;
+    document.head.appendChild(canonical);
+
+    // OG tags
+    const ogTags = {
+        'og:title': `${p.title} | Prasad Rawas`,
+        'og:description': p.subtitle,
+        'og:type': 'website',
+        'og:url': `https://prasadrawas.github.io/portfolio/project.html?id=${projectId}`
+    };
+    Object.entries(ogTags).forEach(([prop, content]) => {
+        const meta = document.createElement('meta');
+        meta.setAttribute('property', prop);
+        meta.content = content;
+        document.head.appendChild(meta);
+    });
+
     // Hero gradient + optional banner
     const hero = document.getElementById('detailHero');
     hero.style.setProperty('--hero-g1', p.gradient[0]);
