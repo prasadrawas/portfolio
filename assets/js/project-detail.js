@@ -29,7 +29,7 @@
 
     const canonical = document.createElement('link');
     canonical.rel = 'canonical';
-    canonical.href = `https://prasadrawas.online/project.html?id=${projectId}`;
+    canonical.href = `https://dev.prasadrawas.online/project.html?id=${projectId}`;
     document.head.appendChild(canonical);
 
     // OG tags
@@ -37,7 +37,7 @@
         'og:title': `${p.title} | Prasad Rawas`,
         'og:description': p.subtitle,
         'og:type': 'website',
-        'og:url': `https://prasadrawas.online/project.html?id=${projectId}`
+        'og:url': `https://dev.prasadrawas.online/project.html?id=${projectId}`
     };
     Object.entries(ogTags).forEach(([prop, content]) => {
         const meta = document.createElement('meta');
