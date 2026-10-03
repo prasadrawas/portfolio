@@ -1583,6 +1583,16 @@ body:hover .cursor-glow {
     z-index: 1;
 }
 
+.card-preview-content .project-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 .card-preview-label {
     font-size: 0.7rem;
     font-weight: 600;
