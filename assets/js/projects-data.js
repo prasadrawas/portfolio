@@ -472,50 +472,51 @@ window.PROJECTS_DATA = {
         ]
     },
 
-    "toolshub": {
-        title: "ToolsHub",
-        subtitle: "A large-scale Turborepo monorepo hosting 112 financial calculators and 150 developer tools under a single domain with full SEO optimization.",
-        badge: "Open Source | Web",
-        gradient: ["#000", "#333"],
-        github: "https://github.com/prasadrawas/toolshub",
+    "trekbooking": {
+        title: "TrekBooking",
+        subtitle: "Full-stack trek booking platform with admin dashboard, organizer management, multi-city pricing, and end-to-end booking lifecycle tracking.",
+        badge: "Passion Project | Full Stack",
+        gradient: ["#059669", "#34D399"],
         overview: [
-            "ToolsHub is a Turborepo monorepo hosting two production-grade tool websites under a single domain. The finance suite offers 112 financial calculators spanning 8 categories, mortgage amortization, retirement planning, tax estimation, investment analysis, debt payoff strategies, auto loans, insurance, and real estate.",
-            "The developer tools suite provides 150 client-side utilities for color manipulation, data conversion, CSS generation, encoding/decoding, code formatting, random data generation, image processing, math operations, and text transformation.",
-            "A lightweight gateway app at the root domain routes traffic to sub-apps using Next.js rewrites. Each tool page includes JSON-LD structured data for SEO (WebApplication, FAQPage, BreadcrumbList schemas), per-tool metadata, and auto-generated sitemaps. All calculations run client-side with no server dependency."
+            "TrekBooking is a full-stack trek booking platform built for the Indian market. It enables trek organizers to list treks, schedule events, and manage bookings, while an admin dashboard provides platform-wide oversight including KPI stat cards, trend charts, and attention alerts.",
+            "The backend is built with FastAPI and SQLAlchemy 2.0 async, using Supabase for authentication, PostgreSQL database, and file storage. The admin dashboard is a Next.js 15 / React 19 app with a shared design system (@repo/ui) distributed via a Turborepo monorepo.",
+            "Features include a 10-step trek creation wizard (title, description, difficulty, pricing with adult/child tiers, multi-city route stops with per-city pricing, images, itinerary, FAQs, cancellation policies), event scheduling with seat management and pickup points, full booking lifecycle with status transitions and refund tracking, organizer approval workflows, and RBAC throughout the API."
         ],
         features: [
-            "112 financial calculators across 8 categories with real-time chart visualizations (Recharts)",
-            "150 developer tools running entirely client-side with zero server dependency",
-            "Turborepo monorepo architecture with shared packages and independent deployments",
-            "Gateway reverse proxy routing sub-apps under a single domain via Next.js rewrites",
-            "Dynamic imports per category for optimal code splitting and performance",
-            "Full SEO. JSON-LD structured data (WebApplication, FAQPage, BreadcrumbList schemas)",
-            "Auto-generated sitemaps via next-sitemap",
-            "US state tax data integration for tax calculators"
+            "10-step trek creation wizard covering pricing, multi-city routes, itinerary, images, FAQs, and cancellation policies",
+            "Multi-city route stops with per-city pricing, state auto-selection, and trek-level discounts",
+            "Event scheduling with seat capacity management and configurable pickup points",
+            "Full booking lifecycle: CONFIRMED, CANCELLED, COMPLETED, EXPIRED statuses with refund tracking (PENDING, IN_PROGRESS, SUCCESS)",
+            "Admin analytics dashboard with KPI stat cards, date-range filtering, and Recharts trend charts",
+            "Attention alerts for items needing action (pending organizer approvals, in-progress refunds)",
+            "Organizer approval workflow with PENDING and APPROVED states",
+            "WhatsApp sharing for booking details (bulk and per-row)"
         ],
         userFlow: [
-            { title: "Visit Domain", desc: "User lands on the root domain. Gateway routes to the appropriate sub-app." },
-            { title: "Browse Categories", desc: "User browses tool categories, finance calculators or developer tools." },
-            { title: "Select Tool", desc: "Pick a specific tool (e.g., Mortgage Calculator, Color Converter)." },
-            { title: "Use Tool", desc: "All calculations run client-side in real-time. Finance tools show interactive charts." },
-            { title: "SEO Discovery", desc: "Each tool page has structured data for Google rich results and search visibility." }
+            { title: "Admin Dashboard", desc: "View KPIs (active treks, bookings, revenue, platform fees), trend charts, and attention alerts." },
+            { title: "Create Trek", desc: "10-step wizard: title, description, difficulty, pricing, route stops, images, itinerary, FAQs, policies." },
+            { title: "Schedule Events", desc: "Create dated events against treks with seat capacity and pickup point configuration." },
+            { title: "Manage Bookings", desc: "View booking details, track status transitions, process refunds." },
+            { title: "Approve Organizers", desc: "Review and approve organizer applications, manage user roles." },
+            { title: "Share & Export", desc: "Share booking details via WhatsApp, export data." }
         ],
         architecture: {
-            description: "Turborepo monorepo with gateway routing. Three Next.js apps (gateway, finance, devtools) sharing common packages.",
+            description: "Turborepo monorepo with strict layered backend architecture (Router → Service → Repository → External) and shared frontend design system.",
             layers: [
-                { abbr: "GW", name: "Gateway App", desc: "Root domain routing via Next.js rewrites" },
-                { abbr: "FI", name: "Finance App", desc: "112 calculators with Recharts visualizations" },
-                { abbr: "DT", name: "DevTools App", desc: "150 client-side utilities" },
-                { abbr: "PK", name: "Shared Packages", desc: "Common UI components and utilities" }
+                { abbr: "API", name: "FastAPI Backend", desc: "4-layer architecture with Supabase Auth and PostgreSQL" },
+                { abbr: "ADM", name: "Admin Dashboard", desc: "Next.js 15 / React 19 with TanStack Query and Recharts" },
+                { abbr: "ORG", name: "Organiser Dashboard", desc: "Next.js app for trek organizers (planned)" },
+                { abbr: "UI", name: "Shared Design System", desc: "@repo/ui with StatCard, DataTable, FormField, Modal, Toast" }
             ]
         },
-        techStack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Turborepo", "Radix UI", "Recharts", "next-sitemap", "JSON-LD"],
+        techStack: ["Next.js 15", "React 19", "TypeScript", "FastAPI", "SQLAlchemy 2.0", "Supabase", "PostgreSQL", "Turborepo", "TanStack Query", "React Hook Form", "Zod", "Recharts", "Radix UI", "Framer Motion", "Vitest", "pytest"],
         info: [
-            { label: "Type", value: "Web Platform" },
-            { label: "Finance Tools", value: "112" },
-            { label: "Dev Tools", value: "150" },
-            { label: "Architecture", value: "Monorepo" },
-            { label: "Rendering", value: "Client-side" }
+            { label: "Type", value: "Full Stack Platform" },
+            { label: "Backend Tests", value: "182" },
+            { label: "Architecture", value: "Monorepo (Turborepo)" },
+            { label: "Auth", value: "Supabase" },
+            { label: "Database", value: "PostgreSQL" },
+            { label: "Role", value: "Solo Developer" }
         ]
     },
 
