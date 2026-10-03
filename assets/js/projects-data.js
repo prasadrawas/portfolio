@@ -59,7 +59,7 @@ window.PROJECTS_DATA = {
         title: "Service Dispatcher",
         subtitle: "Full-stack field-service dispatch platform built twice (Laravel → FastAPI + React 19), orchestrating work orders via queue-based connectors across 7 deployment environments.",
         badge: "Professional | Full Stack Platform",
-        gradient: ["#FF2D20", "#FF6347"],
+        gradient: ["#E84C3D", "#F28C7E"],
         overview: [
             "Service Dispatcher is a production RESTful API built for automated service dispatch and job queue orchestration. It integrates with the RealCADENCE platform for field service management, using a two-phase dispatch architecture.",
             "Phase 1 (Synchronous Enqueue): The API receives dispatch requests, validates them per connector type, and persists jobs to the database queue. Phase 2 (Async Batch Processing): Jobs are reserved into batches, dispatched to external APIs (RealCADENCE), and archived to history tables.",
@@ -160,7 +160,7 @@ window.PROJECTS_DATA = {
         title: "Kerb Driver",
         subtitle: "Production mobile app for delivery drivers to book loading bays in advance, reducing stress, saving time, and lowering emissions in congested city areas.",
         badge: "Professional | Mobile",
-        gradient: ["#00B4AB", "#4DD0C8"],
+        gradient: ["#1A3A4A", "#2D5F6E"],
         playStore: "https://play.google.com/store/apps/details?id=com.gridsmartercities.kerbdeliverydriver&hl=en_IN",
         appStore: "https://apps.apple.com/us/app/kerb-driver/id1616141860",
         overview: [
@@ -247,7 +247,7 @@ window.PROJECTS_DATA = {
         title: "Parking & EV Charging Portal",
         subtitle: "A multi-tenant React web platform for booking parking spaces and EV charging points in advance with role-based access control.",
         badge: "Professional | Web Platform",
-        gradient: ["#61DAFB", "#8BE9FD"],
+        gradient: ["#3D3D3D", "#6B9B3A"],
         overview: [
             "This multi-tenant web application enables users to book parking spaces and EV charging points in advance for specific durations, ensuring seamless availability and automated pricing calculations.",
             "The platform supports multiple roles including Drivers, Admins, and Super Admins. Admin users have a dedicated interface for managing parking spaces, charging points, sub-tenant users, and more. I was responsible for building the Admin UI modules, optimizing user interactions, and implementing unit tests."
@@ -322,7 +322,7 @@ window.PROJECTS_DATA = {
         title: "Secure API Proxy",
         subtitle: "A Laravel and Vue.js-based security proxy layer for frontend API communication, hiding sensitive keys, mitigating CORS, and centralizing request handling.",
         badge: "Professional | Security",
-        gradient: ["#FF2D20", "#41B883"],
+        gradient: ["#3D3D3D", "#6B9B3A"],
         overview: [
             "This is a Laravel-based proxy API layer for a Vue.js frontend, enhancing security, flexibility, and maintainability. The design pattern hides sensitive API keys, tokens, and configurations on the backend, preventing exposure on the frontend.",
             "It acts as middleware to restrict direct backend access, reducing the attack surface and mitigating CORS issues. Centralized request handling enables logging, validation, and authentication before forwarding requests. This abstraction ensures frontend changes don't require backend modifications, improving scalability and security."
@@ -354,7 +354,7 @@ window.PROJECTS_DATA = {
         title: "Kerb App Automation",
         subtitle: "Cross-browser automated testing infrastructure using BrowserStack APIs and Bitrise CI/CD for the Kerb Driver mobile app.",
         badge: "Professional | QA Automation",
-        gradient: ["#1BC47D", "#4ADE80"],
+        gradient: ["#1A3A4A", "#2D5F6E"],
         overview: [
             "A comprehensive test automation suite integrated with BrowserStack APIs on the Bitrise CI/CD platform. The setup uploads Android and iOS builds to BrowserStack, starts app automation using APIs, fetches real-time results via Bash scripts using cURL, and displays test execution status in the Bitrise pipeline.",
             "Implemented parallel execution to speed up tests, configured environment variables for secure API key management, and automated test retries for flaky tests. Integrated BrowserStack App Automate for real-device testing with detailed test reports including logs, screenshots, and video recordings."
@@ -388,7 +388,7 @@ window.PROJECTS_DATA = {
         title: "Flutter MFE CI/CD",
         subtitle: "Bitbucket CI/CD pipelines for deploying multiple Flutter Micro Front-end applications for the RealCADENCE product.",
         badge: "Professional | DevOps",
-        gradient: ["#2684FF", "#6DB3F2"],
+        gradient: ["#4A4A4A", "#6BB536"],
         overview: [
             "Created and deployed four micro front-end applications for the RealCADENCE product. The CI/CD pipeline is set up using Bitbucket Pipelines, which triggers deployment on every main branch push.",
             "The pipeline automates installing Flutter, setting up environment variables, running unit tests, building optimized web assets, and securely transferring files to remote hosts via SCP. It includes caching to speed up builds and automated failure notifications for quick debugging."
@@ -426,7 +426,7 @@ window.PROJECTS_DATA = {
         title: "FreeVPN",
         subtitle: "A free, open-source VPN client for Android that connects to VPN Gate public relay servers using the OpenVPN protocol with intelligent server selection and ISP bypass.",
         badge: "Open Source | Mobile",
-        gradient: ["#6366f1", "#818cf8"],
+        gradient: ["#0D1B2A", "#1B3A4B"],
         banner: "assets/images/freevpn-banner.webp",
         github: "https://github.com/prasadrawas/free-vpn",
         live: "https://prasadrawas.github.io/free-vpn/",
