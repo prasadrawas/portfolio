@@ -275,6 +275,53 @@ window.PROJECTS_DATA = {
         ]
     },
 
+    "stripe-tap-to-pay": {
+        title: "Stripe Tap to Pay (Flutter Plugin)",
+        subtitle: "A native Android plugin enabling NFC-based contactless payments in Flutter apps, built when no official Stripe Flutter plugin existed.",
+        badge: "Professional | Native Plugin",
+        gradient: ["#635BFF", "#A08EFF"],
+        overview: [
+            "In 2021-2022, Stripe had no official Flutter plugin for Tap to Pay (NFC contactless payments). I built a custom native Android plugin from scratch using Kotlin platform channels (MethodChannel) to bridge Flutter's Dart layer with the Stripe Terminal SDK on the native Android side.",
+            "The plugin enabled Flutter apps to accept NFC-based contactless card payments using Stripe's Terminal SDK, handling device discovery, reader connection, payment intent creation, and payment collection — all exposed through a clean Dart API that Flutter developers could consume without touching native code.",
+            "This was a significant achievement at the time as it solved a gap in the Flutter ecosystem, allowing our team's Flutter apps to support in-person payments without needing to build a separate native app."
+        ],
+        features: [
+            "NFC contactless card payment acceptance via Stripe Terminal SDK",
+            "Kotlin MethodChannel bridge between Flutter (Dart) and native Android",
+            "Device discovery and Stripe reader connection management",
+            "Payment intent creation and payment collection flow",
+            "Clean Dart API abstraction hiding native Android complexity",
+            "Error handling and payment status callbacks across the platform channel",
+            "Built before any official Stripe Flutter plugin was available"
+        ],
+        userFlow: [
+            { title: "Initialize", desc: "Flutter app initializes the plugin, which sets up the Stripe Terminal SDK on the native side." },
+            { title: "Discover Reader", desc: "Plugin discovers nearby NFC-capable Stripe card readers via Bluetooth." },
+            { title: "Connect", desc: "App connects to the selected Stripe reader device." },
+            { title: "Create Payment", desc: "Payment intent is created via the Stripe API with the desired amount." },
+            { title: "Tap to Pay", desc: "Customer taps their contactless card on the reader. Payment is collected via NFC." },
+            { title: "Confirmation", desc: "Payment result is returned to Flutter via MethodChannel callback." }
+        ],
+        architecture: {
+            description: "Platform channel architecture bridging Flutter's Dart layer with native Android Kotlin code and the Stripe Terminal SDK.",
+            layers: [
+                { abbr: "D", name: "Dart API", desc: "Clean Flutter-facing API with async method calls and callbacks" },
+                { abbr: "MC", name: "MethodChannel", desc: "Platform channel bridge handling serialization between Dart and Kotlin" },
+                { abbr: "K", name: "Kotlin Plugin", desc: "Native Android implementation wrapping Stripe Terminal SDK" },
+                { abbr: "S", name: "Stripe Terminal", desc: "Stripe's native Android SDK for reader discovery, connection, and payments" }
+            ]
+        },
+        techStack: ["Flutter", "Dart", "Kotlin", "Android Platform Channels", "Stripe Terminal SDK", "NFC", "Bluetooth"],
+        info: [
+            { label: "Type", value: "Native Plugin" },
+            { label: "Platform", value: "Android" },
+            { label: "Bridge", value: "MethodChannel" },
+            { label: "Payment", value: "NFC Contactless" },
+            { label: "Year", value: "2021-2022" },
+            { label: "Role", value: "Solo Developer" }
+        ]
+    },
+
     "micro-center": {
         title: "Micro Center",
         subtitle: "Mobile app for one of the largest electronics retailers in the US, serving 22 million+ customers across 30 stores nationwide.",
