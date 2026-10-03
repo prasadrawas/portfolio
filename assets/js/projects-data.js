@@ -520,6 +520,54 @@ window.PROJECTS_DATA = {
         ]
     },
 
+    "bitebloom": {
+        title: "BiteBloom",
+        subtitle: "AI-powered nutrition tracking app — snap a meal photo and get an instant 16-nutrient breakdown, with barcode scanning, food diary, and progress charts.",
+        badge: "Passion Project | AI Mobile",
+        gradient: ["#1B5E20", "#43A047"],
+        overview: [
+            "BiteBloom is an AI-powered nutrition tracking Android app. Its core feature lets users snap a photo of any meal and instantly receive a per-item breakdown of 16 nutrients, powered by Google Gemini via Firebase AI Logic with automatic model fallback across 5 models.",
+            "The app also supports barcode scanning via Open Food Facts for packaged food, manual meal entry with optional AI analysis, a daily nutrition dashboard with calories, macros, water tracking, and streak counter, plus weekly and monthly progress charts.",
+            "Additional features include BMI & BMR calculation with color-coded categories, customizable meal reminders with timezone-aware scheduling, CSV data export with date range selection, Firebase App Check with Play Integrity, and an onboarding walkthrough. Built with Material 3 theming (dark/light) and Firestore offline persistence."
+        ],
+        features: [
+            "AI meal analysis from photo: 16-nutrient per-item breakdown with animated scanning UI overlay",
+            "Barcode scanner for packaged food via Open Food Facts API",
+            "Food diary: browse meals by date, view photo, meal score, per-item macros/vitamins, delete with undo",
+            "Daily nutrition dashboard: calories, macros, water tracker, streak counter",
+            "Progress charts: weekly and monthly trends for calories, macros, and nutrition via fl_chart",
+            "Meal reminders: customizable daily notifications for breakfast, lunch, dinner (timezone-aware)",
+            "BMI & BMR calculation with color-coded categories and educational info",
+            "CSV data export with date range selection"
+        ],
+        userFlow: [
+            { title: "Snap or Scan", desc: "Take a photo of your meal or scan a barcode on packaged food." },
+            { title: "AI Analysis", desc: "Gemini AI analyzes the image and returns a 16-nutrient breakdown per item." },
+            { title: "Review & Save", desc: "Review the analysis, edit if needed, and save to your food diary." },
+            { title: "Track Progress", desc: "View daily dashboard with calories, macros, water, and streaks." },
+            { title: "Charts", desc: "Browse weekly and monthly progress charts for nutrition trends." },
+            { title: "Reminders", desc: "Set customizable meal reminders to stay on track." }
+        ],
+        architecture: {
+            description: "Layered Flutter architecture with Riverpod state management and Firebase backend services.",
+            layers: [
+                { abbr: "UI", name: "Presentation", desc: "Material 3 screens with flutter_animate and shimmer effects" },
+                { abbr: "P", name: "Providers", desc: "Riverpod StreamProvider for real-time Firestore data" },
+                { abbr: "S", name: "Services", desc: "Auth, Firestore CRUD, Gemini AI, Cloudinary, barcode, export" },
+                { abbr: "D", name: "Data", desc: "Models with Firestore serialization, AppConfig via flutter_dotenv" }
+            ]
+        },
+        techStack: ["Flutter", "Dart", "Firebase Auth", "Firestore", "Firebase AI Logic (Gemini)", "Cloudinary", "Riverpod", "fl_chart", "mobile_scanner", "flutter_local_notifications", "Google Fonts", "Material 3"],
+        info: [
+            { label: "Type", value: "Mobile App" },
+            { label: "Platform", value: "Android" },
+            { label: "AI Model", value: "Google Gemini" },
+            { label: "State Mgmt", value: "Riverpod" },
+            { label: "Version", value: "v1.1.2" },
+            { label: "Role", value: "Solo Developer" }
+        ]
+    },
+
     "birthday-game": {
         title: "Birthday Game",
         subtitle: "A creative 2D side-scrolling endless runner built entirely with vanilla HTML5 Canvas API and pure JavaScript, zero external assets, all graphics rendered procedurally.",
