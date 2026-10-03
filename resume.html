@@ -293,66 +293,36 @@
         /* ======== Projects ======== */
         .r-projects {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 8px;
         }
 
         .r-project {
-            font-size: 8pt;
+            font-size: 8.5pt;
             line-height: 1.55;
             color: var(--text-secondary);
-            padding: 10px 12px;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            background: var(--bg-subtle);
-            transition: border-color 0.2s;
         }
 
-        .r-project:hover {
-            border-color: var(--accent);
-        }
-
-        .r-project-head {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 4px;
+        .r-project-domain {
+            display: inline;
+            font-size: 7.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--accent);
+            margin-right: 6px;
         }
 
         .r-project-name {
             font-weight: 700;
-            font-size: 8.5pt;
             color: var(--text);
         }
 
-        .r-project-desc {
-            font-size: 7.5pt;
-            line-height: 1.5;
-            color: var(--text-secondary);
-            margin-bottom: 5px;
-        }
-
         .r-project-tech {
+            display: block;
+            font-size: 7.5pt;
             font-weight: 500;
             color: var(--text-muted);
-            font-size: 7pt;
-        }
-
-        .r-project-domain {
-            display: inline-block;
-            font-size: 6pt;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.7px;
-            color: var(--accent);
-            background: var(--accent-bg);
-            padding: 2px 6px;
-            border-radius: 3px;
-            white-space: nowrap;
-        }
-
-        .r-project-full {
-            grid-column: 1 / -1;
+            margin-top: 1px;
         }
 
         /* ======== Education ======== */
@@ -417,13 +387,10 @@
             .r-job li { font-size: 8pt; margin-bottom: 2.5px; line-height: 1.45; }
 
             /* Projects tighter */
-            .r-projects { gap: 5px; }
-            .r-project { padding: 6px 8px; background: white !important; border-color: var(--border-strong) !important; }
-            .r-project:hover { border-color: var(--border-strong) !important; }
-            .r-project-desc { font-size: 7pt; margin-bottom: 3px; }
-            .r-project-tech { font-size: 6.5pt; }
-            .r-project-name { font-size: 8pt; }
-            .r-project-domain { font-size: 5.5pt; color: var(--text) !important; background: var(--tag-bg) !important; padding: 1px 4px; }
+            .r-projects { gap: 4px; }
+            .r-project { font-size: 8pt; }
+            .r-project-tech { font-size: 7pt; }
+            .r-project-domain { color: var(--text) !important; }
 
             /* Education */
             .r-edu-degree { font-size: 9pt; }
@@ -446,7 +413,6 @@
             .resume-page { margin: 0; box-shadow: none; border-radius: 0; }
             .resume-body { padding: 20px; }
             .r-skills { grid-template-columns: 1fr; }
-            .r-projects { grid-template-columns: 1fr; }
             .r-job-head { flex-direction: column; }
             .r-edu-head { flex-direction: column; }
             .r-contact { gap: 4px 10px; }
@@ -584,92 +550,48 @@
             <h2 class="r-section-title">Key Projects</h2>
             <div class="r-projects">
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">Full Stack</span>
-                        <span class="r-project-name">VAPR</span>
-                    </div>
-                    <div class="r-project-desc">Layered architecture: FastAPI (40+ endpoints, async task queue, RBAC, OTP auth, rate limiting) + Vue 3 SPA + PostgreSQL + Redis caching + Terraform IaC. 1,090 tests.</div>
-                    <div class="r-project-tech">FastAPI &bull; Vue 3 &bull; PostgreSQL &bull; Celery &bull; Redis &bull; Terraform</div>
+                    <span class="r-project-domain">Full Stack</span><span class="r-project-name">VAPR</span> &mdash; Layered FastAPI architecture (40+ endpoints, async task queue, RBAC, OTP auth, rate limiting) + Vue 3 SPA + PostgreSQL + Redis caching + Terraform IaC. 1,090 tests. Sole developer.
+                    <span class="r-project-tech">FastAPI &bull; Vue 3 &bull; PostgreSQL &bull; Celery &bull; Redis &bull; Terraform</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">Full Stack Rewrite</span>
-                        <span class="r-project-name">Service Dispatcher</span>
-                    </div>
-                    <div class="r-project-desc">Monolith to service-oriented rewrite. Event-driven queue, distributed locking, idempotency, retry with failure classification. ~1,805 tests, 7 environments.</div>
-                    <div class="r-project-tech">FastAPI &bull; React 19 &bull; Laravel &bull; PostgreSQL &bull; Celery &bull; Redis</div>
+                    <span class="r-project-domain">Full Stack Rewrite</span><span class="r-project-name">Service Dispatcher</span> &mdash; Monolith to service-oriented rewrite. Event-driven queue, distributed locking, idempotency, retry with failure classification. ~1,805 tests, 7 environments.
+                    <span class="r-project-tech">FastAPI &bull; React 19 &bull; Laravel &bull; PostgreSQL &bull; Celery &bull; Redis</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">iOS Native</span>
-                        <span class="r-project-name">RealCADENCE</span>
-                    </div>
-                    <div class="r-project-desc">Offline-first architecture: sequential API queue with persistent storage, automatic sync, CoreData-to-SwiftData migration, XCUITest automation. 597 commits.</div>
-                    <div class="r-project-tech">Swift &bull; UIKit &bull; CoreData &bull; SwiftData &bull; XCUITest &bull; MVVM</div>
+                    <span class="r-project-domain">iOS Native</span><span class="r-project-name">RealCADENCE</span> &mdash; Offline-first architecture: sequential API queue with persistent storage, automatic sync, CoreData-to-SwiftData migration, XCUITest automation. 597 commits.
+                    <span class="r-project-tech">Swift &bull; UIKit &bull; CoreData &bull; SwiftData &bull; XCUITest &bull; MVVM</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">AI &mdash; RAG</span>
-                        <span class="r-project-name">VAPR AI Agent</span>
-                    </div>
-                    <div class="r-project-desc">Agentic system: Gemini LLM + ChromaDB vector search for RAG, 5 tool modules with function-calling orchestration, stateful session management.</div>
-                    <div class="r-project-tech">Google Gemini &bull; ChromaDB &bull; RAG &bull; Vector Search &bull; FastAPI</div>
+                    <span class="r-project-domain">AI &mdash; RAG</span><span class="r-project-name">VAPR AI Agent</span> &mdash; Agentic system: Gemini LLM + ChromaDB vector search for RAG, 5 tool modules with function-calling orchestration, stateful session management.
+                    <span class="r-project-tech">Google Gemini &bull; ChromaDB &bull; RAG &bull; Vector Search &bull; FastAPI</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">AI &mdash; Vision</span>
-                        <span class="r-project-name">BiteBloom</span>
-                    </div>
-                    <div class="r-project-desc">Snap a meal photo for 16-nutrient breakdown via Gemini vision. Barcode scanning, food diary, progress charts. Play Store.</div>
-                    <div class="r-project-tech">Flutter &bull; Firebase AI (Gemini) &bull; Firestore &bull; Riverpod &bull; fl_chart</div>
+                    <span class="r-project-domain">AI &mdash; Vision</span><span class="r-project-name">BiteBloom</span> &mdash; Snap a meal photo for 16-nutrient breakdown via Gemini vision. Barcode scanning, food diary, progress charts. Published on Play Store.
+                    <span class="r-project-tech">Flutter &bull; Firebase AI (Gemini) &bull; Firestore &bull; Riverpod &bull; fl_chart</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">Flutter Mobile</span>
-                        <span class="r-project-name">Kerb Driver</span>
-                    </div>
-                    <div class="r-project-desc">Loading bay booking for delivery drivers. 30&ndash;40% perf gain, 100% test coverage. End-to-end App Store + Play Store.</div>
-                    <div class="r-project-tech">Flutter &bull; Firebase &bull; Google Maps &bull; Provider</div>
+                    <span class="r-project-domain">Flutter Mobile</span><span class="r-project-name">Kerb Driver</span> &mdash; Loading bay booking for delivery drivers. 30&ndash;40% perf gain, 100% test coverage. End-to-end App Store + Play Store deployment.
+                    <span class="r-project-tech">Flutter &bull; Firebase &bull; Google Maps &bull; Provider</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">Full Stack Web</span>
-                        <span class="r-project-name">TrekBooking</span>
-                    </div>
-                    <div class="r-project-desc">Trek booking platform with 10-step wizard, multi-city pricing, admin dashboard with KPI charts. 182 tests.</div>
-                    <div class="r-project-tech">Next.js 15 &bull; React 19 &bull; FastAPI &bull; Supabase &bull; Turborepo</div>
+                    <span class="r-project-domain">Full Stack Web</span><span class="r-project-name">TrekBooking</span> &mdash; Trek booking platform with 10-step wizard, multi-city pricing, admin dashboard with KPI charts, organizer workflows. 182 tests.
+                    <span class="r-project-tech">Next.js 15 &bull; React 19 &bull; FastAPI &bull; Supabase &bull; Turborepo</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">Native Plugin</span>
-                        <span class="r-project-name">Stripe Tap to Pay</span>
-                    </div>
-                    <div class="r-project-desc">Pioneered Flutter NFC payments plugin via Kotlin MethodChannel + Stripe Terminal SDK. No official plugin existed.</div>
-                    <div class="r-project-tech">Flutter &bull; Kotlin &bull; Platform Channels &bull; Stripe Terminal &bull; NFC</div>
+                    <span class="r-project-domain">Native Plugin</span><span class="r-project-name">Stripe Tap to Pay</span> &mdash; Pioneered Flutter NFC payments plugin via Kotlin MethodChannel + Stripe Terminal SDK. No official plugin existed at the time.
+                    <span class="r-project-tech">Flutter &bull; Kotlin &bull; Platform Channels &bull; Stripe Terminal &bull; NFC</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">CI/CD</span>
-                        <span class="r-project-name">10+ Pipelines</span>
-                    </div>
-                    <div class="r-project-desc">Tag-triggered Bitbucket Pipelines: parallel test+lint, Liquibase migrations, zero-downtime symlink-swap, health checks. 7+ environments.</div>
-                    <div class="r-project-tech">Bitbucket Pipelines &bull; Bitrise &bull; BrowserStack &bull; Bash &bull; systemd</div>
+                    <span class="r-project-domain">CI/CD</span><span class="r-project-name">10+ Pipelines</span> &mdash; Tag-triggered Bitbucket Pipelines with parallel test+lint, Liquibase DB migrations, zero-downtime symlink-swap deployments, and health checks across 7+ environments.
+                    <span class="r-project-tech">Bitbucket Pipelines &bull; Bitrise &bull; BrowserStack &bull; Bash &bull; systemd</span>
                 </div>
                 <div class="r-project">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">Infrastructure</span>
-                        <span class="r-project-name">EC2 + Terraform</span>
-                    </div>
-                    <div class="r-project-desc">End-to-end EC2 provisioning: Rocky Linux 9, Apache reverse proxy, systemd, PostgreSQL/Redis. Terraform IaC for dev/prod.</div>
-                    <div class="r-project-tech">Terraform &bull; AWS EC2/S3/CloudFront/SES &bull; Apache &bull; Rocky Linux 9</div>
+                    <span class="r-project-domain">Infrastructure</span><span class="r-project-name">EC2 + Terraform</span> &mdash; End-to-end EC2 provisioning: Rocky Linux 9, Apache reverse proxy, systemd services, PostgreSQL/Redis. Terraform IaC across dev/prod.
+                    <span class="r-project-tech">Terraform &bull; AWS EC2/S3/CloudFront/SES &bull; Apache &bull; Rocky Linux 9</span>
                 </div>
-                <div class="r-project r-project-full">
-                    <div class="r-project-head">
-                        <span class="r-project-domain">App Store Releases</span>
-                        <span class="r-project-name">Play Store &amp; App Store</span>
-                    </div>
-                    <div class="r-project-desc">End-to-end mobile release management for multiple apps: build signing, versioning, store listings, review submission, and release rollouts across Play Console and App Store Connect.</div>
-                    <div class="r-project-tech">Play Console &bull; App Store Connect &bull; TestFlight &bull; Bitrise</div>
+                <div class="r-project">
+                    <span class="r-project-domain">App Store Releases</span><span class="r-project-name">Play Store &amp; App Store</span> &mdash; End-to-end mobile release management: build signing, versioning, store listings, review submission, and rollouts across multiple apps.
+                    <span class="r-project-tech">Play Console &bull; App Store Connect &bull; TestFlight &bull; Bitrise</span>
                 </div>
             </div>
         </section>
