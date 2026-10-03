@@ -15,7 +15,7 @@ window.PROJECTS_DATA = {
         overview: [
             "RealCADENCE is a production-grade iOS application built for enterprise field operations and work management. It enables users to track assigned actions, request on-demand services, collect evidence (notes, attachments, MCSI), scan QR codes for quick action/service lookup, and communicate via a full in-app messaging system.",
             "The app is built with Swift and UIKit using Storyboards and XIBs for the UI layer. It follows MVVM architecture with a dedicated service layer for API communication. Data persistence is handled through three separate CoreData stores. API Queue (for offline request queuing), AppData (for cached application state), and OffLineData (for offline-first operations).",
-            "With 229 Swift files, 35 storyboard/XIB files, and 26+ data models, this is a large-scale enterprise iOS application designed for reliability and offline resilience in field conditions."
+            "With 229+ Swift files, 35 storyboard/XIB files, and 26+ data models, this is a large-scale enterprise iOS application designed for reliability and offline resilience in field conditions. Features include a full offline mode with API request queue manager (SwiftData persistence for sequential offline execution), CoreData-to-SwiftData migration, task-oriented auto-advancing workflow mode, and a comprehensive XCUITest UI automation suite covering all action types."
         ],
         features: [
             "Action Management: view, track, and complete assigned actions with evidence capture (notes, attachments, MCSI)",
@@ -57,13 +57,13 @@ window.PROJECTS_DATA = {
 
     "service-dispatcher": {
         title: "Service Dispatcher",
-        subtitle: "Production-grade RESTful API for automated service dispatch and job queue orchestration, integrating with the RealCADENCE platform.",
-        badge: "Professional | Full Stack",
+        subtitle: "Full-stack field-service dispatch platform built twice (Laravel → FastAPI + React 19), orchestrating work orders via queue-based connectors across 7 deployment environments.",
+        badge: "Professional | Full Stack Platform",
         gradient: ["#FF2D20", "#FF6347"],
         overview: [
             "Service Dispatcher is a production RESTful API built for automated service dispatch and job queue orchestration. It integrates with the RealCADENCE platform for field service management, using a two-phase dispatch architecture.",
             "Phase 1 (Synchronous Enqueue): The API receives dispatch requests, validates them per connector type, and persists jobs to the database queue. Phase 2 (Async Batch Processing): Jobs are reserved into batches, dispatched to external APIs (RealCADENCE), and archived to history tables.",
-            "The system supports multiple dispatch channels via a pluggable connector system. Service on Demand (SoD), Action on Demand (AoD), Email, and SMS, each implemented as a strategy pattern. Built with Laravel 12, PHP 8.2+, and hardened with distributed batch locking, retry mechanisms, and comprehensive test coverage (193 tests, 528 assertions)."
+            "The system supports multiple dispatch channels via a pluggable connector system. Service on Demand (SoD), Action on Demand (AoD), Email, and SMS, each implemented as a strategy pattern. Originally built with Laravel 12 / PHP 8.2+, then fully rewritten in FastAPI / Python 3.11 + React 19 for a new generation serving multiple clients. Hardened with distributed batch locking, retry mechanisms, idempotency middleware, and comprehensive test coverage (~1,805 tests across both generations)."
         ],
         features: [
             "Connector/Strategy Pattern: pluggable dispatch channels implementing ConnectorInterface, resolved via ConnectorFactory",
@@ -72,7 +72,7 @@ window.PROJECTS_DATA = {
             "Retry mechanism: transient failures (5xx, timeouts) retried up to 3x with backoff; permanent failures (4xx) fail immediately",
             "RealCADENCE API integration with 4 focused sub-services extending BaseService with auto-cached auth tokens",
             "Custom logging facade (AppLogger) with dedicated channels for dispatch vs. API vs. general logging",
-            "193 tests with 528 assertions covering unit + feature tests with Http::fake(), Queue::fake(), Storage::fake()",
+            "~1,805 tests across both generations: Laravel (145 tests/358 assertions), Vue monorepo (874 tests + Playwright E2E), FastAPI (347 tests), React Charger (209 tests, 100% coverage), React STR (230 tests, 100% coverage)",
             "Auto-generated OpenAPI 3.0 docs via Scramble"
         ],
         userFlow: [
@@ -93,12 +93,12 @@ window.PROJECTS_DATA = {
                 { abbr: "Q", name: "Queue / Workers", desc: "Batch processor with distributed locking" }
             ]
         },
-        techStack: ["PHP 8.2+", "Laravel 12", "MySQL", "Laravel Sanctum", "SendGrid", "PHPUnit 11.5", "Mockery", "Scramble (OpenAPI)", "Laravel Pint", "Bitbucket Pipelines"],
+        techStack: ["PHP 8.2+", "Laravel 12", "FastAPI", "Python 3.11", "React 19", "TypeScript", "PostgreSQL", "MySQL", "Celery", "Redis", "SQLAlchemy", "Terraform", "Bitbucket Pipelines"],
         info: [
-            { label: "Type", value: "REST API" },
-            { label: "Tests", value: "193" },
-            { label: "Assertions", value: "528" },
-            { label: "Test Files", value: "41" },
+            { label: "Type", value: "Full Stack Platform" },
+            { label: "Tests", value: "~1,805" },
+            { label: "Generations", value: "2 (Laravel → FastAPI)" },
+            { label: "Environments", value: "7 (dev/prod × clients)" },
             { label: "Deploy", value: "Zero-downtime" },
             { label: "Role", value: "Lead Developer" }
         ]
@@ -112,7 +112,7 @@ window.PROJECTS_DATA = {
         overview: [
             "VAPR is a production-grade product management platform built for enterprise-scale product cataloging and tracking. It features bulk CSV import with async processing, QR code bulk generation and export, passwordless OTP authentication, and role-based access control.",
             "The backend is built with FastAPI (Python) and PostgreSQL, using SQLAlchemy as the ORM and Celery + Redis for async task processing. Authentication uses a passwordless OTP flow via AWS SES (email) and AWS SNS (SMS), with JWT access tokens and rotating refresh tokens.",
-            "The API follows strict layered architecture with SOLID principles. Routes to Services (DI) to Repositories (protocols) to Models. All operations use a standard API envelope format. The system includes 416 tests covering unit, integration, and end-to-end scenarios."
+            "The API follows strict layered architecture with SOLID principles. Routes to Services (DI) to Repositories (protocols) to Models. All operations use a standard API envelope format. The system includes 1,090 tests (565 backend + 525 frontend) covering unit, integration, and end-to-end scenarios. An AI-powered conversational assistant built with Google Gemini and ChromaDB-backed RAG enables natural-language product queries."
         ],
         features: [
             "Bulk CSV Import: upload CSV to S3, Celery async processing with savepoint-based batch commits (50 rows), progress tracking and error logging per row",
@@ -121,8 +121,10 @@ window.PROJECTS_DATA = {
             "Surrogate ID System: standalone entities with nullable FK to products, globally unique values with link/unlink operations",
             "Soft Deletes: products set to INACTIVE, never hard-deleted, default listing filters by ACTIVE",
             "Standard API Envelope: all responses wrapped in {success, message, data, meta} with paginated list endpoints",
-            "416 tests, unit, integration (TestClient), and end-to-end test coverage",
-            "14-step CI/CD pipeline with zero-downtime deploys via symlink swap pattern"
+            "1,090 tests (565 backend + 525 frontend) covering unit, integration, and end-to-end scenarios with 98.5% frontend coverage",
+            "14-step CI/CD pipeline with zero-downtime deploys via symlink swap pattern",
+            "AI-powered conversational assistant using Google Gemini with ChromaDB-backed RAG for natural-language product queries",
+            "20-permission RBAC system with JWT-embedded authorization and version-based staleness detection"
         ],
         userFlow: [
             { title: "Authentication", desc: "User requests OTP via email or SMS. Enters OTP to receive JWT access + refresh tokens." },
@@ -143,11 +145,11 @@ window.PROJECTS_DATA = {
                 { abbr: "St", name: "Storage", desc: "AWS S3 via boto3 for file storage with presigned URLs" }
             ]
         },
-        techStack: ["FastAPI", "Python", "PostgreSQL 15", "SQLAlchemy", "Celery", "Redis", "AWS S3", "AWS SES", "AWS SNS", "Pydantic v2", "Liquibase", "Gunicorn", "Ruff", "Bitbucket Pipelines"],
+        techStack: ["FastAPI", "Python", "Vue 3", "PostgreSQL 15", "SQLAlchemy", "Celery", "Redis", "AWS S3", "AWS SES", "AWS SNS", "Pydantic v2", "Liquibase", "Terraform", "Google Gemini", "ChromaDB", "Gunicorn", "Ruff", "Bitbucket Pipelines"],
         info: [
             { label: "Type", value: "Full Stack API" },
-            { label: "Tests", value: "416" },
-            { label: "Migrations", value: "17 changesets" },
+            { label: "Tests", value: "1,090" },
+            { label: "Migrations", value: "23 changesets" },
             { label: "Server", value: "Gunicorn + Apache" },
             { label: "OS", value: "Rocky Linux 9" },
             { label: "Deploy", value: "Zero-downtime" }

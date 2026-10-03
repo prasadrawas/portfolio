@@ -189,7 +189,7 @@
                     <pre class="code-block"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
   <span class="code-key">name</span>: <span class="code-string">"Prasad Rawas"</span>,
   <span class="code-key">role</span>: <span class="code-string">"Senior Software Developer"</span>,
-  <span class="code-key">skills</span>: [<span class="code-string">"Flutter"</span>, <span class="code-string">"Swift"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Laravel"</span>],
+  <span class="code-key">skills</span>: [<span class="code-string">"Flutter"</span>, <span class="code-string">"Swift"</span>, <span class="code-string">"React"</span>, <span class="code-string">"FastAPI"</span>],
   <span class="code-key">passion</span>: <span class="code-string">"Building things that matter"</span>,
   <span class="code-key">testCoverage</span>: <span class="code-number">100</span>,
   <span class="code-key">coffeeLevel</span>: <span class="code-number">Infinity</span>,
@@ -217,9 +217,8 @@
                     I'm <strong>Prasad Rawas</strong>, a <strong>Senior Software Developer at VoloX Private Limited</strong> based in Chh. Sambhaji Nagar, India, with <strong>4.8+ years</strong> of experience turning ideas into production-grade software that real people depend on every day.
                 </p>
                 <p>
-                    I don't just write code. I build systems that run in production and handle real-world scale. From an <strong>enterprise iOS app used by field teams across cities</strong> to manage live service operations, to a <strong>FastAPI platform that processes thousands of product records in bulk with async queues</strong>. I build software that businesses rely on daily.
-                    I've built <strong>dispatch APIs that orchestrate real-time field service delivery</strong>,
-                    shipped <strong>mobile apps used by delivery drivers to book loading bays</strong> across congested city areas,
+                    I don't just write code. I build systems that run in production and handle real-world scale. From an <strong>enterprise iOS app with offline mode used by field teams across cities</strong>, to a <strong>FastAPI platform with AI-powered RAG assistant processing thousands of product records</strong>, to a <strong>dispatch platform I built twice</strong> (Laravel, then rewrote in FastAPI + React 19).
+                    I've authored <strong>3,000+ automated tests</strong> across 14 repositories, provisioned <strong>AWS infrastructure via Terraform</strong>,
                     and architected <strong>CI/CD pipelines that deploy across iOS, Android, and Web with zero downtime</strong>.
                 </p>
             </div>
@@ -261,9 +260,9 @@
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
                     </div>
                     <h3>Testing & Quality</h3>
-                    <p>720+ production tests across projects, catching bugs before users ever see them. Achieved 100% coverage on client-facing apps, earning direct client recognition for reliability.</p>
+                    <p>3,000+ production tests across projects, catching bugs before users ever see them. Achieved 100% coverage on client-facing apps, earning direct client recognition for reliability.</p>
                     <div class="bento-highlight">
-                        <span>720+ Tests</span><span>100% Coverage</span><span>BrowserStack</span>
+                        <span>3,000+ Tests</span><span>100% Coverage</span><span>BrowserStack</span>
                     </div>
                 </div>
                 <div class="bento-card">
@@ -334,17 +333,19 @@
                             <span class="timeline-date">Nov 2023 - Present</span>
                         </div>
                         <ul class="timeline-points">
-                            <li>Built <strong>RealCADENCE</strong>: a production iOS app used daily by field teams across cities to manage live service operations, track actions, and capture evidence, all with full offline support</li>
-                            <li>Developed <strong>VAPR</strong>: an enterprise platform that enables businesses to catalog, track, and manage thousands of products with bulk imports and QR-based identification at warehouse scale</li>
-                            <li>Built <strong>Service Dispatcher</strong>: a real-time dispatch API that orchestrates field service delivery across multiple channels (service, action, email, SMS), ensuring jobs reach the right teams on time</li>
-                            <li>Led <strong>Kerb Driver</strong>: a mobile app used by delivery drivers across congested cities to book loading bays in advance, reducing parking search time and lowering street-level emissions. Shipped to Play Store & App Store</li>
-                            <li>Architected <strong>CI/CD pipelines for 10+ applications</strong> across iOS, Android, and Web, automating the full build-test-deploy cycle and enabling the team to ship updates to production with zero downtime</li>
+                            <li>Built <strong>RealCADENCE</strong>: a production iOS app used daily by field teams across cities to manage live service operations, track actions, and capture evidence. Implemented <strong>offline mode</strong> with API request queue manager (SwiftData persistence), migrated CoreData to SwiftData, and built a task-oriented auto-advancing workflow for field workers</li>
+                            <li>Developed <strong>VAPR</strong>: an enterprise product management platform (FastAPI, Vue 3, PostgreSQL) with 40+ API endpoints, Celery-based async bulk CSV import, passwordless OTP authentication (AWS SES/SNS), a <strong>20-permission RBAC system</strong> with JWT-embedded authorization, and an <strong>AI-powered assistant</strong> using Google Gemini with ChromaDB-backed RAG</li>
+                            <li>Built <strong>Service Dispatcher</strong> twice: first in Laravel/PHP, then <strong>rewrote the entire platform in FastAPI/Python + React 19</strong>, using a queue-based connector strategy pattern (SoD, AoD, Email, SMS) to orchestrate field service delivery across 7 deployment environments serving multiple clients</li>
+                            <li>Led <strong>Kerb Driver</strong>: a mobile app used by delivery drivers across congested cities to book loading bays in advance, reducing parking search time and lowering street-level emissions. Optimized state management by 30-40%. Shipped to Play Store & App Store</li>
+                            <li>Authored <strong>3,000+ automated tests</strong> across 14 repositories (pytest, Vitest, Playwright, XCUITest), achieving 100% line coverage on two React apps, 98.5% on the Vue frontend, and comprehensive XCUITest UI automation covering all iOS action types</li>
+                            <li>Created the shared <strong>@volox/trax-api-utils</strong> TypeScript library (20+ API service classes, auth interceptors, semantic theme system) consumed by 3+ frontend applications, with a cross-repo consumer verification script</li>
+                            <li>Provisioned <strong>AWS infrastructure via Terraform</strong> (EC2, S3, CloudFront with OAC, SES, Route53) with cloud-init bootstrap scripts, and built <strong>10+ CI/CD pipelines</strong> (Bitbucket Pipelines) with zero-downtime symlink-swap deployments</li>
                             <li>Built <strong>Parking & EV Charging Portal</strong>: a multi-tenant platform where drivers book parking and EV charging in advance, and admins manage spaces and pricing across multiple locations</li>
                             <li>Created a secure API proxy layer (Laravel + Vue.js) that eliminated frontend exposure of sensitive credentials and became the company-wide architectural standard</li>
                             <li>Delivered 4 Flutter web micro front-end apps powering different modules of the core product, each independently deployable via automated pipelines</li>
                         </ul>
                         <div class="timeline-tech">
-                            <span>Flutter</span><span>Swift</span><span>React</span><span>Vue.js</span><span>Laravel</span><span>FastAPI</span><span>PostgreSQL</span><span>Bitrise</span><span>BrowserStack</span>
+                            <span>Flutter</span><span>Swift</span><span>React</span><span>Vue.js</span><span>Laravel</span><span>FastAPI</span><span>PostgreSQL</span><span>Terraform</span><span>AWS</span><span>Celery</span><span>Redis</span><span>Bitbucket CI</span><span>Bitrise</span><span>BrowserStack</span>
                         </div>
                     </div>
                 </div>
@@ -413,9 +414,9 @@
                         <div class="achievement-icon" style="--ac: #22c55e;">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
                         </div>
-                        <div class="achievement-number">3x</div>
+                        <div class="achievement-number">5x</div>
                         <div class="achievement-label">Codebases with Full Test Suites</div>
-                        <div class="achievement-detail">VAPR, Service Dispatcher, and FreeVPN with comprehensive unit, integration & E2E coverage</div>
+                        <div class="achievement-detail">VAPR, Service Dispatcher (Gen 1 & 2), Charger Web, STR Web, and FreeVPN with comprehensive unit, integration & E2E coverage</div>
                     </div>
                     <div class="achievement-card">
                         <div class="achievement-icon" style="--ac: #F59E0B;">
@@ -634,6 +635,10 @@
                         <span>BrowserStack</span>
                     </div>
                     <div class="skill-logo-card">
+                        <svg class="skill-logo" viewBox="0 0 128 128"><path fill="#7B42BC" d="M64 10L10 38v52l54 28 54-28V38z"/><path fill="#fff" d="M64 26l-38 20v36l38 20 38-20V46z" opacity=".3"/></svg>
+                        <span>Terraform</span>
+                    </div>
+                    <div class="skill-logo-card">
                         <svg class="skill-logo" viewBox="0 0 128 128"><path fill="#EF4444" d="M64 10a54 54 0 100 108 54 54 0 000-108zm0 16a38 38 0 110 76 38 38 0 010-76z"/><path fill="#EF4444" d="M64 38a26 26 0 100 52 26 26 0 000-52zm0 10a16 16 0 110 32 16 16 0 010-32z"/></svg>
                         <span>Turborepo</span>
                     </div>
@@ -688,7 +693,7 @@
                     </div>
                     <span class="exp-count">12 projects</span>
                 </div>
-                <div class="exp-row" data-count="7" data-max="17">
+                <div class="exp-row" data-count="10" data-max="17">
                     <div class="exp-label">
                         <svg class="exp-icon" viewBox="0 0 128 128"><circle cx="64" cy="64" r="11" fill="#61DAFB"/><ellipse cx="64" cy="64" fill="none" stroke="#61DAFB" stroke-width="5" rx="56" ry="21"/><ellipse cx="64" cy="64" fill="none" stroke="#61DAFB" stroke-width="5" rx="56" ry="21" transform="rotate(60 64 64)"/><ellipse cx="64" cy="64" fill="none" stroke="#61DAFB" stroke-width="5" rx="56" ry="21" transform="rotate(120 64 64)"/></svg>
                         <span class="exp-name">React</span>
@@ -696,9 +701,9 @@
                     <div class="exp-bar-wrap">
                         <div class="exp-bar" style="--bar-color: #61DAFB;"></div>
                     </div>
-                    <span class="exp-count">7 projects</span>
+                    <span class="exp-count">10 projects</span>
                 </div>
-                <div class="exp-row" data-count="6" data-max="17">
+                <div class="exp-row" data-count="10" data-max="17">
                     <div class="exp-label">
                         <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#3178C6" d="M2 63.91v62.5h125v-125H2zm100.73-5.01v11.01H78.62v52.41H66.2V69.91H42.09V58.9z"/></svg>
                         <span class="exp-name">TypeScript</span>
@@ -706,7 +711,7 @@
                     <div class="exp-bar-wrap">
                         <div class="exp-bar" style="--bar-color: #3178C6;"></div>
                     </div>
-                    <span class="exp-count">6 projects</span>
+                    <span class="exp-count">10 projects</span>
                 </div>
                 <div class="exp-row" data-count="5" data-max="17">
                     <div class="exp-label">
@@ -738,7 +743,7 @@
                     </div>
                     <span class="exp-count">3 projects</span>
                 </div>
-                <div class="exp-row" data-count="3" data-max="17">
+                <div class="exp-row" data-count="10" data-max="17">
                     <div class="exp-label">
                         <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#2684FF" d="M55.7 13h16.6c2 0 3.6 1.6 3.6 3.6v94.8c0 2-1.6 3.6-3.6 3.6H55.7c-2 0-3.6-1.6-3.6-3.6V16.6c0-2 1.6-3.6 3.6-3.6z"/><path fill="#2684FF" d="M18 42.5h16.6c2 0 3.6 1.6 3.6 3.6v65.3c0 2-1.6 3.6-3.6 3.6H18c-2 0-3.6-1.6-3.6-3.6V46.1c0-2 1.6-3.6 3.6-3.6z" opacity=".7"/><path fill="#2684FF" d="M93.4 13H110c2 0 3.6 1.6 3.6 3.6v94.8c0 2-1.6 3.6-3.6 3.6H93.4c-2 0-3.6-1.6-3.6-3.6V16.6c0-2 1.6-3.6 3.6-3.6z" opacity=".5"/></svg>
                         <span class="exp-name">CI/CD</span>
@@ -746,7 +751,7 @@
                     <div class="exp-bar-wrap">
                         <div class="exp-bar" style="--bar-color: #2684FF;"></div>
                     </div>
-                    <span class="exp-count">3 projects</span>
+                    <span class="exp-count">10 projects</span>
                 </div>
                 <div class="exp-row" data-count="2" data-max="17">
                     <div class="exp-label">
@@ -758,7 +763,27 @@
                     </div>
                     <span class="exp-count">2 projects</span>
                 </div>
-                <div class="exp-row" data-count="2" data-max="17">
+                <div class="exp-row" data-count="3" data-max="17">
+                    <div class="exp-label">
+                        <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#41B883" d="M78.8 10L64 35.4 49.2 10H0l64 110L128 10z"/><path fill="#41B883" d="M78.8 10L64 35.4 49.2 10H25.6L64 76 102.4 10z" opacity=".7"/></svg>
+                        <span class="exp-name">Vue.js</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar" style="--bar-color: #41B883;"></div>
+                    </div>
+                    <span class="exp-count">3 projects</span>
+                </div>
+                <div class="exp-row" data-count="3" data-max="17">
+                    <div class="exp-label">
+                        <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#3776AB" d="M64 10c-29.8 0-27.9 12.9-27.9 12.9l.03 13.4H64.8v4H24.3S2 37.3 2 67.2c0 29.9 19.5 28.8 19.5 28.8h11.6V82.5s-.63-19.5 19.2-19.5h33c18.3 0 19.4-14.3 19.4-14.3V22.9S108.3 10 64 10z"/><path fill="#FFC331" d="M64 118c29.8 0 27.9-12.9 27.9-12.9l-.03-13.4H63.2v-4h40.5S126 90.7 126 60.8c0-29.9-19.5-28.8-19.5-28.8H94.9v13.5s.63 19.5-19.2 19.5h-33c-18.3 0-19.4 14.3-19.4 14.3v25.5S19.7 118 64 118z"/></svg>
+                        <span class="exp-name">Python</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar" style="--bar-color: #3776AB;"></div>
+                    </div>
+                    <span class="exp-count">3 projects</span>
+                </div>
+                <div class="exp-row" data-count="3" data-max="17">
                     <div class="exp-label">
                         <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#FF2D20" d="M64 2C30.3 2 2 17.8 2 37.5v53C2 110.2 30.3 126 64 126s62-15.8 62-35.5v-53C126 17.8 97.7 2 64 2zm0 10c27.6 0 50 12.5 50 28s-22.4 28-50 28S14 55.5 14 40s22.4-28 50-28z"/></svg>
                         <span class="exp-name">Laravel</span>
@@ -766,7 +791,27 @@
                     <div class="exp-bar-wrap">
                         <div class="exp-bar" style="--bar-color: #FF2D20;"></div>
                     </div>
-                    <span class="exp-count">2 projects</span>
+                    <span class="exp-count">3 projects</span>
+                </div>
+                <div class="exp-row" data-count="3" data-max="17">
+                    <div class="exp-label">
+                        <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#05998B" d="M64 12L2 40v48l62 28 62-28V40z" opacity=".9"/><path fill="#fff" d="M64 26L14 48v36l50 22 50-22V48z" opacity=".3"/></svg>
+                        <span class="exp-name">FastAPI</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar" style="--bar-color: #05998B;"></div>
+                    </div>
+                    <span class="exp-count">3 projects</span>
+                </div>
+                <div class="exp-row" data-count="3" data-max="17">
+                    <div class="exp-label">
+                        <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#7B42BC" d="M64 10L10 38v52l54 28 54-28V38z"/><path fill="#fff" d="M64 26l-38 20v36l38 20 38-20V46z" opacity=".3"/></svg>
+                        <span class="exp-name">Terraform</span>
+                    </div>
+                    <div class="exp-bar-wrap">
+                        <div class="exp-bar" style="--bar-color: #7B42BC;"></div>
+                    </div>
+                    <span class="exp-count">3 projects</span>
                 </div>
                 <div class="exp-row" data-count="2" data-max="17">
                     <div class="exp-label">
@@ -785,16 +830,6 @@
                     </div>
                     <div class="exp-bar-wrap">
                         <div class="exp-bar" style="--bar-color: #F05138;"></div>
-                    </div>
-                    <span class="exp-count">1 project</span>
-                </div>
-                <div class="exp-row" data-count="1" data-max="17">
-                    <div class="exp-label">
-                        <svg class="exp-icon" viewBox="0 0 128 128"><path fill="#05998B" d="M64 12L2 40v48l62 28 62-28V40z" opacity=".9"/><path fill="#fff" d="M64 26L14 48v36l50 22 50-22V48z" opacity=".3"/></svg>
-                        <span class="exp-name">FastAPI</span>
-                    </div>
-                    <div class="exp-bar-wrap">
-                        <div class="exp-bar" style="--bar-color: #05998B;"></div>
                     </div>
                     <span class="exp-count">1 project</span>
                 </div>

@@ -94,7 +94,8 @@ animateGlow();
 const phrases = [
     'Full-Stack Developer',
     'Mobile App Engineer',
-    'Flutter & React Native Dev',
+    'iOS & Flutter Developer',
+    'Infrastructure & DevOps',
     'Open Source Contributor',
     'CI/CD & DevOps Enthusiast'
 ];
