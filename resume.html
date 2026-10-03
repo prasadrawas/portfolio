@@ -539,7 +539,7 @@
         <section class="r-section">
             <h2 class="r-section-title">Professional Summary</h2>
             <p class="r-summary">
-                Senior Full Stack Developer and Mobile Engineer with 5.3+ years of experience building and shipping production-grade web applications, REST APIs, and native/cross-platform mobile apps. Sole or primary developer on 14+ repositories spanning FastAPI, React 19, Vue 3, Next.js, Swift (iOS), and Flutter. Led a full-stack platform rewrite from Laravel to FastAPI + React 19 across 7 deployment environments. Built offline-capable iOS apps (Swift/SwiftData), shipped Flutter apps to App Store and Play Store, and delivered end-to-end from database schema and API design to Terraform-provisioned AWS infrastructure and zero-downtime CI/CD deployments. Authored 3,000+ automated tests with up to 100% line coverage.
+                Senior Full Stack Developer and Mobile Engineer with 5.3+ years of experience designing, building, and deploying scalable web applications, RESTful APIs, microservices, and native/cross-platform mobile apps. Sole or primary developer on 14+ repositories spanning FastAPI, React 19, Vue 3, Next.js, Swift (iOS), and Flutter. Led a full-stack platform rewrite from a monolithic Laravel app to a service-oriented FastAPI + React 19 architecture across 7 deployment environments. Built offline-first iOS apps with persistent data sync (Swift/SwiftData), shipped Flutter apps to App Store and Play Store, and owned the full SDLC from system design and API architecture to Terraform-provisioned AWS infrastructure and zero-downtime CI/CD. Authored 3,000+ automated tests (unit, integration, E2E, UI) with up to 100% line coverage.
             </p>
         </section>
 
@@ -549,14 +549,14 @@
             <div class="r-skills">
                 <div class="r-skill-row"><span class="r-skill-cat">Languages</span><span class="r-skill-list">Python, TypeScript, JavaScript, Swift, Dart, Kotlin, PHP, SQL, HCL, Bash</span></div>
                 <div class="r-skill-row"><span class="r-skill-cat">Frontend</span><span class="r-skill-list">React 19, Vue 3, Next.js 15, Vite, Tailwind CSS, MUI, Redux Toolkit, Pinia</span></div>
-                <div class="r-skill-row"><span class="r-skill-cat">Backend</span><span class="r-skill-list">FastAPI, Laravel, Node.js, Express, Celery, Redis, SQLAlchemy, Pydantic</span></div>
+                <div class="r-skill-row"><span class="r-skill-cat">Backend</span><span class="r-skill-list">FastAPI, Laravel, Node.js, Express, Celery (task queues), Redis (caching, pub/sub), SQLAlchemy, Pydantic</span></div>
                 <div class="r-skill-row"><span class="r-skill-cat">Mobile</span><span class="r-skill-list">Swift, UIKit, CoreData, SwiftData, Flutter, Dart, Alamofire, Platform Channels</span></div>
                 <div class="r-skill-row"><span class="r-skill-cat">Databases</span><span class="r-skill-list">PostgreSQL, MySQL, MongoDB, Redis, Firebase, Supabase, SQLite, Liquibase</span></div>
-                <div class="r-skill-row"><span class="r-skill-cat">Cloud / Infra</span><span class="r-skill-list">AWS (EC2, S3, CloudFront, SES, SNS, Route53), Terraform, Docker, Apache</span></div>
+                <div class="r-skill-row"><span class="r-skill-cat">Cloud / Infra</span><span class="r-skill-list">AWS (EC2, S3, CloudFront, SES, SNS, Route53), Terraform (IaC), Docker, Nginx/Apache, Linux</span></div>
                 <div class="r-skill-row"><span class="r-skill-cat">CI/CD</span><span class="r-skill-list">Bitbucket Pipelines, Bitrise, BrowserStack, GitHub Actions, Play Store, App Store</span></div>
                 <div class="r-skill-row"><span class="r-skill-cat">Testing</span><span class="r-skill-list">pytest, Vitest, Playwright, XCTest, XCUITest, Testing Library, PHPUnit</span></div>
-                <div class="r-skill-row"><span class="r-skill-cat">Architecture</span><span class="r-skill-list">SOLID, MVVM, Strategy Pattern, DI, REST API Design, RBAC, JWT, OTP, i18n</span></div>
-                <div class="r-skill-row"><span class="r-skill-cat">AI / ML</span><span class="r-skill-list">Google Gemini, ChromaDB, RAG architecture, tool registry pattern, NFC</span></div>
+                <div class="r-skill-row"><span class="r-skill-cat">Architecture</span><span class="r-skill-list">System Design, Microservices, Event-Driven, SOLID, MVVM, Strategy Pattern, DI, REST APIs, RBAC</span></div>
+                <div class="r-skill-row"><span class="r-skill-cat">AI / ML</span><span class="r-skill-list">Google Gemini, ChromaDB, RAG, Vector Search, LLM Tool Use, Agentic Systems</span></div>
             </div>
         </section>
 
@@ -571,15 +571,15 @@
                 </div>
                 <div class="r-job-company">VoloX Private Limited (Division of ITDM) &bull; Chh. Sambhaji Nagar, India</div>
                 <ul>
-                    <li>Designed and built the <strong>VAPR product management platform</strong> end-to-end &mdash; FastAPI backend (40+ REST endpoints, Celery async processing, OTP auth via AWS SES/SNS, 20-permission RBAC with JWT staleness detection) + Vue 3 frontend + PostgreSQL + Terraform-provisioned AWS infrastructure. <strong>Sole full-stack developer</strong></li>
-                    <li>Architected and shipped a <strong>field-service dispatch platform twice</strong> &mdash; first full stack in Laravel/PHP + Vue 3, then <strong>rewrote end-to-end in FastAPI + React 19</strong> &mdash; queue-based connector strategy pattern (SoD, AoD, Email, SMS) across <strong>7 deployment environments</strong> serving multiple clients</li>
-                    <li>Built <strong>offline-capable iOS app features</strong> for RealCADENCE (Swift, UIKit, SwiftData) &mdash; API request queue manager with persistent offline execution, CoreData-to-SwiftData migration, task-oriented auto-advancing workflow, and <strong>comprehensive XCUITest UI automation</strong> covering all action types</li>
-                    <li>Led full mobile development of <strong>Kerb Driver</strong> (Flutter, Firebase, Google Maps) &mdash; optimized state management by 30&ndash;40%, achieved 100% unit test coverage, and <strong>managed end-to-end deployment</strong> to both App Store and Play Store</li>
+                    <li>Designed the system architecture and built the <strong>VAPR product management platform</strong> end-to-end &mdash; layered FastAPI backend (40+ REST endpoints, async task queue via Celery/Redis, OTP auth via AWS SES/SNS, 20-permission RBAC with JWT staleness detection and cache invalidation) + Vue 3 SPA + PostgreSQL + Terraform-provisioned AWS infrastructure. <strong>Sole full-stack developer</strong></li>
+                    <li>Architected and shipped a <strong>field-service dispatch platform twice</strong> &mdash; first as a Laravel monolith, then <strong>redesigned as a service-oriented FastAPI + React 19 system</strong> &mdash; event-driven queue with pluggable connector strategy pattern (SoD, AoD, Email, SMS), distributed batch locking, idempotency middleware, and retry with transient/permanent failure classification across <strong>7 deployment environments</strong></li>
+                    <li>Built <strong>offline-first iOS app features</strong> for RealCADENCE (Swift, UIKit, SwiftData) &mdash; designed a sequential API request queue with persistent storage for offline execution and automatic sync on connectivity restore, migrated the data layer from CoreData to SwiftData, and built <strong>comprehensive XCUITest UI automation</strong> covering all action types</li>
+                    <li>Led full mobile development of <strong>Kerb Driver</strong> (Flutter, Firebase, Google Maps) &mdash; profiled and optimized state management reducing unnecessary rebuilds by 30&ndash;40%, achieved 100% unit test coverage, and <strong>managed end-to-end deployment</strong> to both App Store and Play Store</li>
                     <li>Delivered <strong>4+ React/Vue web portals</strong> &mdash; fleet vehicle management with CSV bulk upload, parking spot operational hours, BIS import reporting, and a supervisor service-reviews portal with multi-tab filtering, i18n (EN/DE/ES), and cookie-based language detection</li>
-                    <li>Built an <strong>AI-powered conversational assistant</strong> using Google Gemini with ChromaDB-backed RAG, a domain-specific tool registry with 5 tool modules, and session management &mdash; enabling natural-language product queries via an in-app chat widget</li>
-                    <li>Authored <strong>3,000+ automated tests</strong> across 14 repositories (pytest, Vitest, Playwright, XCUITest) &mdash; achieving <strong>100% line coverage</strong> on two React apps, 98.5% on Vue frontend, and comprehensive iOS UI automation</li>
-                    <li>Provisioned and managed <strong>AWS EC2 instances end-to-end</strong> &mdash; Rocky Linux 9, Apache reverse proxy, systemd services, PostgreSQL/Redis &mdash; codified via <strong>Terraform</strong> (EC2, S3, CloudFront with OAC, SES, Route53) across dev/prod environments</li>
-                    <li>Built <strong>10+ CI/CD pipelines</strong> (Bitbucket Pipelines, Bitrise) with zero-downtime symlink-swap deployments, and managed <strong>end-to-end app store releases</strong> &mdash; Play Store and App Store signing, versioning, screenshots, and submission</li>
+                    <li>Built an <strong>agentic AI system</strong> using Google Gemini with ChromaDB vector store for retrieval-augmented generation (RAG), a tool registry with 5 domain-specific function modules, LLM tool-use orchestration, and stateful session management &mdash; enabling natural-language product queries via an in-app chat interface</li>
+                    <li>Authored <strong>3,000+ automated tests</strong> (unit, integration, E2E, UI automation) across 14 repositories using pytest, Vitest, Playwright, and XCUITest &mdash; enforced <strong>100% line coverage</strong> on two React apps, 98.5% on Vue, and gated all deployments on passing test suites</li>
+                    <li>Provisioned and managed <strong>production Linux servers end-to-end</strong> &mdash; Rocky Linux 9, reverse proxy (Apache), process management (systemd), database/cache setup (PostgreSQL, Redis) &mdash; codified as <strong>infrastructure-as-code via Terraform</strong> (EC2, S3, CloudFront with OAC, SES, Route53) with environment parity across dev/prod</li>
+                    <li>Built <strong>10+ CI/CD pipelines</strong> with automated quality gates (parallel lint + test), artifact packaging, blue-green style zero-downtime deployments (symlink swap), post-deploy health verification, and <strong>end-to-end app store release management</strong> (Play Store + App Store)</li>
                     <li>Created the shared <strong>@volox/trax-api-utils</strong> TypeScript library (20+ API service classes, auth interceptors, semantic theme system) consumed by 3+ frontend apps, with a cross-repo consumer verification script</li>
                 </ul>
             </div>
@@ -591,7 +591,7 @@
                 </div>
                 <div class="r-job-company">Aeologic Technologies</div>
                 <ul>
-                    <li>Pioneered a <strong>Stripe Tap to Pay plugin for Flutter</strong> when no official Flutter plugin existed &mdash; built a native Android plugin using <strong>Kotlin platform channels</strong> (MethodChannel) to bridge Flutter with the Stripe Terminal SDK, enabling NFC-based contactless payments in Flutter apps</li>
+                    <li>Pioneered a <strong>Stripe Tap to Pay plugin for Flutter</strong> when no official plugin existed &mdash; designed a native Android plugin using <strong>Kotlin platform channels</strong> (MethodChannel) to bridge the Flutter runtime with the Stripe Terminal SDK, enabling NFC-based contactless payment processing in cross-platform apps</li>
                     <li>Built the Flutter mobile app for <strong>Micro Center</strong>, one of the largest US electronics retailers with 30 stores and 22M+ customers &mdash; delivering cross-platform product browsing and real-time store inventory</li>
                     <li>Contributed to building and shipping <strong>6+ production mobile applications</strong> (Flutter, Dart, Firebase) across retail, logistics, and enterprise domains</li>
                     <li>Led development of a customer-facing app from scratch through to production deployment, earning direct client recognition for reliability</li>
@@ -609,15 +609,15 @@
                         <span class="r-project-domain">Full Stack</span>
                         <span class="r-project-name">VAPR</span>
                     </div>
-                    <div class="r-project-desc">End-to-end product platform: FastAPI backend (40+ endpoints, RBAC, OTP auth) + Vue 3 frontend + PostgreSQL + Terraform IaC. 1,090 tests. Sole developer.</div>
-                    <div class="r-project-tech">FastAPI &bull; Vue 3 &bull; PostgreSQL &bull; Celery &bull; Redis &bull; Liquibase</div>
+                    <div class="r-project-desc">Layered architecture: FastAPI (40+ endpoints, async task queue, RBAC, OTP auth, rate limiting) + Vue 3 SPA + PostgreSQL + Redis caching + Terraform IaC. 1,090 tests.</div>
+                    <div class="r-project-tech">FastAPI &bull; Vue 3 &bull; PostgreSQL &bull; Celery &bull; Redis &bull; Terraform</div>
                 </div>
                 <div class="r-project">
                     <div class="r-project-head">
                         <span class="r-project-domain">Full Stack Rewrite</span>
                         <span class="r-project-name">Service Dispatcher</span>
                     </div>
-                    <div class="r-project-desc">Built full stack in Laravel + Vue 3, then rewrote end-to-end in FastAPI + React 19. ~1,805 tests, 7 deployment environments.</div>
+                    <div class="r-project-desc">Monolith to service-oriented rewrite. Event-driven queue, distributed locking, idempotency, retry with failure classification. ~1,805 tests, 7 environments.</div>
                     <div class="r-project-tech">FastAPI &bull; React 19 &bull; Laravel &bull; PostgreSQL &bull; Celery &bull; Redis</div>
                 </div>
                 <div class="r-project">
@@ -625,7 +625,7 @@
                         <span class="r-project-domain">iOS Native</span>
                         <span class="r-project-name">RealCADENCE</span>
                     </div>
-                    <div class="r-project-desc">Enterprise field-ops app with offline API queue (SwiftData), CoreData migration, task-oriented workflow, XCUITest automation. 597 commits.</div>
+                    <div class="r-project-desc">Offline-first architecture: sequential API queue with persistent storage, automatic sync, CoreData-to-SwiftData migration, XCUITest automation. 597 commits.</div>
                     <div class="r-project-tech">Swift &bull; UIKit &bull; CoreData &bull; SwiftData &bull; XCUITest &bull; MVVM</div>
                 </div>
                 <div class="r-project">
@@ -633,8 +633,8 @@
                         <span class="r-project-domain">AI &mdash; RAG</span>
                         <span class="r-project-name">VAPR AI Agent</span>
                     </div>
-                    <div class="r-project-desc">Gemini + ChromaDB RAG, 5 domain tool modules, session management, in-app chat widget for natural-language product queries.</div>
-                    <div class="r-project-tech">Google Gemini &bull; ChromaDB &bull; RAG &bull; FastAPI &bull; Vue 3</div>
+                    <div class="r-project-desc">Agentic system: Gemini LLM + ChromaDB vector search for RAG, 5 tool modules with function-calling orchestration, stateful session management.</div>
+                    <div class="r-project-tech">Google Gemini &bull; ChromaDB &bull; RAG &bull; Vector Search &bull; FastAPI</div>
                 </div>
                 <div class="r-project">
                     <div class="r-project-head">
