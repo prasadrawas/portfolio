@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad Rawas - Resume</title>
+    <meta name="description" content="Resume of Prasad Rawas, Senior Software Developer with 5.3+ years of experience.">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap');
+
+        :root {
+            --text: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --border: #e2e8f0;
+            --bg: #ffffff;
+            --bg-section: #f8fafc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: var(--text);
+            background: #f1f5f9;
+        }
+
+        .resume-page {
+            max-width: 8.5in;
+            margin: 20px auto;
+            background: var(--bg);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        .resume-content {
+            padding: 0.45in 0.55in;
+        }
+
+        /* ---- Header ---- */
+        .header {
+            text-align: center;
+            padding-bottom: 14px;
+            border-bottom: 2px solid var(--text);
+            margin-bottom: 14px;
+        }
+
+        .header h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .header-subtitle {
+            font-size: 11pt;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 18px;
+            font-size: 8.5pt;
+            color: var(--text-secondary);
+        }
+
+        .contact-row a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-row span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .contact-row svg {
+            width: 11px;
+            height: 11px;
+            flex-shrink: 0;
+        }
+
+        /* ---- Sections ---- */
+        .section {
+            margin-bottom: 13px;
+        }
+
+        .section-title {
+            font-size: 9.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        /* ---- Summary ---- */
+        .summary {
+            font-size: 9pt;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
+        /* ---- Skills ---- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 24px;
+        }
+
+        .skill-row {
+            display: flex;
+            gap: 6px;
+            font-size: 8.5pt;
+            line-height: 1.65;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            color: var(--text);
+            white-space: nowrap;
+            min-width: 85px;
+        }
+
+        .skill-value {
+            color: var(--text-secondary);
+        }
+
+        /* ---- Experience ---- */
+        .job {
+            margin-bottom: 12px;
+        }
+
+        .job:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 10pt;
+            color: var(--text);
+        }
+
+        .job-date {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .job-company {
+            font-size: 9pt;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        .job-company a {
+            color: var(--text-secondary);
+            text-decoration: none;
+        }
+
+        ul {
+            margin-left: 14px;
+        }
+
+        li {
+            font-size: 8.5pt;
+            color: var(--text-secondary);
+            margin-bottom: 3px;
+            line-height: 1.5;
+        }
+
+        li strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ---- Projects ---- */
+        .projects-list {
+            display: grid;
+            gap: 6px;
+        }
+
+        .project-item {
+            font-size: 8.5pt;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .project-item strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .project-item .pipe {
+            color: var(--text-muted);
+            margin: 0 3px;
+        }
+
+        /* ---- Education ---- */
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            font-size: 9.5pt;
+            color: var(--text);
+        }
+
+        .edu-date {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .edu-school {
+            font-size: 8.5pt;
+            color: var(--text-secondary);
+        }
+
+        /* ---- Print Button ---- */
+        .print-bar {
+            max-width: 8.5in;
+            margin: 0 auto 10px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 0 4px;
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 20px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .print-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .print-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 20px;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            transition: border-color 0.2s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--text-muted);
+        }
+
+        /* ---- Print Styles ---- */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .resume-page {
+                margin: 0;
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .resume-content {
+                padding: 0.35in 0.5in;
+            }
+
+            .print-bar {
+                display: none !important;
+            }
+
+            .contact-row a {
+                color: var(--text-secondary) !important;
+            }
+
+            @page {
+                margin: 0;
+                size: letter;
+            }
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 640px) {
+            body { background: white; }
+            .resume-page { margin: 0; box-shadow: none; border-radius: 0; }
+            .resume-content { padding: 20px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .job-header { flex-direction: column; gap: 0; }
+            .edu-header { flex-direction: column; gap: 0; }
+            .contact-row { gap: 4px 12px; font-size: 8pt; }
+            .print-bar { padding: 10px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="print-bar">
+    <a href="index.html" class="back-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Portfolio
+    </a>
+    <button class="print-btn" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Export as PDF
+    </button>
+</div>
+
+<div class="resume-page">
+    <div class="resume-content">
+
+        <!-- Header -->
+        <div class="header">
+            <h1>PRASAD RAWAS</h1>
+            <div class="header-subtitle">Senior Software Developer</div>
+            <div class="contact-row">
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Chh. Sambhaji Nagar, India
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                    <a href="mailto:contactprasadrawas@gmail.com">contactprasadrawas@gmail.com</a>
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <a href="https://www.linkedin.com/in/prasad-rawas-392b10204">LinkedIn</a>
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <a href="https://github.com/prasadrawas">GitHub</a>
+                </span>
+                <span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    <a href="https://dev.prasadrawas.online">dev.prasadrawas.online</a>
+                </span>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="section">
+            <div class="section-title">Summary</div>
+            <p class="summary">
+                Senior Software Developer with 5.3+ years of experience delivering production-grade applications across backend, frontend, mobile, and infrastructure. Sole or primary developer on 14+ repositories spanning FastAPI, React, Vue, Swift, and Flutter. Led a full platform rewrite from Laravel to FastAPI + React 19, provisioned AWS infrastructure via Terraform, and authored 3,000+ automated tests. Track record of end-to-end product ownership from database schema to deployed infrastructure.
+            </p>
+        </div>
+
+        <!-- Skills -->
+        <div class="section">
+            <div class="section-title">Technical Skills</div>
+            <div class="skills-grid">
+                <div class="skill-row"><span class="skill-label">Languages</span><span class="skill-value">Python, TypeScript, JavaScript, Swift, PHP, Dart, Kotlin, SQL, HCL</span></div>
+                <div class="skill-row"><span class="skill-label">Backend</span><span class="skill-value">FastAPI, Laravel, Node.js, Express, Celery, Redis, SQLAlchemy, Pydantic</span></div>
+                <div class="skill-row"><span class="skill-label">Frontend</span><span class="skill-value">React 19, Vue 3, Next.js, Vite, Tailwind CSS, MUI, Redux, Pinia</span></div>
+                <div class="skill-row"><span class="skill-label">Mobile</span><span class="skill-value">Swift, UIKit, CoreData, SwiftData, Flutter, Dart, Alamofire</span></div>
+                <div class="skill-row"><span class="skill-label">Databases</span><span class="skill-value">PostgreSQL, MySQL, MongoDB, Redis, Firebase, SQLite, Liquibase</span></div>
+                <div class="skill-row"><span class="skill-label">Cloud / Infra</span><span class="skill-value">AWS (EC2, S3, CloudFront, SES, SNS, Route53), Terraform, Docker</span></div>
+                <div class="skill-row"><span class="skill-label">CI/CD</span><span class="skill-value">Bitbucket Pipelines, Bitrise, BrowserStack, GitHub Actions, systemd</span></div>
+                <div class="skill-row"><span class="skill-label">Testing</span><span class="skill-value">pytest, Vitest, Playwright, XCTest, XCUITest, Testing Library</span></div>
+                <div class="skill-row"><span class="skill-label">Architecture</span><span class="skill-value">SOLID, MVVM, Strategy Pattern, DI, REST APIs, RBAC, JWT, OTP, RAG</span></div>
+                <div class="skill-row"><span class="skill-label">i18n</span><span class="skill-value">i18next, react-i18next, vue-i18n, cookie-based language detection</span></div>
+            </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="section">
+            <div class="section-title">Professional Experience</div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Senior Software Developer</span>
+                    <span class="job-date">Nov 2023 &ndash; Present</span>
+                </div>
+                <div class="job-company">VoloX Private Limited (Division of ITDM) &middot; Chh. Sambhaji Nagar, India</div>
+                <ul>
+                    <li>Designed and built the <strong>VAPR product management platform</strong> end-to-end (FastAPI, Vue 3, PostgreSQL) &mdash; 40+ REST API endpoints, Celery-based async bulk CSV import handling 10,000+ products per file, passwordless OTP authentication via AWS SES/SNS, and a <strong>20-permission RBAC system</strong> with JWT-embedded authorization and staleness detection</li>
+                    <li>Architected and shipped a <strong>field-service dispatch platform twice</strong> &mdash; first in Laravel/PHP, then <strong>rewrote in FastAPI/Python + React 19</strong> &mdash; using a queue-based connector strategy pattern (SoD, AoD, Email, SMS) to orchestrate work orders across <strong>7 deployment environments</strong> serving multiple clients</li>
+                    <li>Built <strong>offline-capable features</strong> for the RealCADENCE iOS app (Swift, SwiftData): API request queue manager with persistent offline execution, CoreData-to-SwiftData migration, and a task-oriented auto-advancing workflow mode used daily by field workers</li>
+                    <li>Authored <strong>3,000+ automated tests</strong> across 14 repositories using pytest, Vitest, Playwright, and XCUITest &mdash; achieving <strong>100% line coverage</strong> on two React apps, 98.5% on Vue frontend, and comprehensive XCUITest UI automation covering all iOS action types</li>
+                    <li>Created the shared <strong>@volox/trax-api-utils</strong> TypeScript library (20+ API service classes, auth interceptors, semantic theme system) consumed by 3+ frontend apps, with a cross-repo consumer verification script validating releases before merge</li>
+                    <li>Provisioned <strong>AWS infrastructure via Terraform</strong> (EC2, S3, CloudFront with OAC, SES, Route53) with cloud-init bootstrap scripts and multi-environment configs, and built <strong>10+ CI/CD pipelines</strong> (Bitbucket Pipelines) with zero-downtime symlink-swap deployments</li>
+                    <li>Built an <strong>AI-powered conversational assistant</strong> using Google Gemini with ChromaDB-backed RAG, a domain-specific tool registry, and session management for natural-language product queries</li>
+                    <li>Delivered <strong>4+ React/Vue web portals</strong> including fleet vehicle management with CSV bulk upload, parking spot operational hours, BIS import reporting, and a supervisor service-reviews portal with multi-tab filtering, i18n (EN/DE/ES), and cookie-based language detection</li>
+                    <li>Led full mobile development of <strong>Kerb Driver</strong> (Flutter, Firebase, Google Maps) for delivery drivers to book loading bays, optimizing state management by 30&ndash;40% with 100% unit test coverage &mdash; shipped to App Store and Play Store</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Junior Software Developer</span>
+                    <span class="job-date">Jun 2021 &ndash; Nov 2023</span>
+                </div>
+                <div class="job-company">Aeologic Technologies</div>
+                <ul>
+                    <li>Built the Flutter mobile app for <strong>Micro Center</strong>, one of the largest US electronics retailers with 30 stores and 22M+ customers &mdash; cross-platform product browsing and real-time store inventory</li>
+                    <li>Contributed to building and shipping <strong>6+ production mobile applications</strong> (Flutter, Dart, Firebase) across retail, logistics, and enterprise domains</li>
+                    <li>Led development of a customer-facing app from scratch through to production, earning direct client recognition for reliability</li>
+                    <li>Eliminated recurring production bugs by implementing comprehensive testing practices across projects</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Key Projects -->
+        <div class="section">
+            <div class="section-title">Key Projects</div>
+            <div class="projects-list">
+                <div class="project-item">
+                    <strong>VAPR</strong><span class="pipe">|</span>FastAPI, Vue 3, PostgreSQL, Celery, Terraform<span class="pipe">|</span>40+ endpoints, 1,090 tests, 23 DB migrations, OTP auth, RBAC, AI/RAG agent. Sole developer (417 commits).
+                </div>
+                <div class="project-item">
+                    <strong>Service Dispatcher</strong><span class="pipe">|</span>Laravel &rarr; FastAPI + React 19<span class="pipe">|</span>Queue-based connector dispatch platform. Full rewrite across stacks. ~1,805 tests, 7 environments. Sole developer (765 commits).
+                </div>
+                <div class="project-item">
+                    <strong>RealCADENCE</strong><span class="pipe">|</span>Swift, UIKit, CoreData, SwiftData<span class="pipe">|</span>Enterprise iOS app with offline mode, SwiftData migration, XCUITest automation. Primary developer (597 commits).
+                </div>
+                <div class="project-item">
+                    <strong>Trax Service Portal</strong><span class="pipe">|</span>React 19, TypeScript, MUI<span class="pipe">|</span>Supervisor reflection reviews portal with multi-tab filtering, i18n, shared component library. Sole developer (572 commits).
+                </div>
+                <div class="project-item">
+                    <strong>TrekBooking</strong><span class="pipe">|</span>Next.js 15, React 19, FastAPI, Supabase<span class="pipe">|</span>Full-stack trek booking platform with 10-step wizard, multi-city pricing, admin dashboard, 182 tests.
+                </div>
+                <div class="project-item">
+                    <strong>Kerb Driver</strong><span class="pipe">|</span>Flutter, Firebase, Google Maps<span class="pipe">|</span>Loading bay booking app. 100% test coverage, 30&ndash;40% perf improvement. App Store + Play Store.
+                </div>
+            </div>
+        </div>
+
+        <!-- Open Source -->
+        <div class="section">
+            <div class="section-title">Open Source</div>
+            <div class="projects-list">
+                <div class="project-item">
+                    <strong>FreeVPN</strong><span class="pipe">|</span>Flutter, OpenVPN, Kotlin<span class="pipe">|</span>Open-source VPN client with ISP DNS bypass, config sanitization, reconnect detection. 115 unit tests. <a href="https://github.com/prasadrawas/free-vpn" style="color: var(--accent); text-decoration: none;">github.com/prasadrawas/free-vpn</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="section" style="margin-bottom: 0;">
+            <div class="section-title">Education</div>
+            <div class="edu-header">
+                <span class="edu-degree">B.Sc in Information Technology</span>
+                <span class="edu-date">2018 &ndash; 2021</span>
+            </div>
+            <div class="edu-school">MGM Institute of Technology, Chh. Sambhaji Nagar, Maharashtra, India</div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
