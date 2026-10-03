@@ -315,6 +315,20 @@
             font-size: 8pt;
         }
 
+        .r-project-domain {
+            display: inline-block;
+            font-size: 7pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--accent);
+            background: var(--accent-bg);
+            padding: 1px 6px;
+            border-radius: 3px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
         /* ======== Education ======== */
         .r-edu-head {
             display: flex;
@@ -391,6 +405,7 @@
             .r-title { color: var(--text-secondary) !important; }
             .r-metric-value { color: var(--text) !important; }
             .r-project { border-left-color: var(--text-muted) !important; }
+            .r-project-domain { color: var(--text) !important; background: var(--tag-bg) !important; }
             .r-metrics { border-color: var(--border-strong) !important; }
             .r-metric { border-color: var(--border-strong) !important; }
             @page { margin: 0; size: letter; }
@@ -558,48 +573,53 @@
             </div>
         </section>
 
-        <!-- Key Projects -->
+        <!-- Key Projects — One per domain to showcase versatility -->
         <section class="r-section">
             <h2 class="r-section-title">Key Projects</h2>
             <div class="r-projects">
                 <div class="r-project">
-                    <span class="r-project-name">VAPR</span> &mdash; 40+ endpoints, 1,090 tests, 23 DB migrations, OTP auth, RBAC, AI/RAG agent, Terraform IaC. Sole developer (417 commits).<br>
-                    <span class="r-project-tech">FastAPI &bull; Vue 3 &bull; PostgreSQL &bull; Celery &bull; Redis &bull; AWS &bull; Terraform &bull; Google Gemini &bull; ChromaDB</span>
+                    <span class="r-project-domain">Backend &amp; API</span><span class="r-project-name">VAPR</span> &mdash; 40+ REST endpoints, 1,090 tests, 23 DB migrations, passwordless OTP auth (AWS SES/SNS), 20-permission RBAC with JWT staleness detection. Sole developer.<br>
+                    <span class="r-project-tech">FastAPI &bull; Vue 3 &bull; PostgreSQL &bull; Celery &bull; Redis &bull; Pydantic &bull; SQLAlchemy &bull; Liquibase</span>
                 </div>
                 <div class="r-project">
-                    <span class="r-project-name">Service Dispatcher</span> &mdash; Queue-based connector dispatch platform. Full rewrite from Laravel to FastAPI + React 19. ~1,805 tests, 7 environments. Sole developer (765 commits).<br>
-                    <span class="r-project-tech">FastAPI &bull; React 19 &bull; Laravel &bull; PostgreSQL &bull; Celery &bull; Redis &bull; Terraform &bull; Bitbucket Pipelines</span>
+                    <span class="r-project-domain">Platform Rewrite</span><span class="r-project-name">Service Dispatcher</span> &mdash; Built in Laravel/PHP, then fully rewrote in FastAPI + React 19. Queue-based connector strategy pattern across ~1,805 tests and 7 deployment environments.<br>
+                    <span class="r-project-tech">FastAPI &bull; React 19 &bull; Laravel &bull; PostgreSQL &bull; Celery &bull; Redis &bull; TypeScript</span>
                 </div>
                 <div class="r-project">
-                    <span class="r-project-name">RealCADENCE</span> &mdash; Enterprise iOS app with offline mode, SwiftData migration, task-oriented workflow, XCUITest automation suite. Primary developer (597 commits).<br>
-                    <span class="r-project-tech">Swift &bull; UIKit &bull; CoreData &bull; SwiftData &bull; Alamofire &bull; XCTest &bull; XCUITest</span>
+                    <span class="r-project-domain">iOS Native</span><span class="r-project-name">RealCADENCE</span> &mdash; Enterprise field-ops app with offline API queue (SwiftData persistence), CoreData-to-SwiftData migration, task-oriented workflow, XCUITest automation suite. 597 commits.<br>
+                    <span class="r-project-tech">Swift &bull; UIKit &bull; CoreData &bull; SwiftData &bull; Alamofire &bull; XCTest &bull; XCUITest &bull; MVVM</span>
                 </div>
                 <div class="r-project">
-                    <span class="r-project-name">Trax Service Portal</span> &mdash; Supervisor reflection reviews portal with multi-tab filtering, i18n, shared component library. Sole developer (572 commits).<br>
-                    <span class="r-project-tech">React 19 &bull; TypeScript &bull; MUI &bull; i18next &bull; TanStack Query</span>
+                    <span class="r-project-domain">AI &mdash; RAG &amp; Agentic</span><span class="r-project-name">VAPR AI Agent</span> &mdash; Conversational assistant with Google Gemini + ChromaDB-backed RAG, 5 domain-specific tool modules (products, divisions, surrogate IDs, dashboard, knowledge base), session management, in-app chat widget.<br>
+                    <span class="r-project-tech">Google Gemini &bull; ChromaDB &bull; RAG &bull; FastAPI &bull; Vue 3 &bull; Tool Registry Pattern</span>
                 </div>
                 <div class="r-project">
-                    <span class="r-project-name">TrekBooking</span> &mdash; Full-stack trek booking platform with 10-step wizard, multi-city pricing, admin dashboard, 182 tests.<br>
-                    <span class="r-project-tech">Next.js 15 &bull; React 19 &bull; FastAPI &bull; Supabase &bull; Turborepo &bull; Recharts &bull; Zod</span>
+                    <span class="r-project-domain">AI &mdash; Vision</span><span class="r-project-name">BiteBloom</span> &mdash; Snap a meal photo for instant 16-nutrient per-item breakdown via Gemini vision. Barcode scanning (Open Food Facts), food diary, progress charts, meal reminders. Published on Play Store.<br>
+                    <span class="r-project-tech">Flutter &bull; Firebase AI Logic (Gemini) &bull; Firestore &bull; Riverpod &bull; fl_chart &bull; Cloudinary</span>
                 </div>
                 <div class="r-project">
-                    <span class="r-project-name">Kerb Driver</span> &mdash; Loading bay booking app for delivery drivers. 100% test coverage, 30&ndash;40% performance improvement. App Store + Play Store.<br>
+                    <span class="r-project-domain">Cross-platform Mobile</span><span class="r-project-name">Kerb Driver</span> &mdash; Loading bay booking app for delivery drivers. 30&ndash;40% state management performance gain, 100% unit test coverage. End-to-end App Store + Play Store deployment.<br>
                     <span class="r-project-tech">Flutter &bull; Dart &bull; Firebase &bull; Google Maps &bull; Provider</span>
                 </div>
                 <div class="r-project">
-                    <span class="r-project-name">BiteBloom</span> &mdash; AI nutrition tracker: snap a meal photo for instant 16-nutrient breakdown via Google Gemini, barcode scanning, food diary, progress charts, meal reminders.<br>
-                    <span class="r-project-tech">Flutter &bull; Firebase AI Logic (Gemini) &bull; Firestore &bull; Riverpod &bull; fl_chart &bull; Cloudinary</span>
+                    <span class="r-project-domain">Full Stack Web</span><span class="r-project-name">TrekBooking</span> &mdash; Trek booking platform with 10-step creation wizard, multi-city pricing, admin dashboard with KPI charts, organizer approval workflows. 182 tests.<br>
+                    <span class="r-project-tech">Next.js 15 &bull; React 19 &bull; FastAPI &bull; Supabase &bull; Turborepo &bull; Recharts &bull; Zod</span>
                 </div>
-            </div>
-        </section>
-
-        <!-- Open Source -->
-        <section class="r-section">
-            <h2 class="r-section-title">Open Source</h2>
-            <div class="r-projects">
                 <div class="r-project">
-                    <span class="r-project-name">FreeVPN</span> &mdash; Open-source VPN client with ISP DNS bypass, OpenVPN config sanitization, reconnect loop detection. 115 unit tests.<br>
-                    <span class="r-project-tech">Flutter &bull; OpenVPN &bull; Kotlin &bull; Firebase &nbsp;&mdash;&nbsp; github.com/prasadrawas/free-vpn</span>
+                    <span class="r-project-domain">CI/CD &amp; Pipelines</span><span class="r-project-name">10+ Pipelines</span> &mdash; Tag-triggered Bitbucket Pipelines with parallel test+lint, artifact packaging, Liquibase DB migrations, zero-downtime symlink-swap deployments, and post-deploy health checks across 7+ environments.<br>
+                    <span class="r-project-tech">Bitbucket Pipelines &bull; Bitrise &bull; BrowserStack &bull; Bash &bull; SSH/SCP &bull; systemd</span>
+                </div>
+                <div class="r-project">
+                    <span class="r-project-domain">Server &amp; Infrastructure</span><span class="r-project-name">EC2 + Terraform IaC</span> &mdash; End-to-end EC2 provisioning: Rocky Linux 9 setup, Apache reverse proxy, systemd services, PostgreSQL/Redis installation. Terraform for EC2, S3, CloudFront (OAC), SES, Route53 across dev/prod.<br>
+                    <span class="r-project-tech">Terraform &bull; AWS EC2/S3/CloudFront/SES/Route53 &bull; Apache &bull; systemd &bull; Rocky Linux 9</span>
+                </div>
+                <div class="r-project">
+                    <span class="r-project-domain">App Store Releases</span><span class="r-project-name">Play Store &amp; App Store</span> &mdash; End-to-end mobile release management for multiple apps: build signing, versioning, store listing (screenshots, descriptions), review submission, and release rollouts.<br>
+                    <span class="r-project-tech">Play Console &bull; App Store Connect &bull; TestFlight &bull; Bitrise &bull; Fastlane</span>
+                </div>
+                <div class="r-project">
+                    <span class="r-project-domain">Shared Library / DX</span><span class="r-project-name">@volox/trax-api-utils</span> &mdash; ESM TypeScript library with 20+ API service classes, auth/session interceptors, semantic theme system. Consumed by 3+ apps. Cross-repo consumer verification script validates releases before merge.<br>
+                    <span class="r-project-tech">TypeScript &bull; Vite (library mode) &bull; Vitest &bull; React 19 &bull; Bash</span>
                 </div>
             </div>
         </section>
