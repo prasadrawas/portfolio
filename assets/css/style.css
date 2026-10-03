@@ -1673,6 +1673,15 @@ body:hover .cursor-glow {
     padding: 0.2rem 0.55rem;
     border-radius: var(--radius-xs);
     background: rgba(255, 255, 255, 0.04);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.project-tech span svg.ti {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
 }
 
 /* Expand button */
