@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad Rawas - Senior Full Stack Developer & Mobile Engineer</title>
+    <meta name="description" content="Resume of Prasad Rawas, Senior Full Stack Developer and Mobile Engineer with 5.3+ years of experience.">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 9pt;
+            line-height: 1.4;
+            color: #111;
+            background: #f3f4f6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ---- Toolbar ---- */
+        .toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 10px 0;
+        }
+        .toolbar-inner {
+            max-width: 8.5in;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+        }
+        .toolbar-left { display: flex; align-items: center; gap: 14px; }
+        .toolbar-left a {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: #6b7280; text-decoration: none; font-size: 13px; font-weight: 500;
+        }
+        .toolbar-left a:hover { color: #111; }
+        .toolbar-left svg { width: 16px; height: 16px; }
+        .toolbar-title { font-size: 13px; font-weight: 600; color: #111; }
+        .toolbar-right { display: flex; gap: 8px; }
+        .tb {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 7px 16px; border-radius: 8px; font-family: inherit;
+            font-size: 12.5px; font-weight: 500; cursor: pointer; border: none; text-decoration: none;
+        }
+        .tb svg { width: 15px; height: 15px; }
+        .tb-p { background: #2563eb; color: white; }
+        .tb-p:hover { background: #1d4ed8; }
+        .tb-g { background: transparent; color: #374151; border: 1px solid #e5e7eb; }
+        .tb-g:hover { background: #f3f4f6; }
+
+        /* ---- Page ---- */
+        .page {
+            max-width: 8.5in;
+            min-height: 11in;
+            margin: 20px auto 40px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 8px 32px rgba(0,0,0,0.06);
+            border-radius: 6px;
+            padding: 0.4in 0.45in;
+        }
+
+        /* ---- Header ---- */
+        h1 {
+            font-size: 18pt;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: -0.3px;
+            line-height: 1;
+        }
+        .subtitle {
+            font-size: 9.5pt;
+            color: #374151;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+        .contact {
+            margin-top: 5px;
+            font-size: 8pt;
+            color: #4b5563;
+            line-height: 1.5;
+        }
+        .contact a { color: #4b5563; text-decoration: none; }
+        .sep { margin: 0 5px; color: #d1d5db; }
+
+        /* ---- Section ---- */
+        .sec {
+            margin-top: 10px;
+        }
+        .sec-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: #111;
+            border-bottom: 1.5px solid #111;
+            padding-bottom: 2px;
+            margin-bottom: 6px;
+        }
+
+        /* ---- Skills ---- */
+        .skills {
+            font-size: 8pt;
+            line-height: 1.6;
+            color: #374151;
+        }
+        .skills b { color: #111; font-weight: 600; }
+
+        /* ---- Jobs ---- */
+        .job { margin-bottom: 8px; }
+        .job:last-child { margin-bottom: 0; }
+        .job-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .job-role { font-weight: 700; font-size: 9.5pt; color: #111; }
+        .job-date { font-size: 8pt; color: #6b7280; font-weight: 500; white-space: nowrap; }
+        .job-co { font-size: 8.5pt; color: #374151; margin-bottom: 3px; }
+
+        ul { margin-left: 13px; }
+        li {
+            font-size: 8pt;
+            color: #374151;
+            margin-bottom: 2.5px;
+            line-height: 1.45;
+        }
+        li:last-child { margin-bottom: 0; }
+        li b { color: #111; font-weight: 600; }
+
+        /* ---- Projects ---- */
+        .proj {
+            font-size: 8pt;
+            color: #374151;
+            margin-bottom: 2px;
+            line-height: 1.45;
+        }
+        .proj:last-child { margin-bottom: 0; }
+        .proj b { color: #111; font-weight: 600; }
+        .proj-t { color: #6b7280; font-size: 7.5pt; }
+
+        /* ---- Education ---- */
+        .edu-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .edu-deg { font-weight: 600; font-size: 9pt; color: #111; }
+        .edu-date { font-size: 8pt; color: #6b7280; font-weight: 500; }
+        .edu-school { font-size: 8pt; color: #374151; }
+
+        /* ---- Print ---- */
+        @media print {
+            body { background: white !important; }
+            .toolbar { display: none !important; }
+            .page {
+                margin: 0; box-shadow: none; border-radius: 0;
+                min-height: auto;
+                padding: 0.35in 0.4in;
+            }
+            @page { margin: 0; size: letter; }
+        }
+
+        @media (max-width: 640px) {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; padding: 16px; min-height: auto; }
+            .job-top { flex-direction: column; }
+            .edu-top { flex-direction: column; }
+            .toolbar-title { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="toolbar">
+    <div class="toolbar-inner">
+        <div class="toolbar-left">
+            <a href="index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Portfolio
+            </a>
+            <span class="toolbar-title">Resume (1-Page)</span>
+        </div>
+        <div class="toolbar-right">
+            <a href="resume.html" class="tb tb-g">Full Version</a>
+            <button class="tb tb-p" onclick="window.print()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Export PDF
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+
+    <!-- Header -->
+    <h1>Prasad Rawas</h1>
+    <div class="subtitle">Senior Full Stack Developer | Mobile Engineer</div>
+    <div class="contact">
+        Chh. Sambhaji Nagar, India<span class="sep">|</span><a href="mailto:contactprasadrawas@gmail.com">contactprasadrawas@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/prasad-rawas-392b10204">LinkedIn</a><span class="sep">|</span><a href="https://github.com/prasadrawas">GitHub</a><span class="sep">|</span><a href="https://dev.prasadrawas.online">dev.prasadrawas.online</a>
+    </div>
+
+    <!-- Summary -->
+    <div class="sec">
+        <div class="sec-title">Summary</div>
+        <div class="skills">
+            Senior Full Stack Developer and Mobile Engineer with 5.3+ years building scalable web applications, RESTful APIs, and native/cross-platform mobile apps. Sole developer on 14+ production repositories. Led a monolith-to-microservice platform rewrite (Laravel to FastAPI + React 19), designed offline-first iOS architectures, shipped Flutter apps to App Store and Play Store, provisioned AWS infrastructure via Terraform, and authored 3,000+ automated tests with up to 100% line coverage.
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="sec">
+        <div class="sec-title">Technical Skills</div>
+        <div class="skills">
+            <b>Languages:</b> Python, TypeScript, JavaScript, Swift, Dart, Kotlin, PHP, SQL, HCL, Bash &nbsp;
+            <b>Frontend:</b> React 19, Vue 3, Next.js 15, Vite, Tailwind CSS, MUI, Redux Toolkit &nbsp;
+            <b>Backend:</b> FastAPI, Laravel, Node.js, Express, Celery (task queues), Redis (caching/pub-sub), SQLAlchemy, Pydantic &nbsp;
+            <b>Mobile:</b> Swift, UIKit, CoreData, SwiftData, Flutter, Dart, Platform Channels &nbsp;
+            <b>Databases:</b> PostgreSQL, MySQL, MongoDB, Redis, Firebase, Supabase, Liquibase &nbsp;
+            <b>Cloud:</b> AWS (EC2, S3, CloudFront, SES, SNS, Route53), Terraform, Docker, Linux &nbsp;
+            <b>CI/CD:</b> Bitbucket Pipelines, Bitrise, BrowserStack, Play Store, App Store &nbsp;
+            <b>Testing:</b> pytest, Vitest, Playwright, XCTest, XCUITest, Testing Library &nbsp;
+            <b>Architecture:</b> System Design, Microservices, Event-Driven, SOLID, MVVM, Strategy Pattern, DI, REST APIs, RBAC &nbsp;
+            <b>AI:</b> Google Gemini, ChromaDB, RAG, Vector Search, LLM Tool Use, Agentic Systems
+        </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="sec">
+        <div class="sec-title">Professional Experience</div>
+
+        <div class="job">
+            <div class="job-top">
+                <span class="job-role">Senior Software Developer</span>
+                <span class="job-date">Nov 2023 – Present</span>
+            </div>
+            <div class="job-co">VoloX Private Limited (Division of ITDM)</div>
+            <ul>
+                <li>Designed system architecture and built <b>VAPR product management platform</b> end-to-end — layered FastAPI backend (40+ REST endpoints, async task queue via Celery/Redis, OTP auth, 20-permission RBAC with JWT cache invalidation) + Vue 3 SPA + PostgreSQL + Terraform IaC. Sole developer, 1,090 tests</li>
+                <li>Architected a <b>field-service dispatch platform twice</b> — redesigned from Laravel monolith to service-oriented FastAPI + React 19 — event-driven queue with pluggable connector strategy, distributed batch locking, idempotency middleware, and retry with transient/permanent failure classification across 7 environments</li>
+                <li>Built <b>offline-first iOS features</b> for RealCADENCE (Swift, SwiftData) — sequential API queue with persistent storage and automatic sync on connectivity restore, CoreData-to-SwiftData data layer migration, and comprehensive XCUITest UI automation</li>
+                <li>Led <b>Kerb Driver</b> mobile development (Flutter, Firebase, Google Maps) — profiled and optimized state management reducing unnecessary rebuilds by 30–40%, 100% test coverage. Managed end-to-end App Store + Play Store deployment</li>
+                <li>Built an <b>agentic AI system</b> — Google Gemini + ChromaDB vector store for RAG, tool registry with 5 function modules, LLM tool-use orchestration, stateful sessions — enabling natural-language product queries</li>
+                <li>Delivered <b>4+ React/Vue web portals</b> with CSV bulk operations, multi-tab filtering, i18n (EN/DE/ES), cookie-based language detection, and shared TypeScript library (20+ API service classes) consumed by 3+ apps</li>
+                <li>Provisioned <b>production Linux servers</b> end-to-end (Rocky Linux 9, Apache, systemd, PostgreSQL, Redis) and codified as Terraform IaC. Built <b>10+ CI/CD pipelines</b> with quality gates, zero-downtime deploys, and automated app store releases</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-top">
+                <span class="job-role">Junior Software Developer</span>
+                <span class="job-date">Jun 2021 – Nov 2023</span>
+            </div>
+            <div class="job-co">Aeologic Technologies</div>
+            <ul>
+                <li>Pioneered a <b>Stripe Tap to Pay Flutter plugin</b> when no official plugin existed — native Android plugin using Kotlin MethodChannel to bridge Flutter with Stripe Terminal SDK for NFC contactless payments</li>
+                <li>Built the Flutter app for <b>Micro Center</b> (30 stores, 22M+ customers) — cross-platform product browsing and real-time inventory. Shipped 6+ production mobile apps across retail, logistics, and enterprise</li>
+                <li>Led a customer-facing app from scratch to production, earning direct client recognition. Reduced production bugs via comprehensive testing practices</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Key Projects -->
+    <div class="sec">
+        <div class="sec-title">Key Projects</div>
+        <div class="proj"><b>VAPR</b> — Full-stack product platform (FastAPI, Vue 3, PostgreSQL, Celery, Terraform). 40+ endpoints, RBAC, OTP auth, AI/RAG agent. 1,090 tests. <span class="proj-t">Sole developer, 417 commits</span></div>
+        <div class="proj"><b>Service Dispatcher</b> — Monolith-to-service rewrite (Laravel → FastAPI + React 19). Event-driven queue, distributed locking, idempotency. ~1,805 tests. <span class="proj-t">7 environments, 765 commits</span></div>
+        <div class="proj"><b>RealCADENCE</b> — Offline-first enterprise iOS app (Swift, SwiftData). API queue with persistent sync, data layer migration, XCUITest automation. <span class="proj-t">597 commits</span></div>
+        <div class="proj"><b>BiteBloom</b> — AI nutrition tracker (Flutter, Gemini Vision). Meal photo → 16-nutrient breakdown, barcode scanning, food diary, progress charts. <span class="proj-t">Play Store</span></div>
+        <div class="proj"><b>TrekBooking</b> — Full-stack trek platform (Next.js 15, FastAPI, Supabase, Turborepo). 10-step wizard, multi-city pricing, admin dashboard. <span class="proj-t">182 tests</span></div>
+    </div>
+
+    <!-- Education -->
+    <div class="sec">
+        <div class="sec-title">Education</div>
+        <div class="edu-top">
+            <span class="edu-deg">B.Sc in Information Technology</span>
+            <span class="edu-date">2018 – 2021</span>
+        </div>
+        <div class="edu-school">MGM Institute of Technology, Chh. Sambhaji Nagar, Maharashtra, India</div>
+    </div>
+
+</div>
+
+</body>
+</html>
