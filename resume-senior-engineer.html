@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad Rawas - Senior Full Stack Engineer</title>
+    <meta name="description" content="Resume of Prasad Rawas, Senior Full Stack Engineer with 5.3+ years of experience.">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --accent: #2563eb;
+            --accent-bg: #eff6ff;
+            --border: #e5e7eb;
+            --bg: #ffffff;
+            --bg-page: #f3f4f6;
+            --bg-subtle: #f9fafb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg-page);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+        }
+        .toolbar-inner {
+            max-width: 8.5in;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .toolbar-left { display: flex; align-items: center; gap: 14px; }
+        .toolbar-left a {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500;
+        }
+        .toolbar-left a:hover { color: var(--text); }
+        .toolbar-left svg { width: 16px; height: 16px; }
+        .toolbar-title { font-size: 13px; font-weight: 600; color: var(--text); }
+        .toolbar-right { display: flex; gap: 8px; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 18px; border-radius: 8px; font-family: inherit;
+            font-size: 12.5px; font-weight: 500; cursor: pointer; border: none; text-decoration: none;
+        }
+        .btn svg { width: 15px; height: 15px; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+        .btn-ghost:hover { background: var(--bg-subtle); }
+
+        /* Page */
+        .page {
+            max-width: 8.5in;
+            margin: 24px auto 48px;
+            background: var(--bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 40px rgba(0,0,0,0.06);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .page-body {
+            padding: 0.45in 0.55in 0.4in;
+        }
+
+        /* Header */
+        h1 {
+            font-size: 26pt;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+        .subtitle {
+            font-size: 11pt;
+            font-weight: 500;
+            color: var(--accent);
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+        .contact {
+            font-size: 8.5pt;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .contact a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .contact a:hover { text-decoration: underline; }
+        .sep { margin: 0 6px; color: var(--border); }
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-bg), transparent);
+            margin-top: 14px;
+            border-radius: 2px;
+        }
+
+        /* Section */
+        .sec {
+            margin-top: 24px;
+        }
+        .sec-title {
+            font-size: 8.5pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .sec-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 9pt;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Skills */
+        .skills {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 28px;
+        }
+        .skill-row {
+            font-size: 8.5pt;
+            line-height: 1.55;
+            display: flex;
+            gap: 8px;
+            padding: 2px 0;
+        }
+        .skill-cat {
+            font-weight: 600;
+            color: var(--text);
+            min-width: 90px;
+            flex-shrink: 0;
+        }
+        .skill-val { color: var(--text-secondary); }
+
+        /* Jobs */
+        .job { margin-bottom: 16px; }
+        .job:last-child { margin-bottom: 0; }
+        .job-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+        .job-role { font-size: 11pt; font-weight: 700; }
+        .job-date { font-size: 8.5pt; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+        .job-company { font-size: 9pt; color: var(--text-secondary); margin-bottom: 8px; }
+        ul { margin-left: 15px; }
+        li {
+            font-size: 8.5pt;
+            color: var(--text-secondary);
+            margin-bottom: 7px;
+            line-height: 1.6;
+        }
+        li:last-child { margin-bottom: 0; }
+        li strong { color: var(--text); font-weight: 600; }
+
+        /* Projects */
+        .proj-group { margin-bottom: 16px; }
+        .proj-group:last-child { margin-bottom: 0; }
+        .proj-head {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .proj-domain {
+            font-size: 7pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            color: var(--accent);
+            background: var(--accent-bg);
+            padding: 2px 7px;
+            border-radius: 3px;
+        }
+        .proj-name { font-weight: 700; font-size: 9.5pt; }
+        .proj-desc {
+            font-size: 8.5pt;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+            line-height: 1.5;
+        }
+        .proj-tech {
+            font-size: 8pt;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        .proj-bullets { margin-left: 15px; }
+        .proj-bullets li { font-size: 8pt; margin-bottom: 3px; line-height: 1.5; }
+
+        /* Infra section */
+        .infra-group { margin-bottom: 12px; }
+        .infra-group:last-child { margin-bottom: 0; }
+        .infra-title { font-weight: 700; font-size: 9.5pt; margin-bottom: 3px; }
+        .infra-tech { font-size: 8pt; color: var(--text-muted); font-weight: 500; margin-bottom: 4px; }
+        .infra-desc { font-size: 8.5pt; color: var(--text-secondary); }
+        .infra-bullets { margin-left: 15px; }
+        .infra-bullets li { font-size: 8pt; margin-bottom: 3px; line-height: 1.5; }
+
+        /* Education */
+        .edu-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .edu-degree { font-weight: 600; font-size: 10pt; }
+        .edu-date { font-size: 8.5pt; color: var(--text-muted); font-weight: 500; }
+        .edu-school { font-size: 8.5pt; color: var(--text-secondary); margin-top: 2px; }
+
+        /* Print */
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            body { background: white !important; }
+            .toolbar { display: none !important; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; }
+            .page-body { padding: 0.35in 0.45in 0.3in; }
+            .sec { margin-top: 16px; }
+            .job { margin-bottom: 12px; }
+            li { margin-bottom: 4px; }
+            .proj-group { margin-bottom: 10px; }
+            .proj-bullets li { margin-bottom: 2px; }
+            li { page-break-inside: avoid; }
+            .proj-group { page-break-inside: avoid; }
+            .job-head { page-break-after: avoid; }
+            .job-company { page-break-after: avoid; }
+            @page { margin: 0.3in 0; size: letter; }
+            @page :first { margin-top: 0; }
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; }
+            .page-body { padding: 20px; }
+            .skills { grid-template-columns: 1fr; }
+            .job-head { flex-direction: column; }
+            .edu-head { flex-direction: column; }
+            h1 { font-size: 22pt; }
+            .toolbar-title { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="toolbar">
+    <div class="toolbar-inner">
+        <div class="toolbar-left">
+            <a href="index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Portfolio
+            </a>
+            <span class="toolbar-title">Resume - Senior Engineer</span>
+        </div>
+        <div class="toolbar-right">
+            <a href="resume.html" class="btn btn-ghost">Other Versions</a>
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Export PDF
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="page-body">
+
+        <!-- Header -->
+        <header>
+            <h1>Prasad Rawas</h1>
+            <div class="subtitle">Senior Full Stack Engineer | Python | FastAPI | React | TypeScript | AI/LLM</div>
+            <div class="contact">
+                Chh. Sambhaji Nagar, Maharashtra, India<span class="sep">|</span><a href="mailto:contactprasadrawas@gmail.com">contactprasadrawas@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/prasad-rawas-392b10204">LinkedIn</a><span class="sep">|</span><a href="https://github.com/prasadrawas">GitHub</a><span class="sep">|</span><a href="https://dev.prasadrawas.online">dev.prasadrawas.online</a>
+            </div>
+            <div class="divider"></div>
+        </header>
+
+        <!-- Summary -->
+        <section class="sec">
+            <h2 class="sec-title">Professional Summary</h2>
+            <p class="summary">
+                Senior Full Stack Engineer with <strong>5.3+ years of experience</strong> building and shipping production web applications, APIs, and mobile applications. Strong expertise in <strong>Python, FastAPI, React, TypeScript, PostgreSQL, AWS, and REST API development</strong>, with hands-on experience designing scalable backend services, asynchronous processing, role-based systems, automated testing, CI/CD, and cloud infrastructure. Experienced in building <strong>AI/LLM-powered applications</strong> using Google Gemini, RAG, vector search, tool calling, and conversational memory. Built and maintained <strong>14+ production codebases and 3,000+ automated tests</strong>, including enterprise platforms handling large-scale data processing and distributed workloads. Comfortable owning systems end-to-end, from database and API design through frontend development, testing, deployment, and production infrastructure.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section class="sec">
+            <h2 class="sec-title">Technical Skills</h2>
+            <div class="skills">
+                <div class="skill-row"><span class="skill-cat">Languages</span><span class="skill-val">Python, TypeScript, JavaScript, SQL, Swift, Dart, Kotlin, PHP, HCL, Bash</span></div>
+                <div class="skill-row"><span class="skill-cat">Frontend</span><span class="skill-val">React 19, TypeScript, Next.js 15, Vue 3, Vite, Redux Toolkit, Pinia, Tailwind CSS, MUI</span></div>
+                <div class="skill-row"><span class="skill-cat">Backend</span><span class="skill-val">FastAPI, Python, REST APIs, Laravel, Node.js, Express, Celery, Redis, SQLAlchemy, Pydantic</span></div>
+                <div class="skill-row"><span class="skill-cat">AI / LLM</span><span class="skill-val">Google Gemini, RAG, ChromaDB, Vector Search, LLM Tool Use, Agentic Systems</span></div>
+                <div class="skill-row"><span class="skill-cat">Databases</span><span class="skill-val">PostgreSQL, MySQL, MongoDB, Redis, SQLite, Firebase, Supabase, Liquibase</span></div>
+                <div class="skill-row"><span class="skill-cat">Cloud / Infra</span><span class="skill-val">AWS (EC2, S3, CloudFront, SES, SNS, Route53), Terraform, Docker, Linux, Nginx/Apache</span></div>
+                <div class="skill-row"><span class="skill-cat">CI/CD</span><span class="skill-val">Bitbucket Pipelines, GitHub Actions, Bitrise, BrowserStack</span></div>
+                <div class="skill-row"><span class="skill-cat">Testing</span><span class="skill-val">pytest, Vitest, Playwright, XCTest, XCUITest, Testing Library, PHPUnit</span></div>
+                <div class="skill-row"><span class="skill-cat">Architecture</span><span class="skill-val">System Design, Microservices, Event-Driven, SOLID, REST API Design, RBAC, MVVM, DI</span></div>
+                <div class="skill-row"><span class="skill-cat">Mobile</span><span class="skill-val">Swift, UIKit, CoreData, SwiftData, Flutter, Dart, Kotlin, Platform Channels</span></div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="sec">
+            <h2 class="sec-title">Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <span class="job-role">Senior Software Developer</span>
+                    <span class="job-date">Nov 2023 - Present</span>
+                </div>
+                <div class="job-company">Volox Innovations Pvt. Ltd. - Chh. Sambhaji Nagar, India</div>
+                <ul>
+                    <li>Designed and built an enterprise <strong>product management platform end-to-end</strong>, serving as the primary developer across backend, frontend, database, testing, and infrastructure.</li>
+                    <li>Built a <strong>FastAPI backend with 40+ REST endpoints</strong>, PostgreSQL, SQLAlchemy, Pydantic, role-based access control, and passwordless authentication using AWS SES/SNS.</li>
+                    <li>Implemented <strong>asynchronous bulk processing</strong> using Celery and Redis, handling <strong>10,000+ records per file</strong> with status tracking and reliable background processing.</li>
+                    <li>Rebuilt a field-service work order dispatch platform from <strong>Laravel to FastAPI + React 19</strong>, designing scalable APIs, frontend workflows, and backend services.</li>
+                    <li>Developed a pluggable job-routing architecture supporting service calls, email, and SMS with <strong>automatic retries, failure handling, and distributed locking across 7 deployment environments</strong>.</li>
+                    <li>Built React/Vue-based enterprise administration and operations portals with filtering, dashboards, bulk CSV processing, scheduling, reporting, and multilingual support.</li>
+                    <li>Built an <strong>AI-powered product-data assistant</strong> using <strong>Google Gemini, RAG, ChromaDB, vector search, 5 callable tool modules, and conversation memory</strong>, allowing users to query business data using natural language.</li>
+                    <li>Designed and maintained automated test suites across <strong>14+ codebases</strong>, writing <strong>3,000+ unit, integration, end-to-end, and UI automation tests</strong>.</li>
+                    <li>Achieved <strong>100% test coverage on two React applications and 98.5% coverage on a Vue application</strong>, with deployments gated on successful test execution.</li>
+                    <li>Created and maintained <strong>10+ CI/CD pipelines</strong> for automated testing, builds, deployments, zero-downtime releases, and post-deployment health checks.</li>
+                    <li>Provisioned and managed production infrastructure using <strong>AWS, Terraform, Docker, Linux, PostgreSQL, Redis, Apache/Nginx</strong>, maintaining separate development and production environments.</li>
+                    <li>Built a shared <strong>TypeScript library</strong> used across 3+ frontend applications, including API service wrappers, authentication handling, and theming.</li>
+                    <li>Developed automated validation for applications consuming the shared library to ensure compatibility before releases.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <span class="job-role">Junior Software Developer</span>
+                    <span class="job-date">Jun 2021 - Nov 2023</span>
+                </div>
+                <div class="job-company">Aeologic Technologies</div>
+                <ul>
+                    <li>Built a contactless <strong>tap-to-pay solution</strong> for Flutter applications by developing a native Android plugin in Kotlin that integrated Flutter with the Stripe Terminal SDK.</li>
+                    <li>Developed a production mobile application for a major US electronics retailer serving <strong>30 stores and 22M+ customers</strong>, supporting product browsing, real-time inventory, and cross-platform iOS/Android delivery.</li>
+                    <li>Shipped <strong>6+ production mobile applications</strong> across retail, logistics, and enterprise domains.</li>
+                    <li>Led a customer-facing mobile application from development through production release, with direct client recognition for reliability and quality.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="sec">
+            <h2 class="sec-title">Key Projects</h2>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">AI / LLM</span>
+                    <span class="proj-name">AI Chat Assistant for Product Data</span>
+                </div>
+                <div class="proj-desc">Built an AI-powered assistant that allows users to query product and business data using natural language.</div>
+                <div class="proj-tech">Google Gemini, ChromaDB, RAG, Vector Search, FastAPI</div>
+                <ul class="proj-bullets">
+                    <li>Integrated Google Gemini for natural-language understanding and response generation.</li>
+                    <li>Implemented <strong>RAG and vector search</strong> using ChromaDB to retrieve relevant product knowledge.</li>
+                    <li>Built <strong>5 callable tool modules</strong> allowing the AI assistant to interact with application data and functionality.</li>
+                    <li>Added conversation memory for multi-turn interactions.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Full Stack</span>
+                    <span class="proj-name">Product Management Platform</span>
+                </div>
+                <div class="proj-desc">Built an enterprise product management platform end-to-end as the primary developer.</div>
+                <div class="proj-tech">FastAPI, Vue 3, PostgreSQL, SQLAlchemy, Celery, Redis, Terraform</div>
+                <ul class="proj-bullets">
+                    <li>Developed 40+ REST APIs with role-based access control and passwordless authentication.</li>
+                    <li>Implemented asynchronous processing for large data imports.</li>
+                    <li>Built automated test coverage with <strong>1,090 tests</strong>.</li>
+                    <li>Provisioned cloud infrastructure using Terraform.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Platform Rewrite</span>
+                    <span class="proj-name">Field-Service Dispatch System</span>
+                </div>
+                <div class="proj-desc">Rebuilt an existing Laravel-based field-service platform using a modern Python and React stack.</div>
+                <div class="proj-tech">FastAPI, React 19, TypeScript, PostgreSQL, Celery, Redis, Laravel</div>
+                <ul class="proj-bullets">
+                    <li>Rebuilt the platform from Laravel to FastAPI + React 19.</li>
+                    <li>Designed pluggable job-routing architecture supporting multiple communication channels.</li>
+                    <li>Implemented retries, failure handling, distributed locking, and multi-environment deployments.</li>
+                    <li>Developed approximately <strong>1,805 automated tests</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">iOS</span>
+                    <span class="proj-name">Enterprise Field Operations App</span>
+                </div>
+                <div class="proj-desc">Built an offline-first iOS application used by field workers.</div>
+                <div class="proj-tech">Swift, UIKit, SwiftData, CoreData, XCUITest, MVVM</div>
+                <ul class="proj-bullets">
+                    <li>Implemented local request queuing and automatic synchronization when connectivity was restored.</li>
+                    <li>Migrated the persistence layer from CoreData to SwiftData.</li>
+                    <li>Built end-to-end UI automation covering user workflows.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Full Stack Web</span>
+                    <span class="proj-name">Trek Booking Platform</span>
+                </div>
+                <div class="proj-desc">Built a production trekking marketplace and booking platform supporting organizers, users, bookings, and administration.</div>
+                <div class="proj-tech">Next.js 15, React 19, FastAPI, Supabase, Turborepo</div>
+                <ul class="proj-bullets">
+                    <li>Built a multi-step trek creation workflow.</li>
+                    <li>Developed organizer approval and administration workflows.</li>
+                    <li>Built analytics and booking management functionality.</li>
+                    <li>Added automated test coverage with <strong>182 tests</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Flutter</span>
+                    <span class="proj-name">Delivery Driver Booking App</span>
+                </div>
+                <div class="proj-desc">Built a mobile application allowing delivery drivers to reserve loading bays.</div>
+                <div class="proj-tech">Flutter, Firebase, Google Maps, Provider</div>
+                <ul class="proj-bullets">
+                    <li>Optimized UI rendering and reduced unnecessary rebuilds by <strong>30-40%</strong>.</li>
+                    <li>Achieved <strong>100% test coverage</strong>.</li>
+                    <li>Managed production releases on both the App Store and Google Play Store.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Native Plugin</span>
+                    <span class="proj-name">Stripe Tap-to-Pay for Flutter</span>
+                </div>
+                <div class="proj-desc">Developed a native Android plugin to integrate Stripe Terminal NFC payments into Flutter applications.</div>
+                <div class="proj-tech">Flutter, Kotlin, Platform Channels, Stripe Terminal, NFC</div>
+                <ul class="proj-bullets">
+                    <li>Built the native Kotlin bridge between Flutter and Stripe Terminal.</li>
+                    <li>Enabled NFC-based contactless payment functionality before an official Flutter plugin was available.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- CI/CD & Infrastructure -->
+        <section class="sec">
+            <h2 class="sec-title">CI/CD &amp; Infrastructure</h2>
+
+            <div class="infra-group">
+                <div class="infra-title">Deployment Automation</div>
+                <div class="infra-tech">Bitbucket Pipelines, Bitrise, BrowserStack, GitHub Actions, Bash, systemd</div>
+                <ul class="infra-bullets">
+                    <li>Built and maintained <strong>10+ automated CI/CD pipelines</strong> across 7+ environments.</li>
+                    <li>Automated testing, application builds, deployments, zero-downtime releases, and post-deployment health checks.</li>
+                </ul>
+            </div>
+
+            <div class="infra-group">
+                <div class="infra-title">Cloud Infrastructure</div>
+                <div class="infra-tech">AWS EC2, S3, CloudFront, SES, Terraform, PostgreSQL, Redis, Apache, Linux</div>
+                <ul class="infra-bullets">
+                    <li>Set up production Linux infrastructure from scratch and automated provisioning.</li>
+                    <li>Created infrastructure-as-code configurations for development and production environments.</li>
+                    <li>Managed production servers, databases, caching infrastructure, and AWS services.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="sec" style="margin-bottom: 0;">
+            <h2 class="sec-title">Education</h2>
+            <div class="edu-head">
+                <span class="edu-degree">B.Sc. in Information Technology</span>
+                <span class="edu-date">2018 - 2021</span>
+            </div>
+            <div class="edu-school">MGM Institute of Technology - Chh. Sambhaji Nagar, Maharashtra</div>
+        </section>
+
+    </div>
+</div>
+
+<script>
+function exportPDF() { window.print(); }
+</script>
+</body>
+</html>
