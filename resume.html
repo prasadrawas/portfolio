@@ -619,6 +619,10 @@ function exportPDF() {
     btn.disabled = true;
     text.textContent = 'Generating...';
 
+    // Hide SVG icons (html2canvas can't render them reliably)
+    var svgs = page.querySelectorAll('svg');
+    svgs.forEach(function(s) { s.style.display = 'none'; });
+
     // Apply print-tight styles temporarily
     page.style.maxWidth = '8.5in';
     page.style.width = '8.5in';
@@ -700,6 +704,7 @@ function exportPDF() {
 
     html2pdf().set(opt).from(page).save().then(function() {
         // Restore all styles
+        svgs.forEach(function(s) { s.style.display = ''; });
         page.style.maxWidth = '';
         page.style.width = '';
         page.style.boxShadow = '';
