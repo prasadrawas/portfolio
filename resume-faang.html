@@ -306,6 +306,14 @@ function exportPDF() {
     btn.disabled = true;
     text.textContent = 'Generating...';
 
+    // Apply tight styles
+    page.style.maxWidth = '8.5in';
+    page.style.width = '8.5in';
+    page.style.boxShadow = 'none';
+    page.style.borderRadius = '0';
+    page.style.padding = '0.35in 0.4in';
+    page.style.minHeight = 'auto';
+
     var opt = {
         margin: 0,
         filename: 'Prasad_Rawas_Resume.pdf',
@@ -328,6 +336,13 @@ function exportPDF() {
     };
 
     html2pdf().set(opt).from(page).save().then(function() {
+        page.style.maxWidth = '';
+        page.style.width = '';
+        page.style.boxShadow = '';
+        page.style.borderRadius = '';
+        page.style.padding = '';
+        page.style.minHeight = '';
+
         btn.disabled = false;
         text.textContent = 'Export PDF';
     });

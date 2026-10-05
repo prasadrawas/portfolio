@@ -611,15 +611,62 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
 <script>
 function exportPDF() {
-    const btn = document.getElementById('exportBtn');
-    const text = document.getElementById('exportText');
-    const page = document.querySelector('.resume-page');
+    var btn = document.getElementById('exportBtn');
+    var text = document.getElementById('exportText');
+    var page = document.querySelector('.resume-page');
+    var body = document.querySelector('.resume-body');
 
     btn.disabled = true;
     text.textContent = 'Generating...';
 
-    const opt = {
-        margin: 0,
+    // Apply print-tight styles temporarily
+    page.style.maxWidth = '8.5in';
+    page.style.width = '8.5in';
+    page.style.boxShadow = 'none';
+    page.style.borderRadius = '0';
+    body.style.padding = '0.3in 0.4in 0.25in';
+
+    var sections = document.querySelectorAll('.r-section');
+    sections.forEach(function(s) { s.style.marginTop = '14px'; });
+
+    var jobs = document.querySelectorAll('.r-job');
+    jobs.forEach(function(j) { j.style.marginBottom = '10px'; });
+
+    var lis = document.querySelectorAll('.r-job li');
+    lis.forEach(function(l) { l.style.fontSize = '8pt'; l.style.marginBottom = '3px'; l.style.lineHeight = '1.45'; });
+
+    var projects = document.querySelector('.r-projects');
+    if (projects) projects.style.gap = '5px';
+
+    var projItems = document.querySelectorAll('.r-project');
+    projItems.forEach(function(p) { p.style.fontSize = '7.5pt'; });
+
+    var projTechs = document.querySelectorAll('.r-project-tech');
+    projTechs.forEach(function(t) { t.style.fontSize = '7pt'; });
+
+    var skills = document.querySelector('.r-skills');
+    if (skills) skills.style.gap = '3px 24px';
+
+    var skillRows = document.querySelectorAll('.r-skill-row');
+    skillRows.forEach(function(r) { r.style.fontSize = '8pt'; r.style.padding = '1px 0'; });
+
+    var name = document.querySelector('.r-name');
+    if (name) name.style.fontSize = '22pt';
+
+    var title = document.querySelector('.r-title');
+    if (title) { title.style.fontSize = '10.5pt'; title.style.marginBottom = '8px'; }
+
+    var summary = document.querySelector('.r-summary');
+    if (summary) { summary.style.fontSize = '8.5pt'; summary.style.lineHeight = '1.5'; }
+
+    var highlights = document.querySelector('.r-highlights');
+    if (highlights) { highlights.style.fontSize = '8pt'; highlights.style.marginTop = '6px'; }
+
+    var sectionTitles = document.querySelectorAll('.r-section-title');
+    sectionTitles.forEach(function(t) { t.style.marginBottom = '6px'; t.style.fontSize = '8pt'; });
+
+    var opt = {
+        margin: [0.35, 0, 0.35, 0],
         filename: 'Prasad_Rawas_Resume.pdf',
         image: { type: 'jpeg', quality: 1 },
         html2canvas: {
@@ -635,13 +682,31 @@ function exportPDF() {
         },
         pagebreak: {
             mode: ['avoid-all', 'css', 'legacy'],
-            before: [],
-            after: [],
-            avoid: ['.r-job', '.r-project', '.r-section']
+            avoid: ['.r-job', '.r-project']
         }
     };
 
     html2pdf().set(opt).from(page).save().then(function() {
+        // Restore all styles
+        page.style.maxWidth = '';
+        page.style.width = '';
+        page.style.boxShadow = '';
+        page.style.borderRadius = '';
+        body.style.padding = '';
+        sections.forEach(function(s) { s.style.marginTop = ''; });
+        jobs.forEach(function(j) { j.style.marginBottom = ''; });
+        lis.forEach(function(l) { l.style.fontSize = ''; l.style.marginBottom = ''; l.style.lineHeight = ''; });
+        if (projects) projects.style.gap = '';
+        projItems.forEach(function(p) { p.style.fontSize = ''; });
+        projTechs.forEach(function(t) { t.style.fontSize = ''; });
+        if (skills) skills.style.gap = '';
+        skillRows.forEach(function(r) { r.style.fontSize = ''; r.style.padding = ''; });
+        if (name) name.style.fontSize = '';
+        if (title) { title.style.fontSize = ''; title.style.marginBottom = ''; }
+        if (summary) { summary.style.fontSize = ''; summary.style.lineHeight = ''; }
+        if (highlights) { highlights.style.fontSize = ''; highlights.style.marginTop = ''; }
+        sectionTitles.forEach(function(t) { t.style.marginBottom = ''; t.style.fontSize = ''; });
+
         btn.disabled = false;
         text.textContent = 'Export PDF';
     });
