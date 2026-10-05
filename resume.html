@@ -400,11 +400,14 @@
             .r-edu-degree { font-size: 9pt; }
 
 
-            /* Page break control */
-            .r-job { page-break-inside: avoid; }
+            /* Page break control - avoid splitting individual items, allow jobs to split */
+            li { page-break-inside: avoid; }
             .r-project { page-break-inside: avoid; }
+            .r-job-head { page-break-after: avoid; }
+            .r-job-company { page-break-after: avoid; }
+            .r-edu-head { page-break-after: avoid; }
 
-            @page { margin: 0.4in 0; size: letter; }
+            @page { margin: 0.3in 0; size: letter; }
             @page :first { margin-top: 0; }
         }
 
@@ -608,51 +611,9 @@
     </div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
 <script>
 function exportPDF() {
-    var btn = document.getElementById('exportBtn');
-    var text = document.getElementById('exportText');
-    var page = document.querySelector('.resume-page');
-
-    btn.disabled = true;
-    text.textContent = 'Generating...';
-
-    // Wait for fonts to load before capturing
-    document.fonts.ready.then(function() {
-
-    // Minimal style changes for capture
-    page.style.boxShadow = 'none';
-    page.style.borderRadius = '0';
-    page.style.margin = '0';
-
-    var opt = {
-        margin: 0,
-        filename: 'Prasad_Rawas_Resume.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: {
-            scale: 2,
-            useCORS: true,
-            logging: false
-        },
-        jsPDF: {
-            unit: 'px',
-            format: [page.offsetWidth, page.offsetHeight],
-            orientation: 'portrait',
-            hotfixes: ['px_scaling']
-        }
-    };
-
-    html2pdf().set(opt).from(page).save().then(function() {
-        page.style.boxShadow = '';
-        page.style.borderRadius = '';
-        page.style.margin = '';
-
-        btn.disabled = false;
-        text.textContent = 'Export PDF';
-    });
-
-    }); // end fonts.ready
+    window.print();
 }
 </script>
 </body>
