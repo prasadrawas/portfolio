@@ -621,9 +621,7 @@ function exportPDF() {
     // Wait for fonts to load before capturing
     document.fonts.ready.then(function() {
 
-    // Fix width to letter size for consistent capture
-    page.style.width = '8.5in';
-    page.style.maxWidth = '8.5in';
+    // Minimal style changes for capture
     page.style.boxShadow = 'none';
     page.style.borderRadius = '0';
     page.style.margin = '0';
@@ -635,23 +633,17 @@ function exportPDF() {
         html2canvas: {
             scale: 2,
             useCORS: true,
-            logging: false,
-            windowWidth: 816
+            logging: false
         },
         jsPDF: {
-            unit: 'in',
-            format: 'letter',
-            orientation: 'portrait'
-        },
-        pagebreak: {
-            mode: ['css'],
-            avoid: ['li', '.r-project']
+            unit: 'px',
+            format: [page.offsetWidth, page.offsetHeight],
+            orientation: 'portrait',
+            hotfixes: ['px_scaling']
         }
     };
 
     html2pdf().set(opt).from(page).save().then(function() {
-        page.style.width = '';
-        page.style.maxWidth = '';
         page.style.boxShadow = '';
         page.style.borderRadius = '';
         page.style.margin = '';
