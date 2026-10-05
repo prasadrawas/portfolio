@@ -627,22 +627,34 @@ function exportPDF() {
     body.style.padding = '0.3in 0.4in 0.25in';
 
     var sections = document.querySelectorAll('.r-section');
-    sections.forEach(function(s) { s.style.marginTop = '14px'; });
+    sections.forEach(function(s) { s.style.marginTop = '12px'; });
+
+    var header = document.querySelector('.r-header');
+    if (header) header.style.marginBottom = '8px';
 
     var jobs = document.querySelectorAll('.r-job');
-    jobs.forEach(function(j) { j.style.marginBottom = '10px'; });
+    jobs.forEach(function(j) { j.style.marginBottom = '8px'; });
+
+    var jobCompanies = document.querySelectorAll('.r-job-company');
+    jobCompanies.forEach(function(c) { c.style.marginBottom = '4px'; });
 
     var lis = document.querySelectorAll('.r-job li');
-    lis.forEach(function(l) { l.style.fontSize = '8pt'; l.style.marginBottom = '3px'; l.style.lineHeight = '1.45'; });
+    lis.forEach(function(l) { l.style.fontSize = '7.5pt'; l.style.marginBottom = '2px'; l.style.lineHeight = '1.4'; });
 
     var projects = document.querySelector('.r-projects');
     if (projects) projects.style.gap = '5px';
 
     var projItems = document.querySelectorAll('.r-project');
-    projItems.forEach(function(p) { p.style.fontSize = '7.5pt'; });
+    projItems.forEach(function(p) { p.style.fontSize = '7pt'; });
 
     var projTechs = document.querySelectorAll('.r-project-tech');
-    projTechs.forEach(function(t) { t.style.fontSize = '7pt'; });
+    projTechs.forEach(function(t) { t.style.fontSize = '6.5pt'; });
+
+    var projDomains = document.querySelectorAll('.r-project-domain');
+    projDomains.forEach(function(d) { d.style.fontSize = '6pt'; });
+
+    var projNames = document.querySelectorAll('.r-project-name');
+    projNames.forEach(function(n) { n.style.fontSize = '7pt'; });
 
     var skills = document.querySelector('.r-skills');
     if (skills) skills.style.gap = '3px 24px';
@@ -666,7 +678,7 @@ function exportPDF() {
     sectionTitles.forEach(function(t) { t.style.marginBottom = '6px'; t.style.fontSize = '8pt'; });
 
     var opt = {
-        margin: [0.35, 0, 0.35, 0],
+        margin: [0.3, 0, 0.3, 0],
         filename: 'Prasad_Rawas_Resume.pdf',
         image: { type: 'jpeg', quality: 1 },
         html2canvas: {
@@ -681,8 +693,8 @@ function exportPDF() {
             orientation: 'portrait'
         },
         pagebreak: {
-            mode: ['avoid-all', 'css', 'legacy'],
-            avoid: ['.r-job', '.r-project']
+            mode: ['css'],
+            avoid: ['li', '.r-project']
         }
     };
 
@@ -693,12 +705,16 @@ function exportPDF() {
         page.style.boxShadow = '';
         page.style.borderRadius = '';
         body.style.padding = '';
+        if (header) header.style.marginBottom = '';
         sections.forEach(function(s) { s.style.marginTop = ''; });
         jobs.forEach(function(j) { j.style.marginBottom = ''; });
+        jobCompanies.forEach(function(c) { c.style.marginBottom = ''; });
         lis.forEach(function(l) { l.style.fontSize = ''; l.style.marginBottom = ''; l.style.lineHeight = ''; });
         if (projects) projects.style.gap = '';
         projItems.forEach(function(p) { p.style.fontSize = ''; });
         projTechs.forEach(function(t) { t.style.fontSize = ''; });
+        projDomains.forEach(function(d) { d.style.fontSize = ''; });
+        projNames.forEach(function(n) { n.style.fontSize = ''; });
         if (skills) skills.style.gap = '';
         skillRows.forEach(function(r) { r.style.fontSize = ''; r.style.padding = ''; });
         if (name) name.style.fontSize = '';
