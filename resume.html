@@ -618,6 +618,9 @@ function exportPDF() {
     btn.disabled = true;
     text.textContent = 'Generating...';
 
+    // Wait for fonts to load before capturing
+    document.fonts.ready.then(function() {
+
     // Fix width to letter size for consistent capture
     page.style.width = '8.5in';
     page.style.maxWidth = '8.5in';
@@ -656,6 +659,8 @@ function exportPDF() {
         btn.disabled = false;
         text.textContent = 'Export PDF';
     });
+
+    }); // end fonts.ready
 }
 </script>
 </body>
