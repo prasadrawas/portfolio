@@ -197,9 +197,9 @@
         </div>
         <div class="toolbar-right">
             <a href="resume.html" class="tb tb-g">Full Version</a>
-            <button class="tb tb-p" onclick="window.print()">
+            <button class="tb tb-p" id="exportBtn" onclick="exportPDF()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                Export PDF
+                <span id="exportText">Export PDF</span>
             </button>
         </div>
     </div>
@@ -296,5 +296,42 @@
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.2/html2pdf.bundle.min.js"></script>
+<script>
+function exportPDF() {
+    var btn = document.getElementById('exportBtn');
+    var text = document.getElementById('exportText');
+    var page = document.querySelector('.page');
+
+    btn.disabled = true;
+    text.textContent = 'Generating...';
+
+    var opt = {
+        margin: 0,
+        filename: 'Prasad_Rawas_Resume.pdf',
+        image: { type: 'jpeg', quality: 1 },
+        html2canvas: {
+            scale: 2,
+            useCORS: true,
+            letterRendering: true,
+            logging: false
+        },
+        jsPDF: {
+            unit: 'in',
+            format: 'letter',
+            orientation: 'portrait'
+        },
+        pagebreak: {
+            mode: ['avoid-all', 'css', 'legacy'],
+            avoid: ['.job', '.proj', '.sec']
+        }
+    };
+
+    html2pdf().set(opt).from(page).save().then(function() {
+        btn.disabled = false;
+        text.textContent = 'Export PDF';
+    });
+}
+</script>
 </body>
 </html>
