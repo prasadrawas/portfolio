@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad Rawas - Web Solutions Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --accent: #1a73e8;
+            --accent-bg: #e8f0fe;
+            --border: #e5e7eb;
+            --bg: #ffffff;
+            --bg-page: #f3f4f6;
+            --bg-subtle: #f9fafb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg-page);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .toolbar {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 12px 0;
+        }
+        .toolbar-inner {
+            max-width: 8.5in; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
+        }
+        .toolbar-left { display: flex; align-items: center; gap: 14px; }
+        .toolbar-left a {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500;
+        }
+        .toolbar-left a:hover { color: var(--text); }
+        .toolbar-left svg { width: 16px; height: 16px; }
+        .toolbar-title { font-size: 13px; font-weight: 600; color: var(--text); }
+        .toolbar-right { display: flex; align-items: center; gap: 10px; }
+        .job-ids {
+            font-size: 11px; color: var(--text-muted); font-family: 'Courier New', monospace;
+            background: var(--bg-subtle); border: 1px solid var(--border);
+            padding: 4px 10px; border-radius: 4px;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 18px; border-radius: 8px; font-family: inherit;
+            font-size: 12.5px; font-weight: 500; cursor: pointer; border: none; text-decoration: none;
+        }
+        .btn svg { width: 15px; height: 15px; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #1557b0; }
+
+        .page {
+            max-width: 8.5in; margin: 24px auto 48px; background: var(--bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 40px rgba(0,0,0,0.06);
+            border-radius: 10px; overflow: hidden;
+        }
+        .page-body { padding: 0.45in 0.55in 0.4in; }
+
+        h1 { font-size: 26pt; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; }
+        .subtitle { font-size: 11pt; font-weight: 500; color: var(--accent); margin-top: 5px; margin-bottom: 10px; }
+        .contact { font-size: 8.5pt; color: var(--text-muted); line-height: 1.6; }
+        .contact a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .contact a:hover { text-decoration: underline; }
+        .sep { margin: 0 6px; color: var(--border); }
+        .divider { height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-bg), transparent); margin-top: 14px; border-radius: 2px; }
+
+        .sec { margin-top: 24px; }
+        .sec-title {
+            font-size: 8.5pt; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--accent); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sec-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        .summary { font-size: 9pt; line-height: 1.7; color: var(--text-secondary); }
+
+        .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
+        .skill-row { font-size: 8.5pt; line-height: 1.55; display: flex; gap: 8px; padding: 2px 0; }
+        .skill-cat { font-weight: 600; color: var(--text); min-width: 100px; flex-shrink: 0; }
+        .skill-val { color: var(--text-secondary); }
+
+        .job { margin-bottom: 16px; }
+        .job:last-child { margin-bottom: 0; }
+        .job-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .job-role { font-size: 11pt; font-weight: 700; }
+        .job-date { font-size: 8.5pt; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+        .job-company { font-size: 9pt; color: var(--text-secondary); margin-bottom: 8px; }
+        ul { margin-left: 15px; }
+        li { font-size: 8.5pt; color: var(--text-secondary); margin-bottom: 7px; line-height: 1.6; }
+        li:last-child { margin-bottom: 0; }
+        li strong { color: var(--text); font-weight: 600; }
+
+        .proj-group { margin-bottom: 14px; }
+        .proj-group:last-child { margin-bottom: 0; }
+        .proj-head { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+        .proj-domain {
+            font-size: 7pt; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.7px; color: var(--accent); background: var(--accent-bg);
+            padding: 2px 7px; border-radius: 3px;
+        }
+        .proj-name { font-weight: 700; font-size: 9.5pt; }
+        .proj-desc { font-size: 8.5pt; color: var(--text-secondary); margin-bottom: 4px; line-height: 1.5; }
+        .proj-tech { font-size: 8pt; color: var(--text-muted); font-weight: 500; margin-bottom: 5px; }
+        .proj-bullets { margin-left: 15px; }
+        .proj-bullets li { font-size: 8pt; margin-bottom: 3px; line-height: 1.5; }
+
+        .edu-head { display: flex; justify-content: space-between; align-items: baseline; }
+        .edu-degree { font-weight: 600; font-size: 10pt; }
+        .edu-date { font-size: 8.5pt; color: var(--text-muted); font-weight: 500; }
+        .edu-school { font-size: 8.5pt; color: var(--text-secondary); margin-top: 2px; }
+
+        @media print {
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+            body { background: white !important; }
+            .toolbar { display: none !important; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; }
+            .page-body { padding: 0.3in 0.45in 0.25in; }
+            h1 { font-size: 22pt; }
+            .subtitle { font-size: 10pt; margin-top: 3px; margin-bottom: 7px; }
+            .contact { font-size: 8pt; }
+            .divider { margin-top: 9px; }
+            .sec { margin-top: 12px; }
+            .sec-title { font-size: 7.5pt; margin-bottom: 6px; }
+            .summary { font-size: 8.5pt; line-height: 1.5; }
+            .skills { gap: 3px 22px; }
+            .skill-row { font-size: 8pt; line-height: 1.4; padding: 1px 0; }
+            .job { margin-bottom: 10px; }
+            .job-role { font-size: 10pt; }
+            .job-company { font-size: 8.5pt; margin-bottom: 5px; }
+            li { font-size: 8pt; margin-bottom: 3px; line-height: 1.45; page-break-inside: avoid; }
+            .proj-group { margin-bottom: 8px; page-break-inside: avoid; }
+            .proj-name { font-size: 9pt; }
+            .proj-desc { font-size: 8pt; margin-bottom: 2px; }
+            .proj-tech { font-size: 7.5pt; margin-bottom: 3px; }
+            .proj-domain { font-size: 6.5pt; }
+            .proj-bullets li { font-size: 7.5pt; margin-bottom: 2px; line-height: 1.4; }
+            .edu-degree { font-size: 9.5pt; }
+            .job-head { page-break-after: avoid; }
+            .job-company { page-break-after: avoid; }
+            @page { margin: 0.3in 0; size: letter; }
+            @page :first { margin-top: 0; }
+        }
+
+        @media (max-width: 640px) {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; }
+            .page-body { padding: 20px; }
+            .skills { grid-template-columns: 1fr; }
+            .job-head, .edu-head { flex-direction: column; }
+            h1 { font-size: 22pt; }
+            .toolbar-title, .job-ids { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="toolbar">
+    <div class="toolbar-inner">
+        <div class="toolbar-left">
+            <a href="index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Portfolio
+            </a>
+            <span class="toolbar-title">Resume - Google/YouTube</span>
+        </div>
+        <div class="toolbar-right">
+            <span class="job-ids">94377124474823366 | Web Solutions Engineer</span>
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Export PDF
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="page-body">
+
+        <header>
+            <h1>Prasad Rawas</h1>
+            <div class="subtitle">Full Stack Web Solutions Engineer | Python | TypeScript | SQL | AI/LLM</div>
+            <div class="contact">
+                Chh. Sambhaji Nagar, India<span class="sep">|</span><a href="mailto:contactprasadrawas@gmail.com">contactprasadrawas@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/prasad-rawas-392b10204">LinkedIn</a><span class="sep">|</span><a href="https://github.com/prasadrawas">GitHub</a><span class="sep">|</span><a href="https://dev.prasadrawas.online">dev.prasadrawas.online</a>
+            </div>
+            <div class="divider"></div>
+        </header>
+
+        <!-- Summary -->
+        <section class="sec">
+            <h2 class="sec-title">Professional Summary</h2>
+            <p class="summary">
+                Full stack engineer with <strong>5.3+ years of experience</strong> designing, building, and deploying scalable web applications, backend services, and data processing pipelines. Strong expertise in <strong>Python, TypeScript, JavaScript, SQL (PostgreSQL), and NoSQL (MongoDB, Redis)</strong>. Experienced in building <strong>AI/LLM-powered features</strong> using Google Gemini, RAG, vector search, and tool calling. Comfortable owning the full development lifecycle from writing and reviewing technical design documents, through implementation and testing, to deploying, monitoring, and supporting systems in production. Experienced in DevOps practices including CI/CD pipelines, infrastructure-as-code, and production reliability. Proven ability to collaborate cross-functionally with product managers, stakeholders, and engineering teams to identify problems, design solutions, and ship incrementally.
+            </p>
+        </section>
+
+        <!-- Skills -->
+        <section class="sec">
+            <h2 class="sec-title">Technical Skills</h2>
+            <div class="skills">
+                <div class="skill-row"><span class="skill-cat">Languages</span><span class="skill-val">Python, TypeScript, JavaScript, SQL, Swift, Dart, Kotlin, PHP, HCL, Bash</span></div>
+                <div class="skill-row"><span class="skill-cat">Frontend</span><span class="skill-val">React 19, TypeScript, Next.js 15, Vue 3, Vite, Redux Toolkit, Tailwind CSS, MUI</span></div>
+                <div class="skill-row"><span class="skill-cat">Backend</span><span class="skill-val">Python (FastAPI), Node.js, Express, Laravel, REST APIs, Microservices, Celery, Redis</span></div>
+                <div class="skill-row"><span class="skill-cat">Databases</span><span class="skill-val">PostgreSQL (schema design, query optimization), MongoDB, Redis, MySQL, SQLite, Supabase</span></div>
+                <div class="skill-row"><span class="skill-cat">AI / LLM</span><span class="skill-val">Google Gemini, RAG, ChromaDB, Vector Search, LLM Tool Calling, Agentic Systems</span></div>
+                <div class="skill-row"><span class="skill-cat">Data Pipelines</span><span class="skill-val">Celery task queues, Redis pub/sub, async batch processing, ETL, bulk data import/export</span></div>
+                <div class="skill-row"><span class="skill-cat">Cloud / Infra</span><span class="skill-val">AWS (EC2, S3, CloudFront, SES, SNS, Route53), Terraform (IaC), Docker, Linux</span></div>
+                <div class="skill-row"><span class="skill-cat">DevOps / SRE</span><span class="skill-val">CI/CD (Bitbucket Pipelines, GitHub Actions), zero-downtime deploys, health checks, structured logging, monitoring</span></div>
+                <div class="skill-row"><span class="skill-cat">Testing</span><span class="skill-val">pytest, Vitest, Playwright, XCTest, XCUITest, Testing Library, 3,000+ tests written</span></div>
+                <div class="skill-row"><span class="skill-cat">System Design</span><span class="skill-val">Microservices, event-driven architecture, distributed locking, idempotency, RBAC, OAuth2/JWT</span></div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="sec">
+            <h2 class="sec-title">Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <span class="job-role">Senior Software Developer</span>
+                    <span class="job-date">Nov 2023 - Present</span>
+                </div>
+                <div class="job-company">Volox Innovations Pvt. Ltd. - Remote</div>
+                <ul>
+                    <li>Designed, built, and deployed an <strong>enterprise web application end-to-end</strong> as the primary developer. Built a Python/FastAPI backend with 40+ REST API endpoints, a responsive Vue 3 frontend, PostgreSQL database with optimized schema design, and Terraform-provisioned AWS infrastructure.</li>
+                    <li>Built <strong>data pipelines for bulk processing</strong> using Celery and Redis as a distributed task queue, handling 10,000+ records per file with progress tracking, error handling, row-level validation, and reliable background job execution.</li>
+                    <li>Implemented a <strong>20-permission role-based access control system</strong> with JWT token management, passwordless authentication (AWS SES/SNS), rate limiting, and permission dependency enforcement.</li>
+                    <li>Rebuilt a field-service dispatch platform from <strong>Laravel to Python/FastAPI + React 19</strong>, designing a scalable service-oriented architecture with pluggable job routing, automatic retries, failure classification, distributed locking, and idempotency middleware across 7 deployment environments.</li>
+                    <li>Built an <strong>AI/LLM-powered assistant using Google Gemini</strong> with RAG (ChromaDB vector search), 5 callable tool modules for live data interaction, and conversation memory, enabling users to query business data using natural language.</li>
+                    <li>Built <strong>React and Vue-based web applications</strong> with responsive UX-rich frontends including dashboards, data tables, bulk CSV operations, multi-tab filtering, scheduling, reporting, and multilingual support (EN/DE/ES).</li>
+                    <li>Wrote and reviewed <strong>technical design documents</strong>, architecture guides, API documentation (Swagger/ReDoc), and Postman collections. Authored detailed README documentation across 40+ repositories.</li>
+                    <li>Designed and maintained <strong>3,000+ automated tests</strong> (unit, integration, E2E, UI automation) using pytest, Vitest, Playwright, and XCUITest. Achieved 100% coverage on two React apps. All deployments gated on passing test suites.</li>
+                    <li>Built <strong>10+ CI/CD pipelines</strong> with automated testing, builds, zero-downtime deployments (symlink swap), post-deployment health checks, and structured logging with rotating file logs per process.</li>
+                    <li>Provisioned and managed <strong>production infrastructure</strong> using AWS (EC2, S3, CloudFront, SES, Route53), Terraform, Docker, and Linux. Maintained environment parity across development and production.</li>
+                    <li>Built a <strong>shared TypeScript library</strong> used by 3+ web applications with 20+ API service wrappers, auth interceptors, and theming. Created automated consumer validation to ensure compatibility before every release.</li>
+                    <li>Partnered closely with <strong>product managers and cross-functional stakeholders</strong> to iteratively turn requirements into product enhancements delivered incrementally.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <span class="job-role">Software Developer</span>
+                    <span class="job-date">Jun 2021 - Nov 2023</span>
+                </div>
+                <div class="job-company">Aeologic Technologies - Remote</div>
+                <ul>
+                    <li>Built a <strong>native SDK/plugin</strong> in Kotlin bridging Flutter with the Stripe Terminal SDK for NFC contactless payments. Produced clean, tested code and integration documentation for developer consumption.</li>
+                    <li>Developed a production web and mobile application for a major US retailer (<strong>30 stores, 22M+ customers</strong>) with product browsing, real-time inventory, and cross-platform delivery.</li>
+                    <li>Shipped <strong>6+ production applications</strong> across retail, logistics, and enterprise domains. Led a customer-facing app from development through deployment with direct client recognition for reliability.</li>
+                    <li>Collaborated with product managers and cross-functional teams to iteratively deliver features, resolve production issues, and improve application performance.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="sec">
+            <h2 class="sec-title">Key Projects</h2>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">AI / LLM</span>
+                    <span class="proj-name">AI-Powered Data Assistant</span>
+                </div>
+                <div class="proj-desc">Built an LLM-powered assistant that allows users to query business data using natural language.</div>
+                <div class="proj-tech">Python, Google Gemini, ChromaDB, RAG, Vector Search, FastAPI, Tool Calling</div>
+                <ul class="proj-bullets">
+                    <li>Integrated Google Gemini for natural-language understanding with <strong>RAG and vector search</strong> using ChromaDB.</li>
+                    <li>Built <strong>5 callable tool modules</strong> for the LLM to interact with live application data.</li>
+                    <li>Implemented stateful conversation memory for multi-turn interactions.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Full Stack Web App</span>
+                    <span class="proj-name">Product Management Platform</span>
+                </div>
+                <div class="proj-desc">End-to-end web application with secure APIs, async data pipelines, and cloud infrastructure.</div>
+                <div class="proj-tech">Python/FastAPI, Vue 3, TypeScript, PostgreSQL, Celery, Redis, AWS, Terraform</div>
+                <ul class="proj-bullets">
+                    <li>40+ REST APIs with RBAC, passwordless auth, schema validation, and rate limiting.</li>
+                    <li>Async data pipeline processing <strong>10,000+ records</strong> per file with Celery/Redis.</li>
+                    <li>Provisioned cloud infrastructure using Terraform. <strong>1,090 automated tests.</strong></li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">System Redesign</span>
+                    <span class="proj-name">Field-Service Dispatch Platform</span>
+                </div>
+                <div class="proj-desc">Rebuilt from a monolithic PHP application to a scalable Python + React architecture.</div>
+                <div class="proj-tech">Python/FastAPI, React 19, TypeScript, PostgreSQL, Celery, Redis, SQL</div>
+                <ul class="proj-bullets">
+                    <li>Designed pluggable job-routing with retries, distributed locking, idempotency, and failure classification.</li>
+                    <li>Deployed across <strong>7 environments</strong> with zero-downtime releases. ~1,805 automated tests.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Data Pipeline</span>
+                    <span class="proj-name">Bulk Import/Export Processing Engine</span>
+                </div>
+                <div class="proj-desc">Async data pipeline for large-scale CSV import, QR code generation, and data export.</div>
+                <div class="proj-tech">Python, Celery, Redis, PostgreSQL, AWS S3, SQL</div>
+                <ul class="proj-bullets">
+                    <li>Savepoint-based batch commits (50 rows), row-level error tracking, stale job detection and cleanup.</li>
+                    <li>QR bulk export with async ZIP generation, S3 storage, and presigned URL downloads.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Full Stack Web</span>
+                    <span class="proj-name">Trek Booking Platform</span>
+                </div>
+                <div class="proj-tech">Next.js 15, React 19, Python/FastAPI, Supabase (PostgreSQL), TypeScript</div>
+                <ul class="proj-bullets">
+                    <li>Full-stack booking platform with multi-step workflows, admin dashboard, SQL database design. 182 tests.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">DevOps / SRE</span>
+                    <span class="proj-name">CI/CD and Production Infrastructure</span>
+                </div>
+                <div class="proj-tech">Bitbucket Pipelines, GitHub Actions, AWS, Terraform, Docker, Linux, Bash</div>
+                <ul class="proj-bullets">
+                    <li>10+ CI/CD pipelines with automated testing, zero-downtime deploys, health checks, and structured logging.</li>
+                    <li>Production Linux servers (Rocky Linux 9, Apache/Nginx, PostgreSQL, Redis) with Terraform IaC.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="sec" style="margin-bottom: 0;">
+            <h2 class="sec-title">Education</h2>
+            <div class="edu-head">
+                <span class="edu-degree">B.Sc. in Information Technology</span>
+                <span class="edu-date">2018 - 2021</span>
+            </div>
+            <div class="edu-school">MGM Institute of Technology - Chh. Sambhaji Nagar, Maharashtra, India</div>
+        </section>
+
+    </div>
+</div>
+
+<script>
+function exportPDF() { window.print(); }
+</script>
+</body>
+</html>
