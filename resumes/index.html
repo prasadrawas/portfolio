@@ -99,6 +99,18 @@
             font-size: 11px; color: #4b5563;
         }
 
+        .section-label {
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1.5px; color: #4b5563;
+            margin-bottom: 14px; margin-top: 40px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .section-label::after {
+            content: ''; flex: 1; height: 1px;
+            background: rgba(255,255,255,0.06);
+        }
+        .section-label:first-of-type { margin-top: 0; }
+
         @media (max-width: 640px) {
             .container { padding: 32px 16px 60px; }
             h1 { font-size: 22px; }
@@ -123,11 +135,24 @@
     <h1>My Resumes</h1>
     <p class="subtitle">Tailored resumes for different roles and companies. Click to view.</p>
 
+    <!-- General Resumes -->
+    <div class="section-label">General</div>
     <div class="resume-list">
+
+        <a href="resume-senior-engineer.html" class="resume-card">
+            <div class="card-left">
+                <div class="card-title">Senior Full Stack Engineer - Python / AI / LLM</div>
+                <div class="card-meta">
+                    <span class="card-tag tag-general">Default</span>
+                    Python and AI-focused positioning
+                </div>
+            </div>
+            <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
 
         <a href="resume.html" class="resume-card">
             <div class="card-left">
-                <div class="card-title">General - Full Stack Developer & Mobile Engineer</div>
+                <div class="card-title">Full Stack Developer & Mobile Engineer</div>
                 <div class="card-meta">
                     <span class="card-tag tag-general">General</span>
                     Visual version with domain-labeled projects
@@ -140,29 +165,24 @@
             <div class="card-left">
                 <div class="card-title">FAANG - 1-Page ATS Optimized</div>
                 <div class="card-meta">
-                    <span class="card-tag tag-faang">FAANG</span>
+                    <span class="card-tag tag-faang">1-Page</span>
                     Single page, dense, plain text for ATS
                 </div>
             </div>
             <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
         </a>
 
-        <a href="resume-senior-engineer.html" class="resume-card">
-            <div class="card-left">
-                <div class="card-title">Senior Full Stack Engineer - Python / AI / LLM</div>
-                <div class="card-meta">
-                    <span class="card-tag tag-general">General</span>
-                    Python and AI-focused positioning
-                </div>
-            </div>
-            <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </a>
+    </div>
+
+    <!-- JD Tailored Resumes -->
+    <div class="section-label">JD Tailored</div>
+    <div class="resume-list">
 
         <a href="resume-google-94377124474823366.html" class="resume-card">
             <div class="card-left">
                 <div class="card-title">Google - Web Solutions Engineer</div>
                 <div class="card-meta">
-                    <span class="card-tag tag-company">Company</span>
+                    <span class="card-tag tag-company">Google</span>
                     <span class="card-ids">94377124474823366</span>
                 </div>
             </div>
@@ -173,7 +193,7 @@
             <div class="card-left">
                 <div class="card-title">Autodesk - Senior Software Developer + Developer Advocate AI</div>
                 <div class="card-meta">
-                    <span class="card-tag tag-company">Company</span>
+                    <span class="card-tag tag-company">Autodesk</span>
                     <span class="card-ids">26WD101268 | 26WD100915</span>
                 </div>
             </div>
@@ -184,7 +204,7 @@
             <div class="card-left">
                 <div class="card-title">Atlassian - Backend Software Engineer II</div>
                 <div class="card-meta">
-                    <span class="card-tag tag-company">Company</span>
+                    <span class="card-tag tag-company">Atlassian</span>
                     <span class="card-ids">REQ-2026-1248</span>
                 </div>
             </div>
