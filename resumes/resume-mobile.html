@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prasad Rawas - Senior Mobile Application Developer</title>
+    <meta name="description" content="Resume of Prasad Rawas, Senior Mobile Application Developer specializing in Flutter, iOS (Swift), Android (Kotlin), and React Native.">
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --accent: #0284c7;
+            --accent-bg: #f0f9ff;
+            --border: #e5e7eb;
+            --bg: #ffffff;
+            --bg-page: #f3f4f6;
+            --bg-subtle: #f9fafb;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 9.5pt;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg-page);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .toolbar {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.9); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 12px 0;
+        }
+        .toolbar-inner {
+            max-width: 8.5in; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center; padding: 0 20px;
+        }
+        .toolbar-left { display: flex; align-items: center; gap: 14px; }
+        .toolbar-left a {
+            display: inline-flex; align-items: center; gap: 5px;
+            color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500;
+        }
+        .toolbar-left a:hover { color: var(--text); }
+        .toolbar-left svg { width: 16px; height: 16px; }
+        .toolbar-title { font-size: 13px; font-weight: 600; color: var(--text); }
+        .toolbar-right { display: flex; align-items: center; gap: 10px; }
+        .tag-badge {
+            font-size: 11px; color: #0284c7; font-weight: 600;
+            background: var(--accent-bg); border: 1px solid #bae6fd;
+            padding: 4px 10px; border-radius: 4px;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 8px 18px; border-radius: 8px; font-family: inherit;
+            font-size: 12.5px; font-weight: 500; cursor: pointer; border: none; text-decoration: none;
+        }
+        .btn svg { width: 15px; height: 15px; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: #0369a1; }
+
+        .page {
+            max-width: 8.5in; margin: 24px auto 48px; background: var(--bg);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 40px rgba(0,0,0,0.06);
+            border-radius: 10px; overflow: hidden;
+        }
+        .page-body { padding: 0.45in 0.55in 0.4in; }
+
+        h1 { font-size: 26pt; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; }
+        .subtitle { font-size: 11pt; font-weight: 600; color: var(--accent); margin-top: 5px; margin-bottom: 10px; }
+        .contact { font-size: 8.5pt; color: var(--text-muted); line-height: 1.6; }
+        .contact a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .contact a:hover { text-decoration: underline; }
+        .sep { margin: 0 6px; color: var(--border); }
+        .divider { height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent-bg), transparent); margin-top: 14px; border-radius: 2px; }
+
+        .sec { margin-top: 22px; }
+        .sec-title {
+            font-size: 8.5pt; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 2px; color: var(--accent); margin-bottom: 10px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .sec-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        .summary { font-size: 9pt; line-height: 1.7; color: var(--text-secondary); }
+
+        .skills { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 28px; }
+        .skill-row { font-size: 8.5pt; line-height: 1.55; display: flex; gap: 8px; padding: 2px 0; }
+        .skill-cat { font-weight: 600; color: var(--text); min-width: 95px; flex-shrink: 0; }
+        .skill-val { color: var(--text-secondary); }
+
+        .job { margin-bottom: 18px; }
+        .job:last-child { margin-bottom: 0; }
+        .job-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .job-role { font-size: 11pt; font-weight: 700; }
+        .job-date { font-size: 8.5pt; font-weight: 500; color: var(--text-muted); white-space: nowrap; }
+        .job-company { font-size: 9pt; color: var(--text-secondary); margin-bottom: 8px; }
+        ul { margin-left: 15px; }
+        li { font-size: 8.5pt; color: var(--text-secondary); margin-bottom: 7px; line-height: 1.6; }
+        li:last-child { margin-bottom: 0; }
+        li strong { color: var(--text); font-weight: 600; }
+
+        .proj-group { margin-bottom: 13px; }
+        .proj-group:last-child { margin-bottom: 0; }
+        .proj-head { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; }
+        .proj-domain {
+            font-size: 7pt; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.7px; color: var(--accent); background: var(--accent-bg);
+            padding: 2px 7px; border-radius: 3px;
+        }
+        .proj-name { font-weight: 700; font-size: 9.5pt; }
+        .proj-desc { font-size: 8.5pt; color: var(--text-secondary); margin-bottom: 3px; line-height: 1.5; }
+        .proj-tech { font-size: 8pt; color: var(--text-muted); font-weight: 500; margin-bottom: 5px; }
+        .proj-bullets { margin-left: 15px; }
+        .proj-bullets li { font-size: 8pt; margin-bottom: 3px; line-height: 1.5; }
+
+        .edu-head { display: flex; justify-content: space-between; align-items: baseline; }
+        .edu-degree { font-weight: 600; font-size: 10pt; }
+        .edu-date { font-size: 8.5pt; color: var(--text-muted); font-weight: 500; }
+        .edu-school { font-size: 8.5pt; color: var(--text-secondary); margin-top: 2px; }
+
+        @media print {
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
+            body { background: white !important; }
+            .toolbar { display: none !important; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; }
+            .page-body { padding: 0.3in 0.45in 0.25in; }
+            h1 { font-size: 22pt; }
+            .subtitle { font-size: 10pt; margin-top: 3px; margin-bottom: 7px; }
+            .contact { font-size: 8pt; }
+            .divider { margin-top: 9px; }
+            .sec { margin-top: 12px; }
+            .sec-title { font-size: 7.5pt; margin-bottom: 6px; }
+            .summary { font-size: 8.5pt; line-height: 1.5; }
+            .skills { gap: 3px 22px; }
+            .skill-row { font-size: 8pt; line-height: 1.4; padding: 1px 0; }
+            .job { margin-bottom: 10px; }
+            .job-role { font-size: 10pt; }
+            .job-company { font-size: 8.5pt; margin-bottom: 5px; }
+            li { font-size: 8pt; margin-bottom: 3px; line-height: 1.45; page-break-inside: avoid; }
+            .proj-group { margin-bottom: 8px; page-break-inside: avoid; }
+            .proj-name { font-size: 9pt; }
+            .proj-desc { font-size: 8pt; margin-bottom: 2px; }
+            .proj-tech { font-size: 7.5pt; margin-bottom: 3px; }
+            .proj-domain { font-size: 6.5pt; }
+            .proj-bullets li { font-size: 7.5pt; margin-bottom: 2px; line-height: 1.4; }
+            .edu-degree { font-size: 9.5pt; }
+            .job-head { page-break-after: avoid; }
+            .job-company { page-break-after: avoid; }
+            @page { margin: 0.3in 0; size: letter; }
+            @page :first { margin-top: 0; }
+        }
+
+        @media (max-width: 640px) {
+            body { background: white; }
+            .page { margin: 0; box-shadow: none; border-radius: 0; }
+            .page-body { padding: 20px; }
+            .skills { grid-template-columns: 1fr; }
+            .job-head, .edu-head { flex-direction: column; }
+            h1 { font-size: 22pt; }
+            .toolbar-title, .tag-badge { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="toolbar">
+    <div class="toolbar-inner">
+        <div class="toolbar-left">
+            <a href="../index.html">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Portfolio
+            </a>
+            <span class="toolbar-title">Resume - Mobile Application Developer</span>
+        </div>
+        <div class="toolbar-right">
+            <span class="tag-badge">Flutter &bull; iOS (Swift) &bull; Android (Kotlin) &bull; React Native</span>
+            <button class="btn btn-primary" onclick="window.print()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                Export PDF
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+    <div class="page-body">
+
+        <!-- Header -->
+        <header>
+            <h1>Prasad Rawas</h1>
+            <div class="subtitle">Senior Mobile Application Developer | Flutter &bull; iOS (Swift) &bull; Android (Kotlin) &bull; React Native</div>
+            <div class="contact">
+                Chh. Sambhaji Nagar, India<span class="sep">|</span><a href="mailto:contactprasadrawas@gmail.com">contactprasadrawas@gmail.com</a><span class="sep">|</span><a href="https://www.linkedin.com/in/prasad-rawas-392b10204">LinkedIn</a><span class="sep">|</span><a href="https://github.com/prasadrawas">GitHub</a><span class="sep">|</span><a href="https://dev.prasadrawas.online">dev.prasadrawas.online</a>
+            </div>
+            <div class="divider"></div>
+        </header>
+
+        <!-- Summary -->
+        <section class="sec">
+            <h2 class="sec-title">Professional Summary</h2>
+            <p class="summary">
+                Senior Mobile Application Developer with <strong>5.3+ years of experience</strong> architecting, developing, and deploying enterprise mobile applications across <strong>iOS and Android</strong>. Specialized in cross-platform frameworks (<strong>Flutter, React Native</strong>) and native development (<strong>Swift/UIKit/SwiftData on iOS, Kotlin on Android</strong>). Experienced in building <strong>offline-first mobile architectures</strong> with local queuing and background synchronization, native Platform Channel plugins (bridging Stripe Terminal SDK for NFC contactless tap-to-pay), and rendering performance optimization (slashing widget rebuilds by 30-40%). Shipped <strong>6+ production mobile applications</strong> to the Apple App Store and Google Play Store, managing the full release lifecycle including build signing, Bitrise CI/CD, and BrowserStack real-device testing.
+            </p>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="sec">
+            <h2 class="sec-title">Technical Skills</h2>
+            <div class="skills">
+                <div class="skill-row"><span class="skill-cat">Mobile Core</span><span class="skill-val">Flutter, Dart, iOS Native (Swift), Android Native (Kotlin), React Native, TypeScript</span></div>
+                <div class="skill-row"><span class="skill-cat">iOS Stack</span><span class="skill-val">Swift, UIKit, SwiftUI, CoreData, SwiftData, Alamofire, XCTest, XCUITest, TestFlight</span></div>
+                <div class="skill-row"><span class="skill-cat">Android Stack</span><span class="skill-val">Kotlin, Android SDK, Platform Channels, NFC, Stripe Terminal SDK, Play Console</span></div>
+                <div class="skill-row"><span class="skill-cat">State Mgmt</span><span class="skill-val">Provider, Riverpod, BLoC concepts, Redux, React Native State, reactive streams</span></div>
+                <div class="skill-row"><span class="skill-cat">Mobile Arch</span><span class="skill-val">Offline-First Architecture, Local Storage Sync, MVVM, Clean Architecture, Repository Pattern</span></div>
+                <div class="skill-row"><span class="skill-cat">Local Storage</span><span class="skill-val">SwiftData, CoreData, SQLite, Room, Hive, SharedPreferences, Keychain / Keystore</span></div>
+                <div class="skill-row"><span class="skill-cat">Device APIs</span><span class="skill-val">Google Maps SDK, Camera / Barcode Scanning, NFC Hardware, Location Services, Push Notifications</span></div>
+                <div class="skill-row"><span class="skill-cat">Mobile CI/CD</span><span class="skill-val">Bitrise, BrowserStack real-device testing, App Store Connect, Google Play Console, Staged Rollouts</span></div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="sec">
+            <h2 class="sec-title">Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-head">
+                    <span class="job-role">Senior Mobile Application Developer</span>
+                    <span class="job-date">Nov 2023 - Present</span>
+                </div>
+                <div class="job-company">Volox Innovations Pvt. Ltd. &bull; Remote / Chh. Sambhaji Nagar, India</div>
+                <ul>
+                    <li>Architected and implemented <strong>offline-first capabilities in an enterprise iOS application</strong> used daily by field technicians: designed a persistent local request queue that intercepts user actions during network drops, caches records locally, and seamlessly synchronizes with backend REST APIs once connectivity is restored.</li>
+                    <li>Migrated the enterprise iOS application storage layer from <strong>CoreData to SwiftData</strong>, modernizing data persistence, improving model safety, and accelerating local database query performance.</li>
+                    <li>Authored comprehensive <strong>UI and integration test suites using XCTest and XCUITest</strong>, covering critical end-to-end user journeys, offline conflict resolution, and form submissions.</li>
+                    <li>Led cross-platform mobile development for a <strong>Delivery Driver Mobile App in Flutter</strong>, enabling logistics drivers to reserve and navigate to loading bays in urban centers via interactive Google Maps integration.</li>
+                    <li>Profiled and diagnosed Flutter rendering performance bottlenecks: refactored state management using Provider, <strong>reducing unnecessary widget rebuilds by 30-40%</strong> and ensuring smooth 60 FPS map panning and scroll interactions.</li>
+                    <li>Achieved <strong>100% automated test coverage</strong> on the Flutter delivery application, writing unit, widget, and mock integration tests before shipping to production.</li>
+                    <li>Developed and published an <strong>AI-powered mobile application (Flutter &amp; Firebase)</strong> on the Google Play Store, implementing camera capture, barcode scanning, and multi-nutrient tracking.</li>
+                    <li>Managed end-to-end <strong>mobile release engineering and store operations</strong>: established Bitrise CI/CD pipelines, executed real-device automated testing on BrowserStack, configured certificates and provisioning profiles, and oversaw production submissions and staged rollouts on both <strong>Apple App Store Connect and Google Play Console</strong>.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-head">
+                    <span class="job-role">Mobile Application Developer</span>
+                    <span class="job-date">Jun 2021 - Nov 2023</span>
+                </div>
+                <div class="job-company">Aeologic Technologies &bull; Remote</div>
+                <ul>
+                    <li>Engineered a custom <strong>contactless tap-to-pay mobile solution for Flutter</strong> before an official plugin existed: authored a native Android plugin in <strong>Kotlin using Platform Channels</strong> that bridged Flutter code directly with the Stripe Terminal SDK for NFC contactless card transactions.</li>
+                    <li>Co-developed the customer-facing mobile application for a <strong>major US electronics retailer (30 stores, 22M+ customers)</strong> using Flutter, featuring real-time in-store inventory synchronization, product catalogs, barcode search, and seamless checkout on iOS and Android.</li>
+                    <li>Shipped <strong>6+ production mobile applications</strong> across retail, logistics, and field-services domains, taking applications from initial wireframes through architecture, native bridging, and store deployments.</li>
+                    <li>Led a mission-critical customer-facing mobile app from scratch to production launch, earning <strong>direct client recognition</strong> for delivery speed, zero-crash stability, and interface fluidity.</li>
+                    <li>Collaborated cross-functionally with backend engineers to define efficient JSON payloads, minimize mobile network roundtrips, and handle edge-case offline and network timeout scenarios.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Projects -->
+        <section class="sec">
+            <h2 class="sec-title">Featured Mobile Projects</h2>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Flutter &bull; iOS &bull; Android</span>
+                    <span class="proj-name">Delivery Driver Bay Booking Mobile App</span>
+                </div>
+                <div class="proj-desc">Cross-platform mobile application for commercial delivery drivers to locate and book urban loading bays in advance.</div>
+                <div class="proj-tech">Flutter &bull; Dart &bull; Google Maps SDK &bull; Firebase &bull; Provider &bull; App Store &bull; Google Play</div>
+                <ul class="proj-bullets">
+                    <li>Optimized Flutter rendering pipeline, eliminating redundant widget rebuilds by 30-40% for fluid map navigation.</li>
+                    <li>Achieved 100% test coverage; managed end-to-end publishing lifecycle to Apple App Store and Google Play Store.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">iOS Native &bull; Swift</span>
+                    <span class="proj-name">Enterprise Field Operations App (Offline-First)</span>
+                </div>
+                <div class="proj-desc">Mission-critical iOS application utilized daily by field workforces in low-connectivity industrial environments.</div>
+                <div class="proj-tech">Swift &bull; UIKit &bull; CoreData &bull; SwiftData &bull; XCUITest &bull; XCTest &bull; MVVM &bull; Alamofire</div>
+                <ul class="proj-bullets">
+                    <li>Built resilient local action queue with auto-synchronization on network reconnect; migrated persistence to SwiftData.</li>
+                    <li>Automated UI testing with XCUITest covering complete field technician workflows and edge cases.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Native Plugin &bull; Kotlin</span>
+                    <span class="proj-name">Stripe Tap-to-Pay Native Mobile Plugin for Flutter</span>
+                </div>
+                <div class="proj-desc">Custom native Android plugin enabling cross-platform Flutter applications to accept contactless NFC payments.</div>
+                <div class="proj-tech">Flutter &bull; Kotlin &bull; Platform Channels &bull; Stripe Terminal SDK &bull; Android NFC Hardware</div>
+                <ul class="proj-bullets">
+                    <li>Bridged Flutter method channels with native Android Kotlin code to interface directly with card payment hardware.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Flutter &bull; Retail</span>
+                    <span class="proj-name">Major US Electronics Retailer Mobile Application</span>
+                </div>
+                <div class="proj-desc">High-traffic retail e-commerce app serving 30 physical stores and over 22 million retail customers.</div>
+                <div class="proj-tech">Flutter &bull; Dart &bull; iOS &bull; Android &bull; REST APIs &bull; Real-Time Inventory &bull; Barcode Scanner</div>
+                <ul class="proj-bullets">
+                    <li>Engineered product catalog browsing, store-specific live stock levels, customer loyalty, and order checkout.</li>
+                </ul>
+            </div>
+
+            <div class="proj-group">
+                <div class="proj-head">
+                    <span class="proj-domain">Flutter &bull; Play Store</span>
+                    <span class="proj-name">AI Nutrition &amp; Meal Tracker Mobile App</span>
+                </div>
+                <div class="proj-desc">Published mobile application that analyzes meal photos and barcodes to generate 16-nutrient dietary breakdowns.</div>
+                <div class="proj-tech">Flutter &bull; Dart &bull; Firebase &bull; Riverpod &bull; Camera SDK &bull; fl_chart &bull; Google Play Store</div>
+                <ul class="proj-bullets">
+                    <li>Implemented camera photo intake, barcode scanning, interactive historical charts, and offline local caching.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="sec" style="margin-bottom: 0;">
+            <h2 class="sec-title">Education</h2>
+            <div class="edu-head">
+                <span class="edu-degree">B.Sc. in Information Technology</span>
+                <span class="edu-date">2018 - 2021</span>
+            </div>
+            <div class="edu-school">MGM Institute of Technology &bull; Chh. Sambhaji Nagar, Maharashtra, India</div>
+        </section>
+
+    </div>
+</div>
+
+<script>
+function exportPDF() { window.print(); }
+</script>
+</body>
+</html>
