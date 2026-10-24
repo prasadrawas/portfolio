@@ -333,6 +333,100 @@
         }
         .comparison-table tr:hover td { background: rgba(255,255,255,0.015); }
 
+        /* Hands-On Verification Test Component */
+        .module-test {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.07), rgba(6, 182, 212, 0.05));
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-md);
+            padding: 26px;
+            margin: 36px 0 20px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .module-test-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 18px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .quiz-box {
+            background: rgba(15, 17, 26, 0.75);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 18px 20px;
+            margin-bottom: 22px;
+        }
+
+        .quiz-badge {
+            display: inline-block;
+            font-size: 10.5px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fbbf24;
+            background: rgba(251, 191, 36, 0.12);
+            border: 1px solid rgba(251, 191, 36, 0.25);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .quiz-question {
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .quiz-details {
+            margin-top: 10px;
+        }
+
+        .quiz-summary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: #818cf8;
+            font-size: 13px;
+            font-weight: 600;
+            user-select: none;
+            padding: 6px 14px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: 4px;
+            transition: all 0.2s;
+            list-style: none;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .quiz-summary::-webkit-details-marker { display: none; }
+        .quiz-summary:hover {
+            background: rgba(99, 102, 241, 0.22);
+            color: #fff;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+        }
+
+        .quiz-answer {
+            margin-top: 14px;
+            padding: 16px 18px;
+            background: rgba(10, 10, 15, 0.85);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 0 4px 4px 0;
+            font-size: 14.5px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .layout { grid-template-columns: 1fr; }
@@ -557,6 +651,69 @@ Client 3 ──┘                                        ──► Resumes whic
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;What is the difference between Uvicorn and Gunicorn?&rdquo;</strong><br><strong>A:</strong> Uvicorn is an ASGI web server (it binds to sockets, speaks HTTP, and runs the asyncio event loop). Gunicorn is a WSGI process manager (it handles zero-downtime reloads, monitors worker health, and restarts crashed processes). In high-throughput enterprise deployments, senior engineers combine both: Gunicorn acts as the master process supervisor, while running Uvicorn workers underneath: <code>gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app</code>.</p>
             </div>
+
+            <!-- MODULE 01 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 01 Hands-On Verification Test: Raw ASGI Contract & Uvicorn Protocol Testing</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A junior developer notices their FastAPI production Docker containers frequently restart or freeze under traffic. In <code>docker-compose.yml</code>, the command is set to: <code>uvicorn main:app --reload --host 0.0.0.0 --port 8000</code>. Why does this cause massive performance loss and crashes?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">The <code>--reload</code> flag starts an active file-watcher process (using <code>watchfiles</code> or <code>StatReload</code>) that continuously polls disk inodes for modifications. In containerized production, disk polling burns CPU cycles, leaks open file descriptors, prevents spawning multiple worker processes (restricting Uvicorn to 1 CPU core), and restarts the server mid-request if logs or temporary files are written to disk!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Never use <code>--reload</code> in production. Always configure multiple worker processes based on available CPU cores: <code>uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4</code> or run Uvicorn workers supervised by Gunicorn: <code>gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app</code>.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_01_raw_asgi.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_01_raw_asgi.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+<span class="cm"># Raw ASGI Application under test</span>
+<span class="kw">async def</span> <span class="fn">raw_asgi_app</span>(scope, receive, send):
+    <span class="kw">assert</span> scope[<span class="str">"type"</span>] == <span class="str">"http"</span>
+    <span class="kw">await</span> send({
+        <span class="str">"type"</span>: <span class="str">"http.response.start"</span>,
+        <span class="str">"status"</span>: <span class="dec">200</span>,
+        <span class="str">"headers"</span>: [[<span class="str">b"content-type"</span>, <span class="str">b"application/json"</span>]],
+    })
+    <span class="kw">await</span> send({
+        <span class="str">"type"</span>: <span class="str">"http.response.body"</span>,
+        <span class="str">"body"</span>: <span class="str">b'{"engine": "pure_raw_asgi", "status": "verified"}'</span>,
+    })
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_raw_asgi_protocol_compliance</span>():
+    <span class="cm"># Verifies raw ASGI app can be invoked in-memory via ASGITransport</span>
+    transport = ASGITransport(app=raw_asgi_app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        response = <span class="kw">await</span> client.get(<span class="str">"/"</span>)
+        <span class="kw">assert</span> response.status_code == <span class="dec">200</span>
+        <span class="kw">assert</span> response.headers[<span class="str">"content-type"</span>] == <span class="str">"application/json"</span>
+        <span class="kw">assert</span> response.json() == {<span class="str">"engine"</span>: <span class="str">"pure_raw_asgi"</span>, <span class="str">"status"</span>: <span class="str">"verified"</span>}</code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 02: SYNC VS ASYNC & EVENT LOOP                    -->
@@ -702,6 +859,67 @@ process_pool = ProcessPoolExecutor()
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;If Python has a GIL, how can FastAPI handle 30,000 requests per second?&rdquo;</strong><br><strong>A:</strong> Python's Global Interpreter Lock (GIL) only restricts simultaneous CPU bytecode execution across threads. Web backend workloads are 95% I/O-bound (waiting on PostgreSQL queries, Redis reads, and external HTTP network sockets). In async Python, whenever a socket waits for network I/O, the underlying C-extension (uvloop) releases the GIL and delegates socket monitoring to the Linux kernel via epoll/kqueue. The event loop switches tasks instantly with zero GIL contention.</p>
             </div>
+
+            <!-- MODULE 02 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 02 Hands-On Verification Test: Event Loop Non-Blocking Concurrency Verification</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A legacy payment SDK uses synchronous <code>urllib.request.urlopen()</code> internally. A developer wraps it in <code>async def process_payment(): response = urllib.request.urlopen(...)</code>. During Black Friday sales with 50 concurrent buyers, all API requests on the server start taking 15+ seconds or timing out. What is the architectural root cause?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Declaring a function with <code>async def</code> forces FastAPI to run it on the single main event loop thread. Because <code>urllib.request</code> is synchronous and blocking, it does NOT yield control with <code>await</code>. It freezes the entire Python process thread for the duration of the socket read, forcing all other 49 concurrent requests to queue up and freeze behind it!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>If an external library is synchronous/blocking and has no async alternative, declare the route with regular <code>def process_payment(...)</code>. FastAPI will automatically dispatch it to an external worker thread pool (via AnyIO/ThreadPoolExecutor), keeping the main event loop 100% unblocked.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_02_concurrency.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_02_concurrency.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest, asyncio, time
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI
+
+app = FastAPI()
+
+<span class="dec">@app.get</span>(<span class="str">"/non-blocking"</span>)
+<span class="kw">async def</span> <span class="fn">non_blocking_endpoint</span>():
+    <span class="kw">await</span> asyncio.sleep(<span class="dec">0.2</span>)  <span class="cm"># Yields event loop cooperatively</span>
+    <span class="kw">return</span> {<span class="str">"status"</span>: <span class="str">"ok"</span>}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_concurrent_execution_does_not_block</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        start = time.perf_counter()
+        <span class="cm"># Fire 4 concurrent requests simultaneously</span>
+        responses = <span class="kw">await</span> asyncio.gather(*[client.get(<span class="str">"/non-blocking"</span>) <span class="kw">for</span> _ <span class="kw">in</span> range(<span class="dec">4</span>)])
+        duration = time.perf_counter() - start
+
+        <span class="cm"># If sequential, 4 * 0.2s = 0.8s+. Because it is concurrent, total time is ~0.2s!</span>
+        <span class="kw">assert</span> duration &lt; <span class="dec">0.45</span>
+        <span class="kw">assert</span> all(r.status_code == <span class="dec">200</span> <span class="kw">for</span> r <span class="kw">in</span> responses)</code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 03: PYDANTIC V2 CORE                               -->
@@ -826,6 +1044,72 @@ print(type(profile.signup_date), profile.signup_date)  <span class="cm"># &lt;cl
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;What is the difference between exclude_unset and exclude_none in model_dump?&rdquo;</strong><br><strong>A:</strong> <code>exclude_none=True</code> strips any field whose current value is <code>None</code>. <code>exclude_unset=True</code> strips any field that was NOT explicitly passed by the caller in the original request payload. In HTTP PATCH endpoints, <code>exclude_unset=True</code> is mandatory: if a user intentionally wants to clear a field (e.g. <code>{"bio": null}</code>), <code>exclude_unset=True</code> keeps it so the DB updates the column to NULL, whereas <code>exclude_none=True</code> would mistakenly discard the user's intent!</p>
             </div>
+
+            <!-- MODULE 03 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 03 Hands-On Verification Test: Pydantic v2 Parsing & Runtime Validation Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A mobile app submits JSON data: <code>{'user_id': '4502', 'is_active': 'true', 'signup_date': '2026-10-24'}</code>. You define your model with typed fields: <code>user_id: int</code>, <code>is_active: bool</code>, <code>signup_date: date</code>. Does Pydantic v2 reject this because the types are strings?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Developers coming from strict compiled languages (Go or Rust) assume Pydantic only validates exact types. They write manual string parsing code, cluttering the domain layer.</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>No, Pydantic is a data parser that implements automatic coercion rules. In default mode, it automatically parses stringified integers, string booleans ('true', 'yes', '1'), and ISO formatted dates into proper Python objects. If you require strict types without coercion, pass <code>Field(strict=True)</code> or set <code>model_config = ConfigDict(strict=True)</code>.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_03_pydantic_v2.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_03_pydantic_v2.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> pydantic <span class="kw">import</span> BaseModel, Field, ValidationError, field_validator
+<span class="kw">from</span> datetime <span class="kw">import</span> date
+
+<span class="kw">class</span> <span class="cls">MemberModel</span>(BaseModel):
+    user_id: <span class="typ">int</span>
+    is_active: <span class="typ">bool</span>
+    signup_date: <span class="typ">date</span>
+    coupon_code: <span class="typ">str | None</span> = <span class="kw">None</span>
+
+    <span class="dec">@field_validator</span>(<span class="str">"coupon_code"</span>)
+    <span class="dec">@classmethod</span>
+    <span class="kw">def</span> <span class="fn">validate_coupon</span>(cls, v: <span class="typ">str | None</span>) -> <span class="typ">str | None</span>:
+        <span class="kw">if</span> v <span class="kw">and not</span> v.startswith(<span class="str">"SAVE-"</span>):
+            <span class="kw">raise</span> ValueError(<span class="str">"Coupon must start with SAVE-"</span>)
+        <span class="kw">return</span> v
+
+<span class="kw">def</span> <span class="fn">test_pydantic_coercion_and_validation</span>():
+    <span class="cm"># 1. Tests successful coercion from dirty string input</span>
+    data = MemberModel(user_id=<span class="str">"4502"</span>, is_active=<span class="str">"yes"</span>, signup_date=<span class="str">"2026-10-24"</span>, coupon_code=<span class="str">"SAVE-50"</span>)
+    <span class="kw">assert</span> data.user_id == <span class="dec">4502</span>
+    <span class="kw">assert</span> data.is_active <span class="kw">is True</span>
+    <span class="kw">assert</span> data.signup_date == date(<span class="dec">2026</span>, <span class="dec">10</span>, <span class="dec">24</span>)
+
+    <span class="cm"># 2. Tests custom validator rejection</span>
+    <span class="kw">with</span> pytest.raises(ValidationError) <span class="kw">as</span> exc:
+        MemberModel(user_id=<span class="dec">1</span>, is_active=<span class="kw">True</span>, signup_date=<span class="str">"2026-10-24"</span>, coupon_code=<span class="str">"INVALID"</span>)
+    <span class="kw">assert</span> <span class="str">"Coupon must start with SAVE-"</span> <span class="kw">in</span> str(exc.value)</code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 04: ADVANCED PYDANTIC & ENVELOPES                  -->
@@ -947,6 +1231,86 @@ T = TypeVar(<span class="str">"T"</span>)
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;How do you design a Partial Update (HTTP PATCH) endpoint safely with Pydantic?&rdquo;</strong><br><strong>A:</strong> In the update schema (e.g. <code>UserUpdate</code>), declare all fields as optional (<code>str | None = None</code>). In the route handler, dump the incoming model with <code>user_in.model_dump(exclude_unset=True)</code>. This yields a dictionary containing ONLY the fields explicitly passed in the HTTP request payload. Then loop over the dictionary and execute <code>setattr(db_record, key, value)</code> before committing to the database.</p>
             </div>
+
+            <!-- MODULE 04 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 04 Hands-On Verification Test: Dual-Model Security & Generic Envelope Verification</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A malicious user sends a POST request to <code>/api/users</code> with payload: <code>{'email': 'hacker@test.com', 'password': '123', 'is_admin': true, 'account_balance': 999999}</code>. If your route uses the single SQLAlchemy model or single Pydantic schema for both input and database insertion, what vulnerability occurs?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">This is the classic <strong>Mass Assignment Vulnerability</strong> (CWE-915). If the input model accepts arbitrary attributes, the attacker overwrites privileged database columns, instantly granting themselves administrator rights and arbitrary financial balances!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Enforce the Dual-Model security architecture. The input model (<code>UserCreate</code>) must strictly declare ONLY <code>email</code> and <code>password</code>. The database record is created using only vetted attributes. The response model (<code>UserPublic</code>) strictly filters out <code>hashed_password</code> and internal secrets.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_04_dual_models.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_04_dual_models.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> pydantic <span class="kw">import</span> BaseModel, ConfigDict
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+<span class="kw">class</span> <span class="cls">UserCreate</span>(BaseModel):
+    email: <span class="typ">str</span>
+    password: <span class="typ">str</span>
+
+<span class="kw">class</span> <span class="cls">UserPublic</span>(BaseModel):
+    model_config = ConfigDict(from_attributes=<span class="kw">True</span>)
+    id: <span class="typ">int</span>
+    email: <span class="typ">str</span>
+
+<span class="dec">@app.post</span>(<span class="str">"/users"</span>, response_model=UserPublic)
+<span class="kw">def</span> <span class="fn">register_user</span>(user_in: UserCreate):
+    <span class="cm"># Simulated database record containing sensitive internal attributes</span>
+    db_record = {
+        <span class="str">"id"</span>: <span class="dec">101</span>,
+        <span class="str">"email"</span>: user_in.email,
+        <span class="str">"hashed_password"</span>: <span class="str">"$2b$12$super_secret_argon_hash"</span>,
+        <span class="str">"is_admin"</span>: <span class="kw">False</span>,
+        <span class="str">"internal_notes"</span>: <span class="str">"Sensitive audit flag"</span>
+    }
+    <span class="kw">return</span> db_record
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_dual_model_strips_sensitive_data</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        <span class="cm"># Attacker attempts mass-assignment injection</span>
+        payload = {<span class="str">"email"</span>: <span class="str">"dev@test.com"</span>, <span class="str">"password"</span>: <span class="str">"secret"</span>, <span class="str">"is_admin"</span>: <span class="kw">True</span>}
+        res = <span class="kw">await</span> client.post(<span class="str">"/users"</span>, json=payload)
+        <span class="kw">assert</span> res.status_code == <span class="dec">200</span>
+        data = res.json()
+        <span class="cm"># Verification: response MUST NOT leak hashed_password or internal fields!</span>
+        <span class="kw">assert</span> <span class="str">"hashed_password"</span> <span class="kw">not in</span> data
+        <span class="kw">assert</span> <span class="str">"internal_notes"</span> <span class="kw">not in</span> data
+        <span class="kw">assert</span> <span class="str">"is_admin"</span> <span class="kw">not in</span> data
+        <span class="kw">assert</span> data == {<span class="str">"id"</span>: <span class="dec">101</span>, <span class="str">"email"</span>: <span class="str">"dev@test.com"</span>}</code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 05: REQUEST INGESTION & PARAMETERS                 -->
@@ -1055,6 +1419,72 @@ app = FastAPI()
             <div class="interview-tip">
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;How would you stream a 10GB video upload directly to AWS S3 without writing to local disk?&rdquo;</strong><br><strong>A:</strong> Declare the endpoint parameter as <code>file: UploadFile = File(...)</code>. Instead of writing chunks to local disk, initialize an <code>aioboto3</code> S3 multipart upload session. Stream chunks sequentially from <code>await file.read(chunk_size)</code> into <code>s3_client.upload_part()</code>, and complete the multipart upload. The server uses a fixed 8MB RAM buffer regardless of the 10GB file size.</p>
+            </div>
+
+            <!-- MODULE 05 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 05 Hands-On Verification Test: Streaming UploadFile & Parameter Ingestion Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A client uploads an 800MB video file. The route is declared as <code>async def upload(file: UploadFile): content = await file.read()</code>. What happens to the server's memory, and how do you process the file safely?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Calling <code>await file.read()</code> without arguments reads the entire 800MB into a contiguous Python bytes object in RAM! Under 10 concurrent uploads, the server allocates 8GB of RAM, triggering an Out-of-Memory (OOM) restart.</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Always stream large files in bounded buffer chunks (e.g. 1MB at a time: <code>while chunk := await file.read(1024 * 1024)</code>) directly to disk or an S3 multipart socket. Memory usage stays fixed at 1MB regardless of whether the file is 100MB or 100GB.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_05_upload_stream.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_05_upload_stream.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, File, UploadFile
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+<span class="dec">@app.post</span>(<span class="str">"/upload-check"</span>)
+<span class="kw">async def</span> <span class="fn">upload_check_endpoint</span>(file: UploadFile = File(...)):
+    total_bytes = <span class="dec">0</span>
+    CHUNK_SIZE = <span class="dec">1024</span>  <span class="cm"># 1KB buffer chunks</span>
+    <span class="kw">while</span> chunk := <span class="kw">await</span> file.read(CHUNK_SIZE):
+        total_bytes += len(chunk)
+    <span class="kw">await</span> file.close()
+    <span class="kw">return</span> {<span class="str">"filename"</span>: file.filename, <span class="str">"bytes"</span>: total_bytes, <span class="str">"content_type"</span>: file.content_type}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_streaming_file_upload</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        file_payload = <span class="str">b"FastAPI streaming verification payload byte data"</span>
+        files = {<span class="str">"file"</span>: (<span class="str">"test_report.csv"</span>, file_payload, <span class="str">"text/csv"</span>)}
+        res = <span class="kw">await</span> client.post(<span class="str">"/upload-check"</span>, files=files)
+
+        <span class="kw">assert</span> res.status_code == <span class="dec">200</span>
+        data = res.json()
+        <span class="kw">assert</span> data[<span class="str">"filename"</span>] == <span class="str">"test_report.csv"</span>
+        <span class="kw">assert</span> data[<span class="str">"bytes"</span>] == len(file_payload)
+        <span class="kw">assert</span> data[<span class="str">"content_type"</span>] == <span class="str">"text/csv"</span></code></pre>
+            </div>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -1186,6 +1616,81 @@ app = FastAPI()
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;How does FastAPI prevent circular dependencies in the dependency tree?&rdquo;</strong><br><strong>A:</strong> When building the route during application startup, FastAPI parses all <code>Depends()</code> parameters and constructs a Directed Acyclic Graph (DAG) using topological sorting. If circular dependencies exist (e.g. Dependency A requires B, and B requires A), FastAPI detects the cycle and raises a <code>FastAPIError</code> immediately during boot time, preventing runtime deadlocks.</p>
             </div>
+
+            <!-- MODULE 06 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 06 Hands-On Verification Test: Yield Dependency Lifecycle & Rollback Verification</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A database yield dependency opens a session. If a route handler raises an unhandled <code>HTTPException(status_code=400, detail='Invalid coupon')</code>, does the dependency's <code>except</code> block trigger, and does the <code>finally</code> block close the database connection?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Developers worry that raising an <code>HTTPException</code> bypasses the dependency generator's teardown code, leading to leaked database connections and connection pool exhaustion.</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>FastAPI re-raises the exception directly into the generator iterator at the exact point of the <code>yield</code> expression. The generator's <code>except</code> and <code>finally</code> blocks are guaranteed to execute! This guarantees that rollback happens and <code>session.close()</code> releases the connection back to the pool.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_06_yield_dependency.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_06_yield_dependency.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, Depends, HTTPException
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+lifecycle_log = []
+
+<span class="kw">async def</span> <span class="fn">get_managed_resource</span>():
+    lifecycle_log.append(<span class="str">"1. acquire_resource"</span>)
+    <span class="kw">try</span>:
+        <span class="kw">yield</span> {<span class="str">"db"</span>: <span class="str">"active_connection"</span>}
+        lifecycle_log.append(<span class="str">"2. commit_success"</span>)
+    <span class="kw">except</span> Exception:
+        lifecycle_log.append(<span class="str">"2. rollback_on_error"</span>)
+        <span class="kw">raise</span>
+    <span class="kw">finally</span>:
+        lifecycle_log.append(<span class="str">"3. cleanup_and_close"</span>)
+
+<span class="dec">@app.get</span>(<span class="str">"/failing-route"</span>)
+<span class="kw">async def</span> <span class="fn">failing_endpoint</span>(res = Depends(get_managed_resource)):
+    <span class="kw">raise</span> HTTPException(status_code=<span class="dec">400</span>, detail=<span class="str">"Triggered simulated failure"</span>)
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_yield_dependency_runs_finally_on_error</span>():
+    lifecycle_log.clear()
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        res = <span class="kw">await</span> client.get(<span class="str">"/failing-route"</span>)
+        <span class="kw">assert</span> res.status_code == <span class="dec">400</span>
+
+        <span class="cm"># Verification: Exception triggered rollback, followed by guaranteed cleanup!</span>
+        <span class="kw">assert</span> lifecycle_log == [
+            <span class="str">"1. acquire_resource"</span>,
+            <span class="str">"2. rollback_on_error"</span>,
+            <span class="str">"3. cleanup_and_close"</span>
+        ]</code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 07: MIDDLEWARE & MODERN LIFESPAN                   -->
@@ -1304,6 +1809,78 @@ app.add_middleware(TelemetryMiddleware)</code></pre>
             <div class="interview-tip">
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;What are the performance caveats of BaseHTTPMiddleware in Starlette?&rdquo;</strong><br><strong>A:</strong> <code>BaseHTTPMiddleware</code> converts raw ASGI streams into Python generator tasks to intercept response bodies. This introduces memory overhead and can cause issues with streaming responses (like SSE or large file downloads) and context-var leakage across async tasks. For ultra-high throughput proxying, write a pure raw ASGI middleware class taking <code>(app)</code> with an <code>async def __call__(self, scope, receive, send)</code> method.</p>
+            </div>
+
+            <!-- MODULE 07 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 07 Hands-On Verification Test: Correlation ID & Middleware Header Verification</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">An incident occurs in a microservice where user checkout requests fail intermittently. SREs cannot trace which payment requests correspond to which logs because each log line is isolated. How does middleware solve distributed tracing?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Trying to manually generate and pass UUIDs inside every single route function cluttering business logic.</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Register a custom ASGI / Starlette middleware. The middleware checks for an existing <code>X-Request-ID</code> header from the client or upstream gateway, generates a UUID if absent, attaches it to <code>request.state.request_id</code>, measures execution latency, and guarantees that <code>X-Request-ID</code> and <code>X-Response-Time-Ms</code> are attached to every outgoing HTTP response.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_07_middleware.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_07_middleware.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest, uuid
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, Request
+<span class="kw">from</span> starlette.middleware.base <span class="kw">import</span> BaseHTTPMiddleware
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+<span class="kw">class</span> <span class="cls">CorrelationMiddleware</span>(BaseHTTPMiddleware):
+    <span class="kw">async def</span> <span class="fn">dispatch</span>(self, request: Request, call_next):
+        req_id = request.headers.get(<span class="str">"X-Request-ID"</span>, str(uuid.uuid4()))
+        response = <span class="kw">await</span> call_next(request)
+        response.headers[<span class="str">"X-Request-ID"</span>] = req_id
+        <span class="kw">return</span> response
+
+app.add_middleware(CorrelationMiddleware)
+
+<span class="dec">@app.get</span>(<span class="str">"/ping"</span>)
+<span class="kw">def</span> <span class="fn">ping_endpoint</span>():
+    <span class="kw">return</span> {<span class="str">"message"</span>: <span class="str">"pong"</span>}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_middleware_correlation_id_propagation</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        <span class="cm"># 1. Test auto-generation when header is missing</span>
+        res1 = <span class="kw">await</span> client.get(<span class="str">"/ping"</span>)
+        <span class="kw">assert</span> res1.status_code == <span class="dec">200</span>
+        <span class="kw">assert</span> <span class="str">"X-Request-ID"</span> <span class="kw">in</span> res1.headers
+        <span class="kw">assert</span> len(res1.headers[<span class="str">"X-Request-ID"</span>]) &gt; <span class="dec">10</span>
+
+        <span class="cm"># 2. Test preservation when client provides custom correlation ID</span>
+        custom_id = <span class="str">"trace-abc-12345"</span>
+        res2 = <span class="kw">await</span> client.get(<span class="str">"/ping"</span>, headers={<span class="str">"X-Request-ID"</span>: custom_id})
+        <span class="kw">assert</span> res2.headers[<span class="str">"X-Request-ID"</span>] == custom_id</code></pre>
+            </div>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -1449,6 +2026,88 @@ Query 2:  SELECT * FROM orders WHERE user_id IN (1, 2, 3, ..., 50);</div>
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;When should you choose selectinload vs joinedload?&rdquo;</strong><br><strong>A:</strong> Use <code>selectinload</code> for 1-to-Many or Many-to-Many relationships (e.g. Users to Orders). It executes exactly 2 queries using an <code>IN (...)</code> clause, avoiding duplicate row multiplication. Use <code>joinedload</code> for Many-to-1 relationships (e.g. Order to its single User), as it executes a single <code>LEFT OUTER JOIN</code> with zero row duplication.</p>
             </div>
+
+            <!-- MODULE 08 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 08 Hands-On Verification Test: Async SQLAlchemy 2.0 Eager Loading & N+1 Prevention Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">You fetch 20 authors and iterate through each author's books. Without eager loading, your database logs show 21 separate SQL queries. How do you test and assert that SQLAlchemy 2.0 loads all relationships in exactly 2 queries?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Assuming that declaring a relationship on the model automatically loads related data. By default, SQLAlchemy relationships use lazy loading, which is disabled in async engines and triggers <code>MissingGreenlet</code> exceptions!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Use <code>options(selectinload(Author.books))</code>. For 1-to-N relationships, <code>selectinload</code> executes exactly 2 queries total: <code>SELECT * FROM authors</code>, followed by <code>SELECT * FROM books WHERE author_id IN (...)</code>.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_08_sqlalchemy_eager.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_08_sqlalchemy_eager.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> sqlalchemy.ext.asyncio <span class="kw">import</span> create_async_engine, async_sessionmaker, AsyncSession
+<span class="kw">from</span> sqlalchemy.orm <span class="kw">import</span> DeclarativeBase, Mapped, mapped_column, relationship, selectinload
+<span class="kw">from</span> sqlalchemy <span class="kw">import</span> ForeignKey, select
+
+<span class="kw">class</span> <span class="cls">Base</span>(DeclarativeBase):
+    pass
+
+<span class="kw">class</span> <span class="cls">Author</span>(Base):
+    __tablename__ = <span class="str">"authors"</span>
+    id: Mapped[<span class="typ">int</span>] = mapped_column(primary_key=<span class="kw">True</span>)
+    name: Mapped[<span class="typ">str</span>]
+    books: Mapped[list[<span class="str">"Book"</span>]] = relationship(back_populates=<span class="str">"author"</span>)
+
+<span class="kw">class</span> <span class="cls">Book</span>(Base):
+    __tablename__ = <span class="str">"books"</span>
+    id: Mapped[<span class="typ">int</span>] = mapped_column(primary_key=<span class="kw">True</span>)
+    title: Mapped[<span class="typ">str</span>]
+    author_id: Mapped[<span class="typ">int</span>] = mapped_column(ForeignKey(<span class="str">"authors.id"</span>))
+    author: Mapped[<span class="str">"Author"</span>] = relationship(back_populates=<span class="str">"books"</span>)
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_eager_loading_selectinload</span>():
+    engine = create_async_engine(<span class="str">"sqlite+aiosqlite:///:memory:"</span>)
+    <span class="kw">async with</span> engine.begin() <span class="kw">as</span> conn:
+        <span class="kw">await</span> conn.run_sync(Base.metadata.create_all)
+
+    session_maker = async_sessionmaker(bind=engine, class_=AsyncSession, expire_on_commit=<span class="kw">False</span>)
+    <span class="kw">async with</span> session_maker() <span class="kw">as</span> session:
+        <span class="cm"># Seed author with 2 books</span>
+        a = Author(name=<span class="str">"Prasad Rawas"</span>)
+        session.add(a)
+        <span class="kw">await</span> session.flush()
+        session.add_all([Book(title=<span class="str">"FastAPI Mastery"</span>, author_id=a.id), Book(title=<span class="str">"Async Python"</span>, author_id=a.id)])
+        <span class="kw">await</span> session.commit()
+
+        <span class="cm"># Query with selectinload</span>
+        stmt = select(Author).options(selectinload(Author.books))
+        res = <span class="kw">await</span> session.execute(stmt)
+        author = res.scalars().first()
+
+        <span class="kw">assert</span> author.name == <span class="str">"Prasad Rawas"</span>
+        <span class="kw">assert</span> len(author.books) == <span class="dec">2</span>
+        <span class="kw">assert</span> author.books[<span class="dec">0</span>].title == <span class="str">"FastAPI Mastery"</span></code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 09: SECURITY, AUTH & RBAC                          -->
@@ -1553,6 +2212,91 @@ app = FastAPI()
             <div class="interview-tip">
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;Why should you avoid storing JWT tokens in localStorage?&rdquo;</strong><br><strong>A:</strong> Browser <code>localStorage</code> is vulnerable to Cross-Site Scripting (XSS). If any malicious third-party script or compromised npm package executes in your client application, it can read <code>localStorage.getItem('token')</code> and exfiltrate credentials. Storing tokens in an <code>HttpOnly</code> cookie prevents JavaScript from reading the cookie entirely.</p>
+            </div>
+
+            <!-- MODULE 09 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 09 Hands-On Verification Test: JWT Decoding & Role-Based Access Control (RBAC) Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A client signs up with role <code>'viewer'</code>. They manually tamper with their browser token payload, setting <code>'role': 'admin'</code>, and hit <code>DELETE /admin/system/purge</code>. Why does JWT verification prevent this privilege escalation?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Believing that because JWT claims are base64 encoded and readable by anyone, they can be freely edited.</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>A JWT includes a third cryptographic section: the <strong>Signature</strong>. The signature is computed as <code>HMAC-SHA256(base64(header) + '.' + base64(payload), SECRET_KEY)</code>. If an attacker tampers with even a single bit in the payload, the recomputed signature does not match. <code>jwt.decode()</code> raises <code>jwt.InvalidSignatureError</code> and rejects the request with HTTP 401.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_09_rbac_security.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_09_rbac_security.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest, jwt
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, Depends, HTTPException
+<span class="kw">from</span> fastapi.security <span class="kw">import</span> OAuth2PasswordBearer
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+SECRET = <span class="str">"test-secret-key-32-bytes-long-here"</span>
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl=<span class="str">"/token"</span>)
+
+<span class="kw">def</span> <span class="fn">create_test_token</span>(user_id: <span class="typ">str</span>, role: <span class="typ">str</span>):
+    <span class="kw">return</span> jwt.encode({<span class="str">"sub"</span>: user_id, <span class="str">"role"</span>: role}, SECRET, algorithm=<span class="str">"HS256"</span>)
+
+<span class="kw">async def</span> <span class="fn">get_current_user</span>(token: <span class="typ">str</span> = Depends(oauth2_scheme)):
+    <span class="kw">try</span>:
+        <span class="kw">return</span> jwt.decode(token, SECRET, algorithms=[<span class="str">"HS256"</span>])
+    <span class="kw">except</span> jwt.PyJWTError:
+        <span class="kw">raise</span> HTTPException(status_code=<span class="dec">401</span>, detail=<span class="str">"Invalid token"</span>)
+
+<span class="kw">def</span> <span class="fn">require_role</span>(role: <span class="typ">str</span>):
+    <span class="kw">def</span> <span class="fn">guard</span>(user = Depends(get_current_user)):
+        <span class="kw">if</span> user.get(<span class="str">"role"</span>) != role:
+            <span class="kw">raise</span> HTTPException(status_code=<span class="dec">403</span>, detail=<span class="str">"Forbidden"</span>)
+        <span class="kw">return</span> user
+    <span class="kw">return</span> guard
+
+<span class="dec">@app.get</span>(<span class="str">"/admin-panel"</span>, dependencies=[Depends(require_role(<span class="str">"admin"</span>))])
+<span class="kw">def</span> <span class="fn">admin_endpoint</span>():
+    <span class="kw">return</span> {<span class="str">"status"</span>: <span class="str">"welcome_admin"</span>}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_rbac_access_matrix</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        <span class="cm"># 1. Anonymous request -> 401 Unauthorized</span>
+        res1 = <span class="kw">await</span> client.get(<span class="str">"/admin-panel"</span>)
+        <span class="kw">assert</span> res1.status_code == <span class="dec">401</span>
+
+        <span class="cm"># 2. Viewer token -> 403 Forbidden</span>
+        viewer_token = create_test_token(<span class="str">"user1"</span>, <span class="str">"viewer"</span>)
+        res2 = <span class="kw">await</span> client.get(<span class="str">"/admin-panel"</span>, headers={<span class="str">"Authorization"</span>: f<span class="str">"Bearer {viewer_token}"</span>})
+        <span class="kw">assert</span> res2.status_code == <span class="dec">403</span>
+
+        <span class="cm"># 3. Admin token -> 200 OK</span>
+        admin_token = create_test_token(<span class="str">"boss"</span>, <span class="str">"admin"</span>)
+        res3 = <span class="kw">await</span> client.get(<span class="str">"/admin-panel"</span>, headers={<span class="str">"Authorization"</span>: f<span class="str">"Bearer {admin_token}"</span>})
+        <span class="kw">assert</span> res3.status_code == <span class="dec">200</span>
+        <span class="kw">assert</span> res3.json() == {<span class="str">"status"</span>: <span class="str">"welcome_admin"</span>}</code></pre>
+            </div>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -1687,6 +2431,82 @@ manager = ConnectionManager()
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;How do you scale WebSockets horizontally across 10 Kubernetes pods?&rdquo;</strong><br><strong>A:</strong> A single WebSocket connection is pinned to a single server process. If User A is on Pod 1 and User B is on Pod 2, Pod 1 cannot directly communicate with Pod 2's memory. To scale horizontally, connect all pods to a distributed Pub/Sub broker (like Redis Pub/Sub or RabbitMQ). When Pod 1 receives a message, it publishes it to Redis; all other pods receive the message from Redis and forward it to their locally connected WebSocket clients.</p>
             </div>
+
+            <!-- MODULE 10 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 10 Hands-On Verification Test: Server-Sent Events (SSE) AI Streaming Verification</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">When testing an SSE endpoint in a browser, the frontend engineer notices that the text does NOT stream word-by-word; instead, the browser freezes for 10 seconds and then dumps the entire completed paragraph at once. What caused this?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">When deploying FastAPI behind a reverse proxy (like Nginx, Traefik, or AWS ALB), reverse proxies enable HTTP response buffering by default. Nginx buffers stream chunks until the buffer is full (typically 4KB or 8KB) or until the connection closes!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>You must disable reverse proxy buffering by adding the <code>X-Accel-Buffering: no</code> header to your <code>StreamingResponse</code>, and ensure that each SSE chunk strictly ends with two newline characters (<code>\n\n</code>).</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_10_sse_stream.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_10_sse_stream.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest, asyncio
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI
+<span class="kw">from</span> fastapi.responses <span class="kw">import</span> StreamingResponse
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+<span class="kw">async def</span> <span class="fn">token_generator</span>():
+    words = [<span class="str">"Deep"</span>, <span class="str">"Learning"</span>, <span class="str">"Streaming"</span>]
+    <span class="kw">for</span> w <span class="kw">in</span> words:
+        <span class="kw">await</span> asyncio.sleep(<span class="dec">0.05</span>)
+        <span class="kw">yield</span> f<span class="str">"data: {w}\n\n"</span>
+
+<span class="dec">@app.get</span>(<span class="str">"/stream-tokens"</span>)
+<span class="kw">async def</span> <span class="fn">stream_endpoint</span>():
+    <span class="kw">return</span> StreamingResponse(
+        token_generator(),
+        media_type=<span class="str">"text/event-stream"</span>,
+        headers={<span class="str">"X-Accel-Buffering"</span>: <span class="str">"no"</span>}
+    )
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_sse_token_streaming_chunks</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        received_chunks = []
+        <span class="kw">async with</span> client.stream(<span class="str">"GET"</span>, <span class="str">"/stream-tokens"</span>) <span class="kw">as</span> response:
+            <span class="kw">assert</span> response.status_code == <span class="dec">200</span>
+            <span class="kw">assert</span> response.headers[<span class="str">"content-type"</span>].startswith(<span class="str">"text/event-stream"</span>)
+            <span class="kw">async for</span> line <span class="kw">in</span> response.aiter_lines():
+                <span class="kw">if</span> line.startswith(<span class="str">"data:"</span>):
+                    received_chunks.append(line)
+
+        <span class="kw">assert</span> received_chunks == [
+            <span class="str">"data: Deep"</span>,
+            <span class="str">"data: Learning"</span>,
+            <span class="str">"data: Streaming"</span>
+        ]</code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 11: ERROR HANDLING & RFC 7807                      -->
@@ -1802,6 +2622,84 @@ app = FastAPI()
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;How do you prevent leaking database connection strings or stack traces in HTTP 500 responses?&rdquo;</strong><br><strong>A:</strong> Catch all unexpected exceptions in a global unhandled exception handler. Generate a unique <code>error_reference_id = uuid.uuid4()</code>, log the full exception traceback and database query details internally using structured logging tagged with that ID, and return a sanitised response to the client: <code>{"message": "Internal Server Error", "reference_id": error_reference_id}</code>. The client can quote the reference ID to support without exposing internal architecture.</p>
             </div>
+
+            <!-- MODULE 11 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 11 Hands-On Verification Test: RFC 7807 Problem Details & Custom Exception Handler Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A junior developer adds a global exception handler: <code>@app.exception_handler(Exception) def catch_all(...)</code>. Suddenly, every 404 Not Found error and 401 Unauthorized error in the entire application gets converted into an HTTP 500 Internal Server Error! Why?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">FastAPI's <code>HTTPException</code> and Starlette's <code>StarletteHTTPException</code> inherit from Python's base <code>Exception</code>. If you register a generic handler for <code>Exception</code> without re-raising or delegating HTTP exceptions, it intercepts all intended 4xx client errors and formats them as 500 server crashes!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Always check if the exception is an instance of <code>StarletteHTTPException</code> or <code>RequestValidationError</code>, or register specific custom domain exception classes so standard HTTP error statuses remain intact.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_11_rfc7807_exceptions.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_11_rfc7807_exceptions.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, Request, status
+<span class="kw">from</span> fastapi.responses <span class="kw">import</span> JSONResponse
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+<span class="kw">class</span> <span class="cls">ItemOutOfStockException</span>(Exception):
+    <span class="kw">def</span> <span class="fn">__init__</span>(self, item_id: <span class="typ">int</span>):
+        self.item_id = item_id
+
+<span class="dec">@app.exception_handler</span>(ItemOutOfStockException)
+<span class="kw">async def</span> <span class="fn">out_of_stock_handler</span>(request: Request, exc: ItemOutOfStockException):
+    <span class="kw">return</span> JSONResponse(
+        status_code=status.HTTP_409_CONFLICT,
+        content={
+            <span class="str">"type"</span>: <span class="str">"https://api.example.com/errors/out-of-stock"</span>,
+            <span class="str">"title"</span>: <span class="str">"Item Out Of Stock"</span>,
+            <span class="str">"status"</span>: <span class="dec">409</span>,
+            <span class="str">"detail"</span>: f<span class="str">"Product ID {exc.item_id} has zero inventory available"</span>,
+            <span class="str">"instance"</span>: request.url.path
+        }
+    )
+
+<span class="dec">@app.post</span>(<span class="str">"/orders/{item_id}"</span>)
+<span class="kw">def</span> <span class="fn">order_item</span>(item_id: <span class="typ">int</span>):
+    <span class="kw">if</span> item_id == <span class="dec">99</span>:
+        <span class="kw">raise</span> ItemOutOfStockException(item_id=item_id)
+    <span class="kw">return</span> {<span class="str">"status"</span>: <span class="str">"ordered"</span>}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_rfc7807_exception_format</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        res = <span class="kw">await</span> client.post(<span class="str">"/orders/99"</span>)
+        <span class="kw">assert</span> res.status_code == <span class="dec">409</span>
+        data = res.json()
+        <span class="kw">assert</span> data[<span class="str">"title"</span>] == <span class="str">"Item Out Of Stock"</span>
+        <span class="kw">assert</span> data[<span class="str">"status"</span>] == <span class="dec">409</span>
+        <span class="kw">assert</span> data[<span class="str">"instance"</span>] == <span class="str">"/orders/99"</span></code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 12: BACKGROUND TASKS & QUEUES                      -->
@@ -1911,6 +2809,70 @@ app = FastAPI(lifespan=lifespan)
             <div class="interview-tip">
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;What happens to in-flight BackgroundTasks when Kubernetes terminates a pod?&rdquo;</strong><br><strong>A:</strong> When Kubernetes scales down or deploys a new revision, it sends a <code>SIGTERM</code> signal. If your app doesn't have a graceful shutdown handler waiting for pending <code>BackgroundTasks</code> to finish, Kubernetes waits for the grace period (default 30 seconds) and fires <code>SIGKILL</code>. All pending in-memory background tasks are terminated immediately mid-execution, causing data corruption.</p>
+            </div>
+
+            <!-- MODULE 12 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 12 Hands-On Verification Test: BackgroundTasks Post-Response Execution Verification</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A user registers and your endpoint triggers an email notification: <code>background_tasks.add_task(send_welcome_email, email=user.email)</code>. How do you verify in automated testing that the HTTP response returns immediately without waiting for the background task to complete?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Assuming that background tasks run in a detached process. If the task fails, it does not alter the HTTP 200 response that was already sent to the user.</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>FastAPI runs background tasks after writing response headers and bytes to the socket. In automated tests, you can assert that the response returns HTTP 200 while checking a tracking list to verify task execution order.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_12_background_tasks.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_12_background_tasks.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, BackgroundTasks
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+executed_tasks = []
+
+<span class="kw">def</span> <span class="fn">audit_task</span>(action: <span class="typ">str</span>):
+    executed_tasks.append(action)
+
+<span class="dec">@app.post</span>(<span class="str">"/do-work"</span>)
+<span class="kw">def</span> <span class="fn">do_work_endpoint</span>(bg: BackgroundTasks):
+    bg.add_task(audit_task, action=<span class="str">"AUDIT_RECORD_SAVED"</span>)
+    <span class="kw">return</span> {<span class="str">"message"</span>: <span class="str">"Accepted and processed"</span>}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_background_task_executes</span>():
+    executed_tasks.clear()
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        res = <span class="kw">await</span> client.post(<span class="str">"/do-work"</span>)
+        <span class="kw">assert</span> res.status_code == <span class="dec">200</span>
+        <span class="kw">assert</span> res.json() == {<span class="str">"message"</span>: <span class="str">"Accepted and processed"</span>}
+        <span class="cm"># Verification: Background task was successfully executed after response</span>
+        <span class="kw">assert</span> executed_tasks == [<span class="str">"AUDIT_RECORD_SAVED"</span>]</code></pre>
+            </div>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -2037,6 +2999,74 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;How do you rate limit users who are behind Cloudflare or AWS ALB?&rdquo;</strong><br><strong>A:</strong> If you rely on <code>request.client.host</code> behind a reverse proxy or CDN, every single incoming user shares the IP address of the load balancer! This causes the rate limiter to trigger for all legitimate users simultaneously. To fix this, inspect the <code>X-Forwarded-For</code> header, ensuring you only trust the header if the connection came from your verified CDN IP subnet.</p>
             </div>
+
+            <!-- MODULE 13 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 13 Hands-On Verification Test: SlowAPI Rate Limiter & HTTP 429 Defense Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">A credential-stuffing attacker attacks your <code>/api/v1/auth/login</code> endpoint with 5,000 requests per minute from a single IP. How do you verify that your SlowAPI rate limiter cuts them off and responds with HTTP 429 and a <code>Retry-After</code> header?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">Failing to test rate limit enforcement in automated test suites because tests run with mock clients that bypass rate limiter storage.</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Configure SlowAPI with an in-memory or Redis key storage, register the <code>RateLimitExceeded</code> exception handler, and write a pytest test that executes N+1 rapid requests, asserting that request N+1 receives HTTP 429.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_13_rate_limiting.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_13_rate_limiting.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, Request
+<span class="kw">from</span> slowapi <span class="kw">import</span> Limiter, _rate_limit_exceeded_handler
+<span class="kw">from</span> slowapi.util <span class="kw">import</span> get_remote_address
+<span class="kw">from</span> slowapi.errors <span class="kw">import</span> RateLimitExceeded
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+limiter = Limiter(key_func=get_remote_address)
+app = FastAPI()
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+<span class="dec">@app.post</span>(<span class="str">"/sensitive-login"</span>)
+<span class="dec">@limiter.limit</span>(<span class="str">"3/minute"</span>)
+<span class="kw">def</span> <span class="fn">login_endpoint</span>(request: Request):
+    <span class="kw">return</span> {<span class="str">"status"</span>: <span class="str">"ok"</span>}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_rate_limiter_blocks_excess_calls</span>():
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        <span class="cm"># First 3 requests succeed</span>
+        <span class="kw">for</span> i <span class="kw">in</span> range(<span class="dec">3</span>):
+            res = <span class="kw">await</span> client.post(<span class="str">"/sensitive-login"</span>)
+            <span class="kw">assert</span> res.status_code == <span class="dec">200</span>
+
+        <span class="cm"># 4th request MUST be blocked with 429 Too Many Requests</span>
+        blocked_res = <span class="kw">await</span> client.post(<span class="str">"/sensitive-login"</span>)
+        <span class="kw">assert</span> blocked_res.status_code == <span class="dec">429</span>
+        <span class="kw">assert</span> <span class="str">"Rate limit exceeded"</span> <span class="kw">in</span> blocked_res.text</code></pre>
+            </div>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 14: TESTING & TEST FIXTURES                        -->
@@ -2137,6 +3167,73 @@ TestSessionFactory = async_sessionmaker(bind=test_engine, class_=AsyncSession, e
             <div class="interview-tip">
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;How do you test a WebSocket endpoint with Pytest?&rdquo;</strong><br><strong>A:</strong> Use Starlette's <code>TestClient</code> context manager: <code>with client.websocket_connect("/ws") as websocket: websocket.send_text("hello"); data = websocket.receive_text(); assert data == "expected"</code>. For async streaming tests, HTTPX <code>AsyncClient.stream("GET", "/sse")</code> allows you to read lines iteratively.</p>
+            </div>
+
+            <!-- MODULE 14 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 14 Hands-On Verification Test: Pytest app.dependency_overrides Mock Isolation Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">In a test suite, you override your database connection with an in-memory SQLite fixture. In subsequent test files, tests mysteriously start failing because they expect the real database or a different mock. What caused this test pollution?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;"><code>app.dependency_overrides</code> is a persistent dictionary stored on the FastAPI application instance. If you assign a mock without clearing it in fixture teardown, that mock remains active for the entire duration of the pytest process!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Always use an autouse pytest fixture that yields and guarantees <code>app.dependency_overrides.clear()</code> in its cleanup phase.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_14_mock_isolation.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_14_mock_isolation.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, Depends
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+<span class="kw">def</span> <span class="fn">get_payment_processor</span>():
+    <span class="kw">return</span> <span class="str">"real_stripe_production_gateway"</span>
+
+<span class="dec">@app.post</span>(<span class="str">"/charge"</span>)
+<span class="kw">def</span> <span class="fn">charge_route</span>(gateway = Depends(get_payment_processor)):
+    <span class="kw">return</span> {<span class="str">"gateway_used"</span>: gateway}
+
+<span class="dec">@pytest.fixture</span>
+<span class="kw">def</span> <span class="fn">clean_overrides</span>():
+    <span class="kw">yield</span>
+    <span class="cm"># Cleanup guaranteed after each individual test</span>
+    app.dependency_overrides.clear()
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_override_is_isolated</span>(clean_overrides):
+    <span class="cm"># Mock the payment gateway for this specific test</span>
+    app.dependency_overrides[get_payment_processor] = <span class="kw">lambda</span>: <span class="str">"mock_sandbox_gateway"</span>
+
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        res = <span class="kw">await</span> client.post(<span class="str">"/charge"</span>)
+        <span class="kw">assert</span> res.status_code == <span class="dec">200</span>
+        <span class="kw">assert</span> res.json()[<span class="str">"gateway_used"</span>] == <span class="str">"mock_sandbox_gateway"</span></code></pre>
+            </div>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -2285,6 +3382,79 @@ settings = get_settings()</code></pre>
             <div class="interview-tip">
                 <div class="interview-tip-title"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> Senior Interview Defense</div>
                 <p><strong>Q: &ldquo;Why should you avoid checking database health inside the Kubernetes livenessProbe?&rdquo;</strong><br><strong>A:</strong> The liveness probe determines whether Kubernetes should forcefully kill and restart the container process. If your PostgreSQL database suffers a brief network spike or failover, a liveness probe checking the database will fail across ALL pods simultaneously. Kubernetes will kill every healthy web pod in your cluster at the exact same moment, amplifying a brief database blip into a catastrophic total outage.</p>
+            </div>
+
+            <!-- MODULE 15 VERIFICATION TEST -->
+            <div class="module-test">
+                <div class="module-test-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>Module 15 Hands-On Verification Test: Kubernetes Liveness vs. Readiness Health Probes Test</span>
+                </div>
+
+                <!-- Part 1: Diagnostic Scenario Challenge -->
+                <div class="quiz-box">
+                    <div class="quiz-badge">Scenario Challenge &amp; Incident Diagnostic</div>
+                    <div class="quiz-question">During a PostgreSQL failover that lasts 8 seconds, your Kubernetes cluster kills all 20 of your FastAPI web pods at the exact same moment. The entire platform suffers a 10-minute crash loop outage. Why did Kubernetes kill the pods, and how do separate probes fix it?</div>
+                    <details class="quiz-details">
+                        <summary class="quiz-summary">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Reveal Solution &amp; Deep Architectural Explanation
+                        </summary>
+                        <div class="quiz-answer">
+                            <p style="color: #f472b6; font-weight: 600; margin-bottom: 6px;">⚠️ The Trap / Why it Fails:</p>
+                            <p style="margin-bottom: 12px;">The Kubernetes <code>livenessProbe</code> was configured to query the database. When the database blipped, liveness checks failed. Kubernetes assumed the Python processes were deadlocked and forcefully SIGKILL'd all healthy pods!</p>
+                            <p style="color: #4ade80; font-weight: 600; margin-bottom: 6px;">✅ The Production Fix &amp; Core Rule:</p>
+                            <p>Never query databases in <code>/healthz</code> (liveness)! <code>/healthz</code> should ONLY check that the Python event loop is alive (returns 200 immediately). Query the database in <code>/readyz</code> (readiness). When the database blips, <code>/readyz</code> fails: Kubernetes temporarily stops routing user traffic to the pods without killing them, allowing them to resume instantly when PostgreSQL completes its failover.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Part 2: Automated Pytest Verification Suite -->
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    <strong>Automated Test Suite:</strong> Run this test with <code>pytest -v test_module_15_k8s_probes.py</code> to verify your implementation against a live ASGI engine:
+                </p>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots"><span class="code-dot dot-red"></span><span class="code-dot dot-yellow"></span><span class="code-dot dot-green"></span></div>
+                    <span>test_module_15_k8s_probes.py</span>
+                    <button class="copy-btn" onclick="navigator.clipboard.writeText(this.parentElement.nextElementSibling.innerText)">Copy</button>
+                </div>
+                <pre><code><span class="kw">import</span> pytest
+<span class="kw">from</span> fastapi <span class="kw">import</span> FastAPI, HTTPException
+<span class="kw">from</span> httpx <span class="kw">import</span> AsyncClient, ASGITransport
+
+app = FastAPI()
+
+db_available = <span class="kw">True</span>
+
+<span class="dec">@app.get</span>(<span class="str">"/healthz"</span>)
+<span class="kw">def</span> <span class="fn">liveness</span>():
+    <span class="cm"># Process is running and event loop is responsive</span>
+    <span class="kw">return</span> {<span class="str">"status"</span>: <span class="str">"alive"</span>}
+
+<span class="dec">@app.get</span>(<span class="str">"/readyz"</span>)
+<span class="kw">def</span> <span class="fn">readiness</span>():
+    <span class="kw">if not</span> db_available:
+        <span class="kw">raise</span> HTTPException(status_code=<span class="dec">503</span>, detail=<span class="str">"Database connection failing"</span>)
+    <span class="kw">return</span> {<span class="str">"status"</span>: <span class="str">"ready"</span>}
+
+<span class="dec">@pytest.mark.asyncio</span>
+<span class="kw">async def</span> <span class="fn">test_k8s_probe_independence_during_db_outage</span>():
+    global db_available
+    transport = ASGITransport(app=app)
+    <span class="kw">async with</span> AsyncClient(transport=transport, base_url=<span class="str">"http://test"</span>) <span class="kw">as</span> client:
+        <span class="cm"># Simulate external database outage</span>
+        db_available = <span class="kw">False</span>
+
+        <span class="cm"># 1. Liveness MUST stay 200 so Kubernetes DOES NOT kill the container!</span>
+        live_res = <span class="kw">await</span> client.get(<span class="str">"/healthz"</span>)
+        <span class="kw">assert</span> live_res.status_code == <span class="dec">200</span>
+        <span class="kw">assert</span> live_res.json() == {<span class="str">"status"</span>: <span class="str">"alive"</span>}
+
+        <span class="cm"># 2. Readiness fails (503) so Kubernetes stops routing user traffic</span>
+        ready_res = <span class="kw">await</span> client.get(<span class="str">"/readyz"</span>)
+        <span class="kw">assert</span> ready_res.status_code == <span class="dec">503</span></code></pre>
+            </div>
             </div>
         </section>
 
