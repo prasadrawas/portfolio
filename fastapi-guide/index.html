@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>The Complete FastAPI & Modern Python Backend Master Guide | Prasad Rawas</title>
     <meta name="description" content="A comprehensive, masterclass guide explaining 100% of the FastAPI ecosystem: ASGI, Pydantic v2, Async Event Loops, Dependency Injection, SQLAlchemy 2.0, WebSockets, AI SSE Streaming, and Enterprise SRE.">
     <link rel="canonical" href="https://dev.prasadrawas.online/fastapi-guide/">
@@ -49,6 +49,10 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg);
@@ -56,6 +60,7 @@
             line-height: 1.75;
             -webkit-font-smoothing: antialiased;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         code, pre, .font-mono {
@@ -65,25 +70,27 @@
         /* Nav */
         .nav {
             position: sticky; top: 0; z-index: 100;
-            background: rgba(10, 10, 15, 0.9);
+            background: rgba(10, 10, 15, 0.92);
             backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
-            padding: 14px 0;
+            padding: 12px 0;
         }
         .nav-inner {
             max-width: 1440px; margin: 0 auto; padding: 0 24px;
             display: flex; justify-content: space-between; align-items: center;
+            gap: 12px;
         }
-        .nav-left { display: flex; align-items: center; gap: 20px; }
-        .nav-logo { font-size: 19px; font-weight: 800; color: #fff; text-decoration: none; }
+        .nav-left { display: flex; align-items: center; gap: 18px; }
+        .nav-logo { font-size: 19px; font-weight: 800; color: #fff; text-decoration: none; flex-shrink: 0; }
         .nav-logo span { color: var(--accent); }
         .nav-link {
             display: inline-flex; align-items: center; gap: 6px;
             color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s; white-space: nowrap;
         }
         .nav-link:hover { color: #fff; }
-        .nav-actions { display: flex; align-items: center; gap: 10px; }
+        .nav-actions { display: flex; align-items: center; gap: 8px; }
 
         .search-box {
             position: relative;
@@ -98,18 +105,38 @@
             font-size: 12.5px;
             color: #fff;
             outline: none;
-            width: 220px;
+            width: 200px;
             transition: all 0.2s;
             font-family: inherit;
         }
         .search-box input:focus {
             border-color: var(--accent);
-            width: 280px;
+            width: 240px;
             background: rgba(255, 255, 255, 0.08);
             box-shadow: 0 0 14px var(--accent-glow);
         }
         .search-box svg {
             position: absolute; left: 11px; color: var(--text-faint); pointer-events: none;
+        }
+
+        .nav-btn-icon {
+            display: none;
+            align-items: center;
+            gap: 6px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            color: #a5b4fc;
+            padding: 7px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .nav-btn-icon:hover {
+            background: rgba(99, 102, 241, 0.25);
+            color: #fff;
         }
 
         /* Layout */
@@ -121,7 +148,7 @@
             padding: 36px 24px 120px;
         }
 
-        /* Sidebar */
+        /* Sidebar Desktop */
         .sidebar {
             position: sticky;
             top: 76px;
@@ -158,8 +185,8 @@
         .content { min-width: 0; }
 
         .hero-banner {
-            margin-bottom: 56px;
-            padding-bottom: 36px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
             border-bottom: 1px solid var(--border);
         }
 
@@ -172,25 +199,63 @@
         }
         .badge-dot { width: 7px; height: 7px; background: var(--accent-green); border-radius: 50%; box-shadow: 0 0 8px var(--accent-green); }
 
-        h1 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; color: #fff; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 16px; }
-        .hero-desc { font-size: 16.5px; color: var(--text-muted); max-width: 860px; line-height: 1.7; margin-bottom: 24px; }
+        h1 { font-size: clamp(26px, 4vw, 42px); font-weight: 800; color: #fff; letter-spacing: -0.8px; line-height: 1.2; margin-bottom: 16px; }
+        .hero-desc { font-size: 16px; color: var(--text-muted); max-width: 860px; line-height: 1.7; margin-bottom: 24px; }
 
-        .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+        .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
         .hero-tag {
             font-size: 12px; font-family: 'JetBrains Mono', monospace;
             background: var(--surface); border: 1px solid var(--border);
             padding: 4px 10px; border-radius: 4px; color: #cbd5e1;
+            white-space: nowrap;
+        }
+
+        /* Mobile Quick-Jump Chips (Horizontal Scroll) */
+        .mobile-chips-bar {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0 16px;
+            margin-bottom: 24px;
+            overflow: hidden;
+            border-bottom: 1px dashed var(--border);
+        }
+        .chips-label {
+            font-size: 11px; font-family: 'JetBrains Mono', monospace;
+            color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.8px;
+            white-space: nowrap; flex-shrink: 0;
+        }
+        .chips-scroll {
+            display: flex; gap: 8px; overflow-x: auto;
+            -webkit-overflow-scrolling: touch; scrollbar-width: none;
+            padding-bottom: 4px;
+        }
+        .chips-scroll::-webkit-scrollbar { display: none; }
+        .chip {
+            display: inline-flex; align-items: center;
+            font-size: 11.5px; font-family: 'JetBrains Mono', monospace;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: #cbd5e1; text-decoration: none;
+            padding: 5px 10px; border-radius: 999px;
+            white-space: nowrap; flex-shrink: 0;
+            transition: all 0.15s;
+        }
+        .chip:hover, .chip.active {
+            background: rgba(99, 102, 241, 0.15);
+            border-color: var(--accent);
+            color: #fff;
         }
 
         /* Module Sections */
         .module {
-            margin-bottom: 90px;
-            scroll-margin-top: 90px;
+            margin-bottom: 80px;
+            scroll-margin-top: 80px;
         }
 
         .module-header {
             display: flex; align-items: baseline; gap: 14px;
-            margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
+            margin-bottom: 20px; padding-bottom: 14px; border-bottom: 1px solid var(--border);
             flex-wrap: wrap;
         }
 
@@ -205,14 +270,14 @@
         .m-amber { color: #fbbf24; background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.25); }
         .m-pink { color: #f472b6; background: rgba(244,114,182,0.12); border: 1px solid rgba(244,114,182,0.25); }
 
-        h2 { font-size: 27px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
-        h3 { font-size: 19px; font-weight: 700; color: #f8fafc; margin: 34px 0 14px; letter-spacing: -0.3px; }
-        h4 { font-size: 15.5px; font-weight: 600; color: #e2e8f0; margin: 20px 0 8px; }
+        h2 { font-size: 26px; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+        h3 { font-size: 18.5px; font-weight: 700; color: #f8fafc; margin: 32px 0 12px; letter-spacing: -0.3px; }
+        h4 { font-size: 15px; font-weight: 600; color: #e2e8f0; margin: 18px 0 8px; }
         
-        p { color: var(--text); font-size: 15.5px; line-height: 1.8; margin-bottom: 16px; }
+        p { color: var(--text); font-size: 15px; line-height: 1.75; margin-bottom: 16px; word-break: break-word; }
         p strong { color: #fff; }
         
-        ul, ol { margin-left: 20px; margin-bottom: 20px; color: var(--text); font-size: 15px; }
+        ul, ol { margin-left: 20px; margin-bottom: 18px; color: var(--text); font-size: 14.5px; }
         li { margin-bottom: 8px; line-height: 1.7; }
         li strong { color: #fff; }
 
@@ -221,7 +286,7 @@
             background: var(--code-bg);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            margin: 22px 0 30px;
+            margin: 20px 0 28px;
             overflow: hidden;
             box-shadow: 0 6px 24px rgba(0,0,0,0.35);
         }
@@ -231,9 +296,10 @@
             padding: 10px 16px; background: rgba(255,255,255,0.025);
             border-bottom: 1px solid rgba(255,255,255,0.06);
             font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--text-muted);
+            gap: 10px;
         }
 
-        .code-dots { display: flex; gap: 6px; align-items: center; }
+        .code-dots { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
         .code-dot { width: 10px; height: 10px; border-radius: 50%; }
         .dot-red { background: #ef4444; }
         .dot-yellow { background: #f59e0b; }
@@ -241,39 +307,41 @@
 
         .copy-btn {
             background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-muted); padding: 4px 10px; border-radius: 4px;
+            color: var(--text-muted); padding: 5px 12px; border-radius: 4px;
             font-size: 11px; cursor: pointer; transition: all 0.2s; font-family: inherit;
+            flex-shrink: 0; min-height: 28px; touch-action: manipulation;
         }
         .copy-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
 
         pre {
-            padding: 20px;
+            padding: 18px;
             overflow-x: auto;
-            font-size: 13.5px;
+            -webkit-overflow-scrolling: touch;
+            font-size: 13px;
             line-height: 1.65;
             color: #e2e8f0;
         }
 
         /* Syntax colors */
-        .kw { color: #c084fc; font-weight: 600; } /* keyword */
-        .fn { color: #60a5fa; } /* function */
-        .str { color: #34d399; } /* string */
-        .cm { color: #64748b; font-style: italic; } /* comment */
-        .cls { color: #f59e0b; font-weight: 600; } /* class */
-        .dec { color: #f472b6; } /* decorator */
-        .typ { color: #38bdf8; } /* type hint */
+        .kw { color: #c084fc; font-weight: 600; }
+        .fn { color: #60a5fa; }
+        .str { color: #34d399; }
+        .cm { color: #64748b; font-style: italic; }
+        .cls { color: #f59e0b; font-weight: 600; }
+        .dec { color: #f472b6; }
+        .typ { color: #38bdf8; }
 
         /* Explanatory cards & callouts */
         .concept-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 24px;
-            margin: 24px 0;
+            padding: 22px;
+            margin: 22px 0;
         }
 
         .concept-card h4 {
-            color: #fff; margin-top: 0; font-size: 16px; margin-bottom: 10px;
+            color: #fff; margin-top: 0; font-size: 15.5px; margin-bottom: 10px;
             display: flex; align-items: center; gap: 8px;
         }
 
@@ -281,26 +349,28 @@
             background: #090a10;
             border: 1px dashed rgba(255,255,255,0.15);
             border-radius: var(--radius-md);
-            padding: 20px;
+            padding: 18px;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 12.5px;
+            font-size: 12px;
             line-height: 1.6;
             color: #a5b4fc;
             overflow-x: auto;
-            margin: 22px 0;
+            -webkit-overflow-scrolling: touch;
+            white-space: pre;
+            margin: 20px 0;
         }
 
         .ai-gotcha {
             background: linear-gradient(135deg, rgba(236, 72, 153, 0.06), rgba(99, 102, 241, 0.04));
             border: 1px solid rgba(236, 72, 153, 0.35);
             border-radius: var(--radius-md);
-            padding: 22px 24px;
-            margin: 26px 0;
+            padding: 20px 22px;
+            margin: 24px 0;
         }
 
         .ai-gotcha-title {
             display: flex; align-items: center; gap: 8px;
-            font-size: 13.5px; font-weight: 700; color: #f472b6;
+            font-size: 13px; font-weight: 700; color: #f472b6;
             text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
             font-family: 'JetBrains Mono', monospace;
         }
@@ -309,24 +379,29 @@
             background: linear-gradient(135deg, rgba(245, 158, 11, 0.06), rgba(6, 182, 212, 0.04));
             border: 1px solid rgba(245, 158, 11, 0.35);
             border-radius: var(--radius-md);
-            padding: 22px 24px;
-            margin: 26px 0;
+            padding: 20px 22px;
+            margin: 24px 0;
         }
 
         .interview-tip-title {
             display: flex; align-items: center; gap: 8px;
-            font-size: 13.5px; font-weight: 700; color: #fbbf24;
+            font-size: 13px; font-weight: 700; color: #fbbf24;
             text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
             font-family: 'JetBrains Mono', monospace;
         }
 
+        /* Responsive Comparison Table */
         .comparison-table {
             width: 100%; border-collapse: collapse; margin: 24px 0;
-            font-size: 14px;
+            font-size: 13.5px;
+            display: block;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
         .comparison-table th, .comparison-table td {
-            padding: 14px 18px; text-align: left;
+            padding: 12px 16px; text-align: left;
             border-bottom: 1px solid var(--border);
+            white-space: nowrap;
         }
         .comparison-table th {
             color: #fff; background: rgba(255,255,255,0.03); font-weight: 600;
@@ -338,8 +413,8 @@
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.07), rgba(6, 182, 212, 0.05));
             border: 1px solid rgba(99, 102, 241, 0.3);
             border-radius: var(--radius-md);
-            padding: 26px;
-            margin: 36px 0 20px;
+            padding: 24px;
+            margin: 32px 0 16px;
             box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
         }
 
@@ -347,26 +422,27 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 700;
             color: #38bdf8;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             font-family: 'JetBrains Mono', monospace;
+            flex-wrap: wrap;
         }
 
         .quiz-box {
             background: rgba(15, 17, 26, 0.75);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 18px 20px;
-            margin-bottom: 22px;
+            padding: 16px 18px;
+            margin-bottom: 20px;
         }
 
         .quiz-badge {
             display: inline-block;
-            font-size: 10.5px;
+            font-size: 10px;
             font-weight: 700;
             font-family: 'JetBrains Mono', monospace;
             text-transform: uppercase;
@@ -383,7 +459,7 @@
             font-weight: 600;
             color: #fff;
             margin-bottom: 12px;
-            font-size: 15px;
+            font-size: 14.5px;
             line-height: 1.6;
         }
 
@@ -397,16 +473,17 @@
             gap: 6px;
             cursor: pointer;
             color: #818cf8;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
             user-select: none;
-            padding: 6px 14px;
+            padding: 6px 12px;
             background: rgba(99, 102, 241, 0.12);
             border: 1px solid rgba(99, 102, 241, 0.25);
             border-radius: 4px;
             transition: all 0.2s;
             list-style: none;
             font-family: 'JetBrains Mono', monospace;
+            touch-action: manipulation;
         }
 
         .quiz-summary::-webkit-details-marker { display: none; }
@@ -418,19 +495,130 @@
 
         .quiz-answer {
             margin-top: 14px;
-            padding: 16px 18px;
+            padding: 14px 16px;
             background: rgba(10, 10, 15, 0.85);
             border-left: 3px solid var(--accent-cyan);
             border-radius: 0 4px 4px 0;
-            font-size: 14.5px;
+            font-size: 14px;
             color: var(--text);
             line-height: 1.7;
         }
 
-        /* Responsive */
+        /* Mobile Drawer (TOC Modal) */
+        .mobile-drawer-backdrop {
+            display: none;
+            position: fixed; inset: 0; z-index: 150;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .mobile-drawer-backdrop.active {
+            display: block; opacity: 1;
+        }
+
+        .mobile-drawer {
+            display: flex; flex-direction: column;
+            position: fixed; bottom: 0; left: 0; right: 0; z-index: 160;
+            background: #11131f;
+            border-top: 1px solid rgba(99, 102, 241, 0.35);
+            border-radius: 20px 20px 0 0;
+            max-height: 85vh;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.6);
+        }
+        .mobile-drawer.active {
+            transform: translateY(0);
+        }
+
+        .drawer-header {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .drawer-title {
+            display: flex; align-items: center; gap: 8px;
+            font-size: 15px; font-weight: 700; color: #fff;
+        }
+        .drawer-close {
+            background: rgba(255, 255, 255, 0.08); border: none;
+            color: #94a3b8; width: 32px; height: 32px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; cursor: pointer; touch-action: manipulation;
+        }
+        .drawer-close:hover { color: #fff; background: rgba(255, 255, 255, 0.15); }
+
+        .drawer-body {
+            padding: 16px 20px 32px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Floating Action Buttons (FAB) on Mobile */
+        .fab-group {
+            display: none;
+            position: fixed; bottom: 20px; right: 20px; z-index: 120;
+            flex-direction: column; gap: 10px; align-items: flex-end;
+        }
+        .fab-btn {
+            display: flex; align-items: center; gap: 6px;
+            background: rgba(99, 102, 241, 0.95);
+            color: #fff; border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 16px; border-radius: 999px;
+            font-size: 13px; font-weight: 600; cursor: pointer;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.2s;
+            touch-action: manipulation;
+        }
+        .fab-btn:active { transform: scale(0.96); }
+        .fab-top-btn {
+            width: 42px; height: 42px; padding: 0;
+            justify-content: center; border-radius: 50%;
+            background: rgba(20, 22, 34, 0.95);
+            border-color: var(--border);
+            color: #cbd5e1;
+            opacity: 0; pointer-events: none;
+            transition: all 0.25s ease;
+        }
+        .fab-top-btn.visible {
+            opacity: 1; pointer-events: auto;
+        }
+
+        /* Responsive Breakpoints */
         @media (max-width: 1024px) {
-            .layout { grid-template-columns: 1fr; }
+            .layout { grid-template-columns: 1fr; gap: 0; padding: 24px 20px 100px; }
             .sidebar { display: none; }
+            .mobile-chips-bar { display: flex; }
+            .fab-group { display: flex; }
+            .nav-btn-icon { display: inline-flex; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-inner { padding: 0 14px; }
+            .nav-link-desktop { display: none; }
+            .search-box input {
+                width: 130px; font-size: 11.5px;
+                padding: 6px 10px 6px 28px;
+            }
+            .search-box input:focus { width: 160px; }
+            .layout { padding: 18px 14px 100px; }
+            h1 { font-size: 24px; line-height: 1.25; }
+            .hero-desc { font-size: 14.5px; line-height: 1.65; }
+            h2 { font-size: 20px; line-height: 1.3; }
+            h3 { font-size: 17px; margin: 26px 0 10px; }
+            p, ul, ol { font-size: 14px; line-height: 1.7; }
+            .module { margin-bottom: 56px; scroll-margin-top: 65px; }
+            pre { padding: 14px; font-size: 12px; }
+            .diagram-box { font-size: 11px; padding: 14px; }
+            .concept-card, .ai-gotcha, .interview-tip { padding: 16px 14px; margin: 18px 0; }
+            .module-test { padding: 16px 14px; margin: 24px 0 14px; }
+            .quiz-box { padding: 14px 12px; }
+            .quiz-question { font-size: 13.5px; }
+            .quiz-answer { padding: 12px 14px; font-size: 13px; }
         }
     </style>
 </head>
@@ -441,21 +629,67 @@
     <div class="nav-inner">
         <div class="nav-left">
             <a href="../index.html" class="nav-logo">PR<span>.</span></a>
-            <a href="../index.html" class="nav-link">Portfolio</a>
-            <a href="../preparations/index.html" class="nav-link">Roadmap</a>
-            <a href="../resumes/index.html" class="nav-link">Resumes</a>
+            <a href="../index.html" class="nav-link nav-link-desktop">Portfolio</a>
+            <a href="../preparations/index.html" class="nav-link nav-link-desktop">Roadmap</a>
+            <a href="../resumes/index.html" class="nav-link nav-link-desktop">Resumes</a>
         </div>
         <div class="nav-actions">
             <div class="search-box">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" id="searchInput" placeholder="Search topics (e.g. JWT, SSE, N+1)...">
+                <input type="text" id="searchInput" placeholder="Search (e.g. JWT, SSE)...">
             </div>
+            <button class="nav-btn-icon" id="openMobileTocBtn" aria-label="Open Modules List">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                <span>Modules</span>
+            </button>
         </div>
     </div>
 </nav>
 
+<!-- Mobile TOC Drawer Backdrop & Drawer -->
+<div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+<div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+        <div class="drawer-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <span>FastAPI Curriculum (15 Modules)</span>
+        </div>
+        <button class="drawer-close" id="closeDrawerBtn" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="drawer-body">
+        <ul class="toc-list" id="mobileDrawerList">
+            <li><a href="#mod-1" class="toc-link"><span class="toc-badge">01</span> The Core Engine</a></li>
+            <li><a href="#mod-2" class="toc-link"><span class="toc-badge">02</span> Sync vs. Async &amp; Event Loop</a></li>
+            <li><a href="#mod-3" class="toc-link"><span class="toc-badge">03</span> Pydantic v2 Core</a></li>
+            <li><a href="#mod-4" class="toc-link"><span class="toc-badge">04</span> Advanced Pydantic &amp; Envelopes</a></li>
+            <li><a href="#mod-5" class="toc-link"><span class="toc-badge">05</span> Request Ingestion &amp; Parameters</a></li>
+            <li><a href="#mod-6" class="toc-link"><span class="toc-badge">06</span> Dependency Injection (Depends)</a></li>
+            <li><a href="#mod-7" class="toc-link"><span class="toc-badge">07</span> Starlette Middleware &amp; Lifespan</a></li>
+            <li><a href="#mod-8" class="toc-link"><span class="toc-badge">08</span> Database &amp; SQLAlchemy 2.0</a></li>
+            <li><a href="#mod-9" class="toc-link"><span class="toc-badge">09</span> Security, Auth &amp; RBAC</a></li>
+            <li><a href="#mod-10" class="toc-link"><span class="toc-badge">10</span> WebSockets &amp; AI Streaming</a></li>
+            <li><a href="#mod-11" class="toc-link"><span class="toc-badge">11</span> Error Handling &amp; RFC 7807</a></li>
+            <li><a href="#mod-12" class="toc-link"><span class="toc-badge">12</span> Background Tasks &amp; Queues</a></li>
+            <li><a href="#mod-13" class="toc-link"><span class="toc-badge">13</span> Caching, Rate Limits &amp; Resilience</a></li>
+            <li><a href="#mod-14" class="toc-link"><span class="toc-badge">14</span> Automated Testing (Pytest)</a></li>
+            <li><a href="#mod-15" class="toc-link"><span class="toc-badge">15</span> Docker &amp; Production SRE</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Floating Action Buttons on Mobile -->
+<div class="fab-group">
+    <button class="fab-btn" id="fabModulesBtn" aria-label="Open Modules Navigation">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+        <span>15 Modules</span>
+    </button>
+    <button class="fab-btn fab-top-btn" id="fabBackToTop" aria-label="Back to Top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+</div>
+
 <div class="layout">
-    <!-- Sidebar Table of Contents -->
+    <!-- Sidebar Table of Contents (Desktop) -->
     <aside class="sidebar">
         <div class="sidebar-title">FastAPI Curriculum (15 Modules)</div>
         <ul class="toc-list" id="tocList">
@@ -500,6 +734,28 @@
                 <span class="hero-tag">OAuth2 &amp; RBAC</span>
                 <span class="hero-tag">Distributed ARQ/Celery</span>
                 <span class="hero-tag">Multi-Stage Docker</span>
+            </div>
+
+            <!-- Mobile Quick-Jump Chips -->
+            <div class="mobile-chips-bar" id="mobileChipsBar">
+                <span class="chips-label">Quick Jump:</span>
+                <div class="chips-scroll">
+                    <a href="#mod-1" class="chip">01 Engine</a>
+                    <a href="#mod-2" class="chip">02 Async</a>
+                    <a href="#mod-3" class="chip">03 Pydantic</a>
+                    <a href="#mod-4" class="chip">04 Envelopes</a>
+                    <a href="#mod-5" class="chip">05 Ingestion</a>
+                    <a href="#mod-6" class="chip">06 Depends</a>
+                    <a href="#mod-7" class="chip">07 Middleware</a>
+                    <a href="#mod-8" class="chip">08 DB Async</a>
+                    <a href="#mod-9" class="chip">09 Security</a>
+                    <a href="#mod-10" class="chip">10 WebSockets</a>
+                    <a href="#mod-11" class="chip">11 Errors</a>
+                    <a href="#mod-12" class="chip">12 Background</a>
+                    <a href="#mod-13" class="chip">13 Resilience</a>
+                    <a href="#mod-14" class="chip">14 Testing</a>
+                    <a href="#mod-15" class="chip">15 Docker</a>
+                </div>
             </div>
         </header>
         <!-- ========================================================= -->
@@ -3459,7 +3715,7 @@ db_available = <span class="kw">True</span>
         </section>
 
         <!-- Footer -->
-        <footer class="hero-banner" style="border-top: 1px solid var(--border); border-bottom: none; margin-top: 80px; text-align: center;">
+        <footer class="hero-banner" style="border-top: 1px solid var(--border); border-bottom: none; margin-top: 60px; text-align: center; padding-bottom: 40px;">
             <p>Master Guide authored by <a href="../index.html" style="color: #fff; font-weight: 600; text-decoration: none;">Prasad Rawas</a> &bull; Senior Software Developer</p>
             <p style="font-size: 13.5px; color: var(--text-faint); margin-top: 6px;">Track your interview milestones with the <a href="../preparations/index.html" style="color: #818cf8; text-decoration: none;">12-Week Preparation Roadmap</a>.</p>
         </footer>
@@ -3484,22 +3740,76 @@ db_available = <span class="kw">True</span>
         });
     });
 
-    // TOC Active ScrollSpy
-    const tocLinks = document.querySelectorAll('.toc-link');
+    // Mobile Drawer Logic
+    const openBtn = document.getElementById('openMobileTocBtn');
+    const fabBtn = document.getElementById('fabModulesBtn');
+    const closeBtn = document.getElementById('closeDrawerBtn');
+    const backdrop = document.getElementById('drawerBackdrop');
+    const drawer = document.getElementById('mobileDrawer');
+    const drawerLinks = document.querySelectorAll('#mobileDrawerList .toc-link');
+
+    function openDrawer() {
+        backdrop.classList.add('active');
+        drawer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeDrawer() {
+        backdrop.classList.remove('active');
+        drawer.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openDrawer);
+    if (fabBtn) fabBtn.addEventListener('click', openDrawer);
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (backdrop) backdrop.addEventListener('click', closeDrawer);
+
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeDrawer();
+        });
+    });
+
+    // Back to Top Logic
+    const backToTopBtn = document.getElementById('fabBackToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    }, { passive: true });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // TOC Active ScrollSpy (Desktop & Mobile Drawer)
+    const allTocLinks = document.querySelectorAll('.toc-link');
+    const chips = document.querySelectorAll('.chip');
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const id = entry.target.id;
-                tocLinks.forEach(link => {
+                allTocLinks.forEach(link => {
                     if (link.getAttribute('href') === '#' + id) {
                         link.classList.add('active');
                     } else {
                         link.classList.remove('active');
                     }
                 });
+                chips.forEach(chip => {
+                    if (chip.getAttribute('href') === '#' + id) {
+                        chip.classList.add('active');
+                    } else {
+                        chip.classList.remove('active');
+                    }
+                });
             }
         });
-    }, { rootMargin: '-80px 0px -60% 0px' });
+    }, { rootMargin: '-70px 0px -65% 0px' });
 
     modules.forEach(m => observer.observe(m));
 })();
