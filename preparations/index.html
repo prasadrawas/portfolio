@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Week High-Paying Tech Job Preparation Roadmap | Prasad Rawas</title>
+    <meta name="description" content="A comprehensive, interactive 12-week preparation roadmap for Senior Backend, Full-Stack, and AI Engineering roles at Tier-1 product companies and global remote startups.">
+    <link rel="canonical" href="https://dev.prasadrawas.online/preparations/">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="12-Week High-Paying Tech Job Preparation Roadmap">
+    <meta property="og:description" content="Interactive 12-week blueprint for Senior Backend, Full-Stack & AI Engineers targeting ₹35L–₹60L+ and US Remote roles.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dev.prasadrawas.online/preparations/">
+    <meta property="og:image" content="https://dev.prasadrawas.online/assets/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/images/favicon-192.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: rgba(255, 255, 255, 0.03);
+            --surface-hover: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(99, 102, 241, 0.4);
+            --text: #e5e7eb;
+            --text-heading: #ffffff;
+            --text-muted: #9ca3af;
+            --text-faint: #6b7280;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.2);
+            --accent-cyan: #06b6d4;
+            --accent-green: #22c55e;
+            --accent-amber: #f59e0b;
+            --accent-pink: #ec4899;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        code, pre, .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+        }
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-logo {
+            font-size: 19px;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-logo span {
+            color: var(--accent);
+        }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover {
+            color: #fff;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 12.5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+            font-family: inherit;
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+            border-color: var(--border);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .btn-accent:hover {
+            background: #4f46e5;
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* Hero */
+        .hero {
+            margin-bottom: 36px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 999px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #a5b4fc;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 16px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent-green);
+        }
+
+        h1 {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 800;
+            color: var(--text-heading);
+            letter-spacing: -0.8px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+
+        .hero-desc {
+            font-size: 15.5px;
+            color: var(--text-muted);
+            max-width: 820px;
+            line-height: 1.65;
+            margin-bottom: 28px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+        }
+
+        .stat-val {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 2px;
+        }
+
+        .stat-val.accent { color: #818cf8; }
+        .stat-val.cyan { color: var(--accent-cyan); }
+        .stat-val.green { color: var(--accent-green); }
+        .stat-val.amber { color: var(--accent-amber); }
+
+        .stat-lbl {
+            font-size: 12px;
+            color: var(--text-faint);
+            font-weight: 500;
+        }
+
+        /* Progress Card */
+        .progress-card {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(6, 182, 212, 0.04));
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 36px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .progress-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .progress-meta {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #a5b4fc;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .progress-bar-bg {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            overflow: hidden;
+            margin-bottom: 18px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #6366f1, #06b6d4, #22c55e);
+            border-radius: 999px;
+            transition: width 0.4s ease;
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+        }
+
+        /* Filter Controls */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        /* Phase Container */
+        .phase-block {
+            margin-bottom: 44px;
+            transition: all 0.3s ease;
+        }
+
+        .phase-block.hidden {
+            display: none;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .phase-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        .phase-1-tag { color: #818cf8; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.25); }
+        .phase-2-tag { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); }
+        .phase-3-tag { color: #fbbf24; background: rgba(251, 191, 36, 0.12); border: 1px solid rgba(251, 191, 36, 0.25); }
+        .phase-4-tag { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.25); }
+
+        .phase-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.3px;
+        }
+
+        .phase-desc {
+            font-size: 13px;
+            color: var(--text-faint);
+            margin-left: auto;
+        }
+
+        /* Week Card */
+        .week-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .week-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .week-card.all-done {
+            border-color: rgba(34, 197, 94, 0.3);
+            background: linear-gradient(180deg, rgba(34, 197, 94, 0.02), var(--surface));
+        }
+
+        .week-head {
+            padding: 18px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            gap: 16px;
+        }
+
+        .week-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .week-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: #818cf8;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        .week-theme {
+            font-size: 15.5px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .week-hours {
+            font-size: 12px;
+            color: var(--text-faint);
+        }
+
+        .week-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .week-badge-done {
+            display: none;
+            font-size: 11px;
+            font-weight: 600;
+            color: #4ade80;
+            background: rgba(34, 197, 94, 0.12);
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(34, 197, 94, 0.25);
+        }
+
+        .week-card.all-done .week-badge-done {
+            display: inline-flex;
+        }
+
+        .week-toggle {
+            color: var(--text-faint);
+            transition: transform 0.25s ease;
+        }
+
+        .week-card.collapsed .week-toggle {
+            transform: rotate(-90deg);
+        }
+
+        .week-card.collapsed .week-body {
+            display: none;
+        }
+
+        .week-body {
+            padding: 0 22px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        /* Tasks */
+        .task-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-sm);
+            transition: all 0.15s ease;
+        }
+
+        .task-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .task-item.completed {
+            background: rgba(34, 197, 94, 0.03);
+            border-color: rgba(34, 197, 94, 0.15);
+        }
+
+        .task-item.completed .task-text {
+            color: var(--text-muted);
+            text-decoration: line-through;
+            text-decoration-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .custom-checkbox {
+            margin-top: 3px;
+            width: 17px;
+            height: 17px;
+            border-radius: 4px;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.15s;
+        }
+
+        .custom-checkbox:hover {
+            border-color: var(--accent);
+        }
+
+        .custom-checkbox.checked {
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .custom-checkbox.checked svg {
+            display: block;
+        }
+
+        .custom-checkbox svg {
+            display: none;
+            width: 11px;
+            height: 11px;
+            stroke: white;
+            stroke-width: 3;
+        }
+
+        .task-content {
+            flex: 1;
+        }
+
+        .task-header-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+
+        .tag-pill {
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding: 2px 7px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .tag-dsa { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
+        .tag-backend { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
+        .tag-hld { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .tag-lld { color: #f472b6; background: rgba(244, 114, 182, 0.12); }
+        .tag-ai { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
+        .tag-career { color: #fb7185; background: rgba(251, 113, 133, 0.12); }
+
+        .task-text {
+            font-size: 13.5px;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        .task-text strong {
+            color: #fff;
+        }
+
+        .task-links {
+            margin-top: 6px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .task-link {
+            font-size: 11.5px;
+            color: #818cf8;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
+        }
+
+        .task-link:hover {
+            color: #a5b4fc;
+            text-decoration: underline;
+        }
+
+        .task-link svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Checkpoint Box */
+        .checkpoint-box {
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: rgba(99, 102, 241, 0.05);
+            border: 1px dashed rgba(99, 102, 241, 0.25);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12.5px;
+            color: #c7d2fe;
+        }
+
+        .checkpoint-icon {
+            color: #818cf8;
+            flex-shrink: 0;
+        }
+
+        /* Resources & Scripts Section */
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .guide-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 22px;
+        }
+
+        .guide-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .guide-title svg {
+            color: var(--accent);
+        }
+
+        .guide-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .guide-list li {
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .guide-list li strong {
+            color: #fff;
+        }
+
+        .script-quote {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--accent);
+            padding: 10px 14px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-size: 12.5px;
+            color: #e2e8f0;
+            font-style: italic;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-faint);
+            margin-top: 60px;
+        }
+
+        .footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container { padding: 24px 16px 60px; }
+            h1 { font-size: 26px; }
+            .week-head { padding: 14px 16px; }
+            .week-body { padding: 0 16px 16px; }
+            .phase-desc { margin-left: 0; width: 100%; }
+        }
+
+        /* Print */
+        @media print {
+            .nav, .progress-card, .btn, .week-toggle, .filters { display: none !important; }
+            body { background: white !important; color: black !important; }
+            .week-card { border: 1px solid #ccc !important; break-inside: avoid; }
+            .week-body { display: block !important; }
+            .task-item { border: 1px solid #eee !important; color: #111 !important; }
+            .task-text strong { color: black !important; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-left">
+            <a href="../index.html" class="nav-logo">PR<span>.</span></a>
+            <a href="../index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Portfolio
+            </a>
+            <a href="../resumes/index.html" class="nav-back">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Resumes
+            </a>
+        </div>
+        <div class="nav-actions">
+            <button class="btn btn-ghost" id="resetBtn" title="Reset all checked tasks">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                Reset
+            </button>
+            <button class="btn btn-accent" onclick="window.print()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Export Plan
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <!-- Hero Header -->
+    <header class="hero">
+        <div class="badge">
+            <span class="badge-dot"></span>
+            Senior Engineering Preparation Blueprint
+        </div>
+        <h1>12-Week Roadmap for High-Paying Senior Roles</h1>
+        <p class="hero-desc">
+            Tailored specifically for <strong>Senior Backend / Full-Stack &amp; AI Engineers</strong> targeting ₹35L–₹60L+ Tier-1 Product Companies (Atlassian, Google, Autodesk, Swiggy, Razorpay) and $70k–$120k+ Global Remote roles. Progress is saved automatically to your browser.
+        </p>
+
+        <!-- Stats Overview -->
+        <div class="hero-stats">
+            <div class="stat-card">
+                <div class="stat-val accent">12 Weeks</div>
+                <div class="stat-lbl">12–15 hrs/week commitment</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val cyan">4 Phases</div>
+                <div class="stat-lbl">DSA &bull; LLD &bull; HLD &bull; Sourcing</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val green">38 Tasks</div>
+                <div class="stat-lbl">Interactive checklist &amp; code labs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val amber">Hybrid Target</div>
+                <div class="stat-lbl">Tier-1 Product + US Remote</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Progress Card -->
+    <div class="progress-card">
+        <div class="progress-header">
+            <div class="progress-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Your Preparation Progress
+            </div>
+            <div class="progress-meta" id="progressMeta">0 / 38 Tasks Completed (0%)</div>
+        </div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressBar"></div>
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All Phases</button>
+            <button class="filter-btn" data-filter="phase-1">Phase 1: Foundations</button>
+            <button class="filter-btn" data-filter="phase-2">Phase 2: LLD &amp; Trees</button>
+            <button class="filter-btn" data-filter="phase-3">Phase 3: System Design &amp; AI</button>
+            <button class="filter-btn" data-filter="phase-4">Phase 4: Sourcing &amp; Mocks</button>
+        </div>
+    </div>
+
+    <!-- ==================================================== -->
+    <!-- PHASE 1: CORE DSA & BACKEND CONCURRENCY (WEEKS 1-3)  -->
+    <!-- ==================================================== -->
+    <section class="phase-block" data-phase="phase-1">
+        <div class="phase-header">
+            <span class="phase-tag phase-1-tag">Phase 1 &bull; Weeks 1–3</span>
+            <h2 class="phase-title">Core DSA Patterns &amp; Python/FastAPI Concurrency</h2>
+            <span class="phase-desc">Build pattern muscle memory + master async internals</span>
+        </div>
+
+        <!-- WEEK 1 -->
+        <article class="week-card" data-week="w1">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W01</span>
+                    <span class="week-theme">Arrays, Hashing &amp; Asyncio Event Loop Internals</span>
+                    <span class="week-hours">12–14 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w1-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Arrays &amp; Two Pointers</span></div>
+                            <div class="task-text">Solve <strong>NeetCode Core</strong>: Two Sum, Valid Anagram, Group Anagrams, Top K Frequent Elements, Product of Array Except Self.</div>
+                            <div class="task-links"><a href="https://neetcode.io/practice" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Practice</a></div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w1-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Sliding Window</span></div>
+                            <div class="task-text">Solve <strong>Sliding Window patterns</strong>: 3Sum, Container With Most Water, Best Time to Buy/Sell Stock, Longest Substring Without Repeating Characters.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w1-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-backend">Backend Deep-Dive</span></div>
+                            <div class="task-text">Deep-dive into <strong>Python's Asyncio Event Loop</strong>: Tasks vs Futures, `asyncio.gather` vs `asyncio.TaskGroup`, CPU-bound vs I/O-bound handling with `run_in_executor`.</div>
+                            <div class="task-links"><a href="https://docs.python.org/3/library/asyncio.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Python Asyncio Docs</a></div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w1-4">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-backend">Lab / Hands-On</span></div>
+                            <div class="task-text">Write a mini-benchmark script comparing <strong>FastAPI async def vs standard def endpoints</strong> under concurrent load using `locust` or `wrk`. Document RPS differences.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> 9 Medium DSA problems solved &bull; Clear mental model of Python GIL &amp; async event loop ready for interview questions.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 2 -->
+        <article class="week-card" data-week="w2">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W02</span>
+                    <span class="week-theme">Linked Lists, Monotonic Stacks &amp; Database Concurrency</span>
+                    <span class="week-hours">12–14 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w2-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Stacks</span></div>
+                            <div class="task-text">Solve <strong>Stack Patterns</strong>: Valid Parentheses, Min Stack, Evaluate Reverse Polish Notation, Daily Temperatures (Monotonic Stack).</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w2-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Linked Lists</span></div>
+                            <div class="task-text">Solve <strong>Pointers &amp; Linked Lists</strong>: Reverse Linked List, Merge Two Sorted Lists, Reorder List, Remove Nth Node From End, LRU Cache (Must code in Python with Doubly Linked List + Dict).</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w2-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-backend">Database Mastery</span></div>
+                            <div class="task-text">Study <strong>PostgreSQL Isolation Levels &amp; Locking</strong>: Read Committed vs Repeatable Read vs Serializable. Master `SELECT ... FOR UPDATE` (Pessimistic) vs version column (Optimistic locking).</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w2-4">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-backend">ORM Optimization</span></div>
+                            <div class="task-text">SQLAlchemy 2.0 query optimization: Fix the <strong>N+1 query problem</strong> using `selectinload` vs `joinedload`. Inspect generated SQL with `echo=True` or `EXPLAIN ANALYZE`.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> LRU Cache coded from scratch in under 20 mins &bull; Capable of explaining row-level locks and deadlock resolution to an interviewer.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 3 -->
+        <article class="week-card" data-week="w3">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W03</span>
+                    <span class="week-theme">Binary Search, Caching Strategies &amp; Redis Distributed Locking</span>
+                    <span class="week-hours">12–14 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w3-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Binary Search</span></div>
+                            <div class="task-text">Solve <strong>Binary Search Patterns</strong>: Binary Search, Search a 2D Matrix, Koko Eating Bananas, Find Minimum in Rotated Sorted Array, Search in Rotated Sorted Array.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w3-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-backend">Caching Patterns</span></div>
+                            <div class="task-text">Master Caching Architectures: <strong>Cache-Aside vs Write-Through vs Write-Behind</strong>. Strategies to prevent Cache Penetration (Bloom filters), Cache Avalanche (jitter TTL), and Cache Stampede.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w3-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-backend">Hands-On Distributed Systems</span></div>
+                            <div class="task-text">Build an <strong>Atomic Distributed Lock in Python using Redis</strong> (SET NX PX with unique UUID) and a Lua release script to ensure safe lock release.</div>
+                            <div class="task-links"><a href="https://redis.io/docs/latest/develop/use/patterns/distributed-locks/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Redis Redlock Guide</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> Phase 1 Complete! 25 Core LeetCode Mediums completed &bull; Solid grasp of Redis atomic operations and Python async performance.</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- PHASE 2: ADVANCED DSA & LOW-LEVEL DESIGN (WEEKS 4-6) -->
+    <!-- ==================================================== -->
+    <section class="phase-block" data-phase="phase-2">
+        <div class="phase-header">
+            <span class="phase-tag phase-2-tag">Phase 2 &bull; Weeks 4–6</span>
+            <h2 class="phase-title">Advanced DSA &amp; Low-Level Design (Machine Coding)</h2>
+            <span class="phase-desc">Trees, Graphs, Object-Oriented Design &amp; 90-min Live Coding</span>
+        </div>
+
+        <!-- WEEK 4 -->
+        <article class="week-card" data-week="w4">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W04</span>
+                    <span class="week-theme">Trees, Recursion &amp; LLD Rate Limiter Design</span>
+                    <span class="week-hours">14–16 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w4-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Binary Trees</span></div>
+                            <div class="task-text">Solve <strong>Tree Traversal &amp; Recursion</strong>: Invert Tree, Maximum Depth, Subtree of Another Tree, Lowest Common Ancestor of a BST, Binary Tree Level Order Traversal.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w4-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Advanced Trees</span></div>
+                            <div class="task-text">Solve <strong>Tree Validation &amp; Construction</strong>: Validate Binary Search Tree, Kth Smallest Element in BST, Construct Binary Tree from Preorder and Inorder Traversal.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w4-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-lld">LLD / Machine Coding</span></div>
+                            <div class="task-text">Machine Coding Session: <strong>Design a Multi-Strategy Rate Limiter</strong> in Python. Implement Token Bucket, Leaky Bucket, and Sliding Window Counter with unit tests under 90 minutes.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> Clean SOLID-based Rate Limiter code in GitHub repo with 100% test coverage &bull; Confident in Tree DFS/BFS traversals.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 5 -->
+        <article class="week-card" data-week="w5">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W05</span>
+                    <span class="week-theme">Heaps, Intervals &amp; LLD Key-Value Store with Transactions</span>
+                    <span class="week-hours">14–16 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w5-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Heaps / Priority Queues</span></div>
+                            <div class="task-text">Solve <strong>Heap Patterns</strong>: Kth Largest Element in an Array, Task Scheduler, Design Twitter, Find Median from Data Stream (Two Heaps pattern).</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w5-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Intervals</span></div>
+                            <div class="task-text">Solve <strong>Interval Problems</strong>: Insert Interval, Merge Intervals, Non-overlapping Intervals, Meeting Rooms I &amp; II.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w5-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-lld">LLD / Machine Coding</span></div>
+                            <div class="task-text">Machine Coding Session: <strong>In-Memory Key-Value Store with Transactions &amp; TTL</strong> (supporting `SET`, `GET`, `DELETE`, `BEGIN`, `COMMIT`, `ROLLBACK` with nested transaction stacks).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> Completed In-Memory Transactional Store in under 90 mins &bull; Solved Merge Intervals and Top K problems with clean syntax.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 6 -->
+        <article class="week-card" data-week="w6">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W06</span>
+                    <span class="week-theme">Graphs, Topological Sort &amp; LLD Distributed Task Queue</span>
+                    <span class="week-hours">14–16 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w6-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Graphs</span></div>
+                            <div class="task-text">Solve <strong>Graph Fundamentals (BFS/DFS)</strong>: Number of Islands, Max Area of Island, Clone Graph, Pacific Atlantic Water Flow.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w6-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Topological Sort</span></div>
+                            <div class="task-text">Solve <strong>Dependency Resolution</strong>: Course Schedule I, Course Schedule II (Kahn's algorithm &amp; DFS cycle detection), Number of Connected Components.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w6-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-lld">LLD / Machine Coding</span></div>
+                            <div class="task-text">Machine Coding Session: <strong>Design an Asynchronous Job Scheduler / Task Queue</strong> (Mini-Celery in Python with worker pools, task priority, exponential backoff retries, and dead letter queue).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> Phase 2 Complete! 45+ NeetCode problems mastered &bull; Successfully completed 3 full machine coding projects with clean test suites.</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- PHASE 3: HIGH-LEVEL SYSTEM DESIGN & AI (WEEKS 7-9)   -->
+    <!-- ==================================================== -->
+    <section class="phase-block" data-phase="phase-3">
+        <div class="phase-header">
+            <span class="phase-tag phase-3-tag">Phase 3 &bull; Weeks 7–9</span>
+            <h2 class="phase-title">High-Level System Design (HLD) &amp; AI/RAG Architecture</h2>
+            <span class="phase-desc">Architecting for scale, resiliency, trade-offs &amp; modern AI systems</span>
+        </div>
+
+        <!-- WEEK 7 -->
+        <article class="week-card" data-week="w7">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W07</span>
+                    <span class="week-theme">Scalability Core &amp; Distributed Notification Service</span>
+                    <span class="week-hours">12–14 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w7-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-hld">HLD Foundations</span></div>
+                            <div class="task-text">Study <strong>System Design Fundamentals</strong>: L4 vs L7 Load Balancers, Consistent Hashing ring, Horizontal vs Vertical scaling, CAP &amp; PACELC theorem, Database Sharding vs Read Replicas.</div>
+                            <div class="task-links"><a href="https://bytebytego.com/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> ByteByteGo System Design</a></div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w7-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-hld">Case Study</span></div>
+                            <div class="task-text">Design a <strong>Multi-Channel Notification System</strong>: Support Email (SES), SMS (SNS), and Push notifications. Detail user preferences, deduplication window, rate limiting, and analytics.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w7-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA Maintenance</span></div>
+                            <div class="task-text">Solve 4 maintenance problems: Clone Graph, Word Ladder, Pacific Atlantic, Number of Connected Components. Keep recall sharp.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> Complete architectural diagram + capacity estimation worksheet for Notification Service ready to discuss in 45-min rounds.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 8 -->
+        <article class="week-card" data-week="w8">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W08</span>
+                    <span class="week-theme">High-Throughput Systems, Message Queues &amp; Flash Sale Design</span>
+                    <span class="week-hours">12–14 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w8-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-hld">Event-Driven Architecture</span></div>
+                            <div class="task-text">Message Brokers deep-dive: <strong>Kafka vs RabbitMQ vs AWS SQS/SNS</strong>. Partitioning, consumer groups, exactly-once vs at-least-once semantics, idempotency keys.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w8-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-hld">Case Study</span></div>
+                            <div class="task-text">Design an <strong>E-Commerce Flash Sale &amp; Inventory Reservation System</strong>: Preventing overselling with Redis Lua atomic decrement, distributed locking, handling payment webhooks with idempotency.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w8-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Dynamic Programming</span></div>
+                            <div class="task-text">Solve <strong>1D Dynamic Programming essentials</strong>: Climbing Stairs, House Robber I &amp; II, Longest Palindromic Substring, Coin Change (Memoization &amp; Tabulation).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> Mastered high-concurrency reservation patterns and distributed transaction strategies (Saga pattern vs 2PC).</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 9 -->
+        <article class="week-card" data-week="w9">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W09</span>
+                    <span class="week-theme">AI/RAG Architecture, Vector DBs &amp; Agentic Systems</span>
+                    <span class="week-hours">12–14 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w9-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-ai">AI &bull; RAG Deep-Dive</span></div>
+                            <div class="task-text">RAG Architecture internals: Chunking strategies, embedding dimensions, <strong>Vector similarity metrics (Cosine vs Dot vs Euclidean)</strong>, HNSW index vs IVFFlat, Hybrid search (BM25 + Dense).</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w9-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-ai">AI Systems Case Study</span></div>
+                            <div class="task-text">Design an <strong>Enterprise AI Knowledge Assistant</strong> (Drawing directly from your Gemini/ChromaDB work): Ingestion pipeline, vector indexing, query rewriting, tool calling execution, streaming token responses, and latency optimization.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w9-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-backend">Observability &amp; SRE</span></div>
+                            <div class="task-text">Learn <strong>Production Reliability &amp; Observability</strong>: The 4 Golden Signals (Latency, Traffic, Errors, Saturation), Prometheus/Grafana metrics, Structured JSON logging, Health checks &amp; graceful shutdown.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> Phase 3 Complete! You can articulate modern AI backend systems and traditional distributed systems at Senior/Staff depth.</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- ==================================================== -->
+    <!-- PHASE 4: SOURCING, MOCKS & LIVE OFFERS (WEEKS 10-12) -->
+    <!-- ==================================================== -->
+    <section class="phase-block" data-phase="phase-4">
+        <div class="phase-header">
+            <span class="phase-tag phase-4-tag">Phase 4 &bull; Weeks 10–12</span>
+            <h2 class="phase-title">Sourcing, Behavioral/Bar-Raiser, Mock Interviews &amp; Offers</h2>
+            <span class="phase-desc">LinkedIn outreach, warm referrals, live interviews &amp; salary negotiation</span>
+        </div>
+
+        <!-- WEEK 10 -->
+        <article class="week-card" data-week="w10">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W10</span>
+                    <span class="week-theme">STAR Behavioral Stories, Resume Polish &amp; Profile Alignment</span>
+                    <span class="week-hours">10–12 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w10-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">Behavioral &bull; STAR Stories</span></div>
+                            <div class="task-text">Write out 6 detailed STAR stories: <strong>Production Outage</strong>, <strong>Technical Disagreement</strong>, <strong>Major Architecture Rewrite</strong>, <strong>Performance Bottleneck</strong>, <strong>Mentorship</strong>, and <strong>Tight Deadline Delivery</strong>.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w10-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">LinkedIn Optimization</span></div>
+                            <div class="task-text">Update LinkedIn Headline to: <em>"Senior Full-Stack &amp; Backend Engineer | Python (FastAPI), React, AWS, Distributed Systems &bull; Ex-VoloX &bull; 5+ YoE"</em>. Set Open to Work to Recruiters Only.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w10-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">Resume Variant Prep</span></div>
+                            <div class="task-text">Ensure your primary resume ([resume-senior-engineer.html](file:///Users/pr/fvm/.portfolio/resumes/resume-senior-engineer.html)) is PDF-exported with zero formatting flaws.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> 6 polished STAR stories documented &bull; Profile ready to convert recruiter inbound traffic.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 11 -->
+        <article class="week-card" data-week="w11">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W11</span>
+                    <span class="week-theme">The Referral Blitz &amp; Full Mock Interview Drills</span>
+                    <span class="week-hours">12–15 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w11-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">Warm Referral Campaign</span></div>
+                            <div class="task-text">Identify 15 target companies (e.g. Atlassian, Autodesk, Google, Swiggy, Razorpay, plus 5 US remote startups on Wellfound). Reach out to 2–3 Senior Engineers per company on LinkedIn for warm referrals.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w11-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">Mock Interview: System Design</span></div>
+                            <div class="task-text">Complete 1 full 45-minute High-Level System Design mock on Pramp, Interviewing.io, or with a senior peer. Focus on pacing, requirements gathering, and trade-off defense.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w11-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-dsa">Mock Interview: Live Coding</span></div>
+                            <div class="task-text">Complete 1 live coding mock with medium-to-hard complexity under time pressure (clean variable naming, test cases, time/space complexity analysis out loud).</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Checkpoint:</strong> 10+ referrals submitted &bull; 2 realistic mock loops completed with constructive feedback incorporated.</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- WEEK 12 -->
+        <article class="week-card" data-week="w12">
+            <div class="week-head">
+                <div class="week-left">
+                    <span class="week-num">W12</span>
+                    <span class="week-theme">Live Interview Loops, Pipeline Clustering &amp; Negotiation</span>
+                    <span class="week-hours">12–15 hrs</span>
+                </div>
+                <div class="week-right">
+                    <span class="week-badge-done">Completed</span>
+                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+            </div>
+            <div class="week-body">
+                <div class="task-list">
+                    <div class="task-item" data-id="w12-1">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">Pipeline Management</span></div>
+                            <div class="task-text">Cluster recruiter screens and technical rounds so that final onsite/virtual loops occur within the same 2-week window to maximize competing offer leverage.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w12-2">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">Salary Negotiation Script</span></div>
+                            <div class="task-text">Master the salary deflection script: Never give a single number first; anchor to market band (₹35L–₹50L+ base) and negotiate RSUs, sign-on bonuses, and performance multiples.</div>
+                        </div>
+                    </div>
+                    <div class="task-item" data-id="w12-3">
+                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
+                        <div class="task-content">
+                            <div class="task-header-row"><span class="tag-pill tag-career">Offer Decision &amp; Acceptance</span></div>
+                            <div class="task-text">Evaluate total compensation (Base + Equity vesting schedule + Benefits + Growth path). Secure the best offer and set resignation timeline.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="checkpoint-box">
+                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                    <span><strong>Goal Achieved:</strong> High-paying Senior Engineer offer secured in your target technology stack!</span>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <!-- Guides & Practical Scripts -->
+    <section class="guides-grid">
+        <div class="guide-card">
+            <h3 class="guide-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                Salary Deflection Script
+            </h3>
+            <ul class="guide-list">
+                <li><strong>When asked:</strong> "What is your current CTC and expectations?"</li>
+                <li><strong>Your response:</strong></li>
+            </ul>
+            <div class="script-quote">
+                "My current compensation is tied to my current employer's structure, but for this senior role and scope of responsibility, I'm targeting the industry market benchmark in the ₹35L to ₹50L range depending on the overall split between base, performance bonus, and equity. Could you share the approved budget range for this role?"
+            </div>
+        </div>
+
+        <div class="guide-card">
+            <h3 class="guide-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Warm Referral Message Template
+            </h3>
+            <ul class="guide-list">
+                <li><strong>Target:</strong> Senior Engineers / Tech Leads on LinkedIn</li>
+                <li><strong>Template:</strong></li>
+            </ul>
+            <div class="script-quote">
+                "Hi [Name], saw your work on [Product/Team] at [Company]. I'm a Senior Full-Stack/Backend Engineer with 5+ years building distributed FastAPI microservices, Redis caching, and AWS infra. I saw opening [Job ID] and believe my background aligns well with the team's scale. My live portfolio is at dev.prasadrawas.online. Would you be open to referring me? Thanks!"
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Roadmap maintained by <a href="../index.html">Prasad Rawas</a> &bull; Senior Software Developer</p>
+    </footer>
+</div>
+
+<script>
+(function() {
+    const STORAGE_KEY = 'prasad_prep_tasks_v1';
+    let completedTasks = new Set();
+
+    // Load saved tasks
+    try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+            completedTasks = new Set(JSON.parse(saved));
+        }
+    } catch (e) {
+        console.error('Failed to load tasks from localStorage', e);
+    }
+
+    const allCheckboxes = document.querySelectorAll('.task-item');
+    const totalCount = allCheckboxes.length;
+
+    // Apply saved state
+    function updateUI() {
+        let count = 0;
+        allCheckboxes.forEach(item => {
+            const id = item.dataset.id;
+            const cb = item.querySelector('.custom-checkbox');
+            if (completedTasks.has(id)) {
+                item.classList.add('completed');
+                cb.classList.add('checked');
+                count++;
+            } else {
+                item.classList.remove('completed');
+                cb.classList.remove('checked');
+            }
+        });
+
+        // Update progress bar & label
+        const pct = totalCount > 0 ? Math.round((count / totalCount) * 100) : 0;
+        document.getElementById('progressBar').style.width = pct + '%';
+        document.getElementById('progressMeta').textContent = `${count} / ${totalCount} Tasks Completed (${pct}%)`;
+
+        // Update week cards "done" status
+        document.querySelectorAll('.week-card').forEach(week => {
+            const weekTasks = week.querySelectorAll('.task-item');
+            const doneInWeek = week.querySelectorAll('.task-item.completed');
+            if (weekTasks.length > 0 && weekTasks.length === doneInWeek.length) {
+                week.classList.add('all-done');
+            } else {
+                week.classList.remove('all-done');
+            }
+        });
+    }
+
+    // Toggle task
+    allCheckboxes.forEach(item => {
+        const cb = item.querySelector('.custom-checkbox');
+        const toggle = () => {
+            const id = item.dataset.id;
+            if (completedTasks.has(id)) {
+                completedTasks.delete(id);
+            } else {
+                completedTasks.add(id);
+            }
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completedTasks)));
+            } catch (e) {}
+            updateUI();
+        };
+
+        cb.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggle();
+        });
+        item.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            toggle();
+        });
+    });
+
+    // Week Accordion
+    document.querySelectorAll('.week-head').forEach(head => {
+        head.addEventListener('click', () => {
+            const card = head.closest('.week-card');
+            card.classList.toggle('collapsed');
+        });
+    });
+
+    // Phase Filters
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const phaseBlocks = document.querySelectorAll('.phase-block');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.dataset.filter;
+            phaseBlocks.forEach(block => {
+                if (filter === 'all' || block.dataset.phase === filter) {
+                    block.classList.remove('hidden');
+                } else {
+                    block.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // Reset Progress
+    const resetBtn = document.getElementById('resetBtn');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to reset all your preparation progress?')) {
+                completedTasks.clear();
+                try {
+                    localStorage.removeItem(STORAGE_KEY);
+                } catch (e) {}
+                updateUI();
+            }
+        });
+    }
+
+    // Initial render
+    updateUI();
+})();
+</script>
+</body>
+</html>
