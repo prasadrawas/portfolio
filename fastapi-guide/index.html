@@ -519,6 +519,218 @@
             line-height: 1.7;
         }
 
+        /* Interactive MCQ Component */
+        .mcq-quiz-card {
+            background: rgba(15, 17, 26, 0.85);
+            border: 1px solid rgba(99, 102, 241, 0.25);
+            border-radius: var(--radius-md);
+            padding: 20px 22px;
+            margin: 22px 0 16px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+        }
+        .mcq-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .mcq-badge {
+            font-size: 11px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            color: #a5b4fc;
+            background: rgba(99, 102, 241, 0.15);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+        .mcq-sub {
+            font-size: 11.5px;
+            color: var(--text-faint);
+        }
+        .mcq-question-text {
+            font-size: 14.5px;
+            color: #f1f5f9;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .mcq-options-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 14px;
+        }
+        .mcq-opt {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            color: #cbd5e1;
+            font-size: 13.5px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            font-family: inherit;
+            width: 100%;
+        }
+        .mcq-opt:hover:not(:disabled) {
+            background: rgba(99, 102, 241, 0.08);
+            border-color: rgba(99, 102, 241, 0.4);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .mcq-opt:disabled {
+            cursor: default;
+            opacity: 0.95;
+        }
+        .opt-label {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #a5b4fc;
+            flex-shrink: 0;
+        }
+        .opt-text {
+            flex: 1;
+            line-height: 1.45;
+        }
+        .mcq-opt.opt-correct {
+            background: rgba(34, 197, 94, 0.15) !important;
+            border-color: #22c55e !important;
+            color: #86efac !important;
+        }
+        .mcq-opt.opt-correct .opt-label {
+            background: #22c55e;
+            color: #052e16;
+        }
+        .mcq-opt.opt-wrong {
+            background: rgba(239, 68, 68, 0.15) !important;
+            border-color: #ef4444 !important;
+            color: #fca5a5 !important;
+        }
+        .mcq-opt.opt-wrong .opt-label {
+            background: #ef4444;
+            color: #450a0a;
+        }
+        .mcq-opt.opt-should-be {
+            border-color: rgba(34, 197, 94, 0.6) !important;
+            background: rgba(34, 197, 94, 0.06) !important;
+        }
+        .mcq-result {
+            padding: 12px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 13.5px;
+            line-height: 1.5;
+            margin-top: 12px;
+        }
+        .mcq-result-success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #86efac;
+        }
+        .mcq-result-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+        }
+        .mcq-retry-btn {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 4px 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            color: #fff;
+            font-size: 11.5px;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.15s;
+        }
+        .mcq-retry-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Module Footer Next/Previous Navigation */
+        .module-footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 16px;
+            margin: 40px 0 20px;
+            padding-top: 28px;
+            border-top: 1px dashed var(--border);
+        }
+        .module-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            color: var(--text);
+            text-decoration: none;
+            flex: 1;
+            transition: all 0.2s ease;
+            min-height: 64px;
+        }
+        .module-nav-link:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--accent);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.2);
+        }
+        .module-nav-link.next-link {
+            justify-content: flex-end;
+            text-align: right;
+            margin-left: auto;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(6, 182, 212, 0.06));
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+        .module-nav-link.prev-link {
+            justify-content: flex-start;
+            text-align: left;
+        }
+        .nav-direction {
+            display: block;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-faint);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 4px;
+        }
+        .nav-title {
+            display: block;
+            font-size: 14.5px;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+        .module-nav-link svg {
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+        .module-nav-link.next-link:hover svg {
+            transform: translateX(4px);
+        }
+        .module-nav-link.prev-link:hover svg {
+            transform: translateX(-4px);
+        }
+
         /* Mobile Drawer (TOC Modal) */
         .mobile-drawer-backdrop {
             display: none;
@@ -634,6 +846,8 @@
             .quiz-box { padding: 14px 12px; }
             .quiz-question { font-size: 13.5px; }
             .quiz-answer { padding: 12px 14px; font-size: 13px; }
+            .module-footer-nav { flex-direction: column; }
+            .module-nav-link.next-link { text-align: left; justify-content: space-between; }
         }
     </style>
 </head>
@@ -1015,6 +1229,47 @@ Client 3 ──┘                                        ──► Resumes whic
         <span class="kw">assert</span> response.json() == {<span class="str">"engine"</span>: <span class="str">"pure_raw_asgi"</span>, <span class="str">"status"</span>: <span class="str">"verified"</span>}</code></pre>
             </div>
             </div>
+            <!-- MODULE 01 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 01 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> In the ASGI 3.0 specification, what is the exact signature and role of an ASGI application callable?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text"><code>app(request, response)</code> — Synchronous callable where request is parsed and response is returned.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text"><code>async def app(scope, receive, send)</code> — Asynchronous callable taking a connection scope dictionary, an async callable to receive incoming events, and an async callable to dispatch outgoing events.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text"><code>app(environ, start_response)</code> — Standard WSGI callable returning an iterable of raw byte chunks.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text"><code>app(events, stream)</code> — Reactive event listener streaming JSON over HTTP/2.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">The ASGI 3.0 specification defines the application interface as <code>async def app(scope, receive, send)</code>. <code>scope</code> is the connection metadata dictionary, <code>receive</code> is an awaitable callable yielding incoming events (such as request bodies or WebSocket frames), and <code>send</code> is an awaitable callable dispatching outgoing events (such as response headers and body bytes).</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                
+                <a href="#mod-2" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 02: Sync vs. Async & Event Loop</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 02: SYNC VS ASYNC & EVENT LOOP                    -->
@@ -1248,6 +1503,53 @@ app = FastAPI()
         <span class="kw">assert</span> all(r.status_code == <span class="dec">200</span> <span class="kw">for</span> r <span class="kw">in</span> responses)</code></pre>
             </div>
             </div>
+            <!-- MODULE 02 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="C">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 02 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> If an endpoint is declared with standard <code>def sync_route()</code> instead of <code>async def</code>, how does FastAPI execute it?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">It compiles Python bytecode into a C++ coroutine using Cython.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">It executes it directly on the single-threaded main asyncio event loop, blocking all other requests.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">It offloads the function to an AnyIO external worker threadpool (default 40 threads), allowing the main event loop to remain responsive to concurrent traffic.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">It spawns a new operating system process for each incoming HTTP request.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">FastAPI detects non-async <code>def</code> endpoints and automatically offloads them to AnyIO's thread pool (<code>to_thread.run_sync</code>). This prevents blocking calls (like legacy database drivers or file I/O) from freezing the single-threaded event loop.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-1" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 01: The Core Engine (ASGI & Starlette)</span>
+            </div>
+        </a>
+                <a href="#mod-3" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 03: Pydantic v2 Internals</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 03: PYDANTIC V2 CORE                               -->
@@ -1424,6 +1726,53 @@ print(item.model_dump())
         MemberModel(user_id=<span class="dec">1</span>, is_active=<span class="kw">True</span>, signup_date=<span class="str">"2026-10-24"</span>, coupon_code=<span class="str">"INVALID"</span>)
     <span class="kw">assert</span> <span class="str">"Coupon must start with SAVE-"</span> <span class="kw">in</span> str(exc.value)</code></pre>
             </div>
+            </div>
+            <!-- MODULE 03 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 03 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> Why does Pydantic v2 achieve up to 5x-20x faster JSON parsing and validation throughput compared to Pydantic v1?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">Pydantic v2 disabled validation in production and only performs loose Python type-casting.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">The core schema compiler and JSON parser were rewritten from Python into Rust (<code>pydantic-core</code>), executing validations directly in compiled native code.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">Pydantic v2 caches all request bodies permanently in Redis.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">It replaced Python bytecode with WebAssembly binaries.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">Pydantic v2 replaced the Python-based validation logic with <code>pydantic-core</code>, a high-performance engine written in Rust. It builds an internal schema validation graph in native memory and parses JSON bytes directly into Rust structs before allocating Python objects.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-2" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 02: Sync vs. Async & Event Loop</span>
+            </div>
+        </a>
+                <a href="#mod-4" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 04: Advanced Schemas & Envelopes</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -1657,6 +2006,53 @@ app = FastAPI()
         <span class="kw">assert</span> data == {<span class="str">"id"</span>: <span class="dec">101</span>, <span class="str">"email"</span>: <span class="str">"dev@test.com"</span>}</code></pre>
             </div>
             </div>
+            <!-- MODULE 04 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 04 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> When handling polymorphic payloads (e.g. Credit Card vs PayPal vs Crypto payments), what is the architectural advantage of using <code>Field(discriminator='type')</code> with an annotated Union in Pydantic v2?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">It encrypts the payload before writing it to the database.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">It enables O(1) direct schema lookup using the discriminator tag, eliminating slow trial-and-error sequential validation against every candidate model in the Union.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">It automatically converts camelCase keys from Javascript into Python snake_case.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">It bypasses Pydantic validation when request payloads exceed 1MB.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">Without a discriminator, Pydantic must test the payload against model 1, fail, try model 2, fail, and so on. A Discriminated Union looks directly at the discriminator tag field (e.g. <code>payment_type: 'credit_card'</code>) and routes immediately to the exact Pydantic model in O(1) time with precise error messages.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-3" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 03: Pydantic v2 Internals</span>
+            </div>
+        </a>
+                <a href="#mod-5" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 05: Request Ingestion & Streaming</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 05: REQUEST INGESTION & PARAMETERS                 -->
@@ -1831,6 +2227,53 @@ app = FastAPI()
         <span class="kw">assert</span> data[<span class="str">"bytes"</span>] == len(file_payload)
         <span class="kw">assert</span> data[<span class="str">"content_type"</span>] == <span class="str">"text/csv"</span></code></pre>
             </div>
+            </div>
+            <!-- MODULE 05 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="A">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 05 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> When designing an endpoint to accept 2GB video uploads, why should you use <code>UploadFile</code> instead of <code>bytes = File(...)</code>?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text"><code>bytes</code> buffers the entire 2GB file directly into server RAM, risking immediate Out-Of-Memory (OOM) crashes under concurrent load, whereas <code>UploadFile</code> spools to temporary disk storage once it exceeds 1MB.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text"><code>bytes</code> only works with ASCII text files, while <code>UploadFile</code> supports binary.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text"><code>UploadFile</code> automatically uploads the file to AWS S3 without any Python code.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text"><code>bytes</code> cannot be used in HTTP POST or PUT requests.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">Declaring <code>file: bytes = File(...)</code> forces FastAPI to load the entire incoming file into server memory (RAM). If 10 users upload 1GB files simultaneously, 10GB of RAM is consumed instantly, causing the Linux OOM killer to terminate the container. <code>UploadFile</code> uses Python's <code>SpooledTemporaryFile</code>, keeping small files (<1MB) in RAM and streaming larger files to disk.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-4" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 04: Advanced Schemas & Envelopes</span>
+            </div>
+        </a>
+                <a href="#mod-6" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 06: Dependency Injection (Depends)</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -2074,6 +2517,53 @@ lifecycle_log = []
         ]</code></pre>
             </div>
             </div>
+            <!-- MODULE 06 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 06 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> If a sub-dependency is injected into 4 different places in a single request tree with default <code>use_cache=True</code>, how many times will FastAPI execute that dependency function?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">Four times, once for each parameter that depends on it.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">Exactly once; FastAPI calculates it once and caches the resolved value within the request scope, sharing the same instance across the entire dependency graph.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">Zero times until the route handler explicitly calls it.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">It triggers a cyclic dependency error.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">FastAPI constructs a Dependency DAG (Directed Acyclic Graph) for every request. By default (<code>use_cache=True</code>), any dependency resolved during a request is cached in the request scope. Subsequent sub-dependencies receive the cached result, ensuring database sessions or authentication checks run exactly once per request.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-5" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 05: Request Ingestion & Parameters</span>
+            </div>
+        </a>
+                <a href="#mod-7" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 07: Starlette Middleware & Lifespan</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 07: MIDDLEWARE & MODERN LIFESPAN                   -->
@@ -2302,6 +2792,53 @@ app.add_middleware(CorrelationMiddleware)
         res2 = <span class="kw">await</span> client.get(<span class="str">"/ping"</span>, headers={<span class="str">"X-Request-ID"</span>: custom_id})
         <span class="kw">assert</span> res2.headers[<span class="str">"X-Request-ID"</span>] == custom_id</code></pre>
             </div>
+            </div>
+            <!-- MODULE 07 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 07 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> Why do high-throughput production FastAPI services avoid Starlette's <code>BaseHTTPMiddleware</code> for lightweight tasks like adding security headers?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text"><code>BaseHTTPMiddleware</code> is incompatible with HTTPS/TLS traffic.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text"><code>BaseHTTPMiddleware</code> buffers streaming responses in memory, breaks <code>anyio.create_task_group</code> contextvars propagation, and adds ~1ms of overhead per request compared to pure raw ASGI middleware.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text"><code>BaseHTTPMiddleware</code> was deprecated in Python 3.12.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">It cannot read HTTP response status codes.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;"><code>BaseHTTPMiddleware</code> wraps the request and response in an AnyIO task group and streaming iterator, which breaks streaming responses, interferes with ContextVar propagation across coroutines, and introduces measurable latency. A pure raw ASGI middleware class (<code>async def __call__(self, scope, receive, send)</code>) runs with zero memory buffering or latency penalty.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-6" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 06: Dependency Injection (Depends)</span>
+            </div>
+        </a>
+                <a href="#mod-8" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 08: Database & SQLAlchemy 2.0</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -2541,6 +3078,53 @@ Query 2:  SELECT * FROM orders WHERE user_id IN (1, 2, 3, ..., 50);</div>
         <span class="kw">assert</span> author.books[<span class="dec">0</span>].title == <span class="str">"FastAPI Mastery"</span></code></pre>
             </div>
             </div>
+            <!-- MODULE 08 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 08 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> In Async SQLAlchemy 2.0, what happens if your code accesses an unloaded relationship (e.g. <code>user.orders</code>) without eager loading?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">SQLAlchemy synchronously halts the event loop and fetches the rows from the disk table.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">SQLAlchemy raises a <code>MissingGreenlet: await_only() called from non-greenlet context</code> error because implicit lazy loading cannot issue asynchronous I/O transparently.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">SQLAlchemy returns an empty list without error.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">The database connection is permanently dropped.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">In async Python, all database network I/O must be explicitly awaited. Because attribute access (<code>user.orders</code>) cannot be awaited, implicit lazy loading is physically impossible. SQLAlchemy 2.0 raises <code>MissingGreenlet</code> to mandate explicit eager loading strategies (such as <code>selectinload()</code> or <code>joinedload()</code>).</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-7" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 07: Starlette Middleware & Lifespan</span>
+            </div>
+        </a>
+                <a href="#mod-9" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 09: Security, Auth & RBAC</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 09: SECURITY, AUTH & RBAC                          -->
@@ -2744,6 +3328,53 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl=<span class="str">"/token"</span>)
         <span class="kw">assert</span> res3.status_code == <span class="dec">200</span>
         <span class="kw">assert</span> res3.json() == {<span class="str">"status"</span>: <span class="str">"welcome_admin"</span>}</code></pre>
             </div>
+            </div>
+            <!-- MODULE 09 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 09 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> In a microservices architecture, why is asymmetric RS256/ES256 signing preferred over symmetric HS256 for JWT tokens?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">HS256 tokens are unencrypted, while RS256 tokens are encrypted with AES-256.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">RS256 allows downstream resource microservices to verify token authenticity using only the Auth Service's Public Key, without possessing the private key required to forge tokens.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">HS256 tokens expire after 5 minutes, while RS256 tokens never expire.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">RS256 tokens do not require an <code>Authorization: Bearer</code> header.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">With symmetric HS256, every single microservice verifying tokens must know the shared secret. If a single downstream service is breached, the attacker steals the secret and can forge admin tokens across the entire company. With asymmetric RS256/ES256, only the central Identity Service holds the Private Key to issue tokens; all other services verify tokens safely with the Public Key.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-8" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 08: Database & SQLAlchemy 2.0</span>
+            </div>
+        </a>
+                <a href="#mod-10" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 10: WebSockets & AI Streaming</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -2953,6 +3584,53 @@ app = FastAPI()
             <span class="str">"data: Streaming"</span>
         ]</code></pre>
             </div>
+            </div>
+            <!-- MODULE 10 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 10 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> Why do Server-Sent Events (SSE) often appear to freeze or deliver nothing to web browsers when deployed behind Nginx or AWS Application Load Balancers?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">SSE requires WebSocket 101 upgrade headers which load balancers reject.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">Reverse proxies buffer downstream HTTP responses by default; without <code>X-Accel-Buffering: no</code> or <code>proxy_buffering off</code>, Nginx waits until its internal buffer (e.g. 4KB) fills before sending packets to the browser.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">SSE is only supported on localhost HTTP connections.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">FastAPI event loops cannot stream data over HTTP/1.1.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">Reverse proxies buffer HTTP responses to optimize network packet transmission. Because SSE is an open HTTP stream of small text events, proxy buffering holds those events in proxy memory indefinitely. Setting the <code>X-Accel-Buffering: no</code> response header instructs Nginx to immediately flush each event chunk over the TCP socket as soon as FastAPI yields it.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-9" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 09: Security, Auth & RBAC</span>
+            </div>
+        </a>
+                <a href="#mod-11" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 11: Error Handling & RFC 7807</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -3214,6 +3892,53 @@ app = FastAPI()
         <span class="kw">assert</span> data[<span class="str">"instance"</span>] == <span class="str">"/orders/99"</span></code></pre>
             </div>
             </div>
+            <!-- MODULE 11 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 11 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> What happens if you register a global exception handler for base <code>Exception</code> without re-raising or delegating <code>StarletteHTTPException</code>?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">The application crashes at startup with a registration error.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">All planned client errors (like 401 Unauthorized, 403 Forbidden, and 404 Not Found) are caught by the handler and converted into HTTP 500 Internal Server Errors.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">FastAPI silently ignores the custom handler.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">CORS headers stop being sent with API responses.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">FastAPI and Starlette's <code>HTTPException</code> classes inherit from Python's base <code>Exception</code>. If you catch <code>Exception</code> without checking <code>isinstance(exc, StarletteHTTPException)</code>, your handler will intercept all normal 4xx client errors and format them as 500 server crashes.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-10" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 10: WebSockets & AI Streaming</span>
+            </div>
+        </a>
+                <a href="#mod-12" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 12: Background Tasks & Queues</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 12: BACKGROUND TASKS & QUEUES                      -->
@@ -3428,6 +4153,53 @@ executed_tasks = []
         <span class="cm"># Verification: Background task was successfully executed after response</span>
         <span class="kw">assert</span> executed_tasks == [<span class="str">"AUDIT_RECORD_SAVED"</span>]</code></pre>
             </div>
+            </div>
+            <!-- MODULE 12 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 12 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> In containerized Kubernetes deployments, why should you NOT rely on FastAPI's built-in <code>BackgroundTasks</code> for mission-critical jobs like charging credit cards or generating invoices?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text"><code>BackgroundTasks</code> only works with synchronous functions, not coroutines.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text"><code>BackgroundTasks</code> are held exclusively in volatile pod memory; if the pod scales down, crashes, or is restarted during rolling deployments, queued jobs are permanently destroyed without retrying.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text"><code>BackgroundTasks</code> requires an enterprise license.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text"><code>BackgroundTasks</code> cannot access database connections.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">FastAPI <code>BackgroundTasks</code> runs in-process in the web server container's memory. When Kubernetes terminates, reschedules, or scales down a pod, all uncompleted in-memory tasks are wiped immediately without recovery or retries. Mission-critical operations require durable distributed queues (ARQ, Celery) backed by Redis or RabbitMQ.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-11" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 11: Error Handling & RFC 7807</span>
+            </div>
+        </a>
+                <a href="#mod-13" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 13: Caching, Rate Limits & Resilience</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -3671,6 +4443,53 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
         <span class="kw">assert</span> <span class="str">"Rate limit exceeded"</span> <span class="kw">in</span> blocked_res.text</code></pre>
             </div>
             </div>
+            <!-- MODULE 13 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 13 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> What is a 'Cache Stampede' (dogpiling) and how is it prevented in high-traffic FastAPI systems?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">When Redis memory exhausts and causes the Linux OOM killer to terminate the database.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">When a heavily accessed cache key expires under high load, causing thousands of concurrent requests to miss cache simultaneously and hit PostgreSQL at the exact same millisecond; prevented using a single-flight distributed mutex lock in Redis.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">When an attacker floods cache keys with random values.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">When cache TTL is set to zero.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">When a popular key expires, all concurrent requests miss cache simultaneously and overload the database. A distributed mutex lock (<code>SET lock:key token NX PX 5000</code>) ensures only one single worker queries PostgreSQL to repopulate the cache, while other requests wait or serve stale data via the Stale-While-Revalidate pattern.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-12" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 12: Background Tasks & Queues</span>
+            </div>
+        </a>
+                <a href="#mod-14" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 14: Automated Testing (Pytest)</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+            </div>
         </section>
         <!-- ========================================================= -->
         <!-- MODULE 14: TESTING & TEST FIXTURES                        -->
@@ -3856,6 +4675,53 @@ app = FastAPI()
         <span class="kw">assert</span> res.status_code == <span class="dec">200</span>
         <span class="kw">assert</span> res.json()[<span class="str">"gateway_used"</span>] == <span class="str">"mock_sandbox_gateway"</span></code></pre>
             </div>
+            </div>
+            <!-- MODULE 14 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="C">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 14 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> What is the fastest and cleanest way to isolate database state between individual test cases in an async FastAPI Pytest test suite?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">Dropping and recreating all database tables with Alembic before each test.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">Running each test inside a standalone Docker container.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">Wrapping each test in a database transaction with a nested SQL <code>SAVEPOINT</code> and issuing <code>rollback()</code> during fixture teardown, ensuring zero rows are ever written to disk.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">Mocking all SQL queries with hardcoded dictionaries.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">Running transactions with nested SAVEPOINTs and rolling them back after each test keeps the database 100% pristine with zero disk I/O or table truncation overhead. This allows 500+ real integration tests to execute in seconds against a live database.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-13" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 13: Caching, Rate Limits & Resilience</span>
+            </div>
+        </a>
+                <a href="#mod-15" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Next Section</span>
+                <span class="nav-title">Module 15: Docker & Production SRE</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
             </div>
         </section>
         <!-- ========================================================= -->
@@ -4125,6 +4991,53 @@ db_available = <span class="kw">True</span>
         <span class="kw">assert</span> ready_res.status_code == <span class="dec">503</span></code></pre>
             </div>
             </div>
+            <!-- MODULE 15 INTERACTIVE MCQ TEST -->
+            <div class="mcq-quiz-card" data-correct="B">
+                <div class="mcq-header">
+                    <span class="mcq-badge">Knowledge Check MCQ</span>
+                    <span class="mcq-sub">Module 15 Mastery &bull; Instant Feedback</span>
+                </div>
+                <div class="mcq-prompt">
+                    <p class="mcq-question-text"><strong>Q:</strong> Why must you NEVER check database connectivity inside a Kubernetes <code>livenessProbe</code> (<code>/healthz</code>)?</p>
+                </div>
+                <div class="mcq-options-grid">
+                    <button type="button" class="mcq-opt" data-opt="A" onclick="checkMcq(this)">
+                        <span class="opt-label">A</span>
+                        <span class="opt-text">Database queries cannot be run from inside Docker containers.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="B" onclick="checkMcq(this)">
+                        <span class="opt-label">B</span>
+                        <span class="opt-text">If the database suffers a temporary 5-second network blip or failover, the liveness probe fails across all pods simultaneously, causing Kubernetes to forcefully SIGKILL every healthy web container in the cluster in a catastrophic restart storm.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="C" onclick="checkMcq(this)">
+                        <span class="opt-label">C</span>
+                        <span class="opt-text">The liveness probe only supports HTTP 204 No Content responses.</span>
+                    </button>
+                    <button type="button" class="mcq-opt" data-opt="D" onclick="checkMcq(this)">
+                        <span class="opt-label">D</span>
+                        <span class="opt-text">Kubernetes only supports checking local filesystem paths.</span>
+                    </button>
+                </div>
+                <div class="mcq-explanation-data" style="display: none;">The <code>livenessProbe</code> answers whether the process is deadlocked and needs to be killed. If it checks external dependencies like PostgreSQL, a brief DB hiccup causes Kubernetes to kill every web pod simultaneously. Database checks belong exclusively in <code>readinessProbe</code> (<code>/readyz</code>), which safely stops routing traffic without killing healthy containers.</div>
+                <div class="mcq-result" style="display: none;"></div>
+            </div>
+            <!-- MODULE NAVIGATION -->
+            <div class="module-footer-nav">
+                <a href="#mod-14" class="module-nav-link prev-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <div>
+                <span class="nav-direction">Previous Section</span>
+                <span class="nav-title">Module 14: Automated Testing (Pytest)</span>
+            </div>
+        </a>
+                <a href="#mod-1" class="module-nav-link next-link">
+            <div>
+                <span class="nav-direction">Complete Guide</span>
+                <span class="nav-title">Return to Top / Module 01</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+        </a>
+            </div>
         </section>
 
         <!-- Footer -->
@@ -4226,6 +5139,46 @@ db_available = <span class="kw">True</span>
 
     modules.forEach(m => observer.observe(m));
 })();
+
+// Interactive MCQ Logic
+window.checkMcq = function(btn) {
+    const card = btn.closest('.mcq-quiz-card');
+    const correctOpt = card.getAttribute('data-correct');
+    const selectedOpt = btn.getAttribute('data-opt');
+    const explanation = card.querySelector('.mcq-explanation-data').innerHTML;
+    const options = card.querySelectorAll('.mcq-opt');
+
+    options.forEach(opt => {
+        opt.disabled = true;
+        if (opt.getAttribute('data-opt') === correctOpt) {
+            opt.classList.add('opt-should-be');
+        }
+    });
+
+    const resultBox = card.querySelector('.mcq-result');
+    if (selectedOpt === correctOpt) {
+        btn.classList.add('opt-correct');
+        resultBox.className = 'mcq-result mcq-result-success';
+        resultBox.innerHTML = `<strong>✓ Correct!</strong> ${explanation}`;
+    } else {
+        btn.classList.add('opt-wrong');
+        resultBox.className = 'mcq-result mcq-result-error';
+        resultBox.innerHTML = `<strong>✗ Incorrect.</strong> ${explanation}<br><button type="button" class="mcq-retry-btn" onclick="resetMcq(this)">Try Again</button>`;
+    }
+    resultBox.style.display = 'block';
+};
+
+window.resetMcq = function(retryBtn) {
+    const card = retryBtn.closest('.mcq-quiz-card');
+    const options = card.querySelectorAll('.mcq-opt');
+    options.forEach(opt => {
+        opt.disabled = false;
+        opt.classList.remove('opt-correct', 'opt-wrong', 'opt-should-be');
+    });
+    const resultBox = card.querySelector('.mcq-result');
+    resultBox.style.display = 'none';
+    resultBox.innerHTML = '';
+};
 </script>
 </body>
 </html>
