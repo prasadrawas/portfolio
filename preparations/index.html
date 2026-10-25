@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>12-Week High-Paying Tech Job Preparation Roadmap | Prasad Rawas</title>
-    <meta name="description" content="A comprehensive, interactive 12-week preparation roadmap with curated reference links for Senior Backend, Full-Stack, and AI Engineering roles.">
+    <title>15-Week Senior Full Stack Preparation Roadmap | Prasad Rawas</title>
+    <meta name="description" content="A comprehensive, interactive 15-week (105-day) preparation blueprint with in-depth tutorials, LeetCode challenges, YouTube videos, and interview talking points for Senior Full Stack roles.">
     <link rel="canonical" href="https://dev.prasadrawas.online/preparations/">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="12-Week High-Paying Tech Job Preparation Roadmap">
-    <meta property="og:description" content="Interactive 12-week blueprint with reference links for Senior Backend, Full-Stack & AI Engineers targeting ₹35L–₹60L+ and US Remote roles.">
+    <meta property="og:title" content="15-Week Senior Full Stack Preparation Roadmap">
+    <meta property="og:description" content="Interactive 105-day blueprint with in-depth tutorials, curated coding challenges, YouTube videos, and FAANG interview talking points.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dev.prasadrawas.online/preparations/">
     <meta property="og:image" content="https://dev.prasadrawas.online/assets/images/og-image.png">
@@ -29,6 +29,7 @@
             --bg: #0a0a0f;
             --surface: rgba(255, 255, 255, 0.03);
             --surface-hover: rgba(255, 255, 255, 0.06);
+            --surface-elevated: #12121a;
             --border: rgba(255, 255, 255, 0.08);
             --border-hover: rgba(99, 102, 241, 0.4);
             --text: #e5e7eb;
@@ -36,11 +37,13 @@
             --text-muted: #9ca3af;
             --text-faint: #6b7280;
             --accent: #6366f1;
-            --accent-glow: rgba(99, 102, 241, 0.2);
+            --accent-glow: rgba(99, 102, 241, 0.25);
             --accent-cyan: #06b6d4;
             --accent-green: #22c55e;
             --accent-amber: #f59e0b;
             --accent-pink: #ec4899;
+            --accent-purple: #a855f7;
+            --accent-rose: #f43f5e;
             --radius-sm: 6px;
             --radius-md: 10px;
             --radius-lg: 16px;
@@ -70,15 +73,15 @@
         .nav {
             position: sticky;
             top: 0;
-            z-index: 100;
-            background: rgba(10, 10, 15, 0.85);
+            z-index: 90;
+            background: rgba(10, 10, 15, 0.88);
             backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--border);
             padding: 14px 0;
         }
 
         .nav-inner {
-            max-width: 1100px;
+            max-width: 1180px;
             margin: 0 auto;
             padding: 0 24px;
             display: flex;
@@ -164,14 +167,14 @@
 
         /* Container */
         .container {
-            max-width: 1100px;
+            max-width: 1180px;
             margin: 0 auto;
             padding: 40px 24px 80px;
         }
 
         /* Hero */
         .hero {
-            margin-bottom: 36px;
+            margin-bottom: 32px;
         }
 
         .badge {
@@ -199,7 +202,7 @@
         }
 
         h1 {
-            font-size: clamp(28px, 4vw, 42px);
+            font-size: clamp(28px, 4vw, 44px);
             font-weight: 800;
             color: var(--text-heading);
             letter-spacing: -0.8px;
@@ -210,14 +213,14 @@
         .hero-desc {
             font-size: 15.5px;
             color: var(--text-muted);
-            max-width: 820px;
+            max-width: 860px;
             line-height: 1.65;
             margin-bottom: 28px;
         }
 
         .hero-stats {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
             gap: 12px;
             margin-bottom: 32px;
         }
@@ -240,6 +243,7 @@
         .stat-val.cyan { color: var(--accent-cyan); }
         .stat-val.green { color: var(--accent-green); }
         .stat-val.amber { color: var(--accent-amber); }
+        .stat-val.purple { color: var(--accent-purple); }
 
         .stat-lbl {
             font-size: 12px;
@@ -247,14 +251,14 @@
             font-weight: 500;
         }
 
-        /* Progress Card */
-        .progress-card {
+        /* Sticky Control Bar */
+        .control-panel {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(6, 182, 212, 0.04));
             border: 1px solid rgba(99, 102, 241, 0.25);
             border-radius: var(--radius-lg);
-            padding: 24px;
-            margin-bottom: 36px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            padding: 22px 24px;
+            margin-bottom: 32px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
 
         .progress-header {
@@ -263,7 +267,7 @@
             align-items: center;
             margin-bottom: 14px;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .progress-title {
@@ -300,11 +304,60 @@
             box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
         }
 
+        .control-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 260px;
+            max-width: 450px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 8px 12px 8px 34px;
+            color: #fff;
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 11px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-faint);
+            width: 14px;
+            height: 14px;
+        }
+
+        .control-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         /* Filter Controls */
         .filters {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
+            margin-bottom: 30px;
         }
 
         .filter-btn {
@@ -332,60 +385,31 @@
             box-shadow: 0 0 12px var(--accent-glow);
         }
 
-        /* Phase Container */
-        .phase-block {
-            margin-bottom: 44px;
-            transition: all 0.3s ease;
-        }
-
-        .phase-block.hidden {
-            display: none;
-        }
-
-        .phase-header {
-            display: flex;
-            align-items: baseline;
-            gap: 12px;
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border);
-            flex-wrap: wrap;
-        }
-
+        /* Phase Tags */
         .phase-tag {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 11.5px;
+            font-size: 10.5px;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 3px 10px;
+            letter-spacing: 0.6px;
+            padding: 2px 8px;
             border-radius: 4px;
         }
 
-        .phase-1-tag { color: #818cf8; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.25); }
-        .phase-2-tag { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); }
-        .phase-3-tag { color: #fbbf24; background: rgba(251, 191, 36, 0.12); border: 1px solid rgba(251, 191, 36, 0.25); }
-        .phase-4-tag { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.25); }
+        .phase-tag.dsa { color: #818cf8; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.25); }
+        .phase-tag.frontend { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); }
+        .phase-tag.backend { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.25); }
+        .phase-tag.db { color: #fbbf24; background: rgba(251, 191, 36, 0.12); border: 1px solid rgba(251, 191, 36, 0.25); }
+        .phase-tag.system-design { color: #c084fc; background: rgba(192, 132, 252, 0.12); border: 1px solid rgba(192, 132, 252, 0.25); }
+        .phase-tag.devops { color: #f472b6; background: rgba(244, 114, 182, 0.12); border: 1px solid rgba(244, 114, 182, 0.25); }
+        .phase-tag.behavioral { color: #fb7185; background: rgba(251, 113, 133, 0.12); border: 1px solid rgba(251, 113, 133, 0.25); }
 
-        .phase-title {
-            font-size: 20px;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: -0.3px;
-        }
-
-        .phase-desc {
-            font-size: 13px;
-            color: var(--text-faint);
-            margin-left: auto;
-        }
-
-        /* Week Card */
+        /* Week Accordion */
         .week-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
             overflow: hidden;
             transition: border-color 0.2s, box-shadow 0.2s;
         }
@@ -395,8 +419,8 @@
         }
 
         .week-card.all-done {
-            border-color: rgba(34, 197, 94, 0.3);
-            background: linear-gradient(180deg, rgba(34, 197, 94, 0.02), var(--surface));
+            border-color: rgba(34, 197, 94, 0.35);
+            background: linear-gradient(180deg, rgba(34, 197, 94, 0.03), var(--surface));
         }
 
         .week-head {
@@ -412,18 +436,19 @@
         .week-left {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .week-num {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             color: #818cf8;
             background: rgba(99, 102, 241, 0.1);
             padding: 4px 10px;
             border-radius: 4px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
         }
 
         .week-theme {
@@ -458,6 +483,12 @@
             display: inline-flex;
         }
 
+        .week-count-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11.5px;
+            color: var(--text-faint);
+        }
+
         .week-toggle {
             color: var(--text-faint);
             transition: transform 0.25s ease;
@@ -472,49 +503,43 @@
         }
 
         .week-body {
-            padding: 0 22px 20px;
+            padding: 0 20px 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        /* Tasks */
-        .task-list {
+        /* Day Cards */
+        .day-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
             margin-top: 16px;
         }
 
-        .task-item {
+        .day-item {
             display: flex;
             align-items: flex-start;
-            gap: 12px;
-            padding: 14px 16px;
+            gap: 14px;
+            padding: 16px 18px;
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.06);
             border-radius: var(--radius-sm);
-            transition: all 0.15s ease;
+            transition: all 0.2s ease;
         }
 
-        .task-item:hover {
+        .day-item:hover {
             background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.12);
         }
 
-        .task-item.completed {
-            background: rgba(34, 197, 94, 0.03);
-            border-color: rgba(34, 197, 94, 0.18);
+        .day-item.completed {
+            background: rgba(34, 197, 94, 0.02);
+            border-color: rgba(34, 197, 94, 0.2);
         }
 
-        .task-item.completed .task-text {
-            color: var(--text-muted);
-            text-decoration: line-through;
-            text-decoration-color: rgba(255, 255, 255, 0.25);
-        }
-
-        .custom-checkbox {
+        .day-checkbox {
             margin-top: 3px;
-            width: 17px;
-            height: 17px;
+            width: 18px;
+            height: 18px;
             border-radius: 4px;
             border: 1.5px solid rgba(255, 255, 255, 0.25);
             background: transparent;
@@ -526,20 +551,16 @@
             transition: all 0.15s;
         }
 
-        .custom-checkbox:hover {
+        .day-checkbox:hover {
             border-color: var(--accent);
         }
 
-        .custom-checkbox.checked {
+        .day-checkbox.checked {
             background: var(--accent);
             border-color: var(--accent);
         }
 
-        .custom-checkbox.checked svg {
-            display: block;
-        }
-
-        .custom-checkbox svg {
+        .day-checkbox svg {
             display: none;
             width: 11px;
             height: 11px;
@@ -547,163 +568,479 @@
             stroke-width: 3;
         }
 
-        .task-content {
+        .day-checkbox.checked svg {
+            display: block;
+        }
+
+        .day-main {
             flex: 1;
         }
 
-        .task-header-row {
+        .day-top-row {
             display: flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
             flex-wrap: wrap;
+        }
+
+        .day-num-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: #a5b4fc;
+        }
+
+        .day-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .day-title:hover {
+            color: #818cf8;
+        }
+
+        .day-item.completed .day-title {
+            color: var(--text-muted);
+            text-decoration: line-through;
+            text-decoration-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .day-time {
+            font-size: 11.5px;
+            color: var(--text-faint);
+            font-family: 'JetBrains Mono', monospace;
+            margin-left: auto;
+        }
+
+        .day-summary {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-bottom: 12px;
+        }
+
+        .day-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
         }
 
         .tag-pill {
-            font-size: 10px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            padding: 2px 7px;
-            border-radius: 3px;
+            font-size: 10.5px;
             font-family: 'JetBrains Mono', monospace;
-        }
-
-        .tag-dsa { color: #a78bfa; background: rgba(167, 139, 250, 0.12); }
-        .tag-backend { color: #38bdf8; background: rgba(56, 189, 248, 0.12); }
-        .tag-hld { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
-        .tag-lld { color: #f472b6; background: rgba(244, 114, 182, 0.12); }
-        .tag-ai { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
-        .tag-career { color: #fb7185; background: rgba(251, 113, 133, 0.12); }
-
-        .task-text {
-            font-size: 13.5px;
-            color: var(--text);
-            line-height: 1.55;
-        }
-
-        .task-text strong {
-            color: #fff;
-        }
-
-        .task-links {
-            margin-top: 8px;
-            display: flex;
-            gap: 8px 12px;
-            flex-wrap: wrap;
-        }
-
-        .task-link {
-            font-size: 11.5px;
-            color: #818cf8;
-            background: rgba(99, 102, 241, 0.08);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            padding: 3px 9px;
+            color: var(--text-faint);
+            background: rgba(255, 255, 255, 0.04);
+            padding: 2px 7px;
             border-radius: 4px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .task-link:hover {
-            color: #fff;
-            background: rgba(99, 102, 241, 0.2);
-            border-color: rgba(99, 102, 241, 0.4);
-            transform: translateY(-1px);
-        }
-
-        .task-link svg {
-            width: 12px;
-            height: 12px;
-            flex-shrink: 0;
-        }
-
-        /* Checkpoint Box */
-        .checkpoint-box {
-            margin-top: 16px;
-            padding: 12px 16px;
-            background: rgba(99, 102, 241, 0.05);
-            border: 1px dashed rgba(99, 102, 241, 0.25);
-            border-radius: var(--radius-sm);
+        .day-actions {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 12.5px;
-            color: #c7d2fe;
+            flex-wrap: wrap;
         }
 
-        .checkpoint-icon {
-            color: #818cf8;
+        .btn-tutorial {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.1));
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 5px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-family: inherit;
+        }
+
+        .btn-tutorial:hover {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .chip-link {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .chip-link:hover {
+            background: rgba(255, 255, 255, 0.07);
+            color: #fff;
+        }
+
+        /* Slide-Over Drawer / Modal Reader */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .drawer-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer-content {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 860px;
+            background: #0d0d14;
+            border-left: 1px solid var(--border);
+            box-shadow: -8px 0 35px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 1001;
+        }
+
+        .drawer-overlay.open .drawer-content {
+            transform: translateX(0);
+        }
+
+        .drawer-header {
+            padding: 20px 28px;
+            border-bottom: 1px solid var(--border);
+            background: rgba(13, 13, 20, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .drawer-header-left {
+            flex: 1;
+        }
+
+        .drawer-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .drawer-title {
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.3;
+        }
+
+        .drawer-close {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 16px;
             flex-shrink: 0;
         }
 
-        /* Resources & Scripts Section */
-        .guides-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 16px;
-            margin-top: 40px;
+        .drawer-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
         }
 
-        .guide-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-md);
-            padding: 22px;
+        /* Drawer Tabs */
+        .drawer-tabs {
+            display: flex;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid var(--border);
+            padding: 0 28px;
+            gap: 20px;
+            overflow-x: auto;
         }
 
-        .guide-title {
-            font-size: 16px;
+        .drawer-tab {
+            padding: 12px 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-faint);
+            background: none;
+            border: none;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .drawer-tab:hover {
+            color: var(--text-muted);
+        }
+
+        .drawer-tab.active {
+            color: #a5b4fc;
+            border-bottom-color: var(--accent);
+        }
+
+        .drawer-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 28px;
+            line-height: 1.7;
+        }
+
+        /* Tutorial Styling */
+        .tutorial-container h4 {
+            font-size: 17px;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            margin: 22px 0 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .guide-title svg {
-            color: var(--accent);
+        .tutorial-container h4:first-child {
+            margin-top: 0;
         }
 
-        .guide-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+        .tutorial-container p {
+            font-size: 14.5px;
+            color: var(--text);
+            margin-bottom: 14px;
+        }
+
+        .tutorial-container ul, .tutorial-container ol {
+            margin: 0 0 16px 20px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .tutorial-container li {
+            margin-bottom: 6px;
+        }
+
+        .tutorial-container pre {
+            background: #08080c;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-sm);
+            padding: 14px 16px;
+            margin: 14px 0 18px;
+            overflow-x: auto;
+            font-size: 13px;
+            color: #e2e8f0;
+        }
+
+        .tutorial-container code {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12.5px;
+            color: #a5b4fc;
+        }
+
+        .tutorial-container blockquote {
+            border-left: 3px solid var(--accent);
+            padding: 10px 16px;
+            margin: 16px 0;
+            background: rgba(99, 102, 241, 0.06);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            font-style: italic;
+            color: #c7d2fe;
+            font-size: 14px;
+        }
+
+        .tutorial-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
             font-size: 13px;
         }
 
-        .guide-list li {
-            color: var(--text-muted);
-            line-height: 1.5;
-        }
-
-        .guide-list li strong {
-            color: #fff;
-        }
-
-        .script-quote {
-            background: rgba(0, 0, 0, 0.3);
-            border-left: 3px solid var(--accent);
+        .tutorial-container th, .tutorial-container td {
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 10px 14px;
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            text-align: left;
+        }
+
+        .tutorial-container th {
+            background: rgba(255, 255, 255, 0.04);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Challenge Cards */
+        .challenge-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .challenge-info h5 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .challenge-info p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .diff-badge {
+            font-size: 10.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 7px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            margin-right: 6px;
+        }
+
+        .diff-Easy { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
+        .diff-Medium { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
+        .diff-Hard { color: #f87171; background: rgba(248, 113, 113, 0.12); }
+        .diff-Mixed { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+
+        /* Video Cards */
+        .video-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px 18px;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .video-info h5 {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .video-info p {
             font-size: 12.5px;
-            color: #e2e8f0;
+            color: var(--text-faint);
+            margin: 0;
+        }
+
+        /* Interview Q&A Cards */
+        .qa-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+            margin-bottom: 14px;
+        }
+
+        .qa-q {
+            font-size: 14.5px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .qa-q span {
+            color: #818cf8;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .qa-a {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            padding-left: 24px;
+            border-left: 2px solid rgba(99, 102, 241, 0.2);
+            margin-left: 4px;
+        }
+
+        .resume-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(99, 102, 241, 0.05));
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-top: 20px;
+        }
+
+        .resume-box-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4ade80;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .resume-bullet-text {
+            font-size: 13.5px;
+            color: #e5e7eb;
             font-style: italic;
-            margin-top: 8px;
+        }
+
+        /* Drawer Footer */
+        .drawer-footer {
+            padding: 16px 28px;
+            border-top: 1px solid var(--border);
+            background: rgba(13, 13, 20, 0.98);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         /* Footer */
         .footer {
+            margin-top: 60px;
+            padding-top: 28px;
             border-top: 1px solid var(--border);
-            padding: 32px 0;
             text-align: center;
             font-size: 13px;
             color: var(--text-faint);
-            margin-top: 60px;
         }
 
         .footer a {
@@ -715,24 +1052,28 @@
             color: #fff;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .container { padding: 24px 16px 60px; }
-            h1 { font-size: 26px; }
-            .week-head { padding: 14px 16px; }
-            .week-body { padding: 0 16px 16px; }
-            .phase-desc { margin-left: 0; width: 100%; }
-        }
-
-        /* Print */
-        @media print {
-            .nav, .progress-card, .btn, .week-toggle, .filters { display: none !important; }
-            body { background: white !important; color: black !important; }
-            .week-card { border: 1px solid #ccc !important; break-inside: avoid; }
-            .week-body { display: block !important; }
-            .task-item { border: 1px solid #eee !important; color: #111 !important; }
-            .task-text strong { color: black !important; }
-            .task-link { border: none !important; color: #333 !important; padding: 0 !important; }
+            .container {
+                padding: 24px 16px 60px;
+            }
+            .drawer-content {
+                max-width: 100%;
+            }
+            .drawer-header {
+                padding: 16px 20px;
+            }
+            .drawer-body {
+                padding: 20px;
+            }
+            .drawer-tabs {
+                padding: 0 20px;
+            }
+            .day-item {
+                flex-direction: column;
+            }
+            .day-time {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
@@ -742,29 +1083,15 @@
 <nav class="nav">
     <div class="nav-inner">
         <div class="nav-left">
-            <a href="../index.html" class="nav-logo">PR<span>.</span></a>
+            <a href="../index.html" class="nav-logo">PRASAD <span>RAWAS</span></a>
             <a href="../index.html" class="nav-back">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                Portfolio
-            </a>
-            <a href="../resumes/index.html" class="nav-back">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-                Resumes
-            </a>
-            <a href="../fastapi-guide/index.html" class="nav-back">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                FastAPI Guide
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to Home
             </a>
         </div>
         <div class="nav-actions">
-            <button class="btn btn-ghost" id="resetBtn" title="Reset all checked tasks">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
-                Reset
-            </button>
-            <button class="btn btn-accent" onclick="window.print()">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
-                Export Plan
-            </button>
+            <a href="../fastapi-guide/index.html" class="btn btn-ghost">FastAPI Guide</a>
+            <a href="../resumes/resume-fullstack.html" class="btn btn-accent">Full Stack Resume</a>
         </div>
     </div>
 </nav>
@@ -774,967 +1101,616 @@
     <header class="hero">
         <div class="badge">
             <span class="badge-dot"></span>
-            Senior Engineering Preparation Blueprint
+            TIER-1 & FAANG FULL STACK BLUEPRINT
         </div>
-        <h1>12-Week Roadmap for High-Paying Senior Roles</h1>
+        <h1>15-Week Master Full Stack Preparation Roadmap</h1>
         <p class="hero-desc">
-            Tailored specifically for <strong>Senior Backend / Full-Stack &amp; AI Engineers</strong> targeting ₹35L–₹60L+ Tier-1 Product Companies (Atlassian, Google, Autodesk, Swiggy, Razorpay) and $70k–$120k+ Global Remote roles. <strong>Every item contains direct reference links</strong>. Progress is saved automatically.
+            An exhaustive, 105-day structured curriculum engineered for Senior Full Stack Developers targeting ₹40L–₹70L+ and US Remote roles at Google, Atlassian, Amazon, Uber, and Razorpay. Complete with in-depth day tutorials, LeetCode challenges, YouTube references, and interview Q&As.
         </p>
 
-        <!-- Stats Overview -->
+        <!-- Stats Grid -->
         <div class="hero-stats">
             <div class="stat-card">
-                <div class="stat-val accent">12 Weeks</div>
-                <div class="stat-lbl">12–15 hrs/week commitment</div>
+                <div class="stat-val accent">15 Weeks</div>
+                <div class="stat-lbl">105 Daily Structured Modules</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val cyan">4 Phases</div>
-                <div class="stat-lbl">DSA &bull; LLD &bull; HLD &bull; Sourcing</div>
+                <div class="stat-val cyan">105 Tutorials</div>
+                <div class="stat-lbl">In-Depth First-Principles Guides</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val green">38 Tasks</div>
-                <div class="stat-lbl">100% Curated Reference Links</div>
+                <div class="stat-val green">300+ Problems</div>
+                <div class="stat-lbl">LeetCode & System Design Specs</div>
             </div>
             <div class="stat-card">
-                <div class="stat-val amber">Hybrid Target</div>
-                <div class="stat-lbl">Tier-1 Product + US Remote</div>
+                <div class="stat-val amber">105 Q&As</div>
+                <div class="stat-lbl">FAANG Talking Points & Resume Bullets</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-val purple">₹40L–₹70L+</div>
+                <div class="stat-lbl">Target Tier-1 & US Remote CTC</div>
             </div>
         </div>
     </header>
 
-    <!-- Interactive Progress Card -->
-    <div class="progress-card">
+    <!-- Progress Dashboard & Controls -->
+    <section class="control-panel">
         <div class="progress-header">
             <div class="progress-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Your Preparation Progress
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Preparation Mastery Progress
             </div>
-            <div class="progress-meta" id="progressMeta">0 / 38 Tasks Completed (0%)</div>
+            <div class="progress-meta" id="progressMeta">0 / 105 Days Completed (0%)</div>
         </div>
         <div class="progress-bar-bg">
             <div class="progress-bar-fill" id="progressBar"></div>
         </div>
-        <div class="filters">
-            <button class="filter-btn active" data-filter="all">All Phases</button>
-            <button class="filter-btn" data-filter="phase-1">Phase 1: Foundations</button>
-            <button class="filter-btn" data-filter="phase-2">Phase 2: LLD &amp; Trees</button>
-            <button class="filter-btn" data-filter="phase-3">Phase 3: System Design &amp; AI</button>
-            <button class="filter-btn" data-filter="phase-4">Phase 4: Sourcing &amp; Mocks</button>
+
+        <div class="control-row">
+            <!-- Search -->
+            <div class="search-box">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search by topic, e.g. React 19, Sliding Window, Kafka, Postgres...">
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="control-actions">
+                <button class="btn btn-ghost" id="toggleAllBtn">Collapse All Weeks</button>
+                <button class="btn btn-ghost" id="resetBtn" style="color: #f87171;">Reset Progress</button>
+            </div>
         </div>
+    </section>
+
+    <!-- Phase Filters -->
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">All (15 Weeks / 105 Days)</button>
+        <button class="filter-btn" data-filter="dsa">Phase 1: DSA & LLD (W1–3)</button>
+        <button class="filter-btn" data-filter="frontend">Phase 2: Modern Frontend (W4–6)</button>
+        <button class="filter-btn" data-filter="backend">Phase 3: Backend & Realtime (W7–9)</button>
+        <button class="filter-btn" data-filter="db">Phase 4: Database & Caching (W10–11)</button>
+        <button class="filter-btn" data-filter="system-design">Phase 5: System Design (W12–13)</button>
+        <button class="filter-btn" data-filter="devops">Phase 6: DevOps, SRE & Mocks (W14–15)</button>
     </div>
 
-    <!-- ==================================================== -->
-    <!-- PHASE 1: CORE DSA & BACKEND CONCURRENCY (WEEKS 1-3)  -->
-    <!-- ==================================================== -->
-    <section class="phase-block" data-phase="phase-1">
-        <div class="phase-header">
-            <span class="phase-tag phase-1-tag">Phase 1 &bull; Weeks 1–3</span>
-            <h2 class="phase-title">Core DSA Patterns &amp; Python/FastAPI Concurrency</h2>
-            <span class="phase-desc">Build pattern muscle memory + master async internals</span>
-        </div>
-
-        <!-- WEEK 1 -->
-        <article class="week-card" data-week="w1">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W01</span>
-                    <span class="week-theme">Arrays, Hashing &amp; Asyncio Event Loop Internals</span>
-                    <span class="week-hours">12–14 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w1-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Arrays &amp; Two Pointers</span></div>
-                            <div class="task-text">Solve <strong>NeetCode Core</strong>: Two Sum, Valid Anagram, Group Anagrams, Top K Frequent Elements, Product of Array Except Self.</div>
-                            <div class="task-links">
-                                <a href="https://neetcode.io/practice?tab=neetcode150" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode 150 Tracker</a>
-                                <a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Two Sum</a>
-                                <a href="https://leetcode.com/problems/group-anagrams/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Group Anagrams</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w1-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Sliding Window</span></div>
-                            <div class="task-text">Solve <strong>Sliding Window patterns</strong>: 3Sum, Container With Most Water, Best Time to Buy/Sell Stock, Longest Substring Without Repeating Characters.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode 3Sum</a>
-                                <a href="https://leetcode.com/problems/container-with-most-water/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Container With Most Water</a>
-                                <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Longest Substring</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w1-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-backend">Backend Deep-Dive</span></div>
-                            <div class="task-text">Deep-dive into <strong>Python's Asyncio Event Loop</strong>: Tasks vs Futures, `asyncio.gather` vs `asyncio.TaskGroup`, CPU-bound vs I/O-bound handling with `run_in_executor`.</div>
-                            <div class="task-links">
-                                <a href="https://docs.python.org/3/library/asyncio.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Python Asyncio Docs</a>
-                                <a href="https://fastapi.tiangolo.com/async/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> FastAPI Concurrency Guide</a>
-                                <a href="https://realpython.com/async-io-python/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Real Python Async IO</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w1-4">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-backend">Lab / Hands-On</span></div>
-                            <div class="task-text">Write a mini-benchmark script comparing <strong>FastAPI async def vs standard def endpoints</strong> under concurrent load using `locust` or `wrk`. Document RPS differences.</div>
-                            <div class="task-links">
-                                <a href="https://docs.locust.io/en/stable/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Locust Load Testing Docs</a>
-                                <a href="https://github.com/wg/wrk" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> wrk HTTP Benchmarker</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> 9 Medium DSA problems solved &bull; Clear mental model of Python GIL &amp; async event loop ready for interview questions.</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 2 -->
-        <article class="week-card" data-week="w2">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W02</span>
-                    <span class="week-theme">Linked Lists, Monotonic Stacks &amp; Database Concurrency</span>
-                    <span class="week-hours">12–14 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w2-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Stacks</span></div>
-                            <div class="task-text">Solve <strong>Stack Patterns</strong>: Valid Parentheses, Min Stack, Evaluate Reverse Polish Notation, Daily Temperatures (Monotonic Stack).</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/daily-temperatures/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Daily Temperatures</a>
-                                <a href="https://leetcode.com/problems/min-stack/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Min Stack</a>
-                                <a href="https://neetcode.io/practice?tab=neetcode150" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Stack Track</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w2-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Linked Lists</span></div>
-                            <div class="task-text">Solve <strong>Pointers &amp; Linked Lists</strong>: Reverse Linked List, Merge Two Sorted Lists, Reorder List, Remove Nth Node From End, LRU Cache (Must code in Python with Doubly Linked List + Dict).</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/lru-cache/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode LRU Cache (#146)</a>
-                                <a href="https://leetcode.com/problems/reverse-linked-list/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Reverse Linked List</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w2-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-backend">Database Mastery</span></div>
-                            <div class="task-text">Study <strong>PostgreSQL Isolation Levels &amp; Locking</strong>: Read Committed vs Repeatable Read vs Serializable. Master `SELECT ... FOR UPDATE` (Pessimistic) vs version column (Optimistic locking).</div>
-                            <div class="task-links">
-                                <a href="https://www.postgresql.org/docs/current/mvcc.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> PostgreSQL MVCC Concurrency</a>
-                                <a href="https://www.postgresql.org/docs/current/explicit-locking.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> PostgreSQL Explicit Locking</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w2-4">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-backend">ORM Optimization</span></div>
-                            <div class="task-text">SQLAlchemy 2.0 query optimization: Fix the <strong>N+1 query problem</strong> using `selectinload` vs `joinedload`. Inspect generated SQL with `echo=True` or `EXPLAIN ANALYZE`.</div>
-                            <div class="task-links">
-                                <a href="https://docs.sqlalchemy.org/en/20/orm/queryguide/relationships.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> SQLAlchemy Loading Techniques</a>
-                                <a href="https://use-the-index-luke.com/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Use The Index, Luke!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> LRU Cache coded from scratch in under 20 mins &bull; Capable of explaining row-level locks and deadlock resolution to an interviewer.</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 3 -->
-        <article class="week-card" data-week="w3">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W03</span>
-                    <span class="week-theme">Binary Search, Caching Strategies &amp; Redis Distributed Locking</span>
-                    <span class="week-hours">12–14 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w3-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Binary Search</span></div>
-                            <div class="task-text">Solve <strong>Binary Search Patterns</strong>: Binary Search, Search a 2D Matrix, Koko Eating Bananas, Find Minimum in Rotated Sorted Array, Search in Rotated Sorted Array.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Rotated Array</a>
-                                <a href="https://leetcode.com/problems/koko-eating-bananas/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Koko Eating Bananas</a>
-                                <a href="https://neetcode.io/practice?tab=neetcode150" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Binary Search Track</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w3-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-backend">Caching Patterns</span></div>
-                            <div class="task-text">Master Caching Architectures: <strong>Cache-Aside vs Write-Through vs Write-Behind</strong>. Strategies to prevent Cache Penetration (Bloom filters), Cache Avalanche (jitter TTL), and Cache Stampede.</div>
-                            <div class="task-links">
-                                <a href="https://aws.amazon.com/caching/best-practices/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> AWS Caching Best Practices</a>
-                                <a href="https://redis.io/docs/latest/develop/reference/eviction/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Redis Eviction Policies</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w3-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-backend">Hands-On Distributed Systems</span></div>
-                            <div class="task-text">Build an <strong>Atomic Distributed Lock in Python using Redis</strong> (SET NX PX with unique UUID) and a Lua release script to ensure safe lock release.</div>
-                            <div class="task-links">
-                                <a href="https://redis.io/docs/latest/develop/use/patterns/distributed-locks/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Redis Redlock Spec</a>
-                                <a href="https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Kleppmann: Distributed Locks Analysis</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> Phase 1 Complete! 25 Core LeetCode Mediums completed &bull; Solid grasp of Redis atomic operations and Python async performance.</span>
-                </div>
-            </div>
-        </article>
-    </section>
-
-    <!-- ==================================================== -->
-    <!-- PHASE 2: ADVANCED DSA & LOW-LEVEL DESIGN (WEEKS 4-6) -->
-    <!-- ==================================================== -->
-    <section class="phase-block" data-phase="phase-2">
-        <div class="phase-header">
-            <span class="phase-tag phase-2-tag">Phase 2 &bull; Weeks 4–6</span>
-            <h2 class="phase-title">Advanced DSA &amp; Low-Level Design (Machine Coding)</h2>
-            <span class="phase-desc">Trees, Graphs, Object-Oriented Design &amp; 90-min Live Coding</span>
-        </div>
-
-        <!-- WEEK 4 -->
-        <article class="week-card" data-week="w4">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W04</span>
-                    <span class="week-theme">Trees, Recursion &amp; LLD Rate Limiter Design</span>
-                    <span class="week-hours">14–16 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w4-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Binary Trees</span></div>
-                            <div class="task-text">Solve <strong>Tree Traversal &amp; Recursion</strong>: Invert Tree, Maximum Depth, Subtree of Another Tree, Lowest Common Ancestor of a BST, Binary Tree Level Order Traversal.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Level Order Traversal</a>
-                                <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode LCA of BST</a>
-                                <a href="https://neetcode.io/practice?tab=neetcode150" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Trees Track</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w4-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Advanced Trees</span></div>
-                            <div class="task-text">Solve <strong>Tree Validation &amp; Construction</strong>: Validate Binary Search Tree, Kth Smallest Element in BST, Construct Binary Tree from Preorder and Inorder Traversal.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/validate-binary-search-tree/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Validate BST</a>
-                                <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Construct Tree</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w4-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-lld">LLD / Machine Coding</span></div>
-                            <div class="task-text">Machine Coding Session: <strong>Design a Multi-Strategy Rate Limiter</strong> in Python. Implement Token Bucket, Leaky Bucket, and Sliding Window Counter with unit tests under 90 minutes.</div>
-                            <div class="task-links">
-                                <a href="https://blog.cloudflare.com/counting-things-a-lot-of-different-things/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Cloudflare Rate Limiting Architecture</a>
-                                <a href="https://bytebytego.com/courses/system-design-interview/design-a-rate-limiter" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> ByteByteGo Rate Limiter Design</a>
-                                <a href="https://refactoring.guru/design-patterns/strategy/python/example" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Strategy Pattern in Python</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> Clean SOLID-based Rate Limiter code in GitHub repo with 100% test coverage &bull; Confident in Tree DFS/BFS traversals.</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 5 -->
-        <article class="week-card" data-week="w5">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W05</span>
-                    <span class="week-theme">Heaps, Intervals &amp; LLD Key-Value Store with Transactions</span>
-                    <span class="week-hours">14–16 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w5-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Heaps / Priority Queues</span></div>
-                            <div class="task-text">Solve <strong>Heap Patterns</strong>: Kth Largest Element in an Array, Task Scheduler, Design Twitter, Find Median from Data Stream (Two Heaps pattern).</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/find-median-from-data-stream/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Find Median (#295)</a>
-                                <a href="https://leetcode.com/problems/task-scheduler/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Task Scheduler</a>
-                                <a href="https://neetcode.io/practice?tab=neetcode150" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Heap Track</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w5-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Intervals</span></div>
-                            <div class="task-text">Solve <strong>Interval Problems</strong>: Insert Interval, Merge Intervals, Non-overlapping Intervals, Meeting Rooms I &amp; II.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/merge-intervals/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Merge Intervals</a>
-                                <a href="https://neetcode.io/problems/meeting-schedule-ii" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Meeting Rooms II</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w5-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-lld">LLD / Machine Coding</span></div>
-                            <div class="task-text">Machine Coding Session: <strong>In-Memory Key-Value Store with Transactions &amp; TTL</strong> (supporting `SET`, `GET`, `DELETE`, `BEGIN`, `COMMIT`, `ROLLBACK` with nested transaction stacks).</div>
-                            <div class="task-links">
-                                <a href="https://bytebytego.com/courses/system-design-interview/design-a-key-value-store" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> ByteByteGo Key-Value Store</a>
-                                <a href="https://refactoring.guru/design-patterns/command/python/example" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Command &amp; Rollback Pattern in Python</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> Completed In-Memory Transactional Store in under 90 mins &bull; Solved Merge Intervals and Top K problems with clean syntax.</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 6 -->
-        <article class="week-card" data-week="w6">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W06</span>
-                    <span class="week-theme">Graphs, Topological Sort &amp; LLD Distributed Task Queue</span>
-                    <span class="week-hours">14–16 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w6-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Graphs</span></div>
-                            <div class="task-text">Solve <strong>Graph Fundamentals (BFS/DFS)</strong>: Number of Islands, Max Area of Island, Clone Graph, Pacific Atlantic Water Flow.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/number-of-islands/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Number of Islands</a>
-                                <a href="https://leetcode.com/problems/clone-graph/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Clone Graph</a>
-                                <a href="https://neetcode.io/practice?tab=neetcode150" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Graphs Track</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w6-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Topological Sort</span></div>
-                            <div class="task-text">Solve <strong>Dependency Resolution</strong>: Course Schedule I, Course Schedule II (Kahn's algorithm &amp; DFS cycle detection), Number of Connected Components.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/course-schedule/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Course Schedule I</a>
-                                <a href="https://leetcode.com/problems/course-schedule-ii/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Course Schedule II</a>
-                                <a href="https://www.geeksforgeeks.org/topological-sorting-indegree-based-solution/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Kahn's Algorithm Guide</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w6-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-lld">LLD / Machine Coding</span></div>
-                            <div class="task-text">Machine Coding Session: <strong>Design an Asynchronous Job Scheduler / Task Queue</strong> (Mini-Celery in Python with worker pools, task priority, exponential backoff retries, and dead letter queue).</div>
-                            <div class="task-links">
-                                <a href="https://docs.celeryq.dev/en/stable/userguide/workers.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Celery Worker Architecture</a>
-                                <a href="https://architecturenotes.co/things-you-should-know-about-queues/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Architecture Notes on Queues</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> Phase 2 Complete! 45+ NeetCode problems mastered &bull; Successfully completed 3 full machine coding projects with clean test suites.</span>
-                </div>
-            </div>
-        </article>
-    </section>
-
-    <!-- ==================================================== -->
-    <!-- PHASE 3: HIGH-LEVEL SYSTEM DESIGN & AI (WEEKS 7-9)   -->
-    <!-- ==================================================== -->
-    <section class="phase-block" data-phase="phase-3">
-        <div class="phase-header">
-            <span class="phase-tag phase-3-tag">Phase 3 &bull; Weeks 7–9</span>
-            <h2 class="phase-title">High-Level System Design (HLD) &amp; AI/RAG Architecture</h2>
-            <span class="phase-desc">Architecting for scale, resiliency, trade-offs &amp; modern AI systems</span>
-        </div>
-
-        <!-- WEEK 7 -->
-        <article class="week-card" data-week="w7">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W07</span>
-                    <span class="week-theme">Scalability Core &amp; Distributed Notification Service</span>
-                    <span class="week-hours">12–14 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w7-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-hld">HLD Foundations</span></div>
-                            <div class="task-text">Study <strong>System Design Fundamentals</strong>: L4 vs L7 Load Balancers, Consistent Hashing ring, Horizontal vs Vertical scaling, CAP &amp; PACELC theorem, Database Sharding vs Read Replicas.</div>
-                            <div class="task-links">
-                                <a href="https://bytebytego.com/courses/system-design-interview/scale-from-zero-to-millions-of-users" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> ByteByteGo Scale 0 to Millions</a>
-                                <a href="https://bytebytego.com/courses/system-design-interview/design-consistent-hashing" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Consistent Hashing Deep-Dive</a>
-                                <a href="https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Kleppmann: CAP &amp; PACELC</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w7-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-hld">Case Study</span></div>
-                            <div class="task-text">Design a <strong>Multi-Channel Notification System</strong>: Support Email (SES), SMS (SNS), and Push notifications. Detail user preferences, deduplication window, rate limiting, and analytics.</div>
-                            <div class="task-links">
-                                <a href="https://bytebytego.com/courses/system-design-interview/design-a-notification-system" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> ByteByteGo Notification System</a>
-                                <a href="https://docs.aws.amazon.com/ses/latest/dg/best-practices.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> AWS SES Best Practices</a>
-                                <a href="https://stripe.com/blog/idempotency" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Stripe: Idempotent API Design</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w7-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA Maintenance</span></div>
-                            <div class="task-text">Solve 4 maintenance problems: Clone Graph, Word Ladder, Pacific Atlantic, Number of Connected Components. Keep recall sharp.</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/word-ladder/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Word Ladder (#127)</a>
-                                <a href="https://leetcode.com/problems/pacific-atlantic-water-flow/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Pacific Atlantic</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> Complete architectural diagram + capacity estimation worksheet for Notification Service ready to discuss in 45-min rounds.</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 8 -->
-        <article class="week-card" data-week="w8">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W08</span>
-                    <span class="week-theme">High-Throughput Systems, Message Queues &amp; Flash Sale Design</span>
-                    <span class="week-hours">12–14 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w8-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-hld">Event-Driven Architecture</span></div>
-                            <div class="task-text">Message Brokers deep-dive: <strong>Kafka vs RabbitMQ vs AWS SQS/SNS</strong>. Partitioning, consumer groups, exactly-once vs at-least-once semantics, idempotency keys.</div>
-                            <div class="task-links">
-                                <a href="https://kafka.apache.org/intro" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Apache Kafka Introduction</a>
-                                <a href="https://aws.amazon.com/blogs/compute/choosing-between-messaging-services-for-serverless-applications/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> SQS vs SNS vs EventBridge</a>
-                                <a href="https://martinfowler.com/articles/201701-event-driven.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Fowler: Event-Driven Patterns</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w8-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-hld">Case Study</span></div>
-                            <div class="task-text">Design an <strong>E-Commerce Flash Sale &amp; Inventory Reservation System</strong>: Preventing overselling with Redis Lua atomic decrement, distributed locking, handling payment webhooks with idempotency.</div>
-                            <div class="task-links">
-                                <a href="https://bytebytego.com/courses/system-design-interview/design-a-flash-sale-system" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> ByteByteGo Flash Sale System</a>
-                                <a href="https://microservices.io/patterns/data/saga.html" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Saga Pattern for Distributed Transactions</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w8-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">DSA &bull; Dynamic Programming</span></div>
-                            <div class="task-text">Solve <strong>1D Dynamic Programming essentials</strong>: Climbing Stairs, House Robber I &amp; II, Longest Palindromic Substring, Coin Change (Memoization &amp; Tabulation).</div>
-                            <div class="task-links">
-                                <a href="https://leetcode.com/problems/coin-change/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Coin Change (#322)</a>
-                                <a href="https://leetcode.com/problems/house-robber/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode House Robber</a>
-                                <a href="https://neetcode.io/practice?tab=neetcode150" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode 1D DP Track</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> Mastered high-concurrency reservation patterns and distributed transaction strategies (Saga pattern vs 2PC).</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 9 -->
-        <article class="week-card" data-week="w9">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W09</span>
-                    <span class="week-theme">AI/RAG Architecture, Vector DBs &amp; Agentic Systems</span>
-                    <span class="week-hours">12–14 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w9-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-ai">AI &bull; RAG Deep-Dive</span></div>
-                            <div class="task-text">RAG Architecture internals: Chunking strategies, embedding dimensions, <strong>Vector similarity metrics (Cosine vs Dot vs Euclidean)</strong>, HNSW index vs IVFFlat, Hybrid search (BM25 + Dense).</div>
-                            <div class="task-links">
-                                <a href="https://docs.trychroma.com/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> ChromaDB Documentation</a>
-                                <a href="https://www.pinecone.io/learn/vector-database/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Pinecone: Vector DBs &amp; HNSW</a>
-                                <a href="https://cookbook.openai.com/examples/search_rerank" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> OpenAI Cookbook: Search &amp; Rerank</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w9-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-ai">AI Systems Case Study</span></div>
-                            <div class="task-text">Design an <strong>Enterprise AI Knowledge Assistant</strong> (Drawing directly from your Gemini/ChromaDB work): Ingestion pipeline, vector indexing, query rewriting, tool calling execution, streaming token responses, and latency optimization.</div>
-                            <div class="task-links">
-                                <a href="https://ai.google.dev/gemini-api/docs/function-calling" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Gemini Function Calling Docs</a>
-                                <a href="https://docs.llamaindex.ai/en/stable/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LlamaIndex Production RAG</a>
-                                <a href="https://www.anthropic.com/research/building-effective-agents" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Anthropic: Building Effective Agents</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w9-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-backend">Observability &amp; SRE</span></div>
-                            <div class="task-text">Learn <strong>Production Reliability &amp; Observability</strong>: The 4 Golden Signals (Latency, Traffic, Errors, Saturation), Prometheus/Grafana metrics, Structured JSON logging, Health checks &amp; graceful shutdown.</div>
-                            <div class="task-links">
-                                <a href="https://sre.google/sre-book/monitoring-distributed-systems/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Google SRE: Monitoring Distributed Systems</a>
-                                <a href="https://prometheus.io/docs/practices/instrumentation/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Prometheus Metric Instrumentation</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> Phase 3 Complete! You can articulate modern AI backend systems and traditional distributed systems at Senior/Staff depth.</span>
-                </div>
-            </div>
-        </article>
-    </section>
-
-    <!-- ==================================================== -->
-    <!-- PHASE 4: SOURCING, MOCKS & LIVE OFFERS (WEEKS 10-12) -->
-    <!-- ==================================================== -->
-    <section class="phase-block" data-phase="phase-4">
-        <div class="phase-header">
-            <span class="phase-tag phase-4-tag">Phase 4 &bull; Weeks 10–12</span>
-            <h2 class="phase-title">Sourcing, Behavioral/Bar-Raiser, Mock Interviews &amp; Offers</h2>
-            <span class="phase-desc">LinkedIn outreach, warm referrals, live interviews &amp; salary negotiation</span>
-        </div>
-
-        <!-- WEEK 10 -->
-        <article class="week-card" data-week="w10">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W10</span>
-                    <span class="week-theme">STAR Behavioral Stories, Resume Polish &amp; Profile Alignment</span>
-                    <span class="week-hours">10–12 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w10-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">Behavioral &bull; STAR Stories</span></div>
-                            <div class="task-text">Write out 6 detailed STAR stories: <strong>Production Outage</strong>, <strong>Technical Disagreement</strong>, <strong>Major Architecture Rewrite</strong>, <strong>Performance Bottleneck</strong>, <strong>Mentorship</strong>, and <strong>Tight Deadline Delivery</strong>.</div>
-                            <div class="task-links">
-                                <a href="https://www.amazon.jobs/content/en/how-we-hire/interviewing-at-amazon" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Amazon Leadership Principles &amp; STAR Guide</a>
-                                <a href="https://www.youtube.com/@DanCroitor" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Dan Croitor Behavioral Breakdown</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w10-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">LinkedIn Optimization</span></div>
-                            <div class="task-text">Update LinkedIn Headline to: <em>"Senior Full-Stack &amp; Backend Engineer | Python (FastAPI), React, AWS, Distributed Systems &bull; Ex-VoloX &bull; 5+ YoE"</em>. Set Open to Work to Recruiters Only.</div>
-                            <div class="task-links">
-                                <a href="https://cultivatedculture.com/how-to-optimize-your-linkedin-profile/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Cultivated Culture Profile Optimization</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w10-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">Resume Variant Prep</span></div>
-                            <div class="task-text">Ensure your primary resume ([resume-senior-engineer.html](file:///Users/pr/fvm/.portfolio/resumes/resume-senior-engineer.html)) is PDF-exported with zero formatting flaws.</div>
-                            <div class="task-links">
-                                <a href="../resumes/resume-senior-engineer.html" target="_blank" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Open Your Senior Engineer Resume</a>
-                                <a href="https://www.careercup.com/resume" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Gayle McDowell Resume Tips</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> 6 polished STAR stories documented &bull; Profile ready to convert recruiter inbound traffic.</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 11 -->
-        <article class="week-card" data-week="w11">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W11</span>
-                    <span class="week-theme">The Referral Blitz &amp; Full Mock Interview Drills</span>
-                    <span class="week-hours">12–15 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w11-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">Warm Referral Campaign</span></div>
-                            <div class="task-text">Identify 15 target companies (e.g. Atlassian, Autodesk, Google, Swiggy, Razorpay, plus 5 US remote startups on Wellfound). Reach out to 2–3 Senior Engineers per company on LinkedIn for warm referrals.</div>
-                            <div class="task-links">
-                                <a href="https://wellfound.com/jobs" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Wellfound Remote Tech Jobs</a>
-                                <a href="https://www.levels.fyi/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Levels.fyi Compensation Bands</a>
-                                <a href="https://www.atlassian.com/company/careers" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Atlassian Careers</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w11-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">Mock Interview: System Design</span></div>
-                            <div class="task-text">Complete 1 full 45-minute High-Level System Design mock on Pramp, Interviewing.io, or with a senior peer. Focus on pacing, requirements gathering, and trade-off defense.</div>
-                            <div class="task-links">
-                                <a href="https://www.pramp.com/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Pramp Free System Design Mocks</a>
-                                <a href="https://interviewing.io/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Interviewing.io Anonymous Mocks</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w11-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-dsa">Mock Interview: Live Coding</span></div>
-                            <div class="task-text">Complete 1 live coding mock with medium-to-hard complexity under time pressure (clean variable naming, test cases, time/space complexity analysis out loud).</div>
-                            <div class="task-links">
-                                <a href="https://neetcode.io/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> NeetCode Practice Simulator</a>
-                                <a href="https://leetcode.com/assessment/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> LeetCode Assessment Mode</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Checkpoint:</strong> 10+ referrals submitted &bull; 2 realistic mock loops completed with constructive feedback incorporated.</span>
-                </div>
-            </div>
-        </article>
-
-        <!-- WEEK 12 -->
-        <article class="week-card" data-week="w12">
-            <div class="week-head">
-                <div class="week-left">
-                    <span class="week-num">W12</span>
-                    <span class="week-theme">Live Interview Loops, Pipeline Clustering &amp; Negotiation</span>
-                    <span class="week-hours">12–15 hrs</span>
-                </div>
-                <div class="week-right">
-                    <span class="week-badge-done">Completed</span>
-                    <svg class="week-toggle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                </div>
-            </div>
-            <div class="week-body">
-                <div class="task-list">
-                    <div class="task-item" data-id="w12-1">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">Pipeline Management</span></div>
-                            <div class="task-text">Cluster recruiter screens and technical rounds so that final onsite/virtual loops occur within the same 2-week window to maximize competing offer leverage.</div>
-                            <div class="task-links">
-                                <a href="https://www.freecodecamp.org/news/how-not-to-bomb-your-offer-negotiation-c052f5f1d168/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Haseeb Qureshi: Interview Clustering</a>
-                                <a href="https://www.kalzumeus.com/2012/01/23/salary-negotiation/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Kalzumeus Negotiation Handbook</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w12-2">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">Salary Negotiation Script</span></div>
-                            <div class="task-text">Master the salary deflection script: Never give a single number first; anchor to market band (₹35L–₹50L+ base) and negotiate RSUs, sign-on bonuses, and performance multiples.</div>
-                            <div class="task-links">
-                                <a href="https://haseebq.com/my-ten-rules-for-negotiating-a-job-offer/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> 10 Rules for Negotiating an Offer</a>
-                                <a href="https://fearlesssalarynegotiation.com/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Josh Doody: Fearless Negotiation</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="task-item" data-id="w12-3">
-                        <div class="custom-checkbox"><svg viewBox="0 0 24 24" fill="none"><polyline points="20 6 9 17 4 12"/></svg></div>
-                        <div class="task-content">
-                            <div class="task-header-row"><span class="tag-pill tag-career">Offer Decision &amp; Acceptance</span></div>
-                            <div class="task-text">Evaluate total compensation (Base + Equity vesting schedule + Benefits + Growth path). Secure the best offer and set resignation timeline.</div>
-                            <div class="task-links">
-                                <a href="https://www.levels.fyi/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Levels.fyi Stock/RSU Calculator</a>
-                                <a href="https://carta.com/blog/equity-101-stock-option-basics/" target="_blank" rel="noopener" class="task-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg> Carta: Equity 101 Guide</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="checkpoint-box">
-                    <svg class="checkpoint-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
-                    <span><strong>Goal Achieved:</strong> High-paying Senior Engineer offer secured in your target technology stack!</span>
-                </div>
-            </div>
-        </article>
-    </section>
-
-    <!-- Guides & Practical Scripts -->
-    <section class="guides-grid">
-        <div class="guide-card">
-            <h3 class="guide-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                Salary Deflection Script
-            </h3>
-            <ul class="guide-list">
-                <li><strong>When asked:</strong> "What is your current CTC and expectations?"</li>
-                <li><strong>Your response:</strong></li>
-            </ul>
-            <div class="script-quote">
-                "My current compensation is tied to my current employer's structure, but for this senior role and scope of responsibility, I'm targeting the industry market benchmark in the ₹35L to ₹50L range depending on the overall split between base, performance bonus, and equity. Could you share the approved budget range for this role?"
-            </div>
-        </div>
-
-        <div class="guide-card">
-            <h3 class="guide-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                Warm Referral Message Template
-            </h3>
-            <ul class="guide-list">
-                <li><strong>Target:</strong> Senior Engineers / Tech Leads on LinkedIn</li>
-                <li><strong>Template:</strong></li>
-            </ul>
-            <div class="script-quote">
-                "Hi [Name], saw your work on [Product/Team] at [Company]. I'm a Senior Full-Stack/Backend Engineer with 5+ years building distributed FastAPI microservices, Redis caching, and AWS infra. I saw opening [Job ID] and believe my background aligns well with the team's scale. My live portfolio is at dev.prasadrawas.online. Would you be open to referring me? Thanks!"
-            </div>
-        </div>
-    </section>
+    <!-- Weeks Accordion Container -->
+    <div id="weeksContainer">
+        <!-- Rendered dynamically from roadmap-data.js -->
+    </div>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>Roadmap maintained by <a href="../index.html">Prasad Rawas</a> &bull; Senior Software Developer</p>
+        <p>15-Week Senior Full Stack Preparation Roadmap maintained by <a href="../index.html">Prasad Rawas</a> &bull; Senior Software Developer</p>
     </footer>
 </div>
 
+<!-- Slide-over Drawer / Modal Reader -->
+<div class="drawer-overlay" id="drawerOverlay">
+    <div class="drawer-content">
+        <!-- Reader Header -->
+        <div class="drawer-header">
+            <div class="drawer-header-left">
+                <div class="drawer-meta-row">
+                    <span class="week-num" id="drawerDayNum">DAY 1</span>
+                    <span class="phase-tag" id="drawerPhaseTag">PHASE 1</span>
+                    <span class="day-time" id="drawerTimeEst">45m study</span>
+                </div>
+                <h2 class="drawer-title" id="drawerTitle">Tutorial Title</h2>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="btn btn-ghost" id="drawerMarkDoneBtn" style="font-size: 11.5px;">Mark as Done</button>
+                <button class="drawer-close" id="drawerCloseBtn" aria-label="Close">&times;</button>
+            </div>
+        </div>
+
+        <!-- Reader Navigation Tabs -->
+        <div class="drawer-tabs">
+            <button class="drawer-tab active" data-tab="tutorial">📖 In-Depth Tutorial</button>
+            <button class="drawer-tab" data-tab="challenges">🎯 Coding Challenges (<span id="challengeCount">0</span>)</button>
+            <button class="drawer-tab" data-tab="videos">🎥 Video Guides (<span id="videoCount">0</span>)</button>
+            <button class="drawer-tab" data-tab="qa">💼 Resume & Interview Q&A</button>
+        </div>
+
+        <!-- Reader Body -->
+        <div class="drawer-body">
+            <!-- Tab 1: Tutorial -->
+            <div id="tabTutorial" class="tab-pane active">
+                <div class="tutorial-container" id="tutorialContent">
+                    <!-- HTML tutorial injected here -->
+                </div>
+            </div>
+
+            <!-- Tab 2: Challenges -->
+            <div id="tabChallenges" class="tab-pane" style="display: none;">
+                <div id="challengesContent">
+                    <!-- Challenge cards injected here -->
+                </div>
+            </div>
+
+            <!-- Tab 3: Videos -->
+            <div id="tabVideos" class="tab-pane" style="display: none;">
+                <div id="videosContent">
+                    <!-- Video cards injected here -->
+                </div>
+            </div>
+
+            <!-- Tab 4: Q&A -->
+            <div id="tabQa" class="tab-pane" style="display: none;">
+                <div id="qaContent">
+                    <!-- Q&A cards injected here -->
+                </div>
+                <div class="resume-box" id="resumeBox">
+                    <div class="resume-box-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        High-Impact Resume Bullet Point
+                    </div>
+                    <div class="resume-bullet-text" id="resumeBulletText">
+                        <!-- Resume bullet injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reader Footer -->
+        <div class="drawer-footer">
+            <button class="btn btn-ghost" id="drawerPrevBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Previous Day
+            </button>
+            <span style="font-size: 12px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace;" id="drawerProgressIndicator">1 of 105</span>
+            <button class="btn btn-accent" id="drawerNextBtn">
+                Next Day
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Load Data Script -->
+<script src="roadmap-data.js"></script>
+
+<!-- Application Script -->
 <script>
 (function() {
-    const STORAGE_KEY = 'prasad_prep_tasks_v1';
-    let completedTasks = new Set();
+    const STORAGE_KEY = 'prasad_prep_roadmap_15w_v1';
+    let completedDays = new Set();
+    let currentDayIndex = 0;
+    let allCollapsed = false;
 
     // Load saved tasks
     try {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
-            completedTasks = new Set(JSON.parse(saved));
+            completedDays = new Set(JSON.parse(saved));
         }
     } catch (e) {
         console.error('Failed to load tasks from localStorage', e);
     }
 
-    const allCheckboxes = document.querySelectorAll('.task-item');
-    const totalCount = allCheckboxes.length;
+    const weeksData = window.ROADMAP_WEEKS || [];
+    const daysData = window.ROADMAP_DAYS || [];
+    const totalDaysCount = daysData.length;
 
-    // Apply saved state
+    const weeksContainer = document.getElementById('weeksContainer');
+    const progressBar = document.getElementById('progressBar');
+    const progressMeta = document.getElementById('progressMeta');
+    const searchInput = document.getElementById('searchInput');
+    const toggleAllBtn = document.getElementById('toggleAllBtn');
+    const resetBtn = document.getElementById('resetBtn');
+
+    // Drawer Elements
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+    const drawerDayNum = document.getElementById('drawerDayNum');
+    const drawerPhaseTag = document.getElementById('drawerPhaseTag');
+    const drawerTimeEst = document.getElementById('drawerTimeEst');
+    const drawerTitle = document.getElementById('drawerTitle');
+    const drawerMarkDoneBtn = document.getElementById('drawerMarkDoneBtn');
+    const drawerPrevBtn = document.getElementById('drawerPrevBtn');
+    const drawerNextBtn = document.getElementById('drawerNextBtn');
+    const drawerProgressIndicator = document.getElementById('drawerProgressIndicator');
+
+    const tutorialContent = document.getElementById('tutorialContent');
+    const challengesContent = document.getElementById('challengesContent');
+    const videosContent = document.getElementById('videosContent');
+    const qaContent = document.getElementById('qaContent');
+    const resumeBulletText = document.getElementById('resumeBulletText');
+    const challengeCount = document.getElementById('challengeCount');
+    const videoCount = document.getElementById('videoCount');
+
+    // Render Weeks and Days
+    function renderRoadmap() {
+        weeksContainer.innerHTML = '';
+
+        weeksData.forEach(w => {
+            const weekCard = document.createElement('div');
+            weekCard.className = 'week-card';
+            weekCard.dataset.week = w.week;
+            weekCard.dataset.phase = w.phaseKey;
+
+            const daysHtml = w.days.map(d => {
+                const isChecked = completedDays.has(d.id);
+                const tagPills = d.tags.map(t => `<span class="tag-pill">${t}</span>`).join('');
+                return `
+                    <div class="day-item ${isChecked ? 'completed' : ''}" data-day-id="${d.id}" data-day-num="${d.day}">
+                        <div class="day-checkbox ${isChecked ? 'checked' : ''}" data-day-id="${d.id}">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                        </div>
+                        <div class="day-main">
+                            <div class="day-top-row">
+                                <span class="day-num-tag">DAY ${d.day}</span>
+                                <span class="phase-tag ${d.phaseKey}">${d.phaseKey.toUpperCase()}</span>
+                                <span class="day-title" data-day-id="${d.id}">${d.title}</span>
+                                <span class="day-time">${d.timeEstimate}</span>
+                            </div>
+                            <p class="day-summary">${d.summary}</p>
+                            <div class="day-tags">${tagPills}</div>
+                            <div class="day-actions">
+                                <button class="btn-tutorial" data-day-id="${d.id}">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                                    Read In-Depth Tutorial
+                                </button>
+                                <span class="chip-link" data-tab="challenges" data-day-id="${d.id}">🎯 ${d.challenges ? d.challenges.length : 0} Challenges</span>
+                                <span class="chip-link" data-tab="videos" data-day-id="${d.id}">🎥 ${d.videos ? d.videos.length : 0} Videos</span>
+                                <span class="chip-link" data-tab="qa" data-day-id="${d.id}">💼 Resume Q&A</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            weekCard.innerHTML = `
+                <div class="week-head">
+                    <div class="week-left">
+                        <span class="week-num">WEEK ${w.week}</span>
+                        <span class="phase-tag ${w.phaseKey}">${w.phaseKey.toUpperCase()}</span>
+                        <span class="week-theme">${w.theme}</span>
+                        <span class="week-hours">&bull; ${w.hours}</span>
+                    </div>
+                    <div class="week-right">
+                        <span class="week-badge-done">&#10003; ALL COMPLETED</span>
+                        <span class="week-count-tag" id="weekDone-${w.week}">0/7</span>
+                        <svg class="week-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+                    </div>
+                </div>
+                <div class="week-body">
+                    <div class="day-list">${daysHtml}</div>
+                </div>
+            `;
+
+            weeksContainer.appendChild(weekCard);
+        });
+
+        attachEventListeners();
+        updateProgress();
+    }
+
+    // Attach Event Listeners
+    function attachEventListeners() {
+        // Toggle Week Accordion
+        document.querySelectorAll('.week-head').forEach(head => {
+            head.addEventListener('click', (e) => {
+                const card = head.closest('.week-card');
+                card.classList.toggle('collapsed');
+            });
+        });
+
+        // Toggle Day Checkbox
+        document.querySelectorAll('.day-checkbox').forEach(cb => {
+            cb.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dayId = cb.dataset.dayId;
+                toggleDay(dayId);
+            });
+        });
+
+        // Click on title or tutorial button opens Reader
+        document.querySelectorAll('.day-title, .btn-tutorial, .chip-link').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dayId = btn.dataset.dayId;
+                const tab = btn.dataset.tab || 'tutorial';
+                openDrawerByDayId(dayId, tab);
+            });
+        });
+    }
+
+    // Toggle Day Status
+    function toggleDay(dayId) {
+        if (completedDays.has(dayId)) {
+            completedDays.delete(dayId);
+        } else {
+            completedDays.add(dayId);
+        }
+        saveProgress();
+        updateUI();
+    }
+
+    // Save Progress to localStorage
+    function saveProgress() {
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completedDays)));
+        } catch (e) {}
+    }
+
+    // Update Progress Bar & Badges
+    function updateProgress() {
+        const completedCount = completedDays.size;
+        const pct = totalDaysCount > 0 ? Math.round((completedCount / totalDaysCount) * 100) : 0;
+
+        progressBar.style.width = pct + '%';
+        progressMeta.textContent = `${completedCount} / ${totalDaysCount} Days Completed (${pct}%)`;
+
+        // Update each week's progress
+        weeksData.forEach(w => {
+            const weekDone = w.days.filter(d => completedDays.has(d.id)).length;
+            const weekDoneTag = document.getElementById(`weekDone-${w.week}`);
+            if (weekDoneTag) {
+                weekDoneTag.textContent = `${weekDone}/7`;
+            }
+            const card = document.querySelector(`.week-card[data-week="${w.week}"]`);
+            if (card) {
+                if (weekDone === 7) {
+                    card.classList.add('all-done');
+                } else {
+                    card.classList.remove('all-done');
+                }
+            }
+        });
+
+        // Sync drawer mark done button if open
+        const curDay = daysData[currentDayIndex];
+        if (curDay && drawerMarkDoneBtn) {
+            const isDone = completedDays.has(curDay.id);
+            drawerMarkDoneBtn.textContent = isDone ? '✓ Completed' : 'Mark as Done';
+            drawerMarkDoneBtn.className = isDone ? 'btn btn-accent' : 'btn btn-ghost';
+        }
+    }
+
     function updateUI() {
-        let count = 0;
-        allCheckboxes.forEach(item => {
-            const id = item.dataset.id;
-            const cb = item.querySelector('.custom-checkbox');
-            if (completedTasks.has(id)) {
+        document.querySelectorAll('.day-item').forEach(item => {
+            const dayId = item.dataset.dayId;
+            const cb = item.querySelector('.day-checkbox');
+            if (completedDays.has(dayId)) {
                 item.classList.add('completed');
                 cb.classList.add('checked');
-                count++;
             } else {
                 item.classList.remove('completed');
                 cb.classList.remove('checked');
             }
         });
-
-        // Update progress bar & label
-        const pct = totalCount > 0 ? Math.round((count / totalCount) * 100) : 0;
-        document.getElementById('progressBar').style.width = pct + '%';
-        document.getElementById('progressMeta').textContent = `${count} / ${totalCount} Tasks Completed (${pct}%)`;
-
-        // Update week cards "done" status
-        document.querySelectorAll('.week-card').forEach(week => {
-            const weekTasks = week.querySelectorAll('.task-item');
-            const doneInWeek = week.querySelectorAll('.task-item.completed');
-            if (weekTasks.length > 0 && weekTasks.length === doneInWeek.length) {
-                week.classList.add('all-done');
-            } else {
-                week.classList.remove('all-done');
-            }
-        });
+        updateProgress();
     }
 
-    // Toggle task
-    allCheckboxes.forEach(item => {
-        const cb = item.querySelector('.custom-checkbox');
-        const toggle = () => {
-            const id = item.dataset.id;
-            if (completedTasks.has(id)) {
-                completedTasks.delete(id);
-            } else {
-                completedTasks.add(id);
+    // Open Reader Modal
+    function openDrawerByDayId(dayId, activeTab = 'tutorial') {
+        const idx = daysData.findIndex(d => d.id === dayId);
+        if (idx !== -1) {
+            currentDayIndex = idx;
+            renderDrawerContent(daysData[idx], activeTab);
+            drawerOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            history.replaceState(null, null, `#${dayId}`);
+        }
+    }
+
+    function closeDrawer() {
+        drawerOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+        history.replaceState(null, null, window.location.pathname);
+    }
+
+    function renderDrawerContent(day, activeTab = 'tutorial') {
+        drawerDayNum.textContent = `DAY ${day.day} • WEEK ${day.week}`;
+        drawerPhaseTag.textContent = day.phaseKey.toUpperCase();
+        drawerPhaseTag.className = `phase-tag ${day.phaseKey}`;
+        drawerTimeEst.textContent = day.timeEstimate;
+        drawerTitle.textContent = day.title;
+        drawerProgressIndicator.textContent = `Day ${day.day} of ${totalDaysCount}`;
+
+        // Tutorial
+        tutorialContent.innerHTML = day.tutorialHtml || '<p>Detailed tutorial coming soon.</p>';
+
+        // Challenges
+        const challenges = day.challenges || [];
+        challengeCount.textContent = challenges.length;
+        if (challenges.length > 0) {
+            challengesContent.innerHTML = challenges.map(c => `
+                <div class="challenge-card">
+                    <div class="challenge-info">
+                        <h5><span class="diff-badge diff-${c.difficulty}">${c.difficulty}</span> ${c.title}</h5>
+                        <p>${c.description}</p>
+                    </div>
+                    <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="btn btn-accent" style="flex-shrink: 0; font-size: 11.5px;">
+                        Solve Challenge &rarr;
+                    </a>
+                </div>
+            `).join('');
+        } else {
+            challengesContent.innerHTML = '<p style="color: var(--text-faint);">No coding challenge for this module.</p>';
+        }
+
+        // Videos
+        const videos = day.videos || [];
+        videoCount.textContent = videos.length;
+        if (videos.length > 0) {
+            videosContent.innerHTML = videos.map(v => `
+                <div class="video-card">
+                    <div class="video-info">
+                        <h5>${v.title}</h5>
+                        <p>${v.channel} &bull; ${v.duration}</p>
+                    </div>
+                    <a href="${v.url}" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="flex-shrink: 0; font-size: 11.5px;">
+                        Watch Video &#9658;
+                    </a>
+                </div>
+            `).join('');
+        } else {
+            videosContent.innerHTML = '<p style="color: var(--text-faint);">No video links for this module.</p>';
+        }
+
+        // Q&A
+        const qas = day.interviewQuestions || [];
+        if (qas.length > 0) {
+            qaContent.innerHTML = qas.map((qa, i) => `
+                <div class="qa-card">
+                    <div class="qa-q"><span>Q${i+1}:</span> ${qa.question}</div>
+                    <div class="qa-a">${qa.answer}</div>
+                </div>
+            `).join('');
+        } else {
+            qaContent.innerHTML = '<p style="color: var(--text-faint);">No Q&As for this module.</p>';
+        }
+
+        // Resume Bullet
+        resumeBulletText.textContent = day.resumeBullet ? `"${day.resumeBullet}"` : 'Resume bullet not available.';
+
+        // Switch to requested Tab
+        switchDrawerTab(activeTab);
+
+        // Update Mark as Done button
+        const isDone = completedDays.has(day.id);
+        drawerMarkDoneBtn.textContent = isDone ? '✓ Completed' : 'Mark as Done';
+        drawerMarkDoneBtn.className = isDone ? 'btn btn-accent' : 'btn btn-ghost';
+
+        // Prev / Next button states
+        drawerPrevBtn.disabled = currentDayIndex === 0;
+        drawerPrevBtn.style.opacity = currentDayIndex === 0 ? '0.4' : '1';
+        drawerNextBtn.disabled = currentDayIndex === totalDaysCount - 1;
+        drawerNextBtn.style.opacity = currentDayIndex === totalDaysCount - 1 ? '0.4' : '1';
+    }
+
+    function switchDrawerTab(tabName) {
+        document.querySelectorAll('.drawer-tab').forEach(t => {
+            t.classList.toggle('active', t.dataset.tab === tabName);
+        });
+        document.getElementById('tabTutorial').style.display = tabName === 'tutorial' ? 'block' : 'none';
+        document.getElementById('tabChallenges').style.display = tabName === 'challenges' ? 'block' : 'none';
+        document.getElementById('tabVideos').style.display = tabName === 'videos' ? 'block' : 'none';
+        document.getElementById('tabQa').style.display = tabName === 'qa' ? 'block' : 'none';
+    }
+
+    // Drawer Tabs Click Listeners
+    document.querySelectorAll('.drawer-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            switchDrawerTab(tab.dataset.tab);
+        });
+    });
+
+    // Drawer Next / Prev Navigation
+    drawerPrevBtn.addEventListener('click', () => {
+        if (currentDayIndex > 0) {
+            currentDayIndex--;
+            renderDrawerContent(daysData[currentDayIndex]);
+        }
+    });
+
+    drawerNextBtn.addEventListener('click', () => {
+        if (currentDayIndex < totalDaysCount - 1) {
+            currentDayIndex++;
+            renderDrawerContent(daysData[currentDayIndex]);
+        }
+    });
+
+    drawerMarkDoneBtn.addEventListener('click', () => {
+        const curDay = daysData[currentDayIndex];
+        if (curDay) {
+            toggleDay(curDay.id);
+        }
+    });
+
+    drawerCloseBtn.addEventListener('click', closeDrawer);
+    drawerOverlay.addEventListener('click', (e) => {
+        if (e.target === drawerOverlay) closeDrawer();
+    });
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && drawerOverlay.classList.contains('open')) {
+            closeDrawer();
+        } else if (drawerOverlay.classList.contains('open')) {
+            if (e.key === 'ArrowRight' && currentDayIndex < totalDaysCount - 1) {
+                currentDayIndex++;
+                renderDrawerContent(daysData[currentDayIndex]);
+            } else if (e.key === 'ArrowLeft' && currentDayIndex > 0) {
+                currentDayIndex--;
+                renderDrawerContent(daysData[currentDayIndex]);
             }
-            try {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(completedTasks)));
-            } catch (e) {}
-            updateUI();
-        };
+        }
+    });
 
-        cb.addEventListener('click', (e) => {
-            e.stopPropagation();
-            toggle();
+    // Search Filtering
+    searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        document.querySelectorAll('.day-item').forEach(item => {
+            const dayId = item.dataset.dayId;
+            const day = daysData.find(d => d.id === dayId);
+            if (!day) return;
+
+            const textMatch = day.title.toLowerCase().includes(query) ||
+                              day.summary.toLowerCase().includes(query) ||
+                              day.tags.some(t => t.toLowerCase().includes(query));
+
+            item.style.display = textMatch ? 'flex' : 'none';
         });
-        item.addEventListener('click', (e) => {
-            if (e.target.closest('a')) return;
-            toggle();
+
+        // Hide weeks with no visible days
+        document.querySelectorAll('.week-card').forEach(weekCard => {
+            const visibleDays = weekCard.querySelectorAll('.day-item[style*="display: flex"], .day-item:not([style*="display: none"])');
+            weekCard.style.display = visibleDays.length > 0 ? 'block' : 'none';
         });
     });
 
-    // Week Accordion
-    document.querySelectorAll('.week-head').forEach(head => {
-        head.addEventListener('click', () => {
-            const card = head.closest('.week-card');
-            card.classList.toggle('collapsed');
-        });
-    });
-
-    // Phase Filters
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const phaseBlocks = document.querySelectorAll('.phase-block');
-
-    filterBtns.forEach(btn => {
+    // Phase Filter Pills
+    document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
             const filter = btn.dataset.filter;
-            phaseBlocks.forEach(block => {
-                if (filter === 'all' || block.dataset.phase === filter) {
-                    block.classList.remove('hidden');
+            document.querySelectorAll('.week-card').forEach(card => {
+                if (filter === 'all' || card.dataset.phase === filter) {
+                    card.style.display = 'block';
                 } else {
-                    block.classList.add('hidden');
+                    card.style.display = 'none';
                 }
             });
         });
     });
 
-    // Reset Progress
-    const resetBtn = document.getElementById('resetBtn');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', () => {
-            if (confirm('Are you sure you want to reset all your preparation progress?')) {
-                completedTasks.clear();
-                try {
-                    localStorage.removeItem(STORAGE_KEY);
-                } catch (e) {}
-                updateUI();
+    // Toggle All Weeks
+    toggleAllBtn.addEventListener('click', () => {
+        allCollapsed = !allCollapsed;
+        document.querySelectorAll('.week-card').forEach(card => {
+            if (allCollapsed) {
+                card.classList.add('collapsed');
+            } else {
+                card.classList.remove('collapsed');
             }
         });
-    }
+        toggleAllBtn.textContent = allCollapsed ? 'Expand All Weeks' : 'Collapse All Weeks';
+    });
 
-    // Initial render
-    updateUI();
+    // Reset Progress
+    resetBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset all your preparation progress?')) {
+            completedDays.clear();
+            try {
+                localStorage.removeItem(STORAGE_KEY);
+            } catch (e) {}
+            updateUI();
+        }
+    });
+
+    // Initialize App
+    renderRoadmap();
+
+    // Check URL Hash on Load
+    if (window.location.hash) {
+        const hashId = window.location.hash.substring(1);
+        if (daysData.some(d => d.id === hashId)) {
+            openDrawerByDayId(hashId);
+        }
+    }
 })();
 </script>
 </body>
