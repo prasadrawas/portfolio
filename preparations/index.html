@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>15-Week Senior Full Stack Preparation Roadmap | Prasad Rawas</title>
-    <meta name="description" content="A comprehensive, interactive 15-week (105-day) preparation blueprint with in-depth tutorials, LeetCode challenges, YouTube videos, and interview talking points for Senior Full Stack roles.">
+    <meta name="description" content="A comprehensive, interactive 15-week (105-day) preparation blueprint with in-depth tutorials, LeetCode challenges, YouTube videos, voice read-aloud, and interview talking points for Senior Full Stack roles.">
     <link rel="canonical" href="https://dev.prasadrawas.online/preparations/">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
     <meta property="og:title" content="15-Week Senior Full Stack Preparation Roadmap">
-    <meta property="og:description" content="Interactive 105-day blueprint with in-depth tutorials, curated coding challenges, YouTube videos, and FAANG interview talking points.">
+    <meta property="og:description" content="Interactive 105-day blueprint with in-depth tutorials, audio read aloud, curated coding challenges, YouTube videos, and FAANG interview talking points.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dev.prasadrawas.online/preparations/">
     <meta property="og:image" content="https://dev.prasadrawas.online/assets/images/og-image.png">
@@ -181,47 +181,53 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 4px 12px;
+            padding: 4px 10px;
             background: rgba(99, 102, 241, 0.12);
             border: 1px solid rgba(99, 102, 241, 0.3);
             border-radius: 999px;
+            color: #a5b4fc;
             font-size: 11.5px;
             font-weight: 600;
-            color: #a5b4fc;
             text-transform: uppercase;
             letter-spacing: 0.8px;
             margin-bottom: 16px;
         }
 
         .badge-dot {
-            width: 7px;
-            height: 7px;
-            background: var(--accent-green);
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent-green);
+            background: var(--accent);
+            box-shadow: 0 0 8px var(--accent);
         }
 
-        h1 {
-            font-size: clamp(28px, 4vw, 44px);
+        .hero h1 {
+            font-size: 38px;
             font-weight: 800;
             color: var(--text-heading);
-            letter-spacing: -0.8px;
+            letter-spacing: -1px;
             line-height: 1.2;
             margin-bottom: 12px;
         }
 
-        .hero-desc {
-            font-size: 15.5px;
-            color: var(--text-muted);
-            max-width: 860px;
-            line-height: 1.65;
-            margin-bottom: 28px;
+        .hero h1 span {
+            background: linear-gradient(135deg, #fff 30%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero-stats {
+        .hero p {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 760px;
+            line-height: 1.6;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
             margin-bottom: 32px;
         }
 
@@ -229,39 +235,81 @@
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            padding: 16px 18px;
+            padding: 18px 20px;
+            transition: all 0.2s;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: var(--surface-hover);
+            transform: translateY(-1px);
         }
 
         .stat-val {
-            font-size: 22px;
+            font-size: 26px;
             font-weight: 800;
             color: #fff;
-            margin-bottom: 2px;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
         }
 
-        .stat-val.accent { color: #818cf8; }
-        .stat-val.cyan { color: var(--accent-cyan); }
-        .stat-val.green { color: var(--accent-green); }
-        .stat-val.amber { color: var(--accent-amber); }
-        .stat-val.purple { color: var(--accent-purple); }
-
-        .stat-lbl {
+        .stat-label {
             font-size: 12px;
-            color: var(--text-faint);
+            color: var(--text-muted);
             font-weight: 500;
         }
 
-        /* Sticky Control Bar */
-        .control-panel {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.08), rgba(6, 182, 212, 0.04));
-            border: 1px solid rgba(99, 102, 241, 0.25);
-            border-radius: var(--radius-lg);
-            padding: 22px 24px;
+        /* Progress Bar Card */
+        .progress-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px 24px;
             margin-bottom: 32px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
 
         .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .progress-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .progress-meta {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .progress-track {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 999px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #6366f1, #06b6d4);
+            border-radius: 999px;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Phase Filter Bar */
+        .filter-section {
+            margin-bottom: 24px;
+        }
+
+        .filter-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -270,70 +318,28 @@
             gap: 12px;
         }
 
-        .progress-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .progress-meta {
-            font-size: 13.5px;
-            font-weight: 600;
-            color: #a5b4fc;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .progress-bar-bg {
-            width: 100%;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.08);
-            border-radius: 999px;
-            overflow: hidden;
-            margin-bottom: 18px;
-        }
-
-        .progress-bar-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #6366f1, #06b6d4, #22c55e);
-            border-radius: 999px;
-            transition: width 0.4s ease;
-            box-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
-        }
-
-        .control-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
         .search-box {
             position: relative;
-            flex: 1;
-            min-width: 260px;
-            max-width: 450px;
+            min-width: 280px;
         }
 
-        .search-input {
+        .search-box input {
             width: 100%;
-            background: rgba(0, 0, 0, 0.4);
+            padding: 8px 14px 8px 36px;
+            background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 8px 12px 8px 34px;
             color: #fff;
             font-size: 13px;
             font-family: inherit;
             outline: none;
-            transition: border-color 0.2s;
+            transition: all 0.2s;
         }
 
-        .search-input:focus {
+        .search-box input:focus {
             border-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .search-icon {
@@ -342,95 +348,90 @@
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-faint);
-            width: 14px;
-            height: 14px;
+            pointer-events: none;
         }
 
-        .control-actions {
+        .phase-tabs {
             display: flex;
-            align-items: center;
             gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none;
         }
 
-        /* Filter Controls */
-        .filters {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 30px;
+        .phase-tabs::-webkit-scrollbar {
+            display: none;
         }
 
-        .filter-btn {
-            background: rgba(255, 255, 255, 0.04);
+        .phase-tab {
+            padding: 7px 14px;
+            background: var(--surface);
             border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
             color: var(--text-muted);
-            padding: 6px 14px;
-            border-radius: 999px;
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
+            white-space: nowrap;
             transition: all 0.2s;
             font-family: inherit;
         }
 
-        .filter-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
+        .phase-tab:hover {
             color: #fff;
+            background: var(--surface-hover);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
-        .filter-btn.active {
+        .phase-tab.active {
             background: var(--accent);
             color: #fff;
             border-color: var(--accent);
-            box-shadow: 0 0 12px var(--accent-glow);
+            box-shadow: 0 0 14px var(--accent-glow);
         }
 
-        /* Phase Tags */
-        .phase-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 10.5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.6px;
-            padding: 2px 8px;
-            border-radius: 4px;
+        /* Weeks Accordion */
+        .weeks-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
 
-        .phase-tag.dsa { color: #818cf8; background: rgba(99, 102, 241, 0.12); border: 1px solid rgba(99, 102, 241, 0.25); }
-        .phase-tag.frontend { color: #38bdf8; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); }
-        .phase-tag.backend { color: #34d399; background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.25); }
-        .phase-tag.db { color: #fbbf24; background: rgba(251, 191, 36, 0.12); border: 1px solid rgba(251, 191, 36, 0.25); }
-        .phase-tag.system-design { color: #c084fc; background: rgba(192, 132, 252, 0.12); border: 1px solid rgba(192, 132, 252, 0.25); }
-        .phase-tag.devops { color: #f472b6; background: rgba(244, 114, 182, 0.12); border: 1px solid rgba(244, 114, 182, 0.25); }
-        .phase-tag.behavioral { color: #fb7185; background: rgba(251, 113, 133, 0.12); border: 1px solid rgba(251, 113, 133, 0.25); }
-
-        /* Week Accordion */
         .week-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: var(--radius-md);
-            margin-bottom: 18px;
             overflow: hidden;
-            transition: border-color 0.2s, box-shadow 0.2s;
+            transition: all 0.2s ease;
         }
 
         .week-card:hover {
-            border-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.12);
         }
 
         .week-card.all-done {
-            border-color: rgba(34, 197, 94, 0.35);
-            background: linear-gradient(180deg, rgba(34, 197, 94, 0.03), var(--surface));
+            border-color: rgba(34, 197, 94, 0.3);
+            background: rgba(34, 197, 94, 0.02);
         }
 
         .week-head {
-            padding: 18px 22px;
+            padding: 16px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid transparent;
             user-select: none;
-            gap: 16px;
+            transition: background 0.2s;
+        }
+
+        .week-head:hover {
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .week-card:not(.collapsed) .week-head {
+            border-bottom-color: var(--border);
         }
 
         .week-left {
@@ -442,24 +443,41 @@
 
         .week-num {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 700;
-            color: #818cf8;
-            background: rgba(99, 102, 241, 0.1);
-            padding: 4px 10px;
+            padding: 3px 8px;
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
             border-radius: 4px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.3);
         }
 
-        .week-theme {
-            font-size: 15.5px;
+        .phase-tag {
+            font-size: 11px;
             font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .phase-tag.dsa { background: rgba(6, 182, 212, 0.12); color: #67e8f9; border: 1px solid rgba(6, 182, 212, 0.25); }
+        .phase-tag.frontend { background: rgba(168, 85, 247, 0.12); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.25); }
+        .phase-tag.backend { background: rgba(34, 197, 94, 0.12); color: #86efac; border: 1px solid rgba(34, 197, 94, 0.25); }
+        .phase-tag.db { background: rgba(245, 158, 11, 0.12); color: #fde047; border: 1px solid rgba(245, 158, 11, 0.25); }
+        .phase-tag.system-design { background: rgba(236, 72, 153, 0.12); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.25); }
+        .phase-tag.devops { background: rgba(244, 63, 94, 0.12); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.25); }
+
+        .week-theme {
+            font-size: 14.5px;
+            font-weight: 700;
             color: #fff;
         }
 
         .week-hours {
             font-size: 12px;
             color: var(--text-faint);
+            font-family: 'JetBrains Mono', monospace;
         }
 
         .week-right {
@@ -468,104 +486,109 @@
             gap: 12px;
         }
 
+        .week-count-tag {
+            font-size: 11.5px;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-muted);
+            padding: 3px 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+        }
+
         .week-badge-done {
             display: none;
+            align-items: center;
+            gap: 4px;
             font-size: 11px;
-            font-weight: 600;
+            font-weight: 700;
             color: #4ade80;
             background: rgba(34, 197, 94, 0.12);
             padding: 3px 8px;
-            border-radius: 999px;
-            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: 4px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
         }
 
         .week-card.all-done .week-badge-done {
             display: inline-flex;
         }
 
-        .week-count-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 11.5px;
-            color: var(--text-faint);
-        }
-
         .week-toggle {
             color: var(--text-faint);
-            transition: transform 0.25s ease;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .week-card.collapsed .week-toggle {
             transform: rotate(-90deg);
         }
 
+        .week-body {
+            display: block;
+        }
+
         .week-card.collapsed .week-body {
             display: none;
         }
 
-        .week-body {
-            padding: 0 20px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
-        }
-
-        /* Day Cards */
+        /* Day Items */
         .day-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-top: 16px;
         }
 
         .day-item {
+            padding: 16px 20px;
             display: flex;
             align-items: flex-start;
             gap: 14px;
-            padding: 16px 18px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: var(--radius-sm);
-            transition: all 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            transition: background 0.15s;
+        }
+
+        .day-item:last-child {
+            border-bottom: none;
         }
 
         .day-item:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .day-item.completed {
-            background: rgba(34, 197, 94, 0.02);
-            border-color: rgba(34, 197, 94, 0.2);
+            background: rgba(34, 197, 94, 0.015);
         }
 
+        /* Checkbox */
         .day-checkbox {
             margin-top: 3px;
-            width: 18px;
-            height: 18px;
-            border-radius: 4px;
-            border: 1.5px solid rgba(255, 255, 255, 0.25);
-            background: transparent;
-            cursor: pointer;
+            width: 19px;
+            height: 19px;
+            border-radius: 5px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.03);
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            cursor: pointer;
             transition: all 0.15s;
+            flex-shrink: 0;
         }
 
         .day-checkbox:hover {
             border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.1);
         }
 
         .day-checkbox.checked {
-            background: var(--accent);
-            border-color: var(--accent);
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
         }
 
         .day-checkbox svg {
+            width: 12px;
+            height: 12px;
+            stroke: #0a0a0f;
+            stroke-width: 3.5;
             display: none;
-            width: 11px;
-            height: 11px;
-            stroke: white;
-            stroke-width: 3;
         }
 
         .day-checkbox.checked svg {
@@ -574,12 +597,13 @@
 
         .day-main {
             flex: 1;
+            min-width: 0;
         }
 
         .day-top-row {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             margin-bottom: 6px;
             flex-wrap: wrap;
         }
@@ -588,7 +612,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 11px;
             font-weight: 700;
-            color: #a5b4fc;
+            color: var(--text-muted);
         }
 
         .day-title {
@@ -600,44 +624,39 @@
         }
 
         .day-title:hover {
-            color: #818cf8;
-        }
-
-        .day-item.completed .day-title {
-            color: var(--text-muted);
-            text-decoration: line-through;
-            text-decoration-color: rgba(255, 255, 255, 0.3);
+            color: var(--accent-cyan);
+            text-decoration: underline;
         }
 
         .day-time {
-            font-size: 11.5px;
+            font-size: 11px;
             color: var(--text-faint);
             font-family: 'JetBrains Mono', monospace;
             margin-left: auto;
         }
 
         .day-summary {
-            font-size: 13.5px;
+            font-size: 13px;
             color: var(--text-muted);
-            line-height: 1.55;
-            margin-bottom: 12px;
+            line-height: 1.5;
+            margin-bottom: 10px;
         }
 
         .day-tags {
             display: flex;
             gap: 6px;
             flex-wrap: wrap;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .tag-pill {
             font-size: 10.5px;
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--text-faint);
-            background: rgba(255, 255, 255, 0.04);
+            font-weight: 500;
             padding: 2px 7px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.07);
             border-radius: 4px;
-            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-faint);
         }
 
         .day-actions {
@@ -648,18 +667,18 @@
         }
 
         .btn-tutorial {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(6, 182, 212, 0.1));
-            color: #a5b4fc;
-            border: 1px solid rgba(99, 102, 241, 0.3);
-            padding: 5px 12px;
-            border-radius: var(--radius-sm);
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 6px;
+            padding: 5px 12px;
+            background: rgba(99, 102, 241, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.35);
+            border-radius: var(--radius-sm);
+            color: #c7d2fe;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.15s;
             font-family: inherit;
         }
 
@@ -671,20 +690,16 @@
 
         .chip-link {
             font-size: 11.5px;
-            color: var(--text-muted);
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            padding: 4px 10px;
-            border-radius: 999px;
-            cursor: pointer;
-            transition: all 0.15s;
+            color: var(--text-faint);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 4px;
+            transition: color 0.15s;
+            cursor: pointer;
         }
 
         .chip-link:hover {
-            background: rgba(255, 255, 255, 0.07);
             color: #fff;
         }
 
@@ -694,10 +709,12 @@
             inset: 0;
             background: rgba(0, 0, 0, 0.75);
             backdrop-filter: blur(8px);
-            z-index: 1000;
+            z-index: 100;
+            display: flex;
+            justify-content: flex-end;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.25s ease;
+            transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .drawer-overlay.open {
@@ -706,20 +723,17 @@
         }
 
         .drawer-content {
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
             width: 100%;
-            max-width: 860px;
+            max-width: 820px;
+            height: 100%;
             background: #0d0d14;
             border-left: 1px solid var(--border);
-            box-shadow: -8px 0 35px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             transform: translateX(100%);
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 1001;
+            overflow: hidden;
+            box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6);
         }
 
         .drawer-overlay.open .drawer-content {
@@ -727,21 +741,22 @@
         }
 
         .drawer-header {
-            padding: 20px 28px;
+            padding: 24px 28px 20px;
             border-bottom: 1px solid var(--border);
-            background: rgba(13, 13, 20, 0.95);
-            backdrop-filter: blur(10px);
             display: flex;
-            align-items: flex-start;
             justify-content: space-between;
-            gap: 16px;
+            align-items: flex-start;
+            background: rgba(13, 13, 20, 0.95);
+            backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
             z-index: 10;
+            gap: 16px;
         }
 
         .drawer-header-left {
             flex: 1;
+            min-width: 0;
         }
 
         .drawer-meta-row {
@@ -757,6 +772,116 @@
             font-weight: 800;
             color: #fff;
             line-height: 1.3;
+        }
+
+        .drawer-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        /* TTS Toolbar Styles */
+        .tts-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: var(--radius-sm);
+            padding: 3px 6px;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .tts-toolbar:hover {
+            background: rgba(99, 102, 241, 0.18);
+            border-color: rgba(99, 102, 241, 0.55);
+        }
+
+        .tts-toolbar.speaking {
+            background: rgba(99, 102, 241, 0.24);
+            border-color: #818cf8;
+            box-shadow: 0 0 16px rgba(99, 102, 241, 0.35);
+        }
+
+        .tts-toolbar.paused {
+            border-color: rgba(245, 158, 11, 0.5);
+            background: rgba(245, 158, 11, 0.12);
+        }
+
+        .btn-tts-main {
+            background: transparent;
+            color: #c7d2fe;
+            border: none;
+            font-size: 11.5px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 6px;
+            border-radius: var(--radius-sm);
+            transition: color 0.15s;
+            font-family: inherit;
+        }
+
+        .btn-tts-main:hover {
+            color: #fff;
+        }
+
+        .tts-extra-controls {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            padding-left: 5px;
+            border-left: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-tts-action {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #e5e7eb;
+            border-radius: 4px;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .btn-tts-action:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .btn-tts-speed {
+            background: rgba(99, 102, 241, 0.25);
+            border: 1px solid rgba(99, 102, 241, 0.45);
+            color: #c7d2fe;
+            border-radius: 4px;
+            padding: 2px 6px;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            transition: all 0.15s;
+        }
+
+        .btn-tts-speed:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        @keyframes ttsSpeakerPulse {
+            0%, 100% { transform: scale(1); opacity: 0.85; }
+            50% { transform: scale(1.18); opacity: 1; }
+        }
+
+        .tts-icon-speaker.speaking {
+            animation: ttsSpeakerPulse 1.1s infinite ease-in-out;
+            color: #818cf8;
         }
 
         .drawer-close {
@@ -786,64 +911,75 @@
             background: rgba(255, 255, 255, 0.02);
             border-bottom: 1px solid var(--border);
             padding: 0 28px;
-            gap: 20px;
             overflow-x: auto;
+            scrollbar-width: none;
+            gap: 20px;
         }
 
         .drawer-tab {
-            padding: 12px 4px;
+            padding: 13px 0;
+            color: var(--text-muted);
             font-size: 13px;
             font-weight: 600;
-            color: var(--text-faint);
-            background: none;
+            background: transparent;
             border: none;
             border-bottom: 2px solid transparent;
             cursor: pointer;
-            white-space: nowrap;
             transition: all 0.2s;
+            white-space: nowrap;
             font-family: inherit;
         }
 
         .drawer-tab:hover {
-            color: var(--text-muted);
+            color: #fff;
         }
 
         .drawer-tab.active {
-            color: #a5b4fc;
-            border-bottom-color: var(--accent);
+            color: var(--accent-cyan);
+            border-bottom-color: var(--accent-cyan);
         }
 
         .drawer-body {
             flex: 1;
             overflow-y: auto;
             padding: 28px;
-            line-height: 1.7;
+            scroll-behavior: smooth;
         }
 
-        /* Tutorial Styling */
+        /* Tutorial Typography */
+        .tutorial-container {
+            color: #d1d5db;
+            font-size: 14.5px;
+            line-height: 1.75;
+        }
+
         .tutorial-container h4 {
             font-size: 17px;
             font-weight: 700;
             color: #fff;
-            margin: 22px 0 10px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 24px 0 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+            padding-bottom: 8px;
         }
 
         .tutorial-container h4:first-child {
             margin-top: 0;
         }
 
-        .tutorial-container p {
+        .tutorial-container h5 {
             font-size: 14.5px;
-            color: var(--text);
+            font-weight: 600;
+            color: var(--accent-cyan);
+            margin: 18px 0 8px;
+        }
+
+        .tutorial-container p {
             margin-bottom: 14px;
         }
 
         .tutorial-container ul, .tutorial-container ol {
-            margin: 0 0 16px 20px;
-            font-size: 14px;
-            color: var(--text-muted);
+            margin-left: 20px;
+            margin-bottom: 16px;
         }
 
         .tutorial-container li {
@@ -851,132 +987,122 @@
         }
 
         .tutorial-container pre {
-            background: #08080c;
+            background: #08080d;
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: var(--radius-sm);
-            padding: 14px 16px;
-            margin: 14px 0 18px;
+            padding: 16px;
             overflow-x: auto;
-            font-size: 13px;
-            color: #e2e8f0;
+            margin: 14px 0 20px;
+            font-size: 12.5px;
+            line-height: 1.6;
         }
 
         .tutorial-container code {
-            background: rgba(255, 255, 255, 0.06);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 12.5px;
-            color: #a5b4fc;
+            font-family: 'JetBrains Mono', monospace;
+            color: #93c5fd;
         }
 
-        .tutorial-container blockquote {
-            border-left: 3px solid var(--accent);
-            padding: 10px 16px;
-            margin: 16px 0;
-            background: rgba(99, 102, 241, 0.06);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            font-style: italic;
-            color: #c7d2fe;
-            font-size: 14px;
+        .tutorial-container pre code {
+            color: #e2e8f0;
         }
 
-        .tutorial-container table {
+        .table-tutorial {
             width: 100%;
             border-collapse: collapse;
-            margin: 16px 0;
+            margin: 16px 0 24px;
             font-size: 13px;
         }
 
-        .tutorial-container th, .tutorial-container td {
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 10px 14px;
+        .table-tutorial th, .table-tutorial td {
+            border: 1px solid var(--border);
+            padding: 10px 12px;
             text-align: left;
         }
 
-        .tutorial-container th {
+        .table-tutorial th {
             background: rgba(255, 255, 255, 0.04);
             color: #fff;
             font-weight: 600;
         }
 
+        .table-tutorial tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
         /* Challenge Cards */
         .challenge-card {
-            background: var(--surface);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 16px 18px;
-            margin-bottom: 12px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             gap: 16px;
         }
 
         .challenge-info h5 {
             font-size: 15px;
-            font-weight: 700;
             color: #fff;
             margin-bottom: 4px;
-        }
-
-        .challenge-info p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .diff-badge {
             font-size: 10.5px;
             font-weight: 700;
-            text-transform: uppercase;
             padding: 2px 7px;
-            border-radius: 3px;
-            font-family: 'JetBrains Mono', monospace;
-            margin-right: 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
         }
 
-        .diff-Easy { color: #4ade80; background: rgba(74, 222, 128, 0.12); }
-        .diff-Medium { color: #fbbf24; background: rgba(251, 191, 36, 0.12); }
-        .diff-Hard { color: #f87171; background: rgba(248, 113, 113, 0.12); }
-        .diff-Mixed { color: #c084fc; background: rgba(192, 132, 252, 0.12); }
+        .diff-Easy { background: rgba(34, 197, 94, 0.15); color: #4ade80; }
+        .diff-Medium { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+        .diff-Hard { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
+
+        .challenge-info p {
+            font-size: 12.5px;
+            color: var(--text-muted);
+        }
 
         /* Video Cards */
         .video-card {
-            background: var(--surface);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 16px 18px;
+            padding: 16px 20px;
             margin-bottom: 12px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             gap: 16px;
         }
 
         .video-info h5 {
             font-size: 14.5px;
-            font-weight: 700;
             color: #fff;
             margin-bottom: 4px;
         }
 
         .video-info p {
-            font-size: 12.5px;
-            color: var(--text-faint);
-            margin: 0;
+            font-size: 12px;
+            color: var(--text-muted);
         }
 
-        /* Interview Q&A Cards */
+        /* Q&A Cards */
         .qa-card {
-            background: var(--surface);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid var(--border);
             border-radius: var(--radius-sm);
-            padding: 18px;
+            padding: 16px 18px;
             margin-bottom: 14px;
         }
 
         .qa-q {
-            font-size: 14.5px;
+            font-size: 14px;
             font-weight: 700;
             color: #fff;
             margin-bottom: 8px;
@@ -986,7 +1112,7 @@
         }
 
         .qa-q span {
-            color: #818cf8;
+            color: var(--accent);
             font-family: 'JetBrains Mono', monospace;
         }
 
@@ -995,64 +1121,68 @@
             color: var(--text-muted);
             line-height: 1.6;
             padding-left: 24px;
-            border-left: 2px solid rgba(99, 102, 241, 0.2);
-            margin-left: 4px;
         }
 
-        .resume-box {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(99, 102, 241, 0.05));
-            border: 1px solid rgba(34, 197, 94, 0.25);
+        .resume-bullet-box {
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px dashed rgba(99, 102, 241, 0.35);
             border-radius: var(--radius-sm);
             padding: 16px;
-            margin-top: 20px;
+            margin-top: 24px;
         }
 
-        .resume-box-title {
-            font-size: 13px;
+        .resume-bullet-title {
+            font-size: 12px;
             font-weight: 700;
-            color: #4ade80;
+            color: #a5b4fc;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
         }
 
         .resume-bullet-text {
-            font-size: 13.5px;
-            color: #e5e7eb;
+            font-size: 13px;
+            color: #fff;
             font-style: italic;
+            line-height: 1.5;
         }
 
         /* Drawer Footer */
         .drawer-footer {
             padding: 16px 28px;
             border-top: 1px solid var(--border);
-            background: rgba(13, 13, 20, 0.98);
+            background: rgba(13, 13, 20, 0.95);
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
-        /* Footer */
-        .footer {
-            margin-top: 60px;
-            padding-top: 28px;
-            border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-faint);
-        }
-
-        .footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: #fff;
+        /* Responsive */
+        @media (max-width: 960px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
+            .drawer-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .drawer-header-actions {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-inner {
+                padding: 0 16px;
+            }
             .container {
                 padding: 24px 16px 60px;
             }
@@ -1060,19 +1190,13 @@
                 max-width: 100%;
             }
             .drawer-header {
-                padding: 16px 20px;
+                padding: 16px;
             }
             .drawer-body {
-                padding: 20px;
+                padding: 16px;
             }
             .drawer-tabs {
-                padding: 0 20px;
-            }
-            .day-item {
-                flex-direction: column;
-            }
-            .day-time {
-                margin-left: 0;
+                padding: 0 16px;
             }
         }
     </style>
@@ -1083,15 +1207,14 @@
 <nav class="nav">
     <div class="nav-inner">
         <div class="nav-left">
-            <a href="../index.html" class="nav-logo">PRASAD <span>RAWAS</span></a>
-            <a href="../index.html" class="nav-back">
+            <a href="../" class="nav-logo">PRASAD<span>.DEV</span></a>
+            <a href="../" class="nav-back">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                Back to Home
+                Back to Portfolio
             </a>
         </div>
         <div class="nav-actions">
-            <a href="../fastapi-guide/index.html" class="btn btn-ghost">FastAPI Guide</a>
-            <a href="../resumes/resume-fullstack.html" class="btn btn-accent">Full Stack Resume</a>
+            <a href="../#contact" class="btn btn-accent">Hire Prasad</a>
         </div>
     </div>
 </nav>
@@ -1101,85 +1224,71 @@
     <header class="hero">
         <div class="badge">
             <span class="badge-dot"></span>
-            TIER-1 & FAANG FULL STACK BLUEPRINT
+            15-Week Senior Full Stack Blueprint • 105 Modules
         </div>
-        <h1>15-Week Master Full Stack Preparation Roadmap</h1>
-        <p class="hero-desc">
-            An exhaustive, 105-day structured curriculum engineered for Senior Full Stack Developers targeting ₹40L–₹70L+ and US Remote roles at Google, Atlassian, Amazon, Uber, and Razorpay. Complete with in-depth day tutorials, LeetCode challenges, YouTube references, and interview Q&As.
-        </p>
-
-        <!-- Stats Grid -->
-        <div class="hero-stats">
-            <div class="stat-card">
-                <div class="stat-val accent">15 Weeks</div>
-                <div class="stat-lbl">105 Daily Structured Modules</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val cyan">105 Tutorials</div>
-                <div class="stat-lbl">In-Depth First-Principles Guides</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val green">300+ Problems</div>
-                <div class="stat-lbl">LeetCode & System Design Specs</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val amber">105 Q&As</div>
-                <div class="stat-lbl">FAANG Talking Points & Resume Bullets</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-val purple">₹40L–₹70L+</div>
-                <div class="stat-lbl">Target Tier-1 & US Remote CTC</div>
-            </div>
-        </div>
+        <h1>World-Class Senior Full Stack <span>Preparation Roadmap</span></h1>
+        <p>A daily step-by-step master plan targeting Tier-1 tech companies (Atlassian, Google, Amazon, Stripe). Includes in-depth tutorials with real-world analogies, voice narration, curated LeetCode challenges, YouTube guides, and FAANG interview Q&As.</p>
     </header>
 
-    <!-- Progress Dashboard & Controls -->
-    <section class="control-panel">
+    <!-- Key Stats -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-val">15 Weeks</div>
+            <div class="stat-label">Structured Duration</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">105 Days</div>
+            <div class="stat-label">Deep Modules & Tutorials</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">120+</div>
+            <div class="stat-label">Curated Coding Challenges</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-val">200+</div>
+            <div class="stat-label">Interview Q&As & Resume Bullets</div>
+        </div>
+    </div>
+
+    <!-- Overall Progress Card -->
+    <div class="progress-card">
         <div class="progress-header">
-            <div class="progress-title">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                Preparation Mastery Progress
-            </div>
-            <div class="progress-meta" id="progressMeta">0 / 105 Days Completed (0%)</div>
+            <span class="progress-title">Your 15-Week Preparation Progress</span>
+            <span class="progress-meta" id="progressMeta">0 / 105 Days Completed (0%)</span>
         </div>
-        <div class="progress-bar-bg">
-            <div class="progress-bar-fill" id="progressBar"></div>
+        <div class="progress-track">
+            <div class="progress-fill" id="progressBar"></div>
         </div>
+    </div>
 
-        <div class="control-row">
-            <!-- Search -->
+    <!-- Filter & Search Toolbar -->
+    <div class="filter-section">
+        <div class="filter-header">
+            <div class="phase-tabs" id="phaseTabs">
+                <button class="phase-tab active" data-phase="all">All Phases (15 Weeks)</button>
+                <button class="phase-tab" data-phase="dsa">Phase 1: DSA & Problem Solving (W1-3)</button>
+                <button class="phase-tab" data-phase="frontend">Phase 2: Modern Frontend (W4-6)</button>
+                <button class="phase-tab" data-phase="backend">Phase 3: High-Throughput Backend (W7-9)</button>
+                <button class="phase-tab" data-phase="db">Phase 4: Persistence & Caching (W10-11)</button>
+                <button class="phase-tab" data-phase="system-design">Phase 5: System Design (W12-13)</button>
+                <button class="phase-tab" data-phase="devops">Phase 6: DevOps & Mocks (W14-15)</button>
+            </div>
             <div class="search-box">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" id="searchInput" class="search-input" placeholder="Search by topic, e.g. React 19, Sliding Window, Kafka, Postgres...">
-            </div>
-
-            <!-- Action Buttons -->
-            <div class="control-actions">
-                <button class="btn btn-ghost" id="toggleAllBtn">Collapse All Weeks</button>
-                <button class="btn btn-ghost" id="resetBtn" style="color: #f87171;">Reset Progress</button>
+                <svg class="search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                <input type="text" id="searchInput" placeholder="Search algorithms, Next.js, Redis, Kafka...">
             </div>
         </div>
-    </section>
-
-    <!-- Phase Filters -->
-    <div class="filters">
-        <button class="filter-btn active" data-filter="all">All (15 Weeks / 105 Days)</button>
-        <button class="filter-btn" data-filter="dsa">Phase 1: DSA & LLD (W1–3)</button>
-        <button class="filter-btn" data-filter="frontend">Phase 2: Modern Frontend (W4–6)</button>
-        <button class="filter-btn" data-filter="backend">Phase 3: Backend & Realtime (W7–9)</button>
-        <button class="filter-btn" data-filter="db">Phase 4: Database & Caching (W10–11)</button>
-        <button class="filter-btn" data-filter="system-design">Phase 5: System Design (W12–13)</button>
-        <button class="filter-btn" data-filter="devops">Phase 6: DevOps, SRE & Mocks (W14–15)</button>
     </div>
 
     <!-- Weeks Accordion Container -->
-    <div id="weeksContainer">
-        <!-- Rendered dynamically from roadmap-data.js -->
+    <div class="weeks-list" id="weeksContainer">
+        <!-- Rendered dynamically by JavaScript -->
     </div>
 
     <!-- Footer -->
-    <footer class="footer">
-        <p>15-Week Senior Full Stack Preparation Roadmap maintained by <a href="../index.html">Prasad Rawas</a> &bull; Senior Software Developer</p>
+    <footer style="margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+        <p style="font-size: 13px; color: var(--text-faint);">© 2026 Prasad Rawas. Designed for Senior Full Stack Engineer Excellence.</p>
+        <button class="btn btn-ghost" id="resetProgressBtn" style="font-size: 11px;">Reset Progress</button>
     </footer>
 </div>
 
@@ -1196,7 +1305,33 @@
                 </div>
                 <h2 class="drawer-title" id="drawerTitle">Tutorial Title</h2>
             </div>
-            <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="drawer-header-actions">
+                <!-- TTS Read Aloud Toolbar -->
+                <div class="tts-toolbar" id="ttsToolbar" title="Listen to this tutorial aloud (Text-to-Speech)">
+                    <button class="btn-tts-main" id="ttsMainBtn" aria-label="Read Aloud Tutorial">
+                        <svg class="tts-icon-speaker" id="ttsIconSpeaker" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                        </svg>
+                        <span id="ttsBtnLabel">Read Aloud</span>
+                    </button>
+                    <div class="tts-extra-controls" id="ttsExtraControls" style="display: none;">
+                        <button class="btn-tts-action" id="ttsPauseResumeBtn" title="Pause / Resume" aria-label="Pause or Resume">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="6" y="4" width="4" height="16"></rect>
+                                <rect x="14" y="4" width="4" height="16"></rect>
+                            </svg>
+                        </button>
+                        <button class="btn-tts-action" id="ttsStopBtn" title="Stop Reading" aria-label="Stop Reading">
+                            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="5" y="5" width="14" height="14" rx="2"></rect>
+                            </svg>
+                        </button>
+                        <button class="btn-tts-speed" id="ttsSpeedBtn" title="Change voice speed">1x</button>
+                    </div>
+                </div>
+
                 <button class="btn btn-ghost" id="drawerMarkDoneBtn" style="font-size: 11.5px;">Mark as Done</button>
                 <button class="drawer-close" id="drawerCloseBtn" aria-label="Close">&times;</button>
             </div>
@@ -1233,19 +1368,14 @@
                 </div>
             </div>
 
-            <!-- Tab 4: Q&A -->
+            <!-- Tab 4: Q&A & Resume Bullet -->
             <div id="tabQa" class="tab-pane" style="display: none;">
                 <div id="qaContent">
                     <!-- Q&A cards injected here -->
                 </div>
-                <div class="resume-box" id="resumeBox">
-                    <div class="resume-box-title">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                        High-Impact Resume Bullet Point
-                    </div>
-                    <div class="resume-bullet-text" id="resumeBulletText">
-                        <!-- Resume bullet injected here -->
-                    </div>
+                <div class="resume-bullet-box">
+                    <div class="resume-bullet-title">🎯 Tailored Resume Bullet Point (FAANG Impact Format):</div>
+                    <p class="resume-bullet-text" id="resumeBulletText">Bullet point will appear here.</p>
                 </div>
             </div>
         </div>
@@ -1253,49 +1383,52 @@
         <!-- Reader Footer -->
         <div class="drawer-footer">
             <button class="btn btn-ghost" id="drawerPrevBtn">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
                 Previous Day
             </button>
             <span style="font-size: 12px; color: var(--text-faint); font-family: 'JetBrains Mono', monospace;" id="drawerProgressIndicator">1 of 105</span>
             <button class="btn btn-accent" id="drawerNextBtn">
                 Next Day
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
         </div>
     </div>
 </div>
 
-<!-- Load Data Script -->
+<!-- Load Compiled 105-Day Roadmap Dataset -->
 <script src="roadmap-data.js"></script>
 
-<!-- Application Script -->
+<!-- Main App & TTS Engine Controller -->
 <script>
 (function() {
-    const STORAGE_KEY = 'prasad_prep_roadmap_15w_v1';
-    let completedDays = new Set();
-    let currentDayIndex = 0;
-    let allCollapsed = false;
+    'use strict';
 
-    // Load saved tasks
+    // State
+    const STORAGE_KEY = 'prasad_roadmap_completed_days_v1';
+    let completedDays = new Set();
     try {
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
             completedDays = new Set(JSON.parse(saved));
         }
     } catch (e) {
-        console.error('Failed to load tasks from localStorage', e);
+        console.warn('LocalStorage error:', e);
     }
 
-    const weeksData = window.ROADMAP_WEEKS || [];
     const daysData = window.ROADMAP_DAYS || [];
+    const weeksData = window.ROADMAP_WEEKS || [];
     const totalDaysCount = daysData.length;
 
+    let currentDayIndex = 0;
+    let activePhaseFilter = 'all';
+
+    // DOM Elements
     const weeksContainer = document.getElementById('weeksContainer');
     const progressBar = document.getElementById('progressBar');
     const progressMeta = document.getElementById('progressMeta');
     const searchInput = document.getElementById('searchInput');
-    const toggleAllBtn = document.getElementById('toggleAllBtn');
-    const resetBtn = document.getElementById('resetBtn');
+    const phaseTabs = document.querySelectorAll('.phase-tab');
+    const resetProgressBtn = document.getElementById('resetProgressBtn');
 
     // Drawer Elements
     const drawerOverlay = document.getElementById('drawerOverlay');
@@ -1316,6 +1449,246 @@
     const resumeBulletText = document.getElementById('resumeBulletText');
     const challengeCount = document.getElementById('challengeCount');
     const videoCount = document.getElementById('videoCount');
+
+    // TTS Elements
+    const ttsToolbar = document.getElementById('ttsToolbar');
+    const ttsMainBtn = document.getElementById('ttsMainBtn');
+    const ttsIconSpeaker = document.getElementById('ttsIconSpeaker');
+    const ttsBtnLabel = document.getElementById('ttsBtnLabel');
+    const ttsExtraControls = document.getElementById('ttsExtraControls');
+    const ttsPauseResumeBtn = document.getElementById('ttsPauseResumeBtn');
+    const ttsStopBtn = document.getElementById('ttsStopBtn');
+    const ttsSpeedBtn = document.getElementById('ttsSpeedBtn');
+
+    // ==========================================
+    // Text-to-Speech (TTS) Engine
+    // ==========================================
+    const TTS = {
+        supported: ('speechSynthesis' in window) && ('SpeechSynthesisUtterance' in window),
+        speaking: false,
+        paused: false,
+        chunks: [],
+        currentChunkIndex: 0,
+        speedIndex: 0,
+        speeds: [1.0, 1.25, 1.5, 0.85],
+        speedLabels: ['1x', '1.25x', '1.5x', '0.85x'],
+        heartbeatTimer: null,
+
+        init() {
+            if (!this.supported) {
+                if (ttsToolbar) ttsToolbar.style.display = 'none';
+                return;
+            }
+
+            ttsMainBtn.addEventListener('click', () => {
+                if (this.speaking) {
+                    if (this.paused) {
+                        this.resume();
+                    } else {
+                        this.pause();
+                    }
+                } else {
+                    this.startReading();
+                }
+            });
+
+            ttsPauseResumeBtn.addEventListener('click', () => {
+                if (this.paused) {
+                    this.resume();
+                } else {
+                    this.pause();
+                }
+            });
+
+            ttsStopBtn.addEventListener('click', () => {
+                this.stop();
+            });
+
+            ttsSpeedBtn.addEventListener('click', () => {
+                this.cycleSpeed();
+            });
+        },
+
+        extractCleanTutorialText() {
+            const day = daysData[currentDayIndex];
+            if (!day) return '';
+
+            // Clone container to parse without altering DOM
+            const temp = document.createElement('div');
+            temp.innerHTML = day.tutorialHtml || '';
+
+            // Clean code tags: replace <pre> with a clear audio note
+            temp.querySelectorAll('pre').forEach(pre => {
+                const lang = pre.querySelector('code')?.className || '';
+                const cleanLang = lang.replace('language-', '').trim();
+                const note = document.createElement('p');
+                note.textContent = cleanLang ? `[Code example in ${cleanLang} follows on screen].` : '[Code example follows on screen].';
+                pre.replaceWith(note);
+            });
+
+            // Convert tables into concise audio summaries
+            temp.querySelectorAll('table').forEach(tbl => {
+                const summary = document.createElement('p');
+                summary.textContent = '[Reference comparison table shown on screen].';
+                tbl.replaceWith(summary);
+            });
+
+            // Announce title
+            const fullText = `Day ${day.day}: ${day.title}. Estimated study time: ${day.timeEstimate}. ${temp.innerText}`;
+
+            // Break into sentence chunks of max ~160 chars for 100% reliable Chrome synthesis
+            const rawSentences = fullText.split(new RegExp('(?<=[.?!;:])\\s+|[\\r\\n]+'));
+            const chunks = [];
+
+            rawSentences.forEach(sentence => {
+                const clean = sentence.replace(/\s+/g, ' ').trim();
+                if (!clean) return;
+
+                if (clean.length > 200) {
+                    // Split long sentence at comma or space
+                    const words = clean.split(' ');
+                    let cur = '';
+                    words.forEach(w => {
+                        if ((cur + ' ' + w).length > 160) {
+                            if (cur) chunks.push(cur.trim());
+                            cur = w;
+                        } else {
+                            cur += (cur ? ' ' : '') + w;
+                        }
+                    });
+                    if (cur) chunks.push(cur.trim());
+                } else {
+                    chunks.push(clean);
+                }
+            });
+
+            return chunks;
+        },
+
+        startReading() {
+            window.speechSynthesis.cancel();
+            this.chunks = this.extractCleanTutorialText();
+            if (this.chunks.length === 0) return;
+
+            this.currentChunkIndex = 0;
+            this.speaking = true;
+            this.paused = false;
+
+            this.updateUI();
+            this.speakNextChunk();
+        },
+
+        speakNextChunk() {
+            if (!this.speaking || this.paused) return;
+
+            if (this.currentChunkIndex >= this.chunks.length) {
+                this.stop();
+                return;
+            }
+
+            const textChunk = this.chunks[this.currentChunkIndex];
+            const utterance = new SpeechSynthesisUtterance(textChunk);
+
+            utterance.rate = this.speeds[this.speedIndex];
+            utterance.pitch = 1.0;
+
+            // Pick English voice if available
+            const voices = window.speechSynthesis.getVoices();
+            const preferredVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Daniel') || v.default)) || voices.find(v => v.lang.startsWith('en'));
+            if (preferredVoice) utterance.voice = preferredVoice;
+
+            utterance.onend = () => {
+                if (this.speaking && !this.paused) {
+                    this.currentChunkIndex++;
+                    this.speakNextChunk();
+                }
+            };
+
+            utterance.onerror = (e) => {
+                if (e.error === 'interrupted' || e.error === 'canceled') return;
+                console.warn('TTS chunk error:', e);
+                this.currentChunkIndex++;
+                this.speakNextChunk();
+            };
+
+            window.speechSynthesis.speak(utterance);
+            this.startHeartbeat();
+        },
+
+        pause() {
+            if (!this.speaking) return;
+            window.speechSynthesis.pause();
+            this.paused = true;
+            this.stopHeartbeat();
+            this.updateUI();
+        },
+
+        resume() {
+            if (!this.speaking) return;
+            this.paused = false;
+            window.speechSynthesis.resume();
+            this.startHeartbeat();
+            this.updateUI();
+        },
+
+        stop() {
+            this.stopHeartbeat();
+            window.speechSynthesis.cancel();
+            this.speaking = false;
+            this.paused = false;
+            this.chunks = [];
+            this.currentChunkIndex = 0;
+            this.updateUI();
+        },
+
+        cycleSpeed() {
+            this.speedIndex = (this.speedIndex + 1) % this.speeds.length;
+            ttsSpeedBtn.textContent = this.speedLabels[this.speedIndex];
+        },
+
+        // Chrome keepalive: Chrome bug silently pauses speech on long utterances
+        startHeartbeat() {
+            this.stopHeartbeat();
+            this.heartbeatTimer = setInterval(() => {
+                if (this.speaking && !this.paused && window.speechSynthesis.speaking) {
+                    window.speechSynthesis.pause();
+                    window.speechSynthesis.resume();
+                }
+            }, 10000);
+        },
+
+        stopHeartbeat() {
+            if (this.heartbeatTimer) {
+                clearInterval(this.heartbeatTimer);
+                this.heartbeatTimer = null;
+            }
+        },
+
+        updateUI() {
+            if (this.speaking) {
+                ttsToolbar.classList.add('speaking');
+                ttsExtraControls.style.display = 'flex';
+                ttsIconSpeaker.classList.add('speaking');
+
+                if (this.paused) {
+                    ttsToolbar.classList.add('paused');
+                    ttsBtnLabel.textContent = 'Paused';
+                    ttsPauseResumeBtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+                    ttsPauseResumeBtn.title = 'Resume Reading';
+                } else {
+                    ttsToolbar.classList.remove('paused');
+                    ttsBtnLabel.textContent = `Reading (${this.currentChunkIndex + 1}/${this.chunks.length})`;
+                    ttsPauseResumeBtn.innerHTML = '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+                    ttsPauseResumeBtn.title = 'Pause Reading';
+                }
+            } else {
+                ttsToolbar.classList.remove('speaking', 'paused');
+                ttsExtraControls.style.display = 'none';
+                ttsIconSpeaker.classList.remove('speaking');
+                ttsBtnLabel.textContent = 'Read Aloud';
+            }
+        }
+    };
 
     // Render Weeks and Days
     function renderRoadmap() {
@@ -1388,7 +1761,7 @@
     function attachEventListeners() {
         // Toggle Week Accordion
         document.querySelectorAll('.week-head').forEach(head => {
-            head.addEventListener('click', (e) => {
+            head.addEventListener('click', () => {
                 const card = head.closest('.week-card');
                 card.classList.toggle('collapsed');
             });
@@ -1485,6 +1858,7 @@
     function openDrawerByDayId(dayId, activeTab = 'tutorial') {
         const idx = daysData.findIndex(d => d.id === dayId);
         if (idx !== -1) {
+            TTS.stop(); // Stop any active speech when switching
             currentDayIndex = idx;
             renderDrawerContent(daysData[idx], activeTab);
             drawerOverlay.classList.add('open');
@@ -1494,12 +1868,15 @@
     }
 
     function closeDrawer() {
+        TTS.stop(); // Stop audio immediately on modal close
         drawerOverlay.classList.remove('open');
         document.body.style.overflow = '';
         history.replaceState(null, null, window.location.pathname);
     }
 
     function renderDrawerContent(day, activeTab = 'tutorial') {
+        TTS.stop(); // Reset speech for new day
+
         drawerDayNum.textContent = `DAY ${day.day} • WEEK ${day.week}`;
         drawerPhaseTag.textContent = day.phaseKey.toUpperCase();
         drawerPhaseTag.className = `phase-tag ${day.phaseKey}`;
@@ -1507,7 +1884,7 @@
         drawerTitle.textContent = day.title;
         drawerProgressIndicator.textContent = `Day ${day.day} of ${totalDaysCount}`;
 
-        // Tutorial
+        // Tutorial Content
         tutorialContent.innerHTML = day.tutorialHtml || '<p>Detailed tutorial coming soon.</p>';
 
         // Challenges
@@ -1580,6 +1957,7 @@
     }
 
     function switchDrawerTab(tabName) {
+        TTS.stop(); // Stop speech if user leaves the tab
         document.querySelectorAll('.drawer-tab').forEach(t => {
             t.classList.toggle('active', t.dataset.tab === tabName);
         });
@@ -1596,7 +1974,7 @@
         });
     });
 
-    // Drawer Next / Prev Navigation
+    // Drawer Prev / Next / Mark Done / Close
     drawerPrevBtn.addEventListener('click', () => {
         if (currentDayIndex > 0) {
             currentDayIndex--;
@@ -1660,15 +2038,18 @@
         });
     });
 
-    // Phase Filter Pills
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    // Phase Tab Filtering
+    phaseTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            phaseTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
 
-            const filter = btn.dataset.filter;
+            const selectedPhase = tab.dataset.phase;
+            activePhaseFilter = selectedPhase;
+
             document.querySelectorAll('.week-card').forEach(card => {
-                if (filter === 'all' || card.dataset.phase === filter) {
+                const cardPhase = card.dataset.phase;
+                if (selectedPhase === 'all' || cardPhase === selectedPhase) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
@@ -1677,22 +2058,10 @@
         });
     });
 
-    // Toggle All Weeks
-    toggleAllBtn.addEventListener('click', () => {
-        allCollapsed = !allCollapsed;
-        document.querySelectorAll('.week-card').forEach(card => {
-            if (allCollapsed) {
-                card.classList.add('collapsed');
-            } else {
-                card.classList.remove('collapsed');
-            }
-        });
-        toggleAllBtn.textContent = allCollapsed ? 'Expand All Weeks' : 'Collapse All Weeks';
-    });
-
     // Reset Progress
-    resetBtn.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset all your preparation progress?')) {
+    resetProgressBtn.addEventListener('click', () => {
+        if (confirm('Are you sure you want to reset all your completed preparation days? This cannot be undone.')) {
+            TTS.stop();
             completedDays.clear();
             try {
                 localStorage.removeItem(STORAGE_KEY);
@@ -1701,7 +2070,8 @@
         }
     });
 
-    // Initialize App
+    // Initialize TTS and App
+    TTS.init();
     renderRoadmap();
 
     // Check URL Hash on Load
