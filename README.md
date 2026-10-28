@@ -39,5 +39,5 @@ Personal developer portfolio website.
 
 ## Author
 
-**Prasad Rawas** - [GitHub](https://github.com/prasadrawas) - [LinkedIn](https://www.linkedin.com/in/prasad-rawas-392b10204)
+**Prasad Rawas** - [GitHub](https://github.com/prasadrawas) - [LinkedIn](https://www.linkedin.com/in/prasadrawas)
 
