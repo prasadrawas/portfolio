@@ -7,7 +7,7 @@
     const projectId = params.get('id');
 
     if (!projectId || !window.PROJECTS_DATA[projectId]) {
-        window.location.href = 'index.html#projects';
+        window.location.href = '/#projects';
         return;
     }
 
